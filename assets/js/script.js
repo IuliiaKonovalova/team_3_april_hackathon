@@ -18,7 +18,7 @@ playBtn.addEventListener('click', () => {
 
 // Fade animation;
 prevButton.addEventListener('click', () => {
-  carousel.classList.toggle('fade');
+  carousel.classList.add('fade');
 })
 
 nextButton.addEventListener('click', () => {
