@@ -1,0 +1,72 @@
+{
+    "category": {
+        "plastic pollution": [
+            {
+                "id": 1,
+                "text": "Every day approximately 8 million pieces of plastic pollution find their way into our oceans. 12 million tonnes of plastic are poured into the ocean every year.",
+                "source": "https://www.sas.org.uk/our-work/plastic-pollution/plastic-pollution-facts-figures/"
+            },
+            {
+                "id": 2,
+                "text": "Between 500 billion and 1 trillion plastic bags are used worldwide annually.",
+                "source": "https://www.ecowatch.com/ocean-plastic-guide-2653277768.html"
+            },
+            {
+                "id": 3,
+                "text": "Some countries have banned, partially banned, or taxed single-use plastic bags include Kenya, China, France, Rwanda, and Italy.",
+                "source": "https://www.globalcitizen.org/en/content/plastic-bans-around-the-world/?template=next"
+            }
+        ],
+        "air pollution": [
+            {
+                "id": 1,
+                "text": "Air pollution kills 800 people every hour or 13 every minute - more than three times compared to malaria, tuberculosis and AIDS combined each year.",
+                "source": "https://www.voanews.com/a/facts-about-air-pollution-on-world-environment-day/4946443.html"
+            },
+            {
+                "id": 2,
+                "text": "More than 2 million people globally die prematurely every year due to outdoor and indoor air pollution",
+                "source": "https://wedocs.unep.org/bitstream/handle/20.500.11822/7646/-Global%20Environment%20Outlook%20%204%20%28GEO-4%29-2007768.pdf?sequence=3&isAllowed=y"
+            },
+            {
+                "id": 3,
+                "text": "Around 99% of the world's population live in places where air quality levels exceed WHO limits.",
+                "source": "https://www.who.int/health-topics/air-pollution#tab=tab_2"
+            }
+        ],
+        "chemical pollution": [
+            {
+                "id": 1,
+                "text": "Thousands of chemicals from cleaning products are washed into streams and rivers. Some persist in the environment and enter the food chain.",
+                "source": "https://www.pjponline.com/the-environmental-impact-of-cleaning-products/"
+            },
+            {
+                "id": 2,
+                "text": "Less than 2% of chemicals on the market have actually been tested for carcinogenicity (tendency to cause cancer)",
+                "source": "https://deainfo.nci.nih.gov/advisory/pcp/annualreports/pcp08-09rpt/pcp_report_08-09_508.pdf"
+            },
+            {
+                "id": 3,
+                "text": "One half of every metric ton of fertilizer applied to fields never even makes it into plant tissue, but instead ends up evaporating or being washed into local waterways",
+                "source": "https://netedu.xauat.edu.cn/jpkc/netedu/jpkc2009/szylyybh/content/wlzy/4/Nutrient%20Overload-Unbalancing%20the%20Global%20Nitrogen%20Cycle.pdf"
+            }
+        ],
+        "consumption": [
+            {
+                "id": 1,
+                "text": "In the past 50 years, humans have consumed more resources than in all previous history.",
+                "source": "https://www.epa.gov/sites/default/files/2015-09/documents/vision2.pdf"
+            },
+            {
+                "id": 2,
+                "text": "Industrialized countries, with 20% of the world's population, consume 87% of the world's printing and writing paper.",
+                "source": "https://www.nwf.org/Global-Warming/Personal-Solutions/Reduce-Reuse-Recycle/~/media/PDFs/Global%20Warming/Personal%20Solutions/underrecycledfiberfactsheet2.ashx"
+            },
+            {
+                "id": 3,
+                "text": "Less than 2% of chemicals on the market have actually been tested for carcinogenicity (tendency to cause cancer).",
+                "source": "https://deainfo.nci.nih.gov/advisory/pcp/annualreports/pcp08-09rpt/pcp_report_08-09_508.pdf"
+            }
+        ]
+    }
+}
