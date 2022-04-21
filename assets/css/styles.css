@@ -160,21 +160,25 @@ body {
 
 
 
-
+/* ----- Carousel ----- */
 .carousel {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: orange;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: space-between; */
 }
 
-.carousel__track-container {
-  margin: 0;
+.carousel__track--container {
+  margin: 0 2em;
   padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel__track {
@@ -184,6 +188,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .carousel__slide {
@@ -192,6 +197,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--clr-accent--800);
+  padding: 2em 1em;
+}
+
+.carousel__slide--title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1em;
 }
 
 .carousel__track--top {
@@ -206,23 +220,28 @@ body {
   display: none;
 }
 
+.carousel__images--container {
+  width: 50rem;
+}
+
 .carousel__images {
-  object-fit: cover;
-  object-position: 100% 0;
+  object-fit: contain;
   z-index: 333;
   width: 100%;
   border-radius: 1.5rem;
 }
 
 .carousel__button {
-  background: transparent;
+  background-color: pink;
+  border-radius: 50%;
+  padding: 1em 1.2em;
   cursor: pointer;
   z-index: 333;
   border: none;
 }
 
 .btn-carousel {
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--clr-neutral-100);
 }
 

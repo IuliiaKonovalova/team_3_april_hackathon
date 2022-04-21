@@ -16,6 +16,14 @@ playBtn.addEventListener('click', () => {
   carousel.classList.remove('hide');
 })
 
+slides.forEach(slide => {
+  slide.addEventListener('click', () => {
+    carousel.classList.add('hide');
+    mainTitle.classList.remove('hide');
+    playBtn.classList.remove('hide');
+  })
+})
+
 
 // Reset all slides
 function reset() {
