@@ -66,6 +66,7 @@ body {
   color: var(--clr-neutral--100);
 }
 
+
 /* ------ Navbar ------ */
 .navbar {
   background-color: var(--clr-primary--300);
@@ -92,7 +93,6 @@ body {
   display: inline-block;
   padding: 0.5em 1em;
   border-radius: var(--br);
-  /* background-color: #d313ec; */
   background-color: #a1e7d0;
   color: var(--clr-neutral--900);
   font-size: var(--fs);

@@ -1,0 +1,48 @@
+{
+    "recyclable-waste": {
+            "paper": {
+                "type": [
+                    "paper", "plate", "cup", "book", "newsPaper", "cardboard"
+                ],
+                "decription": "Items made of paper or carboard"
+            }
+            "plastic": {
+                "type": [
+                    "bottle", "plate", "cup", "cutlery", "tub", "chair", "toy", "sweetWrapper", "bootlecaps", "crate"
+                ],
+                "decription": "Items made of plastic"
+            }
+            "glass": {
+                "type": [
+                    "bottle", "plate", "cup", "container", "mirror", "windowpane"
+                ],
+                "decription": "Items made of glass"
+            }
+            "metal": {
+                "type": [
+                    "cans", "screws", "bootlecaps"
+                ],
+                "decription": "Any materials made of metal"
+            }
+            "bio": {
+                "type": [
+                    "meat", "vegetable", "fruit", "woodenFurniture", "treeBranch", "leaves", "grass", "flower","cork"
+                ],
+                "decription": "Materials that may be turned into compost at a composting site."
+            }
+            "buildingMaterial": {
+                "type": [
+                    "ceramic", "brick", "concrete"
+                ],
+                "decription": "Material can be broken down and coverted to building material used in construction."
+            }
+    },
+    "non-recyclable-waste": {
+            "mixedWaste": {
+                "type": [
+                    "mixed-waste", "aminalExcrement"
+                ],
+                "description": "Comprises of a comination of material that is not possible to be separated into recyclable categories"
+            }
+    }
+}
