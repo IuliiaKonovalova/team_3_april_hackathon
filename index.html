@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -18,15 +19,39 @@
     </ul>
   </nav>
   <main class="main" id="main">
-    <section class="main__container">
-      <h1 class="main__title" id="title">Game Title</h1>
+    <div class="main__container">
+      <h1 class="main__title" id="main-title">Game Title</h1>
       <div class="image__holder">
         <img src="assets/images/earth.svg" alt="">
       </div>
-      <a class="btn btn__play">
-        Play
+      <a class="btn btn__play" id="play-btn">
+        <img src="assets/images/play.svg" alt="">
       </a>
-    </section>
+      <!-- Carousel -->
+      <div class="carousel hide" id="carousel">
+        <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
+          <i class="fas fa-arrow-left btn-carousel"></i>
+        </button>
+        <div class="carousel__track-container">
+          <ul class="carousel__track">
+            <div class="carousel__track--top">
+              <li class="carousel__slide  carousel__images--visible">
+                <img class="carousel__images" src="assets/images/beach.svg" alt="">
+              </li>
+              <li class="carousel__slide carousel__images--hidden">
+                <img class="carousel__images" src="assets/images/city.svg" alt="">
+              </li>
+              <li class="carousel__slide carousel__images--hidden">
+                <img class="carousel__images " src="assets/images/ocean.png" alt="">
+              </li>
+            </div>
+          </ul>
+        </div>
+        <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
+          <i class="fas fa-arrow-right btn-carousel"></i>
+        </button>
+      </div>
+    </div>
   </main>
   <footer class="footer">
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse consequatur excepturi atque voluptatibus, tempore
