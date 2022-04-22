@@ -2,11 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-
+  <meta name="description" content="Garbage Run is an environmental awareness interactive learning platform" />
+  <meta name="author" content="Juliia Aleksei JP Milosz Whitney" />
+  <meta name="robots" content="index, follow" />
+  <meta keywords="Environment, Rubbish, Game, Organic, Recyclable, Plastic, Clean, Awareness, 
+                  Planet, Greenhouse Gases" />
+  <title>Garbage Run | Enviromental Awareness Game</title>
   <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -15,7 +18,7 @@
   <nav class="navbar">
     <ul class="navbar__items">
       <li><a href="javascript:void(0)">Home</a></li>
-      <li><a href="javascript:void(0)">Rules</a></li>
+      <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
   </nav>
@@ -41,19 +44,19 @@
             <li class="carousel__slide carousel__images--visible">
               <h2 class="carousel__slide--title">Beach</h2>
               <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/beach.svg" alt="" />
+                <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
               </div>
             </li>
             <li class="carousel__slide carousel__images--hidden">
-              <h2 class="carousel__slide--title">City</h2>
+              <h2 class="carousel__slide--title">River</h2>
               <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/city.svg" alt="" />
+                <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
               </div>
             </li>
             <li class="carousel__slide carousel__images--hidden">
               <h2 class="carousel__slide--title">Ocean</h2>
               <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/ocean.png" alt="" />
+                <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
               </div>
             </li>
           </div>
@@ -63,6 +66,28 @@
         <i class="fas fa-arrow-right btn-carousel"></i>
       </button>
     </div>
+    <!-- Rules Section -->
+    <div class="rules__section hide" id="rules">
+      <div class="eco__facts">
+        <h1>Did you know?</h1>
+        <div>
+          <p id="eco__text"></p>
+        </div>
+      </div>
+      <div class="game__rules">
+        <h1>How to Play?</h1>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta qui quis iure facilis doloremque
+            perferendis, quidem ab modi veniam assumenda hic molestias dolores fugiat, natus ullam tempore tempora
+            delectus.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
     <!-- <div class="game"></div> -->
   </main>
   <footer class="footer">
@@ -73,7 +98,7 @@
         <li>
           <a href="">
             <div class="footer__image--container">
-              <img src="" alt="">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
             </div>
             <p>Name</p>
           </a>
@@ -81,7 +106,7 @@
         <li>
           <a href="">
             <div class="footer__image--container">
-              <img src="" alt="">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
             </div>
             <p>Name</p>
           </a>
@@ -89,7 +114,7 @@
         <li>
           <a href="">
             <div class="footer__image--container">
-              <img src="" alt="">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 3">
             </div>
             <p>Name</p>
           </a>
@@ -97,7 +122,7 @@
         <li>
           <a href="">
             <div class="footer__image--container">
-              <img src="" alt="">
+              <img class="footer__avatar" avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 4">
             </div>
             <p>Name</p>
           </a>
@@ -105,7 +130,7 @@
         <li>
           <a href="">
             <div class="footer__image--container">
-              <img src="" alt="">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 5">
             </div>
             <p>Name</p>
           </a>
@@ -113,7 +138,7 @@
         <li>
           <a href="">
             <div class="footer__image--container">
-              <img src="" alt="">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 6">
             </div>
             <p>Name</p>
           </a>
@@ -121,7 +146,6 @@
       </ul>
     </div>
   </footer>
-
   <script type="module" src="assets/js/script.js"></script>
 </body>
 
