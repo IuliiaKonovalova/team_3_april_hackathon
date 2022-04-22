@@ -454,6 +454,7 @@ p {
 
 
 /* ----- Footer ----- */
+
 .footer {
   background-color: var(--clr-neutral--800);
   display: flex;
@@ -462,4 +463,13 @@ p {
   justify-content: center;
   width: 100%;
   padding: 2em;
+}
+
+/* ----- Footer Avatars ----- */
+.footer__avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--clr-neutral--100);
 }
