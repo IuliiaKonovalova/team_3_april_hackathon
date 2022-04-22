@@ -303,18 +303,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 0.4fr;
+  gap: 2rem;
 }
 
 .carousel__track--container {
-  margin: 0 2em;
+  margin: 0;
   padding: 0;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  justify-self: center;
+  align-self: center;
 }
 
 .carousel__track {
@@ -324,6 +322,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .carousel__slide {
@@ -360,6 +359,10 @@ body {
 
 .carousel__images--container {
   width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .carousel__images {
@@ -370,10 +373,11 @@ body {
 }
 
 .carousel__button {
+  justify-self: center;
+  align-self: center;
   background-color: var(--clr-neutral--800);
   border-radius: 50%;
   padding: 1em 1.2em;
-  margin: 10em;
   cursor: pointer;
   z-index: 333;
   border: none;
