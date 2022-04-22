@@ -1,6 +1,7 @@
 {
     "recyclable-waste": {
             "paper": {
+
                 "type": {
                     "paper": "assets/images/paper.jpg",
                     "plate": "assets/images/plate.jpg",
@@ -66,14 +67,17 @@
                     "concrete": "assets/images/concrete.jpg",
                     "stone": "assets/images/stone.jpg"
                 },
+
                 "decription": "Material can be broken down and coverted to building material used in construction."
             }
     },
     "non-recyclable-waste": {
             "mixedWaste": {
+
                 "type": {
                     "mixedWaste": "assets/images/mixedWaste.jpg"
                 },
+              
                 "description": "Comprises of a comination of material that is not possible to be separated into recyclable categories"
             }
     }

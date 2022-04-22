@@ -1,78 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+		<script
+			src="https://kit.fontawesome.com/7a0af02583.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+	</head>
 
-  <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+	<body>
+		<nav class="navbar">
+			<ul class="navbar__items">
+				<li><a href="javascript:void(0)">Home</a></li>
+				<li><a href="javascript:void(0)">Rules</a></li>
+				<li><a href="javascript:void(0)">Leaders Board</a></li>
+			</ul>
+		</nav>
+		<main class="main" id="main">
+			<div class="main__container">
+				<h1 class="main__title" id="main-title">Earth Protectors</h1>
+				<div class="image__holder">
+					<img src="assets/images/earth1.png" alt="" />
+				</div>
+				<a class="btn btn__play" id="play-btn">
+					<img src="assets/images/play.svg" alt="" />
+				</a>
+				<!-- Carousel -->
+				<div class="carousel hide" id="carousel">
+					<button
+						id="carousel-prev"
+						class="carousel__button carousel__button--prev"
+						aria-label="Previous slide"
+					>
+						<i class="fas fa-arrow-left btn-carousel"></i>
+					</button>
+					<div class="carousel__track--container">
+						<ul class="carousel__track">
+							<div class="carousel__track--top">
+								<li class="carousel__slide carousel__images--visible">
+									<h2 class="carousel__slide--title">Beach</h2>
+									<div class="carousel__images--container">
+										<img
+											class="carousel__images"
+											src="assets/images/beach.svg"
+											alt=""
+										/>
+									</div>
+								</li>
+								<li class="carousel__slide carousel__images--hidden">
+									<h2 class="carousel__slide--title">City</h2>
+									<div class="carousel__images--container">
+										<img
+											class="carousel__images"
+											src="assets/images/city.svg"
+											alt=""
+										/>
+									</div>
+								</li>
+								<li class="carousel__slide carousel__images--hidden">
+									<h2 class="carousel__slide--title">Ocean</h2>
+									<div class="carousel__images--container">
+										<img
+											class="carousel__images"
+											src="assets/images/ocean.png"
+											alt=""
+										/>
+									</div>
+								</li>
+							</div>
+						</ul>
+					</div>
+					<button
+						id="carousel-next"
+						class="carousel__button carousel__button--next"
+						aria-label="Next slide"
+					>
+						<i class="fas fa-arrow-right btn-carousel"></i>
+					</button>
+				</div>
+			</div>
+			<!-- <div class="game"></div> -->
+		</main>
+		<footer class="footer">
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse consequatur
+			excepturi atque voluptatibus, tempore omnis ut repudiandae ducimus
+			voluptates, exercitationem ipsa minus? Consequatur est eveniet quia
+			corporis similique eius iure!
+		</footer>
 
-<body>
-  <nav class="navbar">
-    <ul class="navbar__items">
-      <li><a href="javascript:void(0)">Home</a></li>
-      <li><a href="javascript:void(0)">Rules</a></li>
-      <li><a href="javascript:void(0)">Leaders Board</a></li>
-    </ul>
-  </nav>
-  <main class="main" id="main">
-    <div class="main__container">
-      <h1 class="main__title" id="main-title">Game Title</h1>
-      <div class="image__holder">
-        <img src="assets/images/earth.svg" alt="">
-      </div>
-      <a class="btn btn__play" id="play-btn">
-        <img src="assets/images/play.svg" alt="">
-      </a>
-      <!-- Carousel -->
-      <div class="carousel hide" id="carousel">
-        <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
-          <i class="fas fa-arrow-left btn-carousel"></i>
-        </button>
-        <div class="carousel__track--container">
-          <ul class="carousel__track">
-            <div class="carousel__track--top">
-              <li class="carousel__slide  carousel__images--visible">
-                <h2 class="carousel__slide--title">Beach</h2>
-                <div class="carousel__images--container">
-                  <img class="carousel__images" src="assets/images/beach.svg" alt="">
-                </div>
-              </li>
-              <li class="carousel__slide carousel__images--hidden">
-                <h2 class="carousel__slide--title">City</h2>
-                <div class="carousel__images--container">
-                  <img class="carousel__images" src="assets/images/city.svg" alt="">
-                </div>
-              </li>
-              <li class="carousel__slide carousel__images--hidden">
-                <h2 class="carousel__slide--title">Ocean</h2>
-                <div class="carousel__images--container">
-                  <img class="carousel__images " src="assets/images/ocean.png" alt="">
-                </div>
-              </li>
-            </div>
-          </ul>
-        </div>
-        <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
-          <i class="fas fa-arrow-right btn-carousel"></i>
-        </button>
-      </div>
-    </div>
-    <!-- <div class="game"></div> -->
-  </main>
-  <footer class="footer">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse consequatur excepturi atque voluptatibus, tempore
-    omnis ut repudiandae ducimus voluptates, exercitationem ipsa minus? Consequatur est eveniet quia corporis similique
-    eius iure!
-  </footer>
-
-  <script type="module" src="assets/js/script.js"></script>
-
-
-</body>
-
+		<script type="module" src="assets/js/script.js"></script>
+	</body>
 </html>
