@@ -253,11 +253,22 @@ body {
   right: 5%;
 }
 
-
-
-
 .hide {
   display: none;
+}
+
+/* ----- Carousel slide animation ----- */
+.fade {
+  -webkit-animation: fadein 2s; 
+  -moz-animation: fadein 2s; 
+   -ms-animation: fadein 2s; 
+    -o-animation: fadein 2s; 
+       animation: fadein 2s;
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 
