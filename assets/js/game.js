@@ -88,7 +88,7 @@ const blueBin = document.getElementById("blue-bin");
 const greenBin = document.getElementById("green-bin");
 
 let testJson = {
-  "recyclable": {
+  recyclable: {
     box: "assets/test/box.png",
     paper: "assets/test/paper.png",
   },
@@ -96,7 +96,7 @@ let testJson = {
     bottle: "./assets/test/bottle.png",
     cup: "./assets/test/cup.png",
   },
-  "organic": {
+  organic: {
     banana: "./assets/test/banana.png",
     apple: "./assets/test/apple.png",
   },

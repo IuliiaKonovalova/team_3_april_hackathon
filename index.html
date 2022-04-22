@@ -15,7 +15,7 @@
   <nav class="navbar">
     <ul class="navbar__items">
       <li><a href="javascript:void(0)">Home</a></li>
-      <li><a href="javascript:void(0)">Rules</a></li>
+      <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
   </nav>
@@ -24,8 +24,8 @@
       <img src="assets/images/earth1.png" alt="" />
     </div>
     <!-- Start Game block -->
-    <div class="main__block">
-      <h1 class="main__title" id="main-title">Earth Protectors</h1>
+    <div class="main__block" id="main-block">
+      <h1 class="main__title">Earth Protectors</h1>
       <a class="btn btn__play" id="play-btn">
         <img src="assets/images/play.svg" alt="" />
       </a>
@@ -41,19 +41,19 @@
             <li class="carousel__slide carousel__images--visible">
               <h2 class="carousel__slide--title">Beach</h2>
               <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/beach.svg" alt="" />
+                <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
               </div>
             </li>
             <li class="carousel__slide carousel__images--hidden">
-              <h2 class="carousel__slide--title">City</h2>
+              <h2 class="carousel__slide--title">River</h2>
               <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/city.svg" alt="" />
+                <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
               </div>
             </li>
             <li class="carousel__slide carousel__images--hidden">
               <h2 class="carousel__slide--title">Ocean</h2>
               <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/ocean.png" alt="" />
+                <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
               </div>
             </li>
           </div>
@@ -63,6 +63,28 @@
         <i class="fas fa-arrow-right btn-carousel"></i>
       </button>
     </div>
+    <!-- Rules Section -->
+    <div class="rules__section hide" id="rules">
+      <div class="eco__facts">
+        <h1>Did you know?</h1>
+        <div>
+          <p id="eco__text"></p>
+        </div>
+      </div>
+      <div class="game__rules">
+        <h1>How to Play?</h1>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta qui quis iure facilis doloremque
+            perferendis, quidem ab modi veniam assumenda hic molestias dolores fugiat, natus ullam tempore tempora
+            delectus.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
     <!-- <div class="game"></div> -->
   </main>
   <footer class="footer">
