@@ -130,14 +130,18 @@ body {
   opacity: 0.9;
 }
 
-.main__title {
+.main__block {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  /* font-weight: 400; */
+.main__title {
+  font-size: 5rem;
   color: var(--clr-neutral--900);
   background-color: var(--clr-accent--100);
   font-family: var(--ff-secondary);
@@ -152,11 +156,7 @@ body {
 }
 
 .btn__play {
-  position: absolute;
-  /* had to alter position to re-center after adding pulse animation */
-  top: 60%;
-  left: 50%;
-  /* transform: translate(-50%, -50%); */
+  margin-top: 5em;
   width: 8rem;
   background-color: #ffffff;
   border-radius: 50%;
@@ -165,34 +165,6 @@ body {
   align-items: center;
   justify-content: center;
   animation: myAnim 2s ease-in-out 0s infinite normal forwards;
-}
-
-
-.btn__play:hover,
-.btn__play:focus,
-.btn__play:active {
-  /* -webkit-animation-name: btn__play;
-  animation-name: btn__play;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate; */
-}
-
-.btn__play {
-  /* position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 9rem;
-  background-color: antiquewhite;
-  border-radius: 50%;
-  padding: 1em 1em 1em 1.5em; */
-
 }
 
 
