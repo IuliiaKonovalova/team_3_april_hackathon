@@ -43,4 +43,3 @@ submitButton.addEventListener('click', function () {
     var ref = database.ref('scores');
     ref.push(data);
 })
-
