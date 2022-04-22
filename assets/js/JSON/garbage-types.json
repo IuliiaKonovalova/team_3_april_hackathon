@@ -1,47 +1,83 @@
 {
     "recyclable-waste": {
             "paper": {
-                "type": [
-                    "paper", "plate", "cup", "book", "newsPaper", "cardboard"
-                ],
+
+                "type": {
+                    "paper": "assets/images/paper.jpg",
+                    "plate": "assets/images/plate.jpg",
+                    "cup": "assets/images/cup.jpg",
+                    "book": "assets/images/book.jpg",
+                    "newspaper": "assets/images/newspaper.jpg",
+                    "cardboard": "assets/images/cardboard.jpg"
+                },
                 "decription": "Items made of paper or carboard"
             },
             "plastic": {
-                "type": [
-                    "bottle", "plate", "cup", "cutlery", "tub", "chair", "toy", "sweetWrapper", "bootlecaps", "crate"
-                ],
+                "type": {
+                    "bottle": "assets/images/bottle.jpg",
+                    "plate": "assets/images/plate.jpg",
+                    "cup": "assets/images/cup.jpg",
+                    "cutlery": "assets/images/cutlery.jpg",
+                    "tub": "assets/images/tub.jpg",
+                    "chair": "assets/images/chair.jpg",
+                    "toy": "assets/images/toy.jpg",
+                    "sweetWrapper": "assets/images/sweetWrapper.jpg",
+                    "bootlecaps": "assets/images/bootlecaps.jpg",
+                    "crate": "assets/images/crate.jpg"
+                },
                 "decription": "Items made of plastic"
             },
             "glass": {
-                "type": [
-                    "bottle", "plate", "cup", "container", "mirror", "windowpane"
-                ],
+                "type": {
+                    "bottle": "assets/images/bottle.jpg",
+                    "plate": "assets/images/plate.jpg",
+                    "cup": "assets/images/cup.jpg",
+                    "container": "assets/images/container.jpg",
+                    "mirror": "assets/images/mirror.jpg",
+                    "windowpane": "assets/images/windowpane.jpg"
+                },
                 "decription": "Items made of glass"
             },
             "metal": {
-                "type": [
-                    "cans", "screws", "bootlecaps"
-                ],
+                "type": {
+                    "cans": "assets/images/cans.jpg",
+                    "screws": "assets/images/screws.jpg",
+                    "bootleCaps": "assets/images/bootleCaps.jpg"
+                },
                 "decription": "Any materials made of metal"
             },
             "bio": {
-                "type": [
-                    "meat", "vegetable", "fruit", "woodenFurniture", "treeBranch", "leaves", "grass", "flower","cork"
-                ],
+                "type": {
+                    "meat": "assets/images/meat.jpg",
+                    "vegetable": "assets/images/vegetable.jpg",
+                    "fruit": "assets/images/fruit.jpg",
+                    "woodenFurniture": "assets/images/woodenFurniture.jpg",
+                    "treeBranch": "assets/images/treeBranch.jpg",
+                    "leaves": "assets/images/leaves.jpg",
+                    "grass": "assets/images/grass.jpg",
+                    "flower": "assets/images/flower.jpg",
+                    "cork": "assets/images/cork.jpg"
+                },
                 "decription": "Materials that may be turned into compost at a composting site."
             },
             "buildingMaterial": {
-                "type": [
-                    "ceramic", "brick", "concrete"
-                ],
+                "type": {
+                    "ceramic": "assets/images/ceramic.jpg",
+                    "brick": "assets/images/brick.jpg",
+                    "concrete": "assets/images/concrete.jpg",
+                    "stone": "assets/images/stone.jpg"
+                },
+
                 "decription": "Material can be broken down and coverted to building material used in construction."
             }
     },
     "non-recyclable-waste": {
             "mixedWaste": {
-                "type": [
-                    "mixed-waste", "aminalExcrement"
-                ],
+
+                "type": {
+                    "mixedWaste": "assets/images/mixedWaste.jpg"
+                },
+              
                 "description": "Comprises of a comination of material that is not possible to be separated into recyclable categories"
             }
     }

@@ -287,6 +287,7 @@ body {
 	left: 5%;
 }
 
+
 .carousel__button--next {
 	right: 5%;
 }
@@ -294,6 +295,170 @@ body {
 .hide {
 	display: none;
 }
+
+
+.btn__play {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9rem;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  padding: 1em 1em 1em 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ----- Carousel ----- */
+.carousel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.carousel__track--container {
+  margin: 0 2em;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.carousel__slide {
+  width: 100%;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-accent--800);
+  padding: 2em 1em;
+}
+
+.carousel__slide--title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1em;
+}
+
+.carousel__track--top {
+  width: 100%;
+}
+
+.carousel__images--visible {
+  display: block;
+}
+
+.carousel__images--hidden {
+  display: none;
+}
+
+.carousel__images--container {
+  width: 50rem;
+}
+
+.carousel__images {
+  object-fit: contain;
+  z-index: 333;
+  width: 100%;
+  border-radius: 1.5rem;
+}
+
+.carousel__button {
+  background-color: pink;
+  border-radius: 50%;
+  padding: 1em 1.2em;
+  cursor: pointer;
+  z-index: 333;
+  border: none;
+}
+
+.btn-carousel {
+  font-size: 4rem;
+  color: var(--clr-neutral-100);
+}
+
+.carousel__button--prev {
+  left: 5%;
+}
+
+.carousel__button--next {
+  right: 5%;
+}
+
+.hide {
+  display: none;
+}
+
+/* ----- Carousel slide animation ----- */
+.fade {
+  -webkit-animation: fadein 2s; 
+  -moz-animation: fadein 2s; 
+   -ms-animation: fadein 2s; 
+    -o-animation: fadein 2s; 
+       animation: fadein 2s;
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* ---- Rules Page ---- */
+.eco__facts,
+.game__rules {
+  color: #000;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+}
+
+.eco__facts {
+  top: 15%;
+  left: 50%;
+}
+
+.game__rules {
+  top: 75%;
+  left: 50%;
+}
+
+.eco__facts p,
+.game__rules p {
+  padding: 10px;
+}
+
+.eco__facts h1,
+p,
+.game__rules h1,
+p {
+  text-align: center;
+}
+
+
+
 
 /* ----- Footer ----- */
 .footer {

@@ -16,6 +16,16 @@ playBtn.addEventListener('click', () => {
   carousel.classList.remove('hide');
 })
 
+
+// Fade animation;
+prevButton.addEventListener('click', () => {
+  carousel.classList.add('fade');
+})
+
+nextButton.addEventListener('click', () => {
+  carousel.classList.add('fade');
+})
+
 slides.forEach(slide => {
   slide.addEventListener('click', () => {
     carousel.classList.add('hide');
@@ -79,5 +89,7 @@ nextButton.addEventListener('click', function () {
   }
   slideNext();
 });
+
+
 
 startSlide();
