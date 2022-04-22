@@ -253,12 +253,58 @@ body {
   right: 5%;
 }
 
-
-
-
 .hide {
   display: none;
 }
+
+/* ----- Carousel slide animation ----- */
+.fade {
+  -webkit-animation: fadein 2s; 
+  -moz-animation: fadein 2s; 
+   -ms-animation: fadein 2s; 
+    -o-animation: fadein 2s; 
+       animation: fadein 2s;
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* ---- Rules Page ---- */
+.eco__facts,
+.game__rules {
+  color: #000;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+}
+
+.eco__facts {
+  top: 15%;
+  left: 50%;
+}
+
+.game__rules {
+  top: 75%;
+  left: 50%;
+}
+
+.eco__facts p,
+.game__rules p {
+  padding: 10px;
+}
+
+.eco__facts h1,
+p,
+.game__rules h1,
+p {
+  text-align: center;
+}
+
 
 
 /* ----- Footer ----- */
