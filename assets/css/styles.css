@@ -492,6 +492,17 @@ p {
   padding: 2em;
 }
 
+
+.team-info {
+  display: none;
+}
+
+.team-show {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  
 /* ----- Footer Avatars ----- */
 .footer__avatar {
   vertical-align: middle;
@@ -499,4 +510,5 @@ p {
   height: 50px;
   border-radius: 50%;
   background-color: var(--clr-neutral--100);
+
 }

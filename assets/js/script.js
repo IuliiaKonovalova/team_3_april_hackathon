@@ -1,3 +1,50 @@
+// variables
+const playBtn = document.getElementById('play-btn');
+
+const mainTitle = document.getElementById('main-title');
+
+const mainBlock = document.getElementById('main-block');
+
+const rulesLink = document.getElementById('rules__link');
+const carousel = document.getElementById('carousel');
+const slides = document.querySelectorAll('.carousel__slide');
+const rulesSection = document.getElementById('rules');
+
+const prevButton = document.querySelector('#carousel-prev');
+const nextButton = document.querySelector('#carousel-next');
+
+const ecoText = document.getElementById("eco__text");
+// Set the current carousel slide
+let current = 0;
+
+playBtn.addEventListener('click', () => {
+  mainBlock.classList.add('hide');
+  carousel.classList.remove('hide');
+})
+
+rulesLink.addEventListener('click', () => {
+  playBtn.classList.add('hide');
+  mainTitle.classList.add('hide');
+  rulesSection.classList.remove('hide');
+
+  fetchEcoFacts();
+})
+
+
+// Fade animation;
+prevButton.addEventListener('click', () => {
+  carousel.classList.add('fade');
+})
+
+nextButton.addEventListener('click', () => {
+  carousel.classList.add('fade');
+})
+
+slides.forEach(slide => {
+  slide.addEventListener('click', () => {
+    carousel.classList.add('hide');
+    mainBlock.classList.remove('hide');
+    
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
 document.addEventListener("DOMContentLoaded", () => {
 
