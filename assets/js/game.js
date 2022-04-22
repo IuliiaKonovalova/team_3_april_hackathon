@@ -90,7 +90,7 @@ const blueBin = document.getElementById("blue-bin");
 const greenBin = document.getElementById("green-bin");
 
 let testJson = {
-  "recyclable": {
+  recyclable: {
     box: "assets/test/box.png",
     paper: "assets/test/paper.png",
   },
@@ -98,7 +98,7 @@ let testJson = {
     bottle: "./assets/test/bottle.png",
     cup: "./assets/test/cup.png",
   },
-  "organic": {
+  organic: {
     banana: "./assets/test/banana.png",
     apple: "./assets/test/apple.png",
   },
@@ -106,58 +106,101 @@ let testJson = {
 
 
 $(redBin).droppable({
-    drop: (event, ui) => {
-        let itemCategory = ui.draggable.attr("data-category");
-        if(itemCategory === "recyclable") {
-            // remove the item from the game and from the screen
-            $(ui.draggable).remove();
-            console.log("right");
-        } else {
-            // remove the item from the game and from the screen
-            $(ui.draggable).remove();
-            console.log("wrong");
-        }
+  drop: (event, ui) => {
+    let itemCategory = ui.draggable.attr("data-category");
+    if (itemCategory === "organic") {
+      $(ui.draggable).effect("explode", {
+        pieces: 50,
+        complete: () => {
+          $(ui.draggable).remove();
+        },
+      });
+      $(redBin).effect("bounce", {
+        times: 3,
+        distance: 20,
+      });
+
+      console.log("right");
+    } else {
+      $(ui.draggable).animate(
+        {
+          left: Math.floor(Math.random() * $(window).width()),
+          top: Math.floor(Math.random() * $(window).height()),
+        },
+        500
+      );
+      $(redBin).effect("shake", { times: 2 }, 500);
+      console.log("wrong");
     }
+  },
 });
 
 $(blueBin).droppable({
-    drop: (event, ui) => {
-        let itemCategory = ui.draggable.attr("data-category");
-        if(itemCategory === "soft-plastic") {
-            // remove the item from the game and from the screen
-            $(ui.draggable).remove();
-            console.log("right");
-        } else {
-            // remove the item from the game and from the screen
-            $(ui.draggable).remove();
-            console.log("wrong");
-        }
+  drop: (event, ui) => {
+    let itemCategory = ui.draggable.attr("data-category");
+    if (itemCategory === "soft-plastic") {
+      $(ui.draggable).effect("explode", {
+        pieces: 50,
+        complete: () => {
+          $(ui.draggable).remove();
+        },
+      });
+      $(blueBin).effect("bounce", {
+        times: 3,
+        distance: 20,
+      });
+
+      console.log("right");
+    } else {
+      $(ui.draggable).animate(
+        {
+          left: Math.floor(Math.random() * $(window).width()),
+          top: Math.floor(Math.random() * $(window).height()),
+        },
+        500
+      );
+      $(blueBin).effect("shake", { times: 2 }, 500);
+      console.log("wrong");
     }
+  },
 });
 
 $(greenBin).droppable({
-    drop: (event, ui) => {
-        let itemCategory = ui.draggable.attr("data-category");
-        if(itemCategory === "organic") {
-            // remove the item from the game and from the screen
-            $(ui.draggable).remove();
-            console.log("right");
-        } else {
-            // remove the item from the game and from the screen
-            $(ui.draggable).remove();
-            console.log("wrong");
-        }
+  drop: (event, ui) => {
+    let itemCategory = ui.draggable.attr("data-category");
+    if (itemCategory === "recyclable") {
+      $(ui.draggable).effect("explode", {
+        pieces: 50,
+        complete: () => {
+          $(ui.draggable).remove();
+        },
+      });
+      $(greenBin).effect("bounce", {
+        times: 3,
+        distance: 20,
+      });
+
+      console.log("right");
+    } else {
+      $(ui.draggable).animate(
+        {
+          left: Math.floor(Math.random() * $(window).width()),
+          top: Math.floor(Math.random() * $(window).height()),
+        },
+        500
+      );
+      $(greenBin).effect("shake", { times: 2 }, 500);
+      console.log("wrong");
     }
+  },
 });
-
-
 
 const game = new Game(testJson);
 game.start("easy");
 
 $("img.garbage-item").draggable({
-//   revert: "invalid",
-//   helper: "",
+  //   revert: "invalid",
+  //   helper: "",
   cursor: "move",
   start: (event, ui) => {
     ui.helper.css("z-index", "100");
