@@ -44,8 +44,6 @@ export default class Game {
                 garbageItem.draw(this.gameScreen);
             }
         } else if(this.gameMode === "hard") {
-            // First generate 15 garbage items and set the timeouts for them to disappear after 5 seconds
-            // Then generate another item every 5 seconds
             let numberOfGarbageItems = 15;
             for(let i = 0; i < numberOfGarbageItems; i++) {
                 let garbageItem = new GarbageItem(this.garbageJson);
@@ -199,8 +197,6 @@ const game = new Game(testJson);
 game.start("easy");
 
 $("img.garbage-item").draggable({
-  //   revert: "invalid",
-  //   helper: "",
   cursor: "move",
   start: (event, ui) => {
     ui.helper.css("z-index", "100");
