@@ -1,12 +1,16 @@
 // variables
 const playBtn = document.getElementById('play-btn');
 const mainTitle = document.getElementById('main-title');
+const rulesLink = document.getElementById('rules__link');
 
 const carousel = document.getElementById('carousel');
 const slides = document.querySelectorAll('.carousel__slide');
+const rulesSection = document.getElementById('rules');
 
 const prevButton = document.querySelector('#carousel-prev');
 const nextButton = document.querySelector('#carousel-next');
+
+const ecoText = document.getElementById("eco__text");
 // Set the current carousel slide
 let current = 0;
 
@@ -14,6 +18,14 @@ playBtn.addEventListener('click', () => {
   playBtn.classList.add('hide');
   mainTitle.classList.add('hide');
   carousel.classList.remove('hide');
+})
+
+rulesLink.addEventListener('click', () => {
+  playBtn.classList.add('hide');
+  mainTitle.classList.add('hide');
+  rulesSection.classList.remove('hide');
+
+  fetchEcoFacts();
 })
 
 
@@ -89,6 +101,19 @@ nextButton.addEventListener('click', function () {
   }
   slideNext();
 });
+
+// fetch text from eco-facts.json and display it to the user
+function fetchEcoFacts() {
+  fetch("https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json")
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      let category = Object.keys(data.category)[Math.floor(Math.random() * Object.keys(data.category).length)];
+      let fact = data.category[category][Math.floor(Math.random() * data.category[category].length)].text;
+      ecoText.innerText = fact;
+    });
+}
 
 
 
