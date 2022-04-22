@@ -10,8 +10,8 @@
   --clr-neutral--100: #fff;
   --clr-neutral--300: #ffffffb7;
   --clr-neutral--500: #afadad;
-  --clr-neutral--900: #000;
   --clr-neutral--800: #122335;
+  --clr-neutral--900: #000;
   --fs: 1.4rem;
   --ff-primary: "Lato", sans-serif;
   --ff-secondary: "Rubik Moonrocks", cursive;
@@ -107,6 +107,7 @@ body {
 
 .navbar__items li a {
   color: var(--clr-neutral--800);
+
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -120,7 +121,6 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 100rem;
   padding: 2em;
   background-image: url(/assets/images/cloud_background.jpg);
   background-repeat: no-repeat;
@@ -131,14 +131,18 @@ body {
   opacity: 0.9;
 }
 
-.main__title {
+.main__block {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  /* font-weight: 400; */
+.main__title {
+  font-size: 5rem;
   color: var(--clr-neutral--900);
   background-color: var(--clr-accent--100);
   font-family: var(--ff-secondary);
@@ -153,11 +157,7 @@ body {
 }
 
 .btn__play {
-  position: absolute;
-  /* had to alter position to re-center after adding pulse animation */
-  top: 60%;
-  left: 45%;
-  transform: translate(-50%, -50%);
+  margin-top: 5em;
   width: 8rem;
   background-color: #ffffff;
   border-radius: 50%;
@@ -165,42 +165,36 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: myAnim 2s ease-in-out 0s infinite normal forwards;
 }
 
-/* ------ Pulse Grow on play button ------ */
-/* ------ https://codepen.io/techshiva/pen/MRbwRg */
-@-webkit-keyframes btn__play {
-  to {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+/*------ Play btn image + Animation ------*/
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+    transform-origin: center center;
   }
-}
 
-@keyframes btn__play {
-  to {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale(0.91);
   }
-}
 
-.btn__play {
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-}
+  17% {
+    animation-timing-function: ease-out;
+    transform: scale(0.98);
+  }
 
-.btn__play:hover,
-.btn__play:focus,
-.btn__play:active {
-  -webkit-animation-name: btn__play;
-  animation-name: btn__play;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
+  33% {
+    animation-timing-function: ease-in;
+    transform: scale(0.87);
+  }
+
+  45% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
 }
 
 /* ----- Carousel ----- */
@@ -239,8 +233,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--clr-neutral--100);
+  /* background-color: var(--clr-accent--800); */
+  background-color: #53d23c;
   padding: 2em 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .carousel__slide--title {
@@ -299,22 +295,6 @@ body {
 .hide {
   display: none;
 }
-
-
-.btn__play {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 9rem;
-  background-color: var(--clr-neutral--100);
-  border-radius: 50%;
-  padding: 1em 1em 1em 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 
 /* ----- Carousel ----- */
 .carousel {
@@ -412,9 +392,7 @@ body {
   right: 5%;
 }
 
-.hide {
-  display: none;
-}
+
 
 /* ----- Carousel slide animation ----- */
 .fade {
@@ -470,12 +448,16 @@ p {
 }
 
 
+.hide {
+  display: none;
+}
 
 
 /* ----- Footer ----- */
 .footer {
   background-color: var(--clr-neutral--800);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;

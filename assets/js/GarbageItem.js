@@ -25,7 +25,8 @@ export default class GarbageItem {
         this.item = Object.keys(jsonFile[this.category])[Math.floor(Math.random() * Object.keys(jsonFile[this.category]).length)];
         this.imageUrl = jsonFile[this.category][this.item];
         this.x = 0;
-        this.y = 0;        
+        this.y = 0;
+        this.id = Math.random();
     }
     draw(element) {
         let width = element.offsetWidth;
@@ -33,7 +34,11 @@ export default class GarbageItem {
         this.x = Math.floor(Math.random() * (width - 100));
         this.y = Math.floor(Math.random() * (height - 100));
         let item = document.createElement("img");
+        item.classList.add("garbage-item");
         item.src = this.imageUrl;
+        // add data-id attribute to the item
+        item.setAttribute("data-id", this.id);
+        item.setAttribute("data-category", this.category);
         item.style.position = "absolute";
         item.style.left = this.x + "px";
         item.style.top = this.y + "px";
@@ -42,7 +47,10 @@ export default class GarbageItem {
         element.appendChild(item);
     }
     remove(screen) {
-        screen.remove(this);
+        // need to choose this exact item to remove
+        let item = screen.querySelector(`img[data-id="${this.id}"]`);
+        screen.removeChild(item);
+
     }
 
     
