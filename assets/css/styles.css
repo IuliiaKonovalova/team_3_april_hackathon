@@ -463,3 +463,14 @@ p {
   width: 100%;
   padding: 2em;
 }
+
+.team-info {
+  display: none;
+}
+
+.team-show {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+}

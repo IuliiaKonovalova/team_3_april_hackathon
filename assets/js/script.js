@@ -1,11 +1,11 @@
 // variables
 const playBtn = document.getElementById('play-btn');
-<<<<<<< HEAD
+// <<<<<<< HEAD
 const mainTitle = document.getElementById('main-title');
 const rulesLink = document.getElementById('rules__link');
 =======
 const mainBlock = document.getElementById('main-block');
->>>>>>> 9bc887a0b014a1c8d86a682f86f2286311880609
+// >>>>>>> 9bc887a0b014a1c8d86a682f86f2286311880609
 
 const carousel = document.getElementById('carousel');
 const slides = document.querySelectorAll('.carousel__slide');
