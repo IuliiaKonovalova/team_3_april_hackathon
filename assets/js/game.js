@@ -44,8 +44,6 @@ export default class Game {
                 garbageItem.draw(this.gameScreen);
             }
         } else if(this.gameMode === "hard") {
-            // First generate 15 garbage items and set the timeouts for them to disappear after 5 seconds
-            // Then generate another item every 5 seconds
             let numberOfGarbageItems = 15;
             for(let i = 0; i < numberOfGarbageItems; i++) {
                 let garbageItem = new GarbageItem(this.garbageJson);
@@ -90,7 +88,7 @@ const blueBin = document.getElementById("blue-bin");
 const greenBin = document.getElementById("green-bin");
 
 let testJson = {
-  recyclable: {
+  "recyclable": {
     box: "assets/test/box.png",
     paper: "assets/test/paper.png",
   },
@@ -98,7 +96,7 @@ let testJson = {
     bottle: "./assets/test/bottle.png",
     cup: "./assets/test/cup.png",
   },
-  organic: {
+  "organic": {
     banana: "./assets/test/banana.png",
     apple: "./assets/test/apple.png",
   },
