@@ -1,11 +1,7 @@
 // variables
 const playBtn = document.getElementById('play-btn');
-<<<<<<< HEAD
-const mainTitle = document.getElementById('main-title');
-const rulesLink = document.getElementById('rules__link');
-=======
 const mainBlock = document.getElementById('main-block');
->>>>>>> 9bc887a0b014a1c8d86a682f86f2286311880609
+const rulesLink = document.getElementById('rules__link');
 
 const carousel = document.getElementById('carousel');
 const slides = document.querySelectorAll('.carousel__slide');
@@ -25,7 +21,8 @@ playBtn.addEventListener('click', () => {
 
 rulesLink.addEventListener('click', () => {
   playBtn.classList.add('hide');
-  mainTitle.classList.add('hide');
+  mainBlock.classList.add('hide');
+  carousel.classList.add('hide')
   rulesSection.classList.remove('hide');
 
   fetchEcoFacts();
