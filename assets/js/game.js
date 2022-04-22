@@ -199,8 +199,6 @@ const game = new Game(testJson);
 game.start("easy");
 
 $("img.garbage-item").draggable({
-  //   revert: "invalid",
-  //   helper: "",
   cursor: "move",
   start: (event, ui) => {
     ui.helper.css("z-index", "100");
