@@ -85,3 +85,21 @@ export default class Game {
     }
 }
 
+const redBin = document.getElementById("red-bin");
+const blueBin = document.getElementById("blue-bin");
+const greenBin = document.getElementById("green-bin");
+
+let testJson = {
+  recyclable: {
+    box: "assets/test/box.png",
+    paper: "assets/test/paper.png",
+  },
+  "soft-plastic": {
+    bottle: "./assets/test/bottle.png",
+    cup: "./assets/test/cup.png",
+  },
+  organic: {
+    banana: "./assets/test/banana.png",
+    apple: "./assets/test/apple.png",
+  },
+};
