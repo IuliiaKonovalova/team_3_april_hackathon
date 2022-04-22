@@ -1,6 +1,6 @@
 // variables
 const playBtn = document.getElementById('play-btn');
-const mainTitle = document.getElementById('main-title');
+const mainBlock = document.getElementById('main-block');
 
 const carousel = document.getElementById('carousel');
 const slides = document.querySelectorAll('.carousel__slide');
@@ -11,8 +11,7 @@ const nextButton = document.querySelector('#carousel-next');
 let current = 0;
 
 playBtn.addEventListener('click', () => {
-  playBtn.classList.add('hide');
-  mainTitle.classList.add('hide');
+  mainBlock.classList.add('hide');
   carousel.classList.remove('hide');
 })
 
@@ -29,8 +28,7 @@ nextButton.addEventListener('click', () => {
 slides.forEach(slide => {
   slide.addEventListener('click', () => {
     carousel.classList.add('hide');
-    mainTitle.classList.remove('hide');
-    playBtn.classList.remove('hide');
+    mainBlock.classList.remove('hide');
   })
 })
 
