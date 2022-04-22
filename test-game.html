@@ -16,7 +16,7 @@
         }
         .bin {
             position: absolute;
-            width: 100px;
+            width: 150px;
             height: 200px;
             /* background-color: #000; */
             bottom: 50px;
@@ -24,15 +24,25 @@
         }
         #red-bin {
             left: 100px;
-            background-color: #f00;
+            /* background-color: #f00; */
         }
         #blue-bin {
             left: 500px;
-            background-color: #00f;
+            /* background-color: #00f; */
         }
         #green-bin {
             left: 900px;
-            background-color: #0f0;
+            /* background-color: #0f0; */
+        }
+
+        #red-bin img,
+        #blue-bin img,
+        #green-bin img {
+            width: 100%;
+            /* height: 100px; */
+            /* position: absolute; */
+            /* top: 50px; */
+            /* left: 50px; */
         }
        
     </style>
@@ -40,13 +50,13 @@
 <body>
     <div id="game-screen">
         <div id="blue-bin" class="bin">
-            <!-- <img src="assets/images/blue_bin.svg" alt=""> -->
+            <img src="assets/images/blue_bin.svg" alt="">
         </div>
         <div id="red-bin" class="bin">
-            <!-- <img src="assets/images/red_bin.svg" alt=""> -->
+            <img src="assets/images/red_bin.svg" alt="">
         </div>
         <div id="green-bin" class="bin">
-            <!-- <img src="assets/images/green_bin.svg" alt=""> -->
+            <img src="assets/images/green_bin.svg" alt="">
         </div>
     </div>
     <script type="module" src="assets/js/game.js"></script>
