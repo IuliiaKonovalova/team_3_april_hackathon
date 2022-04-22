@@ -1,7 +1,11 @@
 // variables
 const playBtn = document.getElementById('play-btn');
+<<<<<<< HEAD
 const mainTitle = document.getElementById('main-title');
 const rulesLink = document.getElementById('rules__link');
+=======
+const mainBlock = document.getElementById('main-block');
+>>>>>>> 9bc887a0b014a1c8d86a682f86f2286311880609
 
 const carousel = document.getElementById('carousel');
 const slides = document.querySelectorAll('.carousel__slide');
@@ -15,8 +19,7 @@ const ecoText = document.getElementById("eco__text");
 let current = 0;
 
 playBtn.addEventListener('click', () => {
-  playBtn.classList.add('hide');
-  mainTitle.classList.add('hide');
+  mainBlock.classList.add('hide');
   carousel.classList.remove('hide');
 })
 
@@ -41,8 +44,7 @@ nextButton.addEventListener('click', () => {
 slides.forEach(slide => {
   slide.addEventListener('click', () => {
     carousel.classList.add('hide');
-    mainTitle.classList.remove('hide');
-    playBtn.classList.remove('hide');
+    mainBlock.classList.remove('hide');
   })
 })
 
