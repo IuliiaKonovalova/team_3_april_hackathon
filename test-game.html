@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
             overflow: hidden;
             position: relative;
         }
+
         .bin {
             position: absolute;
             width: 150px;
@@ -22,14 +24,17 @@
             bottom: 50px;
 
         }
+
         #red-bin {
             left: 100px;
             /* background-color: #f00; */
         }
+
         #blue-bin {
             left: 500px;
             /* background-color: #00f; */
         }
+
         #green-bin {
             left: 900px;
             /* background-color: #0f0; */
@@ -44,10 +49,14 @@
             /* top: 50px; */
             /* left: 50px; */
         }
-       
     </style>
 </head>
+
 <body>
+    <div>
+        <p id="name">James</p>
+        <p id="score">30</p>
+    </div>
     <div id="game-screen">
         <div id="blue-bin" class="bin">
             <img src="assets/images/blue_bin.svg" alt="">
@@ -60,8 +69,12 @@
         </div>
     </div>
     <script type="module" src="assets/js/game.js"></script>
+    <script type="module" src="assets/js/leaderboard.js"></script>
     <!-- jquery and jquery ui scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 </body>
+
 </html>
