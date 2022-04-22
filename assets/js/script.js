@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // variables
-  const playBtn = document.getElementById('play-btn');
+  const playBtn = document.getElementsByClassName('play-btn');
   const mainBlock = document.getElementById('main-block');
   const rulesLink = document.getElementById('rules__link');
 
@@ -17,13 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set the current carousel slide
   let current = 0;
 
-  playBtn.addEventListener('click', () => {
-    mainBlock.classList.add('hide');
-    carousel.classList.remove('hide');
-  })
+  console.log(playBtn);
+
+  for (let btn of playBtn) {
+    btn.addEventListener('click', () => {
+      mainBlock.classList.add('hide');
+      rulesSection.classList.add('hide');
+      carousel.classList.remove('hide');
+    })
+  }
 
   rulesLink.addEventListener('click', () => {
-    playBtn.classList.add('hide');
     mainBlock.classList.add('hide');
     carousel.classList.add('hide')
     rulesSection.classList.remove('hide');
