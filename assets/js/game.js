@@ -16,76 +16,80 @@ import GarbageItem from "./GarbageItem.js";
 // Combo breaks when player puts an item to the wrong bin.
 
 export default class Game {
-    constructor(jsonFile) {
-        this.garbageJson = jsonFile;
-        this.garbageItems = [];
-        this.lives = 3;
-        this.score = 0;
-        this.combo = 0;
-        this.gameMode = "easy";
-        this.gameOver = false;
-        this.gameScreen = document.getElementById("game-screen");
+  constructor(jsonFile) {
+    this.garbageJson = jsonFile;
+    this.garbageItems = [];
+    this.lives = 3;
+    this.score = 0;
+    this.combo = 0;
+    this.gameMode = "easy";
+    this.gameOver = false;
+    this.gameScreen = document.getElementById("game-screen");
+  }
+  start(mode) {
+    this.gameMode = mode;
+    this.gameOver = false;
+    this.lives = 3;
+    this.score = 0;
+    this.combo = 0;
+    this.garbageItems = [];
+    this.generateGarbage();
+  }
+  generateGarbage() {
+    if (this.gameMode === "easy") {
+      let numberOfGarbageItems = 15;
+      for (let i = 0; i < numberOfGarbageItems; i++) {
+        let garbageItem = new GarbageItem(this.garbageJson);
+        this.garbageItems.push(garbageItem);
+        garbageItem.draw(this.gameScreen);
+      }
+    } else if (this.gameMode === "hard") {
+      let numberOfGarbageItems = 15;
+      for (let i = 0; i < numberOfGarbageItems; i++) {
+        let garbageItem = new GarbageItem(this.garbageJson);
+        this.garbageItems.push(garbageItem);
+        garbageItem.draw(this.gameScreen);
+        setTimeout(() => {
+          this.garbageItems.shift();
+          garbageItem.remove(this.gameScreen);
+        }, 5000 * i);
+      }
+      setInterval(() => {
+        let garbageItem = new GarbageItem(this.garbageJson);
+        this.garbageItems.push(garbageItem);
+        garbageItem.draw(this.gameScreen);
+        setTimeout(() => {
+          this.garbageItems.shift();
+          garbageItem.remove(this.gameScreen);
+        }, 5000);
+      }, 1000);
     }
-    start(mode) {
-        this.gameMode = mode;
-        this.gameOver = false;
-        this.lives = 3;
-        this.score = 0;
-        this.combo = 0;
-        this.garbageItems = [];
-        this.generateGarbage();        
-    }
-    generateGarbage() {
-        if(this.gameMode === "easy") {
-            let numberOfGarbageItems = 15;
-            for(let i = 0; i < numberOfGarbageItems; i++) {
-                let garbageItem = new GarbageItem(this.garbageJson);
-                this.garbageItems.push(garbageItem);
-                garbageItem.draw(this.gameScreen);
-            }
-        } else if(this.gameMode === "hard") {
-            let numberOfGarbageItems = 15;
-            for(let i = 0; i < numberOfGarbageItems; i++) {
-                let garbageItem = new GarbageItem(this.garbageJson);
-                this.garbageItems.push(garbageItem);
-                garbageItem.draw(this.gameScreen);
-                setTimeout(() => {
-                    this.garbageItems.shift();
-                    garbageItem.remove(this.gameScreen);
-                }, 5000*i);
-            }
-            setInterval(() => {
-                let garbageItem = new GarbageItem(this.garbageJson);
-                this.garbageItems.push(garbageItem);
-                garbageItem.draw(this.gameScreen);
-                setTimeout(() => {
-                    this.garbageItems.shift();
-                    garbageItem.remove(this.gameScreen);
-                }, 5000);
-            }, 1000);
-        }
-    }
-    removeGarbageItem(garbageItem) {
-        this.garbageItems.shift();
-        garbageItem.remove(this.gameScreen);
-    }
-    updateScore(score) {
-        this.score += score;
-    }
-    updateLives(lives) {
-        this.lives += lives;
-    }
-    updateCombo(combo) {
-        this.combo += combo;
-    }
-    gameOver() {
-        this.gameOver = true;
-    }
+  }
+  removeGarbageItem(garbageItem) {
+    this.garbageItems.shift();
+    garbageItem.remove(this.gameScreen);
+  }
+  updateScore(score) {
+    this.score += score;
+  }
+  updateLives(lives) {
+    this.lives += lives;
+  }
+  updateCombo(combo) {
+    this.combo += combo;
+  }
+  gameOver() {
+    this.gameOver = true;
+  }
 }
 
 const redBin = document.getElementById("red-bin");
 const blueBin = document.getElementById("blue-bin");
 const greenBin = document.getElementById("green-bin");
+
+// audio
+const popSound = new Audio("assets/audio/pop.mp3");
+const fartSound = new Audio("assets/audio/fart.mp3");
 
 let testJson = {
   recyclable: {
@@ -102,11 +106,11 @@ let testJson = {
   },
 };
 
-
 $(redBin).droppable({
   drop: (event, ui) => {
     let itemCategory = ui.draggable.attr("data-category");
     if (itemCategory === "organic") {
+      popSound.play();
       $(ui.draggable).effect("explode", {
         pieces: 50,
         complete: () => {
@@ -120,6 +124,7 @@ $(redBin).droppable({
 
       console.log("right");
     } else {
+      fartSound.play();
       $(ui.draggable).animate(
         {
           left: Math.floor(Math.random() * $(window).width()),
@@ -137,6 +142,7 @@ $(blueBin).droppable({
   drop: (event, ui) => {
     let itemCategory = ui.draggable.attr("data-category");
     if (itemCategory === "soft-plastic") {
+      popSound.play();
       $(ui.draggable).effect("explode", {
         pieces: 50,
         complete: () => {
@@ -150,6 +156,7 @@ $(blueBin).droppable({
 
       console.log("right");
     } else {
+      fartSound.play();
       $(ui.draggable).animate(
         {
           left: Math.floor(Math.random() * $(window).width()),
@@ -167,6 +174,7 @@ $(greenBin).droppable({
   drop: (event, ui) => {
     let itemCategory = ui.draggable.attr("data-category");
     if (itemCategory === "recyclable") {
+      popSound.play();
       $(ui.draggable).effect("explode", {
         pieces: 50,
         complete: () => {
@@ -180,6 +188,7 @@ $(greenBin).droppable({
 
       console.log("right");
     } else {
+      fartSound.play();
       $(ui.draggable).animate(
         {
           left: Math.floor(Math.random() * $(window).width()),
@@ -202,3 +211,13 @@ $("img.garbage-item").draggable({
     ui.helper.css("z-index", "100");
   },
 });
+
+const gameScreen = document.getElementById("game-screen");
+const easyGameButton = document.getElementById("easy-game-button");
+const hardGameButton = document.getElementById("hard-game-button");
+const scoreDisplay = document.getElementById("score-display");
+const livesDisplay = document.getElementById("lives-display");
+const comboDisplay = document.getElementById("combo-display");
+const gameOverDisplay = document.getElementById("game-over-display");
+const stopGameButton = document.getElementById("stop-game-button");
+const restartGameButton = document.getElementById("restart-game-button");
