@@ -53,14 +53,10 @@
 </head>
 
 <body>
-
-    <div id="game-scores">
-        <p id="player">J</p>
-        <p id="score">10</p>
-        <button type="submit" id="submit">Submit score</button>
     <div>
-        <p id="name">James</p>
-        <p id="score">30</p>
+        <input type="text" name="" id="name"><br>
+        <input type="text" name="" id="score"><br>
+        <button id="sub" onclick="sendData(name, score)">Submit score</button>
     </div>
     <div id="game-screen">
         <div id="blue-bin" class="bin">
@@ -74,7 +70,7 @@
         </div>
     </div>
     <script type="module" src="assets/js/game.js"></script>
-      
+
     <!-- Firebase configuration -->
     <script type="module" src="assets/js/leaderboard.js"></script>
     <!-- jquery and jquery ui scripts -->
