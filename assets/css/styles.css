@@ -483,6 +483,13 @@ p {
 }
 
 /* ---- Games Section ---- */
+.ocean__game--section {
+  width: 100vw;
+  height: 70vh;
+  z-index: 999;
+  margin: 0;
+}
+
 .ocean__game--header {
   height: 20vh;
   background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
@@ -496,11 +503,11 @@ p {
   }
 
   70% {
-    margin-left: 100%;
+    margin-left: 50vw;
   }
 
   100% {
-    margin-left: 80%;
+    margin-left: 80vw;
   }
 }
 
@@ -544,7 +551,7 @@ p {
 }
 
 #fish3 {
-  top: 90vh;
+  top: 70vh;
   animation-delay: 1s;
   -webkit-animation-delay: 1s;
 }
@@ -571,7 +578,7 @@ p {
 }
 
 #stingray2 {
-  top: 90vh;
+  top: 65vh;
   animation-delay: 18s;
   -webkit-animation-delay: 18s;
 }
@@ -598,27 +605,33 @@ p {
 }
 
 #jellyfish2 {
-  top: 70vh;
+  top: 50vh;
   animation-delay: 16s;
   -webkit-animation-delay: 16s;
 }
 
 .ocean__background {
   background-image: linear-gradient(#98d4f3, #07496b);
-  height: 80%;
+  height: 60vh;
   overflow: hidden;
 }
 
 /* Beach animation */
 
 .beach__game--section {
-  margin: 0;
+  /* margin: 0;
   width: 100vw;
+  height: 70vh;
   overflow: hidden;
+  z-index: 999; */
+
+  width: 100vw;
+  height: 70vh;
+  z-index: 999;
+  margin: 0;
 }
 
 .beach__scene {
-  display: grid;
   grid-template-rows: 2fr 3fr;
   --height: 98vh;
   height: var(--height);
@@ -755,6 +768,15 @@ p {
   height: 100px;
   width: 100px;
   background-color: black;
+}
+
+.footer__creators {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  display: none;
 }
 
 /* ----- Footer Avatars ----- */

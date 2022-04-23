@@ -9,12 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const difficultyBtnHard = document.getElementById('difficulty-hard');
   const rulesLink = document.getElementById('rules__link');
 
+
+  const rulesSection = document.getElementById('rules');
+
   const carousel = document.getElementById('carousel');
   const slides = document.querySelectorAll('.carousel__slide');
-  const rulesSection = document.getElementById('rules');
 
   const prevButton = document.getElementById('carousel-prev');
   const nextButton = document.getElementById('carousel-next');
+  const beachTheme = document.getElementById('beach-theme');
+  const riverTheme = document.getElementById('river-theme');
+  const oceanTheme = document.getElementById('ocean-theme');
+
 
   const ecoText = document.getElementById("eco__text");
   // Set the current carousel slide
@@ -59,12 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.classList.add('fade');
   })
 
-  slides.forEach(slide => {
-    slide.addEventListener('click', () => {
-      carousel.classList.add('hide');
-      mainBlock.classList.remove('hide');
-    })
-  })
+  // slides.forEach(slide => {
+  //   slide.addEventListener('click', () => {
+  //     carousel.classList.add('hide');
+  //     mainBlock.classList.remove('hide');
+  //   })
+  // })
 
 
   // Reset all slides
@@ -136,5 +142,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   startSlide();
+
+  // Go to beach mode
+  beachTheme.addEventListener('click', () => {
+    carousel.classList.add('hide');
+    document.getElementById('earth-image').classList.add('hide');
+    document.getElementById('beach-game').classList.remove('hide');
+    document.getElementById('ocean-game').classList.add('hide');
+  })
+
+  // Go to river mode
+  riverTheme.addEventListener('click', () => {
+    carousel.classList.add('hide');
+    document.getElementById('earth-image').classList.add('hide');
+    document.getElementById('river-game').classList.remove('hide');
+  })
+
+  // Go to ocean mode
+  oceanTheme.addEventListener('click', () => {
+    carousel.classList.add('hide');
+    document.getElementById('earth-image').classList.add('hide');
+    document.getElementById('ocean-game').classList.remove('hide');
+    document.getElementById('beach-game').classList.add('hide');
+  })
 
 })
