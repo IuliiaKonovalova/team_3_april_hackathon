@@ -126,6 +126,7 @@ body {
   color: var(--clr-accent--900);
   font-family: var(--ff-secondary);
   font-weight: 900;
+  font-size: 3vh;
 }
 
 .game__bar div:not(:last-child) {
@@ -272,12 +273,12 @@ body {
   max-width: 60rem;
   border-radius: 1.5rem;
   display: grid;
-  grid-template-rows: 0.2fr 0.5fr;
+  grid-template-rows: 0.2fr 0.7fr;
   background-color: var(--clr-neutral--800);
   padding: 2em;
   position: relative;
   height: 50vh;
-  gap: 1rem;
+  gap: 5vh;
 }
 
 .carousel__slide a {
@@ -294,7 +295,7 @@ body {
 .carousel__slide--title {
   text-transform: uppercase;
   font-family: var(--ff-secondary);
-  font-size: 3rem;
+  font-size: 4vh;
   font-weight: 900;
   color: var(--clr-neutral--100);
   justify-self: center;
@@ -313,16 +314,13 @@ body {
   align-self: center;
   justify-self: center;
   width: fit-content;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: 0 auto;
 }
 
 .carousel__images {
-  /* width: 50vw;
-  height: 40vh; */
-  /* max-width: 30rem; */
   height: 30vh;
 }
 
