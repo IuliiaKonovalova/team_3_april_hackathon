@@ -73,18 +73,18 @@ body {
   background-color: var(--clr-neutral--800);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   height: 10vh;
-  padding: 1em 1.5em;
 }
 
 .navbar__items {
   width: 100%;
   max-width: 100rem;
+  padding: 1em;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
 }
 
@@ -118,48 +118,14 @@ body {
   font-size: 2vh;
 }
 
-/* Game mode */
-.game__bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--clr-accent--900);
-  font-family: var(--ff-secondary);
-  font-weight: 900;
-  font-size: 3vh;
-}
-
-.game__bar div:not(:last-child) {
-  margin-right: 3vw;
-}
-
-.lives__control span {
-  display: flex;
-}
-
-.lives__control span i:not(:last-child) {
-  margin-right: 1vw;
-}
-
-.sound__control {
-  color: var(--clr-accent--900);
-  font-size: 5vh;
-  cursor: pointer;
-}
-
-.sound__control:hover {
-  color: var(--clr-accent--100);
-
-}
-
-/* ----- Main ----- */
+/* Main */
 .main {
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 0 auto;
   padding: 2vh 5vw;
   background-image: url(/assets/images/cloud_background.jpg);
   background-repeat: no-repeat;
@@ -167,6 +133,7 @@ body {
   background-attachment: fixed;
   margin: 0 auto;
   position: relative;
+  opacity: 0.9;
   height: 80vh;
 }
 
@@ -251,31 +218,26 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 80rem;
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.4fr;
   margin: 0 auto;
+}
+
+.carousel__track--container {
+  margin: 0;
+  padding: 0;
+  justify-self: center;
+  align-self: center;
 }
 
 .carousel__track {
   padding: 0;
   margin: 0;
   list-style: none;
-  align-self: center;
-  justify-self: center;
-  max-width: 60rem;
-}
-
-.carousel__images--visible {
-  max-width: 60rem;
-  border-radius: 1.5rem;
-  display: grid;
-  grid-template-rows: 0.2fr 0.7fr;
-  background-color: var(--clr-neutral--800);
-  padding: 2em;
-  position: relative;
-  height: 50vh;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .carousel__slide {
@@ -297,18 +259,17 @@ body {
   right: 1em;
 }
 
-.btn__play--theme {
-  border: 1px solid var(--clr-neutral--800);
-}
-
 .carousel__slide--title {
+  text-align: center;
   text-transform: uppercase;
   font-family: var(--ff-secondary);
-  font-size: 4vh;
+  font-size: 3rem;
   font-weight: 900;
   color: var(--clr-neutral--100);
-  justify-self: center;
-  align-self: center;
+}
+
+.carousel__track--top {
+  width: 100%;
 }
 
 .carousel__images--visible {
@@ -321,18 +282,17 @@ body {
 
 .carousel__images--container {
   align-self: center;
-
+  justify-self: center;
   width: 100%;
   display: flex;
-
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
 
 .carousel__images {
+  width: 50vw;
   height: 50vh;
-
 }
 
 .carousel__button {
