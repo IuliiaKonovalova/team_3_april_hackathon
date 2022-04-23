@@ -423,9 +423,10 @@ body {
 
   border-radius: 10px;
   z-index: 15;
-  background-color: white;
   width: 500px;
   max-width: 80%;
+  background-color: var(--clr-neutral--800);
+  color: var(--clr-neutral--100);
 }
 
 .modal.active {
@@ -442,7 +443,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--clr-neutral--100);
+  font-family: var(--ff-secondary);
 }
 
 .modal-header .title {
@@ -457,10 +459,13 @@ body {
   background: none;
   font-size: 1.25rem;
   font-weight: bold;
+  color: var(--clr-neutral--100);
 }
 
 .modal-body {
   padding: 10px 15px;
+  font-family: var(--ff-primary);
+
 }
 
 #overlay {
