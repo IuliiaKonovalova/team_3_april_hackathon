@@ -650,17 +650,20 @@ body {
   --height: 98vh;
   height: var(--height);
   padding: calc((100vh - var(--height)) / 2);
+  z-index: 999;
 }
 
 .sky {
   padding: 20px;
   background: var(--clr-primary--sky);
   z-index: -1;
+  z-index: 999;
 }
 
 .earth {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  z-index: 999;
 }
 
 .beach {
@@ -702,6 +705,7 @@ body {
   width: var(--cloud-width);
   box-shadow: var(--box-shadow);
   animation: var(--cloud-dur) linear var(--cloud-delay) infinite cloudMove;
+  z-index: 999;
 }
 
 @keyframes cloudMove {
