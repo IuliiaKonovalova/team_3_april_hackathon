@@ -240,10 +240,6 @@ body {
   }
 }
 
-.hide {
-  display: none;
-}
-
 /* ----- Difficulty ----- */
 .difficulty {
   position: absolute;
@@ -416,7 +412,7 @@ body {
   }
 }
 
-/* INSTRUCTIONS POP-UP */
+/* ----- Modal Pop-Up Window - Game Rules ----- */
 
 .modal {
   position: absolute;
@@ -493,7 +489,7 @@ body {
 }
 
 
-/* ---- Rules Section ---- */
+/* ----- Rules Section ----- */
 .rules__section {
   position: absolute;
   top: 50%;
@@ -553,7 +549,6 @@ body {
   /* outline: 4px solid green; */
 }
 
-
 .rules__bin h3 {
   margin: 15px 0;
 }
@@ -571,6 +566,53 @@ body {
 #rules__play {
   margin-top: 1vh;
   float: right;
+}
+
+.animate {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate.pop {
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+
+.delay-1 {
+  animation-delay: 0.6s;
+}
+
+.delay-2 {
+  animation-delay: 0.7s;
+}
+
+.delay-3 {
+  animation-delay: 0.8s;
 }
 
 
