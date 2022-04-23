@@ -16,6 +16,20 @@
   --ff-primary: "Lato", sans-serif;
   --ff-secondary: "Rubik Moonrocks", cursive;
   --br: 0.1em;
+
+  /* beach animation classes */
+  --clr-primary--sky: #2dc7ff;
+  --clr-primary--beach: #ff9f1c;
+  --clr-secondary--beach: #ffbf69;
+  --clr-primary--sea: #023e8a;
+  --clr-secondary--sea: #48cae4;
+  --clr-tertiary--sea: #90e0ef;
+  --clr-primary--cloud: #f5fffa;
+  --clr-secondary--cloud: #f0ffff;
+  --clr--tertiary--cloud: #ffefd5;
+  --clr--fourthly--cloud: #ffebcd;
+  --clr--fifthly--cloud: #fffafa;
+  --clr--sixthly-cloud: #fffff0;
 }
 
 *,
@@ -792,25 +806,30 @@ body {
   z-index: 999; */
 
   width: 100vw;
-  height: 70vh;
+  height: auto;
   z-index: 999;
   margin: 0;
+  overflow: auto;
+  animation: hide-scroll 1.2s infinite;
 }
 
 .beach__scene {
-  /* display: grid; */
+  display: grid;
   grid-template-rows: 2fr 3fr;
-  --height: 98vh;
-  height: var(--height);
-  padding: calc((100vh - var(--height)) / 2);
+  height: 100vh;
   z-index: 999;
-  background-color: #005aff;
+}
+
+@keyframes hide-scroll {
+
+  from,
+  to {
+    overflow: hidden;
+  }
 }
 
 .sky {
-  padding: 20px;
   /* background: var(--clr-primary--sky); */
-  background-color: #00daff;
   z-index: -1;
   z-index: 999;
 }
@@ -819,20 +838,17 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   z-index: 999;
-  background-color: #ffa500;
 }
 
 .beach {
   padding: 10px;
-  background: var(--clr-primary--beach);
-  background-color: yellow;
+  background-color: var(--clr-primary--beach);
   z-index: -1;
 }
 
 .sea {
   padding: 20px;
-  background: var(--clr-primary--sea);
-  background-color: #122335;
+  background-color: var(--clr-primary--sea);
   border-radius: 0 59% 56% 0;
   animation: tide 10s ease-in-out infinite;
   box-shadow: 0 0 var(--clr-primary--sea), 0 0 var(--clr-primary--sea),
