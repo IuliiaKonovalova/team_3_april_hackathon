@@ -21,6 +21,25 @@
       <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
+    <div class="game__bar">
+      <div class="timer__control">
+        <span id="timer">05:00</span>
+      </div>
+      <div class="lives__control">
+        <span id="lives">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart"></i>
+        </span>
+      </div>
+      <div class="score__control">
+        <span id="score">3000</span>
+      </div>
+      <div class="sound__control">
+        <i class="fas fa-volume-up hide" id="sound-on"></i>
+        <i class="fas fa-volume-mute" id="sound-off"></i>
+      </div>
+    </div>
   </nav>
   <main class="main" id="main">
     <div class="image__holder">
@@ -38,43 +57,36 @@
       <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
         <i class="fas fa-arrow-left btn-carousel"></i>
       </button>
-      <div class="carousel__track--container">
-        <ul class="carousel__track">
-          <div class="carousel__track--top">
-            <li class="carousel__slide carousel__images--visible">
-              <h2 class="carousel__slide--title">Beach</h2>
-              <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
-              </div>
-              <a class="btn btn__play" id="beach-game">
-                <img src="assets/images/play.svg" alt="Play button icon" />
-              </a>
-            </li>
-            <li class="carousel__slide carousel__images--hidden">
-              <h2 class="carousel__slide--title">River</h2>
-              <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
-              </div>
-              <a class="btn btn__play" id="river-game">
-                <img src="assets/images/play.svg" alt="Play button icon" />
-              </a>
-            </li>
-            <li class="carousel__slide carousel__images--hidden">
-              <h2 class="carousel__slide--title">Ocean</h2>
-
-              <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/ocean55.svg" alt="" />
-              </div>
-              <a class="btn btn__play" id="ocean-game">
-                <img src="assets/images/play.svg" alt="Play button icon" />
-              </a>
-            </li>
+      <ul class="carousel__track">
+        <li class="carousel__slide carousel__images--visible">
+          <h2 class="carousel__slide--title">Beach</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
           </div>
-        </ul>
-        <!-- <a class="btn btn__rules play-btn">
-          <img src="assets/images/play.svg" alt="" />
-        </a> -->
-      </div>
+          <a class="btn btn__play btn__play--theme" id="beach-game">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+        <li class="carousel__slide carousel__images--hidden">
+          <h2 class="carousel__slide--title">River</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
+            <!-- <img class="carousel__images" src="assets/images/river55.png" alt="" /> -->
+          </div>
+          <a class="btn btn__play btn__play--theme" id="river-game">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+        <li class="carousel__slide carousel__images--hidden">
+          <h2 class="carousel__slide--title">Ocean</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
+          </div>
+          <a class="btn btn__play btn__play--theme" id="ocean-game">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+      </ul>
       <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
         <i class="fas fa-arrow-right btn-carousel"></i>
       </button>
