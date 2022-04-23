@@ -616,7 +616,7 @@ body {
   animation-delay: 0.8s;
 }
 
-<<<<<<< HEAD
+
 /* ---- Games Section ---- */
 /* Combo */
 
@@ -634,10 +634,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
 
-  =======.hide {
+.hide {
     display: none;
-    >>>>>>>88a7c2c2993839a41ecd2410c9bbc05dac3e1aed
   }
 
 
