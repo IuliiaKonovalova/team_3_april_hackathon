@@ -28,6 +28,7 @@ export default class Game {
     this.garbageInterval = null;
     this.timerInterval = null;
     this.timeLeft = 60;
+    this.sound = true;
   }
   start(mode) {
     clearInterval(this.garbageInterval);
@@ -49,6 +50,12 @@ export default class Game {
         let garbageItem = new GarbageItem(this.garbageJson);
         this.garbageItems++;
         garbageItem.draw(this.gameScreen);
+        $(`img[data-id="${garbageItem.id}"]`).draggable({
+          cursor: "move",
+          start: (event, ui) => {
+            ui.helper.css("z-index", "100");
+          },
+        });
       }
       console.log(this.garbageItems + " garbage items generated");
     } else if (this.gameMode === "hard") {
@@ -58,6 +65,12 @@ export default class Game {
         let garbageItem = new GarbageItem(this.garbageJson);
         this.garbageItems += 1;
         garbageItem.draw(this.gameScreen);
+        $(`img[data-id="${garbageItem.id}"]`).draggable({
+          cursor: "move",
+          start: (event, ui) => {
+            ui.helper.css("z-index", "100");
+          },
+        });
       }
       this.garbageInterval = setInterval(() => {
         let garbageItem = new GarbageItem(this.garbageJson);
@@ -100,6 +113,12 @@ export default class Game {
       }
     }, 1000);
   }
+  soundOn() {
+    this.sound = true;
+  }
+  soundOff() {
+    this.sound = false;
+  }
 }
 
 // audio
@@ -125,7 +144,9 @@ const checkAnswer = (event, ui, bin) => {
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
   if (itemCategory === binCategory) {
-    popSound.play();
+    if (game.sound) {
+      popSound.play();
+    }
     $(ui.draggable).effect("explode", {
       pieces: 50,
       complete: () => {
@@ -145,7 +166,9 @@ const checkAnswer = (event, ui, bin) => {
     console.log("combo: " + game.combo);
     console.log("items: " + game.garbageItems);
   } else {
-    fartSound.play();
+    if (game.sound) {
+      fartSound.play();
+    }
     $(ui.draggable).animate(
       {
         left: Math.floor(Math.random() * $(window).width()),
@@ -185,13 +208,6 @@ $(".bin").droppable({
 
 const game = new Game(testJson);
 game.start("hard");
-
-$("img.garbage-item").draggable({
-  cursor: "move",
-  start: (event, ui) => {
-    ui.helper.css("z-index", "100");
-  },
-});
 
 const gameScreen = document.getElementById("game-screen");
 const easyGameButton = document.getElementById("easy-game-button");
