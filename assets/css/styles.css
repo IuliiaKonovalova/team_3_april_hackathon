@@ -621,6 +621,32 @@ body {
 }
 
 /* ---- Games Section ---- */
+/* Combo */
+
+.combo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.05em 1em 0.3em 1em;
+  background-color: orange;
+  color: black;
+  border-radius: 0.2em;
+  font-family: var(--ff-secondary);
+  font-size: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.combo__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Ocean */
+
 .ocean__game--section {
   width: 100vw;
   height: 70vh;
