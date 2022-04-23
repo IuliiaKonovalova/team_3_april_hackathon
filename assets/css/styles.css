@@ -988,7 +988,6 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: var(--spacing);
-  background-color: orange;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1007,6 +1006,11 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: var(--clr-neutral--100);
+}
+
+.footer__creators--item a:hover {
+  color: var(--clr-accent--900);
 }
 
 .team-show {
