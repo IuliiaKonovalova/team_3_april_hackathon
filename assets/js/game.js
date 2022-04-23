@@ -18,21 +18,23 @@ import GarbageItem from "./GarbageItem.js";
 export default class Game {
   constructor(jsonFile) {
     this.garbageJson = jsonFile;
-    this.garbageItems = [];
+    this.garbageItems = 0;
     this.lives = 3;
     this.score = 0;
     this.combo = 0;
     this.gameMode = "easy";
     this.gameOver = false;
     this.gameScreen = document.getElementById("game-screen");
+    this.interval = null;
   }
   start(mode) {
+    clearInterval(this.interval);
     this.gameMode = mode;
     this.gameOver = false;
     this.lives = 3;
     this.score = 0;
     this.combo = 0;
-    this.garbageItems = [];
+    this.garbageItems = 0;
     this.generateGarbage();
   }
   generateGarbage() {
@@ -40,48 +42,47 @@ export default class Game {
       let numberOfGarbageItems = 15;
       for (let i = 0; i < numberOfGarbageItems; i++) {
         let garbageItem = new GarbageItem(this.garbageJson);
-        this.garbageItems.push(garbageItem);
+        this.garbageItems++;
         garbageItem.draw(this.gameScreen);
       }
+      console.log(this.garbageItems + " garbage items generated");
     } else if (this.gameMode === "hard") {
       let numberOfGarbageItems = 15;
       for (let i = 0; i < numberOfGarbageItems; i++) {
         let garbageItem = new GarbageItem(this.garbageJson);
-        this.garbageItems.push(garbageItem);
+        this.garbageItems += 1;
         garbageItem.draw(this.gameScreen);
-        setTimeout(() => {
-          this.garbageItems.shift();
-          garbageItem.remove(this.gameScreen);
-        }, 5000 * i);
       }
-      setInterval(() => {
+      this.interval = setInterval(() => {
         let garbageItem = new GarbageItem(this.garbageJson);
-        this.garbageItems.push(garbageItem);
+        this.garbageItems += 1;
         garbageItem.draw(this.gameScreen);
-        setTimeout(() => {
-          this.garbageItems.shift();
-          garbageItem.remove(this.gameScreen);
-        }, 5000);
-      }, 1000);
+        $(`img[data-id="${garbageItem.id}"]`).draggable({
+          cursor: "move",
+          start: (event, ui) => {
+            ui.helper.css("z-index", "100");
+          },
+        });
+      }, 2000);
     }
   }
-  removeGarbageItem(garbageItem) {
-    this.garbageItems.shift();
-    garbageItem.remove(this.gameScreen);
+  removeGarbageItem() {
+    this.garbageItems -= 1;
   }
   updateScore() {
     this.score += 10 * this.combo;
   }
-  updateLives(lives) {
-    this.lives += lives;
+  takeLife() {
+    this.lives -= 1;
   }
-  increaseCombo(combo) {
+  increaseCombo() {
     this.combo += 1;
   }
   resetCombo() {
     this.combo = 0;
   }
-  gameOver() {
+  gameOverTrigger() {
+    clearInterval(this.interval);
     this.gameOver = true;
   }
 }
@@ -120,7 +121,14 @@ const checkAnswer = (event, ui, bin) => {
       times: 3,
       distance: 20,
     });
+    game.removeGarbageItem();
+    game.increaseCombo();
+    game.updateScore();
+    checkGameOver();
     console.log("right");
+    console.log("score: " + game.score);
+    console.log("combo: " + game.combo);
+    console.log("items: " + game.garbageItems);
   } else {
     fartSound.play();
     $(ui.draggable).animate(
@@ -132,6 +140,22 @@ const checkAnswer = (event, ui, bin) => {
     );
     $(bin).effect("shake", { times: 2 }, 500);
     console.log("wrong");
+    game.takeLife();
+    game.resetCombo();
+    checkGameOver();
+    console.log("lives: " + game.lives);
+  }
+};
+
+const checkGameOver = () => {
+  if (game.lives === 0) {
+    game.gameOverTrigger();
+    console.log("game over");
+  } else if (game.garbageItems === 0) {
+    game.gameOverTrigger();
+    console.log("game over");
+  } else {
+    console.log("game not over");
   }
 };
 
@@ -142,7 +166,7 @@ $(".bin").droppable({
 });
 
 const game = new Game(testJson);
-game.start("easy");
+game.start("hard");
 
 $("img.garbage-item").draggable({
   cursor: "move",
