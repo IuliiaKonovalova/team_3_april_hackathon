@@ -135,6 +135,51 @@ document.addEventListener("DOMContentLoaded", () => {
     slideNext();
   });
 
+  let gameOn = false;
+  // Iteration through every button element in HTML to execute an openModal function for elements with specified selector - come from https://www.youtube.com/watch?v=MBaw_6cPmAw
+  document.querySelectorAll('[data-modal-target]').forEach(button => {
+    button.addEventListener('click', () => {
+      if (gameOn === false) {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        openModal(modal);
+      } else {
+        alert("Game is ON! You can access the instruction only if the game is stopped.");
+      }
+    });
+  });
+
+  // Iteration through every button element in HTML to execute a closeModal function for elements with specified parent class - come from https://www.youtube.com/watch?v=MBaw_6cPmAw
+  document.querySelectorAll('[data-close-button]').forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal'); // looks for the closest parent with 'modal' class
+      closeModal(modal);
+    });
+  });
+
+  // Overlay event listener - iterates through elements with specified selector and executes the closeModal function if applicable - come from https://www.youtube.com/watch?v=MBaw_6cPmAw
+  document.getElementById('overlay').addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active');
+    modals.forEach(modal => {
+      closeModal(modal);
+    });
+  });
+
+  // DOM CONTROL
+
+  /** Function adds class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null - come from https://www.youtube.com/watch?v=MBaw_6cPmAw */
+  function openModal(modal) {
+    if (modal === null) return;
+    modal.classList.add('active');
+    document.getElementById('overlay').classList.add('active');
+  }
+
+  /** Function removes class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null - come from https://www.youtube.com/watch?v=MBaw_6cPmAw */
+  function closeModal(modal) {
+    if (modal === null) return;
+    modal.classList.remove('active');
+    document.getElementById('overlay').classList.remove('active');
+  }
+
   startSlide();
 
 })
