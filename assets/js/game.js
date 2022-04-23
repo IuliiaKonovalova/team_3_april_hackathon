@@ -31,6 +31,8 @@ export default class Game {
   }
   start(mode) {
     clearInterval(this.garbageInterval);
+    clearInterval(this.timerInterval);
+    this.timeLeft = 60;
     this.gameMode = mode;
     this.gameOver = false;
     this.lives = 3;
@@ -41,6 +43,7 @@ export default class Game {
   }
   generateGarbage() {
     if (this.gameMode === "easy") {
+      this.startTimer();
       let numberOfGarbageItems = 15;
       for (let i = 0; i < numberOfGarbageItems; i++) {
         let garbageItem = new GarbageItem(this.garbageJson);
@@ -49,6 +52,7 @@ export default class Game {
       }
       console.log(this.garbageItems + " garbage items generated");
     } else if (this.gameMode === "hard") {
+      this.startTimer();
       let numberOfGarbageItems = 15;
       for (let i = 0; i < numberOfGarbageItems; i++) {
         let garbageItem = new GarbageItem(this.garbageJson);
@@ -85,11 +89,15 @@ export default class Game {
   }
   gameOverTrigger() {
     clearInterval(this.garbageInterval);
+    clearInterval(this.timerInterval);
     this.gameOver = true;
   }
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft -= 1;
+      if (this.timeLeft === 0) {
+        this.gameOverTrigger();
+      }
     }, 1000);
   }
 }
