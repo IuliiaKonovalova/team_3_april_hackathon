@@ -621,10 +621,6 @@ body {
 }
 
 
-.hide {
-  display: none;
-}
-
 /* ---- Games Section ---- */
 /* Combo */
 
@@ -922,6 +918,11 @@ body {
   --box-shadow: 52px 5px 0 -5px var(--bg-2),
     93px 17px 0 -17px var(--bg-1),
     -55px 10px 0 -10px var(--bg-2);
+}
+
+
+.hide {
+  display: none;
 }
 
 
