@@ -416,6 +416,82 @@ body {
   }
 }
 
+/* INSTRUCTIONS POP-UP */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /* scale(0) sets modal to invisible */
+  transform: translate(-50%, -50%) scale(0);
+
+  /* Gradually apears/disapears over set time frame */
+  transition: 200ms ease-in-out;
+
+  border-radius: 10px;
+  z-index: 15;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  /* Sets modal to be visible when active */
+  z-index: 10;
+  text-align: justify;
+  max-height: 90%;
+  font-size: 1.4rem;
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+
+  /* If overlay is invisible, it will remove the option to capture any click events */
+  pointer-events: none;
+}
+
+/* When overlay is active, we set opacity to be visible and pointer-events to capture events to disallow for button clicks */
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 1;
+}
+
 
 /* ---- Rules Section ---- */
 .rules__section {
@@ -484,6 +560,12 @@ body {
 
 .rules__bin img {
   height: 15vh;
+  transition: transform .7s ease-in-out;
+}
+
+.rules__bin img:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
 }
 
 #rules__play {
