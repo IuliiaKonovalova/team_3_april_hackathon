@@ -452,7 +452,8 @@ body {
   font-weight: bold;
 }
 
-.modal-header .close-button {
+.modal-header .close-button,
+#rules__close {
   cursor: pointer;
   border: none;
   outline: none;
@@ -508,6 +509,14 @@ body {
 .rules__section h1 {
   font-family: var(--ff-secondary);
   font-size: 6vh;
+  display: inline-block;
+}
+
+#rules__close {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 4vh;
 }
 
 .eco__facts,

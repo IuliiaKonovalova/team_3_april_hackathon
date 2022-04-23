@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rulesLink = document.getElementById('rules__link');
 
   const rulesSection = document.getElementById('rules');
+  const rulesCloseBtn = document.getElementById('rules__close');
 
 
 
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   rulesLink.addEventListener("click", () => {
+    main.addEventListener('click', rulesEventHandler);
     mainBlock.classList.add("hide");
     carousel.classList.add("hide");
     rulesSection.classList.remove("hide");
@@ -117,8 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch text from eco-facts.json and display it to the user
   function fetchEcoFacts() {
     fetch(
-        "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json"
-      )
+      "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json"
+    )
       .then((response) => {
         return response.json();
       })
@@ -134,18 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Function comes from https://stackoverflow.com/questions/1462138/event-listener-for-when-element-becomes-visible
-  function onVisible(element, callback) {
-    new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-          callback(element);
-          observer.disconnect();
-        }
-      });
-    }).observe(element);
+  function rulesEventHandler(event) {
+    console.log("click");
+    if (!rulesSection.classList.contains("hide")) {
+      if (!rulesSection.contains(event.target) || rulesCloseBtn.contains(event.target)) {
+        mainBlock.classList.remove('hide');
+        rulesSection.classList.add('hide');
+        difficultyBlock.classList.add('hide');
+        main.removeEventListener('click', rulesEventHandler);
+      }
+    }
   }
-
+  ` `
   // Click Previous Button
   prevButton.addEventListener("click", function () {
     if (current === 0) {
@@ -207,20 +209,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
   }
-
-  onVisible(rulesSection, () => {
-    main.addEventListener('click', function (e) {
-      console.log("click");
-      if (rulesSection.classList.contains("hide") === false) {
-        if (!rulesSection.contains(e.target)) {
-          mainBlock.classList.remove('hide');
-          rulesSection.classList.add('hide');
-          difficultyBlock.classList.add('hide');
-        }
-      }
-    });
-  });
-
 
   startSlide();
 
