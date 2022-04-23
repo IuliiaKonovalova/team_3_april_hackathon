@@ -28,6 +28,7 @@ export default class Game {
     this.garbageInterval = null;
     this.timerInterval = null;
     this.timeLeft = 60;
+    this.sound = true;
   }
   start(mode) {
     clearInterval(this.garbageInterval);
@@ -99,6 +100,12 @@ export default class Game {
         this.gameOverTrigger();
       }
     }, 1000);
+  }
+  soundOn() {
+    this.sound = true;
+  }
+  soundOff() {
+    this.sound = false;
   }
 }
 
