@@ -255,7 +255,6 @@ body {
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.4fr;
   margin: 0 auto;
-  /* height: 50vh; */
 }
 
 .carousel__track {
@@ -276,7 +275,6 @@ body {
   padding: 2em;
   position: relative;
   height: 50vh;
-  /* gap: 5vh; */
   margin: 0 auto;
 }
 
