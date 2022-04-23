@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const rulesSection = document.getElementById('rules');
 
 
-  const rulesSection = document.getElementById("rules");
 
   const carousel = document.getElementById("carousel");
   const slides = document.querySelectorAll(".carousel__slide");
