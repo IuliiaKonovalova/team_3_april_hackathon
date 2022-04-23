@@ -8,7 +8,7 @@ In line with this edition of the Hackathon, we have decided to develop an intera
 The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
 
 
-- Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
+
 
 # User Experience Design
 
@@ -59,6 +59,7 @@ The overall goal of this game is to drive home a newfound knowledge base for rec
 
 
 ## Credits
+- Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
 
 
 ## Acknowledgements
