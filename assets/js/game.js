@@ -25,10 +25,12 @@ export default class Game {
     this.gameMode = "easy";
     this.gameOver = false;
     this.gameScreen = document.getElementById("game-screen");
-    this.interval = null;
+    this.garbageInterval = null;
+    this.timerInterval = null;
+    this.timeLeft = 60;
   }
   start(mode) {
-    clearInterval(this.interval);
+    clearInterval(this.garbageInterval);
     this.gameMode = mode;
     this.gameOver = false;
     this.lives = 3;
@@ -53,7 +55,7 @@ export default class Game {
         this.garbageItems += 1;
         garbageItem.draw(this.gameScreen);
       }
-      this.interval = setInterval(() => {
+      this.garbageInterval = setInterval(() => {
         let garbageItem = new GarbageItem(this.garbageJson);
         this.garbageItems += 1;
         garbageItem.draw(this.gameScreen);
@@ -82,8 +84,13 @@ export default class Game {
     this.combo = 0;
   }
   gameOverTrigger() {
-    clearInterval(this.interval);
+    clearInterval(this.garbageInterval);
     this.gameOver = true;
+  }
+  startTimer() {
+    this.timerInterval = setInterval(() => {
+      this.timeLeft -= 1;
+    }, 1000);
   }
 }
 
@@ -152,6 +159,9 @@ const checkGameOver = () => {
     game.gameOverTrigger();
     console.log("game over");
   } else if (game.garbageItems === 0) {
+    game.gameOverTrigger();
+    console.log("game over");
+  } else if (game.timeLeft === 0) {
     game.gameOverTrigger();
     console.log("game over");
   } else {
