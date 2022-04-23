@@ -9,7 +9,6 @@
             "cardboard": "assets/images/paper/cardboard.jpg",
             "napkin": "assets/images/paper/paper_napkin.jpg",
             "tissue": "assets/images/paper/paper_tissue.jpg"
-
         },
         "description": "Items made of paper or carboard"
     },
@@ -22,7 +21,7 @@
             "tub": "assets/images/plastic/plastic_tub.jpg",
             "toy": "assets/images/plastic/broken_toy.jpg",
             "sweetWrapper": "assets/images/plastic/sweet_wrapper.jpg",
-            "bootlecaps": "assets/images/plastic/bootle_cap.jpg",
+            "bootlecaps": "assets/images/plastic/bootle_cap.jpg"
         },
         "description": "Items made of plastic"
     },
