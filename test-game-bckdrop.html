@@ -24,14 +24,14 @@
       text-align: center;
     }
 
-    /* Animation webkit */
-    @-webkit-keyframes ocean-swim {
+    /* Ocean animation */
+    @keyframes ocean-swim {
       0% {
         margin-left: -235px
       }
 
       70% {
-        margin-left: 50%;
+        margin-left: 100%;
       }
 
       100% {
@@ -39,10 +39,9 @@
       }
     }
 
-    /* Animation */
-    @keyframes ocean-swim {
+    @-webkit-keyframes ocean-swim {
       0% {
-        margin-left: -235px
+        margin-left: -235px;
       }
 
       70% {
