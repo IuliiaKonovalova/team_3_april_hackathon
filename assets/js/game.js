@@ -86,10 +86,6 @@ export default class Game {
   }
 }
 
-const redBin = document.getElementById("red-bin");
-const blueBin = document.getElementById("blue-bin");
-const greenBin = document.getElementById("green-bin");
-
 // audio
 const popSound = new Audio("assets/audio/pop.mp3");
 const fartSound = new Audio("assets/audio/fart.mp3");
@@ -109,104 +105,6 @@ let testJson = {
   },
 };
 
-// $(redBin).droppable({
-//   drop: (event, ui) => {
-//     let itemCategory = ui.draggable.attr("data-category");
-//     if (itemCategory === "organic") {
-//       popSound.play();
-
-//       $(ui.draggable).effect("explode", {
-//         pieces: 50,
-//         complete: () => {
-//           $(ui.draggable).remove();
-//         },
-//       });
-//       $(redBin).effect("bounce", {
-//         times: 3,
-//         distance: 20,
-//       });
-
-//       console.log("right");
-//     } else {
-//       fartSound.play();
-//       $(ui.draggable).animate(
-//         {
-//           left: Math.floor(Math.random() * $(window).width()),
-//           top: Math.floor(Math.random() * $(window).height()),
-//         },
-//         500
-//       );
-//       $(redBin).effect("shake", { times: 2 }, 500);
-//       console.log("wrong");
-//     }
-//   },
-// });
-
-// $(blueBin).droppable({
-//   drop: (event, ui) => {
-//     let itemCategory = ui.draggable.attr("data-category");
-//     if (itemCategory === "soft-plastic") {
-//       popSound.play();
-//       $(ui.draggable).effect("explode", {
-//         pieces: 50,
-//         complete: () => {
-//           $(ui.draggable).remove();
-//         },
-//       });
-//       $(blueBin).effect("bounce", {
-//         times: 3,
-//         distance: 20,
-//       });
-
-//       console.log("right");
-//     } else {
-//       fartSound.play();
-//       $(ui.draggable).animate(
-//         {
-//           left: Math.floor(Math.random() * $(window).width()),
-//           top: Math.floor(Math.random() * $(window).height()),
-//         },
-//         500
-//       );
-//       $(blueBin).effect("shake", { times: 2 }, 500);
-//       console.log("wrong");
-//     }
-//   },
-// });
-
-// $(greenBin).droppable({
-//   drop: (event, ui) => {
-//     let itemCategory = ui.draggable.attr("data-category");
-//     if (itemCategory === "recyclable") {
-//       popSound.play();
-//       $(ui.draggable).effect("explode", {
-//         pieces: 50,
-//         complete: () => {
-//           $(ui.draggable).remove();
-//         },
-//       });
-//       $(greenBin).effect("bounce", {
-//         times: 3,
-//         distance: 20,
-//       });
-
-//       console.log("right");
-//     } else {
-//       fartSound.play();
-//       $(ui.draggable).animate(
-//         {
-//           left: Math.floor(Math.random() * $(window).width()),
-//           top: Math.floor(Math.random() * $(window).height()),
-//         },
-//         500
-//       );
-//       $(greenBin).effect("shake", { times: 2 }, 500);
-//       console.log("wrong");
-//     }
-//   },
-// });
-
-// need to rewrite three methods above into one function
 const checkAnswer = (event, ui, bin) => {
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
