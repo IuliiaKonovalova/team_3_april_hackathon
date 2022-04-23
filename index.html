@@ -22,17 +22,18 @@
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
     <div class="game__bar">
-      <div class="timer__control">
+
+      <div class="timer__control hide">
         <span id="timer">05:00</span>
       </div>
-      <div class="lives__control">
+      <div class="lives__control hide">
         <span id="lives">
           <i class="fas fa-heart"></i>
           <i class="fas fa-heart"></i>
           <i class="fas fa-heart"></i>
         </span>
       </div>
-      <div class="score__control">
+      <div class="score__control hide">
         <span id="score">3000</span>
       </div>
       <div class="sound__control">
@@ -51,6 +52,11 @@
       <a class="btn btn__play play-btn">
         <img src="assets/images/play.svg" alt="Play button icon" />
       </a>
+    </div>
+    <!-- Game difficulty -->
+    <div class="difficulty hide" id="difficulty-block">
+      <div class="difficulty__btn" id="difficulty-easy">Easy</div>
+      <div class="difficulty__btn" id="difficulty-hard">Hard</div>
     </div>
     <!-- Carousel themes block -->
     <div class="carousel hide" id="carousel">
