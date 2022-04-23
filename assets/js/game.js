@@ -128,20 +128,16 @@ export default class Game {
 const popSound = new Audio("assets/audio/pop.mp3");
 const fartSound = new Audio("assets/audio/fart.mp3");
 
-let testJson = {
-  recyclable: {
-    box: "assets/test/box.png",
-    paper: "assets/test/paper.png",
-  },
-  "soft-plastic": {
-    bottle: "./assets/test/bottle.png",
-    cup: "./assets/test/cup.png",
-  },
-  organic: {
-    banana: "./assets/test/banana.png",
-    apple: "./assets/test/apple.png",
-  },
-};
+
+let gameJson = {};
+$.ajax({
+  url: "assets/js/JSON/garbage-types.json",
+  async: false,
+  success: (data) => {
+    gameJson = data;
+  }
+});
+console.log(gameJson);
 
 const checkAnswer = (event, ui, bin) => {
   let itemCategory = ui.draggable.attr("data-category");
@@ -209,7 +205,7 @@ $(".game__bin").droppable({
   },
 });
 
-const game = new Game(testJson);
+const game = new Game(gameJson);
 // game.start("hard");
 // console.log(gameDifficulty);
 

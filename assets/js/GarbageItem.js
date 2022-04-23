@@ -4,31 +4,12 @@
  */
 export default class GarbageItem {
   constructor(jsonFile) {
-    // json file looks like this:
-    // {
-    //   "recyclable": {
-    //     "item1": path to image,
-    //     "item2": path to image,
-    //   ...},
-    //  "non-recyclable": {
-    //     "item1": path to image,
-    //     "item2": path to image,
-    //  ...},
-    //   "organic": {
-    //     "item1": path to image,
-    //     "item2": path to image,
-    //   ...}
-    // }
     // new Garbage item should randomly choose one of the categories
-    this.category =
-      Object.keys(jsonFile)[
-        Math.floor(Math.random() * Object.keys(jsonFile).length)
-      ];
+    this.category = Object.keys(jsonFile)[Math.floor(Math.random() * Object.keys(jsonFile).length)];
+    console.log(this.category);
     // new Garbage item should randomly choose one of the items in the category
-    this.item = Object.keys(jsonFile[this.category])[
-      Math.floor(Math.random() * Object.keys(jsonFile[this.category]).length)
-    ];
-    this.imageUrl = jsonFile[this.category][this.item];
+    this.item = Object.keys(jsonFile[this.category]["type"])[Math.floor(Math.random() * Object.keys(jsonFile[this.category]["type"]).length)];
+    this.imageUrl = jsonFile[this.category]["type"][this.item];
     this.x = 0;
     this.y = 0;
     this.id = Math.random();
