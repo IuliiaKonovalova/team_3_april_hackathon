@@ -9,28 +9,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const difficultyBtnEasy = document.getElementById('difficulty-easy');
   const difficultyBtnHard = document.getElementById('difficulty-hard');
   const rulesLink = document.getElementById('rules__link');
-
   const rulesSection = document.getElementById('rules');
-
-
-
+  const rulesCloseBtn = document.getElementById('rules__close');
   const carousel = document.getElementById("carousel");
   const slides = document.querySelectorAll(".carousel__slide");
-
   const prevButton = document.getElementById("carousel-prev");
   const nextButton = document.getElementById("carousel-next");
   const beachTheme = document.getElementById("beach-theme");
   const riverTheme = document.getElementById("river-theme");
   const oceanTheme = document.getElementById("ocean-theme");
-
   const ecoText = document.getElementById("eco__text");
+  const footerBtn = document.getElementById("footer-btn");
+  const footerContent = document.getElementById("footer-content");
+
+  const ecoFactsJson = "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json";
   // Set the current carousel slide
   let current = 0;
 
-  console.log(playBtn);
-
   for (let btn of playBtn) {
     btn.addEventListener("click", () => {
+      main.removeEventListener('click', rulesEventHandler);
       mainBlock.classList.add("hide");
       rulesSection.classList.add("hide");
       difficultyBlock.classList.remove("hide");
@@ -38,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   rulesLink.addEventListener("click", () => {
+    main.addEventListener('click', rulesEventHandler);
     mainBlock.classList.add("hide");
     carousel.classList.add("hide");
     rulesSection.classList.remove("hide");
@@ -116,34 +115,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fetch text from eco-facts.json and display it to the user
   function fetchEcoFacts() {
-    fetch(
-        "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json"
-      )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        let category = Object.keys(data.category)[
-          Math.floor(Math.random() * Object.keys(data.category).length)
-        ];
-        let fact =
-          data.category[category][
-            Math.floor(Math.random() * data.category[category].length)
-          ].text;
-        ecoText.innerText = fact;
-      });
+    let ecoJson = {};
+    $.ajax({
+      url: "assets/js/JSON/eco-facts.json",
+      async: false,
+      success: (data) => {
+        ecoJson = data;
+      }
+    });
+    displayRandomFacts(ecoJson);
   }
 
-  // Function comes from https://stackoverflow.com/questions/1462138/event-listener-for-when-element-becomes-visible
-  function onVisible(element, callback) {
-    new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-          callback(element);
-          observer.disconnect();
-        }
-      });
-    }).observe(element);
+  // Get json file and convert it's data for random display of eco-facts
+  function displayRandomFacts(jsonFile) {
+    let category = Object.keys(jsonFile.category)[
+      Math.floor(Math.random() * Object.keys(jsonFile.category).length)
+    ];
+    let fact =
+      jsonFile.category[category][
+        Math.floor(Math.random() * jsonFile.category[category].length)
+      ].text;
+    ecoText.innerText = fact;
+  }
+
+  // Event handler to close Rules Section
+  function rulesEventHandler(event) {
+    if (!rulesSection.classList.contains("hide")) {
+      if (!rulesSection.contains(event.target) || rulesCloseBtn.contains(event.target)) {
+        mainBlock.classList.remove('hide');
+        rulesSection.classList.add('hide');
+        difficultyBlock.classList.add('hide');
+        main.removeEventListener('click', rulesEventHandler);
+      }
+    }
   }
 
   // Click Previous Button
@@ -162,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slideNext();
   });
 
+  // ----- Modal Functionality ----- //
 
   // Iteration through every button element in HTML to execute an openModal function for elements with specified selector
   document.querySelectorAll('[data-modal-target]').forEach(button => {
@@ -172,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
   // Iteration through every button element in HTML to execute a closeModal function for elements with specified parent class
   document.querySelectorAll('[data-close-button]').forEach(button => {
     button.addEventListener('click', () => {
@@ -181,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal(modal);
     });
   });
-
 
   // Overlay event listener - iterates through elements with specified selector and executes the closeModal function if applicable
   document.getElementById('overlay').addEventListener('click', () => {
@@ -192,35 +195,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // DOM CONTROL
-
-  /** Function adds class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null */
+  // Function adds class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
   function openModal(modal) {
     if (modal === null) return;
     modal.classList.add("active");
     document.getElementById("overlay").classList.add("active");
   }
 
-  /** Function removes class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null */
+  /// Function removes class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
   function closeModal(modal) {
     if (modal === null) return;
     modal.classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
   }
-
-  onVisible(rulesSection, () => {
-    main.addEventListener('click', function (e) {
-      console.log("click");
-      if (rulesSection.classList.contains("hide") === false) {
-        if (!rulesSection.contains(e.target)) {
-          mainBlock.classList.remove('hide');
-          rulesSection.classList.add('hide');
-          difficultyBlock.classList.add('hide');
-        }
-      }
-    });
-  });
-
 
   startSlide();
 
@@ -246,5 +233,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("ocean-game").classList.remove("hide");
     document.getElementById("beach-game").classList.add("hide");
     document.getElementById("garbage-bins").classList.remove("hide");
+  });
+
+  // Display creators GitHub links
+  footerBtn.addEventListener('click', (e) => {
+    footerContent.classList.remove('hide');
+    // footerBtn.classList.add('hide');
+    // document.querySelector("footer").addEventListener("click", (e) => {
+    //   document.querySelectorAll("footer a").forEach(function () {
+    //   })
+    // });
   });
 });
