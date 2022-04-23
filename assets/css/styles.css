@@ -64,7 +64,7 @@ body {
   flex-direction: column;
   width: 100%;
   font-size: var(--fs);
-  min-height: 100vh;
+  height: 100vh;
   color: var(--clr-neutral--100);
 }
 
@@ -75,6 +75,7 @@ body {
   align-items: center;
   justify-content: end;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  height: 10vh;
 }
 
 .navbar__items {
@@ -93,12 +94,15 @@ body {
 
 .navbar__items li {
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 1vh 2vw;
   border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
   font-weight: 900;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar__items li:hover {
@@ -111,6 +115,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 2vh;
 }
 
 /* Main */
@@ -129,6 +134,7 @@ body {
   margin: 0 auto;
   position: relative;
   opacity: 0.9;
+  height: 80vh;
 }
 
 .main__block {
@@ -493,6 +499,7 @@ p {
   justify-content: center;
   width: 100%;
   padding: 2em;
+  height: 10vh;
 }
 
 .team-info {
