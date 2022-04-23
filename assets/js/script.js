@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch text from eco-facts.json and display it to the user
   function fetchEcoFacts() {
     fetch(
-      "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json"
-    )
+        "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json"
+      )
       .then((response) => {
         return response.json();
       })
