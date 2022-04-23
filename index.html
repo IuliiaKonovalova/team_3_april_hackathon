@@ -15,6 +15,22 @@
 </head>
 
 <body>
+  <!-- Overlay for Modal Operation -->
+  <div id="overlay"></div>
+  <!-- Modal Pop-up Window (Game Instructions) -->
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Instructions</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error fuga
+        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
+        maiores.
+      </p>
+    </div>
+  </div>
   <nav class="navbar">
     <ul class="navbar__items">
       <li><a href="index.html">Home</a></li>
@@ -99,6 +115,7 @@
     </div>
     <!-- Rules Section -->
     <div class="rules__section hide" id="rules">
+      <!-- data-modal-target is a selector for JS that points out to element to be open with button -->
       <div class="game__rules">
         <h1>How to Play?</h1>
         <p>
@@ -106,21 +123,24 @@
         </p>
         <div class="rules__bins">
           <div class="rules__bin" id="organic__bin">
-            <!-- <h3 class="">What is Organic Waste?</h3> -->
-            <img class="bin__rules--img" src="/assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
+            <img data-modal-target="#modal" class="bin__rules--img" src="/assets/images/red_bin.svg"
+              alt="Image of a red bin for organic waste">
           </div>
           <div class="rules__bin">
             <!-- <h3 class="">What are Soft Plastics?</h3> -->
-            <img class="bin__rules--img" src="/assets/images/blue_bin.svg" alt="Image of a red bin for organic waste">
+            <img data-modal-target="#modal" class="bin__rules--img" src="/assets/images/blue_bin.svg"
+              alt="Image of a red bin for organic waste">
 
           </div>
           <div class="rules__bin" id="recyclable__bin">
             <!-- <h3 class="">What are Recyclable Materials?</h3> -->
-            <img class="bin__rules--img" src="/assets/images/green_bin.svg" alt="Image of a red bin for organic waste">
+            <img data-modal-target="#modal" class="bin__rules--img" src="/assets/images/green_bin.svg"
+              alt="Image of a red bin for organic waste">
           </div>
           <div class="rules__bin" id="organic__bin">
             <!-- <h3 class="">What is Organic Waste?</h3> -->
-            <img class="bin__rules--img" src="/assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
+            <img data-modal-target="#modal" class="bin__rules--img" src="/assets/images/red_bin.svg"
+              alt="Image of a red bin for organic waste">
           </div>
         </div>
       </div>
