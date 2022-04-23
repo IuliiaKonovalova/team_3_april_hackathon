@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll('.carousel__slide');
   const rulesSection = document.getElementById('rules');
 
-  const prevButton = document.querySelector('#carousel-prev');
-  const nextButton = document.querySelector('#carousel-next');
+  const prevButton = document.getElementById('carousel-prev');
+  const nextButton = document.getElementById('carousel-next');
 
   const ecoText = document.getElementById("eco__text");
   // Set the current carousel slide
@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener('click', () => {
       mainBlock.classList.add('hide');
       rulesSection.classList.add('hide');
-      // carousel.classList.remove('hide');
       difficultyBlock.classList.remove('hide');
     })
   }
