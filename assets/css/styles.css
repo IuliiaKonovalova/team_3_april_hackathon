@@ -289,6 +289,11 @@ body {
   margin: 0 auto;
 }
 
+.carousel__images {
+  width: 50vw;
+  height: 50vh;
+}
+
 .carousel__button {
   justify-self: center;
   align-self: center;
