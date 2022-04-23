@@ -82,7 +82,7 @@ export default class Game {
           cursor: "move",
           containment: "window",
           start: (event, ui) => {
-            ui.helper.css("z-index", "100");
+            ui.helper.css("z-index", "999999999999");
           },
         });
       }, 2000);
