@@ -73,18 +73,18 @@ body {
   background-color: var(--clr-neutral--800);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   height: 10vh;
-  padding: 1em 1.5em;
 }
 
 .navbar__items {
   width: 100%;
   max-width: 100rem;
+  padding: 1em;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
 }
 
@@ -118,48 +118,14 @@ body {
   font-size: 2vh;
 }
 
-/* Game mode */
-.game__bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--clr-accent--900);
-  font-family: var(--ff-secondary);
-  font-weight: 900;
-  font-size: 3vh;
-}
-
-.game__bar div:not(:last-child) {
-  margin-right: 3vw;
-}
-
-.lives__control span {
-  display: flex;
-}
-
-.lives__control span i:not(:last-child) {
-  margin-right: 1vw;
-}
-
-.sound__control {
-  color: var(--clr-accent--900);
-  font-size: 5vh;
-  cursor: pointer;
-}
-
-.sound__control:hover {
-  color: var(--clr-accent--100);
-
-}
-
-/* ----- Main ----- */
+/* Main */
 .main {
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 0 auto;
   padding: 2vh 5vw;
   background-image: url(/assets/images/cloud_background.jpg);
   background-repeat: no-repeat;
@@ -167,6 +133,7 @@ body {
   background-attachment: fixed;
   margin: 0 auto;
   position: relative;
+  opacity: 0.9;
   height: 80vh;
 }
 
@@ -251,31 +218,26 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 80rem;
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.4fr;
   margin: 0 auto;
+}
+
+.carousel__track--container {
+  margin: 0;
+  padding: 0;
+  justify-self: center;
+  align-self: center;
 }
 
 .carousel__track {
   padding: 0;
   margin: 0;
   list-style: none;
-  align-self: center;
-  justify-self: center;
-  max-width: 60rem;
-}
-
-.carousel__images--visible {
-  max-width: 60rem;
-  border-radius: 1.5rem;
-  display: grid;
-  grid-template-rows: 0.2fr 0.7fr;
-  background-color: var(--clr-neutral--800);
-  padding: 2em;
-  position: relative;
-  height: 50vh;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .carousel__slide {
@@ -297,18 +259,17 @@ body {
   right: 1em;
 }
 
-.btn__play--theme {
-  border: 1px solid var(--clr-neutral--800);
-}
-
 .carousel__slide--title {
+  text-align: center;
   text-transform: uppercase;
   font-family: var(--ff-secondary);
-  font-size: 4vh;
+  font-size: 3rem;
   font-weight: 900;
   color: var(--clr-neutral--100);
-  justify-self: center;
-  align-self: center;
+}
+
+.carousel__track--top {
+  width: 100%;
 }
 
 .carousel__images--visible {
@@ -321,18 +282,17 @@ body {
 
 .carousel__images--container {
   align-self: center;
-
+  justify-self: center;
   width: 100%;
   display: flex;
-
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
 
 .carousel__images {
+  width: 50vw;
   height: 50vh;
-
 }
 
 .carousel__button {
@@ -572,6 +532,130 @@ p {
   height: 80%;
   overflow: hidden;
 }
+
+/* Beach animation */
+
+.beach__game--section {
+  margin: 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.beach__scene {
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  --height: 98vh;
+  height: var(--height);
+  padding: calc((100vh - var(--height)) / 2);
+}
+
+.sky {
+  padding: 20px;
+  background: var(--clr-primary--sky);
+  z-index: -1;
+}
+
+.earth {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.beach {
+  padding: 10px;
+  background: var(--clr-primary--beach);
+  z-index: -1;
+}
+
+.sea {
+  padding: 20px;
+  background: var(--clr-primary--sea);
+  border-radius: 0 59% 56% 0;
+  animation: tide 10s ease-in-out infinite;
+  box-shadow: 0 0 var(--clr-primary--sea),
+    0 0 var(--clr-primary--sea),
+    5vw 0 var(--clr-primary--sea),
+    10vw 0 var(--clr-secondary--sea),
+    22vw 0 var(--clr-tertiary--sea),
+    30vw 0 var(--clr-secondary--beach);
+}
+
+@keyframes tide {
+  50% {
+    box-shadow: 14vw 0 var(--clr-primary--sea),
+      10vw 0 var(--clr-primary--sea),
+      27vw 0 var(--clr-primary--sea),
+      28vw 0 var(--clr-secondary--sea),
+      29vw 0 var(--clr-tertiary--sea),
+      30vw 0 var(--clr-secondary--beach);
+  }
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 80px 80px 50px 50px;
+  background: var(--bg-1);
+  opacity: 0;
+  height: var(--cloud-height);
+  width: var(--cloud-width);
+  box-shadow: var(--box-shadow);
+  animation: var(--cloud-dur) linear var(--cloud-delay) infinite cloudMove;
+}
+
+@keyframes cloudMove {
+  0% {
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 1;
+    transform: translate(-20vw, var(--y-offset));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(110vw, var(--y-offset));
+  }
+}
+
+.cloud:nth-child(1) {
+  --bg-1: var(--clr-primary--cloud);
+  --bg-2: var(--clr-secondary--cloud);
+  --y-offset: 34px;
+  --cloud-dur: 50s;
+  --cloud-delay: 0s;
+  --cloud-height: 70px;
+  --cloud-width: 100px;
+  --box-shadow: 50px 16px 0 -16px var(--bg-2),
+    -48px 8px 0 -8px var(--bg-2),
+    -86px 19px 0 -19px var(--bg-1);
+}
+
+.cloud:nth-child(2) {
+  --bg-1: var(--clr--tertiary--cloud);
+  --bg-2: var(--clr--fourthly--cloud);
+  --y-offset: 10px;
+  --cloud-dur: 60s;
+  --cloud-delay: 10s;
+  --cloud-height: 60px;
+  --cloud-width: 100px;
+  --box-shadow: 45px 6px 0 -6px var(--bg-2),
+    -62px 12px 0 -12px var(--bg-2);
+
+}
+
+.cloud:nth-child(3) {
+  --bg-1: var(--clr--fifthly--cloud);
+  --bg-2: var(--clr--sixthly-cloud);
+  --y-offset: 60px;
+  --cloud-dur: 45s;
+  --cloud-delay: 20s;
+  --cloud-height: 70px;
+  --cloud-width: 100px;
+  --box-shadow: 52px 5px 0 -5px var(--bg-2),
+    93px 17px 0 -17px var(--bg-1),
+    -55px 10px 0 -10px var(--bg-2);
+}
+
 
 /* ----- Footer ----- */
 
