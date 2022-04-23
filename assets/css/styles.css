@@ -418,7 +418,7 @@ body {
 }
 
 
-/* ---- Rules Page ---- */
+/* ---- Rules Section ---- */
 .rules__section {
   position: absolute;
   top: 50%;
@@ -482,7 +482,6 @@ p {
 .hide {
   display: none;
 }
-
 
 /* ----- Footer ----- */
 
