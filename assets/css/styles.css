@@ -933,14 +933,80 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: 100%;
-  padding: 2em;
   height: 10vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
-.team-info {
-  display: none;
+.footer__header {
+  color: var(--clr-neutral--100);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  justify-content: start;
+  width: 100%;
+  text-align: center;
+}
+
+.footer__btn {
+  cursor: pointer;
+  color: var(--clr-accent--900);
+}
+
+.footer__btn:hover {
+  color: var(--clr-accent--100);
+  text-decoration: underline;
+}
+
+.footer__content {
+  color: var(--clr-neutral--100);
+  font-size: 1rem;
+  letter-spacing: var(--spacing);
+  background-color: var(--clr-neutral--800);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.footer__creators {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 30rem;
+  padding: 2vh;
+}
+
+.footer__creators--item {
+  color: var(--clr-neutral--100);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: var(--spacing);
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 5rem;
+}
+
+.footer__creators--item:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.footer__creators--item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .team-show {
@@ -950,15 +1016,6 @@ body {
   background-color: black;
 }
 
-.footer__creators {
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
-  margin-top: 2em;
-  display: none;
-}
-
 /* ----- Footer Avatars ----- */
 .footer__avatar {
   vertical-align: middle;
@@ -966,4 +1023,8 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: var(--clr-neutral--100);
+}
+
+.hide {
+  display: none;
 }
