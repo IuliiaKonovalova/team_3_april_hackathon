@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const playBtn = document.getElementsByClassName('play-btn');
   const mainBlock = document.getElementById('main-block');
   const difficultyBlock = document.getElementById('difficulty-block');
+  const difficultyBtnEasy = document.getElementById('difficulty-easy');
+  const difficultyBtnHard = document.getElementById('difficulty-hard');
   const rulesLink = document.getElementById('rules__link');
 
   const carousel = document.getElementById('carousel');
@@ -37,6 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchEcoFacts();
   })
 
+  // If the user clicks easy level, hide the difficulty block and show the theme block
+  difficultyBtnEasy.addEventListener('click', (e) => {
+    carousel.classList.remove('hide');
+    difficultyBlock.classList.add('hide');
+  })
+
+  // If the user clicks hard level, hide the difficulty block and show the theme block
+  difficultyBtnHard.addEventListener('click', (e) => {
+    carousel.classList.remove('hide');
+    difficultyBlock.classList.add('hide');
+  })
 
   // Fade animation;
   prevButton.addEventListener('click', () => {
