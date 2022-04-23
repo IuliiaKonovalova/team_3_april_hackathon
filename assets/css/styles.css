@@ -603,7 +603,7 @@ body {
   }
 
   100% {
-    margin-left: 80vw;
+    margin-left: calc(100vw - 235px);
   }
 }
 
@@ -613,11 +613,11 @@ body {
   }
 
   70% {
-    margin-left: 50%;
+    margin-left: 50vw;
   }
 
   100% {
-    margin-left: 80%;
+    margin-left: calc(100vw - 235px);
   }
 }
 
@@ -641,14 +641,14 @@ body {
 }
 
 #fish2 {
-  top: 60vh;
+  top: 30vh;
   animation-delay: 12s;
   -webkit-animation-delay: 12s;
 }
 
 #fish3 {
-  top: 70vh;
-  animation-delay: 1s;
+  top: 65vh;
+  animation-delay: 7s;
   -webkit-animation-delay: 1s;
 }
 
@@ -669,7 +669,7 @@ body {
 
 #stingray {
   top: 50vh;
-  animation-delay: 5s;
+  animation-delay: 4s;
   -webkit-animation-delay: 5s;
 }
 
@@ -728,16 +728,19 @@ body {
 }
 
 .beach__scene {
+  /* display: grid; */
   grid-template-rows: 2fr 3fr;
   --height: 98vh;
   height: var(--height);
   padding: calc((100vh - var(--height)) / 2);
   z-index: 999;
+  background-color: #005aff;
 }
 
 .sky {
   padding: 20px;
-  background: var(--clr-primary--sky);
+  /* background: var(--clr-primary--sky); */
+  background-color: #00daff;
   z-index: -1;
   z-index: 999;
 }
@@ -746,17 +749,20 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   z-index: 999;
+  background-color: #ffa500;
 }
 
 .beach {
   padding: 10px;
   background: var(--clr-primary--beach);
+  background-color: yellow;
   z-index: -1;
 }
 
 .sea {
   padding: 20px;
   background: var(--clr-primary--sea);
+  background-color: #122335;
   border-radius: 0 59% 56% 0;
   animation: tide 10s ease-in-out infinite;
   box-shadow: 0 0 var(--clr-primary--sea),
