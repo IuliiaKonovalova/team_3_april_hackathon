@@ -64,7 +64,7 @@ body {
   flex-direction: column;
   width: 100%;
   font-size: var(--fs);
-  min-height: 100vh;
+  height: 100vh;
   color: var(--clr-neutral--100);
 }
 
@@ -75,6 +75,7 @@ body {
   align-items: center;
   justify-content: end;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  height: 10vh;
 }
 
 .navbar__items {
@@ -93,12 +94,15 @@ body {
 
 .navbar__items li {
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 1vh 2vw;
   border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
   font-weight: 900;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar__items li:hover {
@@ -111,6 +115,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 2vh;
 }
 
 /* Main */
@@ -121,7 +126,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 2em;
+  padding: 2vh 5vw;
   background-image: url(/assets/images/cloud_background.jpg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -129,6 +134,7 @@ body {
   margin: 0 auto;
   position: relative;
   opacity: 0.9;
+  height: 80vh;
 }
 
 .main__block {
@@ -141,23 +147,27 @@ body {
   align-items: center;
 }
 
+.image__holder {
+  width: 75vh;
+  max-width: 95vw;
+}
+
 .main__title {
-  font-size: 5rem;
+  font-size: 5vh;
   color: var(--clr-neutral--900);
   background-color: var(--clr-accent--100);
   font-family: var(--ff-secondary);
   padding: 0.2em 1em 0.2em 1em;
+  letter-spacing: 0.25em;
   border-radius: var(--br);
   text-align: center;
   text-transform: uppercase;
 }
 
-.image__holder {
-  width: 80vh;
-}
+
 
 .btn__play {
-  margin-top: 5em;
+  margin-top: 10vh;
   width: 8rem;
   background-color: #ffffff;
   border-radius: 50%;
@@ -197,101 +207,6 @@ body {
   }
 }
 
-/* ----- Carousel ----- */
-.carousel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
-}
-
-.carousel__track--container {
-  margin: 0 2em;
-  padding: 0;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel__track {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel__slide {
-  width: 100%;
-  border-radius: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: var(--clr-accent--800); */
-  background-color: #53d23c;
-  padding: 2em 1em;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px outset;
-}
-
-.carousel__slide--title {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 1em;
-}
-
-.carousel__track--top {
-  width: 100%;
-}
-
-.carousel__images--visible {
-  display: block;
-}
-
-.carousel__images--hidden {
-  display: none;
-}
-
-.carousel__images--container {
-  width: 50rem;
-}
-
-.carousel__images {
-  object-fit: contain;
-  z-index: 333;
-  width: 100%;
-  border-radius: 1.5rem;
-}
-
-.carousel__button {
-  background-color: var(--clr-neutral--100);
-  border-radius: 50%;
-  padding: 1em 1.2em;
-  cursor: pointer;
-  z-index: 333;
-  border: none;
-}
-
-.btn-carousel {
-  font-size: 4rem;
-  color: var(--clr-neutral-100);
-}
-
-.carousel__button--prev {
-  left: 5%;
-}
-
-
-.carousel__button--next {
-  right: 5%;
-}
-
 .hide {
   display: none;
 }
@@ -305,7 +220,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.4fr;
-  gap: 2rem;
+  margin: 0 auto;
 }
 
 .carousel__track--container {
@@ -327,12 +242,21 @@ body {
 
 .carousel__slide {
   width: 100%;
+  max-width: 60rem;
   border-radius: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--clr-neutral--100);
+  display: grid;
+  grid-template-rows: 0.2fr 0.5fr;
+  background-color: var(--clr-neutral--800);
   padding: 2em 1em;
+  position: relative;
+  height: 60vh;
+}
+
+.carousel__slide a {
+  margin: 0;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
 }
 
 .carousel__slide--title {
@@ -341,8 +265,7 @@ body {
   font-family: var(--ff-secondary);
   font-size: 3rem;
   font-weight: 900;
-  margin-bottom: 1em;
-  color: var(--clr-neutral--900);
+  color: var(--clr-neutral--100);
 }
 
 .carousel__track--top {
@@ -350,7 +273,7 @@ body {
 }
 
 .carousel__images--visible {
-  display: block;
+  display: grid;
 }
 
 .carousel__images--hidden {
@@ -358,7 +281,9 @@ body {
 }
 
 .carousel__images--container {
-  width: 30rem;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -366,10 +291,8 @@ body {
 }
 
 .carousel__images {
-  object-fit: contain;
-  z-index: 333;
-  width: 100%;
-  border-radius: 1.5rem;
+  width: 50vw;
+  height: 50vh;
 }
 
 .carousel__button {
@@ -483,6 +406,133 @@ p {
   display: none;
 }
 
+/* ---- Games Section ---- */
+.ocean__game--header {
+  height: 20vh;
+  background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
+  text-align: center;
+}
+
+/* Ocean animation */
+@keyframes ocean-swim {
+  0% {
+    margin-left: -235px
+  }
+
+  70% {
+    margin-left: 100%;
+  }
+
+  100% {
+    margin-left: 80%;
+  }
+}
+
+@-webkit-keyframes ocean-swim {
+  0% {
+    margin-left: -235px;
+  }
+
+  70% {
+    margin-left: 50%;
+  }
+
+  100% {
+    margin-left: 80%;
+  }
+}
+
+/* Fish */
+.fish {
+  background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+  width: 235px;
+  height: 104px;
+  margin-left: -235px;
+  position: absolute;
+  animation: ocean-swim 24s;
+  -webkit-animation: ocean-swim 24s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+#fish {
+  top: 45vh;
+}
+
+#fish2 {
+  top: 60vh;
+  animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+}
+
+#fish3 {
+  top: 90vh;
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+}
+
+/* Stingray */
+.stingray {
+  background-image: url('/assets/images/stingray.svg');
+  width: 200px;
+  height: 91px;
+  margin-left: -235px;
+  position: absolute;
+  animation: ocean-swim 24s;
+  -webkit-animation: ocean-swim 24s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+#stingray {
+  top: 50vh;
+  animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+}
+
+#stingray2 {
+  top: 90vh;
+  animation-delay: 18s;
+  -webkit-animation-delay: 18s;
+}
+
+/* Jellyfish */
+.jellyfish {
+  background-image: url('/assets/images/jellyfish.svg');
+  width: 100px;
+  height: 114px;
+  margin-left: -235px;
+  position: absolute;
+  animation: ocean-swim 24s;
+  -webkit-animation: ocean-swim 24s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+#jellyfish {
+  top: 25vh;
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+}
+
+#jellyfish2 {
+  top: 70vh;
+  animation-delay: 16s;
+  -webkit-animation-delay: 16s;
+}
+
+.ocean__background {
+  background-image: linear-gradient(#98d4f3, #07496b);
+  height: 80%;
+  overflow: hidden;
+}
+
 /* ----- Footer ----- */
 
 .footer {
@@ -493,6 +543,7 @@ p {
   justify-content: center;
   width: 100%;
   padding: 2em;
+  height: 10vh;
 }
 
 .team-info {

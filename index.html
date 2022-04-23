@@ -30,7 +30,7 @@
     <div class="main__block" id="main-block">
       <h1 class="main__title">Earth Protectors</h1>
       <a class="btn btn__play play-btn">
-        <img src="assets/images/play.svg" alt="" />
+        <img src="assets/images/play.svg" alt="Play button icon" />
       </a>
     </div>
     <!-- Carousel themes block -->
@@ -46,24 +46,34 @@
               <div class="carousel__images--container">
                 <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
               </div>
+              <a class="btn btn__play" id="beach-game">
+                <img src="assets/images/play.svg" alt="Play button icon" />
+              </a>
             </li>
             <li class="carousel__slide carousel__images--hidden">
               <h2 class="carousel__slide--title">River</h2>
               <div class="carousel__images--container">
                 <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
               </div>
+              <a class="btn btn__play" id="river-game">
+                <img src="assets/images/play.svg" alt="Play button icon" />
+              </a>
             </li>
             <li class="carousel__slide carousel__images--hidden">
               <h2 class="carousel__slide--title">Ocean</h2>
+
               <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
+                <img class="carousel__images" src="assets/images/ocean55.svg" alt="" />
               </div>
+              <a class="btn btn__play" id="ocean-game">
+                <img src="assets/images/play.svg" alt="Play button icon" />
+              </a>
             </li>
           </div>
         </ul>
-        <a class="btn btn__rules play-btn">
+        <!-- <a class="btn btn__rules play-btn">
           <img src="assets/images/play.svg" alt="" />
-        </a>
+        </a> -->
       </div>
       <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
         <i class="fas fa-arrow-right btn-carousel"></i>
@@ -126,6 +136,26 @@
     </div>
 
     <!-- <div class="game"></div> -->
+
+    <!-- Scene Section -->
+    <div class="ocean__game--section hide" id="ocean-game">
+      <div class="ocean__game--header">
+        <h2 class="game__scene--title">Help Clean Up the Ocean!</h2>
+      </div>
+
+      <div class="ocean__background">
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+        <div class="fish" id="fish3"></div>
+
+        <div class="stingray" id="stingray"></div>
+        <div class="stingray" id="stingray2"></div>
+
+        <div class="jellyfish" id="jellyfish"></div>
+        <div class="jellyfish" id="jellyfish2"></div>
+      </div>
+    </div>
+
   </main>
   <footer class="footer">
     <p>Copyright bla bla bla</p>
