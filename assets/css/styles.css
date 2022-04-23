@@ -149,6 +149,7 @@ body {
 
 .image__holder {
   width: 75vh;
+  max-width: 95vw;
 }
 
 .main__title {
@@ -219,7 +220,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.4fr;
-  gap: 2rem;
+  margin: 0 auto;
 }
 
 .carousel__track--container {
