@@ -24,7 +24,7 @@ export default class Game {
     this.combo = 0;
     this.gameMode = "easy";
     this.gameOver = false;
-    this.gameScreen = document.getElementById("game-screen");
+    this.gameScreen = document.getElementById("main");
     this.garbageInterval = null;
     this.timerInterval = null;
     this.timeLeft = 60;
@@ -52,8 +52,9 @@ export default class Game {
         garbageItem.draw(this.gameScreen);
         $(`img[data-id="${garbageItem.id}"]`).draggable({
           cursor: "move",
+          containment: "window",
           start: (event, ui) => {
-            ui.helper.css("z-index", "100");
+            ui.helper.css("z-index", "999999999999");
           },
         });
       }
@@ -67,8 +68,9 @@ export default class Game {
         garbageItem.draw(this.gameScreen);
         $(`img[data-id="${garbageItem.id}"]`).draggable({
           cursor: "move",
+          containment: "window",
           start: (event, ui) => {
-            ui.helper.css("z-index", "100");
+            ui.helper.css("z-index", "999999999999");
           },
         });
       }
@@ -78,6 +80,7 @@ export default class Game {
         garbageItem.draw(this.gameScreen);
         $(`img[data-id="${garbageItem.id}"]`).draggable({
           cursor: "move",
+          containment: "window",
           start: (event, ui) => {
             ui.helper.css("z-index", "100");
           },
@@ -171,8 +174,8 @@ const checkAnswer = (event, ui, bin) => {
     }
     $(ui.draggable).animate(
       {
-        left: Math.floor(Math.random() * $(window).width()),
-        top: Math.floor(Math.random() * $(window).height()),
+        left: Math.floor(Math.random() * 90) + "%",
+        top: Math.floor(Math.random() * 90) + "%",
       },
       500
     );
@@ -200,14 +203,20 @@ const checkGameOver = () => {
   }
 };
 
-$(".bin").droppable({
+$(".game__bin").droppable({
   drop: (event, ui) => {
     checkAnswer(event, ui, $(event.target));
   },
 });
 
 const game = new Game(testJson);
-game.start("hard");
+// game.start("hard");
+// console.log(gameDifficulty);
+
+$(".btn__play--theme").click(() => {
+  let difficulty = $("#garbage-bins").attr("data-mode");
+  game.start(difficulty);
+});
 
 const gameScreen = document.getElementById("game-screen");
 const easyGameButton = document.getElementById("easy-game-button");
