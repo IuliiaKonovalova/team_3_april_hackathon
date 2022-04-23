@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test game with backdrop</title>
+  <style>
+    /* ---- Scene Section ---- */
+
+    body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      height: 20vh;
+      background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+<<<<<<< HEAD
+    /* Animation webkit */
+    /* @-webkit-keyframes myfirst {
+=======
+    /* Ocean animation */
+    @keyframes ocean-swim {
+>>>>>>> 19415f6091aecc069c8acf2b87ec24892011cf65
+      0% {
+        margin-left: -235px;
+      }
+
+      70% {
+        margin-left: 100%;
+      }
+
+      100% {
+        margin-left: 80%;
+      }
+    } */
+
+    @-webkit-keyframes ocean-swim {
+      0% {
+        margin-left: -235px;
+      }
+
+      70% {
+        margin-left: 50%;
+      }
+
+      100% {
+        margin-left: 80%;
+      }
+    }
+
+    /* Fish */
+    .fish {
+      background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+      width: 235px;
+      height: 104px;
+      margin-left: -235px;
+      position: absolute;
+      animation: ocean-swim 24s;
+      -webkit-animation: ocean-swim 24s;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      -webkit-animation-timing-function: linear;
+    }
+
+    #fish {
+      top: 45vh;
+    }
+
+    #fish2 {
+      top: 60vh;
+      animation-delay: 12s;
+      -webkit-animation-delay: 12s;
+    }
+
+    #fish3 {
+      top: 90vh;
+      animation-delay: 1s;
+      -webkit-animation-delay: 1s;
+    }
+
+    /* Stingray */
+    .stingray {
+      background-image: url('/assets/images/stingray.svg');
+      width: 200px;
+      height: 91px;
+      margin-left: -235px;
+      position: absolute;
+      animation: ocean-swim 24s;
+      -webkit-animation: ocean-swim 24s;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      -webkit-animation-timing-function: linear;
+    }
+
+    #stingray {
+      top: 50vh;
+      animation-delay: 5s;
+      -webkit-animation-delay: 5s;
+    }
+
+    #stingray2 {
+      top: 90vh;
+      animation-delay: 18s;
+      -webkit-animation-delay: 18s;
+    }
+
+    /* Jellyfish */
+    .jellyfish {
+      background-image: url('/assets/images/jellyfish.svg');
+      width: 100px;
+      height: 114px;
+      margin-left: -235px;
+      position: absolute;
+      animation: ocean-swim 24s;
+      -webkit-animation: ocean-swim 24s;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      -webkit-animation-timing-function: linear;
+    }
+
+    #jellyfish {
+      top: 25vh;
+      animation-delay: 2s;
+      -webkit-animation-delay: 2s;
+    }
+
+    #jellyfish2 {
+      top: 70vh;
+      animation-delay: 16s;
+      -webkit-animation-delay: 16s;
+    }
+
+    .ocean__background {
+      background-image: linear-gradient(#98d4f3, #07496b);
+      height: 80%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Scene Section -->
+  <header>
+    <h1>Help Clean Up the Ocean!</h1>
+  </header>
+
+  <section class="ocean__background">
+    <div class="fish" id="fish"></div>
+    <div class="fish" id="fish2"></div>
+    <div class="fish" id="fish3"></div>
+
+    <div class="stingray" id="stingray"></div>
+    <div class="stingray" id="stingray2"></div>
+
+    <div class="jellyfish" id="jellyfish"></div>
+    <div class="jellyfish" id="jellyfish2"></div>
+  </section>
+
+
+</body>
+
+</html>

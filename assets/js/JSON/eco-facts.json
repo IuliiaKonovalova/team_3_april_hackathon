@@ -1,6 +1,8 @@
 {
     "category": {
+
         "plastic pollution": [
+
             {
                 "id": 1,
                 "text": "Every day approximately 8 million pieces of plastic pollution find their way into our oceans. 12 million tonnes of plastic are poured into the ocean every year.",
@@ -17,7 +19,9 @@
                 "source": "https://www.globalcitizen.org/en/content/plastic-bans-around-the-world/?template=next"
             }
         ],
-        "air pollution": [
+
+        "air-pollution": [
+
             {
                 "id": 1,
                 "text": "Air pollution kills 800 people every hour or 13 every minute - more than three times compared to malaria, tuberculosis and AIDS combined each year.",
@@ -34,7 +38,8 @@
                 "source": "https://www.who.int/health-topics/air-pollution#tab=tab_2"
             }
         ],
-        "chemical pollution": [
+
+        "chemical-pollution": [
             {
                 "id": 1,
                 "text": "Thousands of chemicals from cleaning products are washed into streams and rivers. Some persist in the environment and enter the food chain.",

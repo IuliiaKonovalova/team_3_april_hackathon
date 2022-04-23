@@ -2,77 +2,235 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Garbage Run is an environmental awareness interactive learning platform" />
+  <meta name="author" content="Juliia Aleksei JP Milosz Whitney" />
+  <meta name="robots" content="index, follow" />
+  <meta keywords="Environment, Rubbish, Game, Organic, Recyclable, Plastic, Clean, Awareness, 
+                  Planet, Greenhouse Gases" />
+  <title>Garbage Run | Enviromental Awareness Game</title>
   <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
   <nav class="navbar">
     <ul class="navbar__items">
-      <li><a href="javascript:void(0)">Home</a></li>
-      <li><a href="javascript:void(0)">Rules</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
-  </nav>
-  <main class="main" id="main">
-    <div class="main__container">
-      <h1 class="main__title" id="main-title">Game Title</h1>
-      <div class="image__holder">
-        <img src="assets/images/earth.svg" alt="">
+    <div class="game__bar">
+
+      <div class="timer__control hide">
+        <span id="timer">05:00</span>
       </div>
-      <a class="btn btn__play" id="play-btn">
-        <img src="assets/images/play.svg" alt="">
-      </a>
-      <!-- Carousel -->
-      <div class="carousel hide" id="carousel">
-        <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
-          <i class="fas fa-arrow-left btn-carousel"></i>
-        </button>
-        <div class="carousel__track--container">
-          <ul class="carousel__track">
-            <div class="carousel__track--top">
-              <li class="carousel__slide  carousel__images--visible">
-                <h2 class="carousel__slide--title">Beach</h2>
-                <div class="carousel__images--container">
-                  <img class="carousel__images" src="assets/images/beach.svg" alt="">
-                </div>
-              </li>
-              <li class="carousel__slide carousel__images--hidden">
-                <h2 class="carousel__slide--title">City</h2>
-                <div class="carousel__images--container">
-                  <img class="carousel__images" src="assets/images/city.svg" alt="">
-                </div>
-              </li>
-              <li class="carousel__slide carousel__images--hidden">
-                <h2 class="carousel__slide--title">Ocean</h2>
-                <div class="carousel__images--container">
-                  <img class="carousel__images " src="assets/images/ocean.png" alt="">
-                </div>
-              </li>
-            </div>
-          </ul>
-        </div>
-        <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
-          <i class="fas fa-arrow-right btn-carousel"></i>
-        </button>
+      <div class="lives__control hide">
+        <span id="lives">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart"></i>
+        </span>
+      </div>
+      <div class="score__control hide">
+        <span id="score">3000</span>
+      </div>
+      <div class="sound__control">
+        <i class="fas fa-volume-up hide" id="sound-on"></i>
+        <i class="fas fa-volume-mute" id="sound-off"></i>
       </div>
     </div>
+  </nav>
+  <main class="main" id="main">
+    <div class="image__holder">
+      <img src="assets/images/earth1.png" alt="" />
+    </div>
+    <!-- Start Game block -->
+    <div class="main__block" id="main-block">
+      <h1 class="main__title">Earth Protectors</h1>
+      <a class="btn btn__play play-btn">
+        <img src="assets/images/play.svg" alt="Play button icon" />
+      </a>
+    </div>
+    <!-- Game difficulty -->
+    <div class="difficulty hide" id="difficulty-block">
+      <div class="difficulty__btn" id="difficulty-easy">Easy</div>
+      <div class="difficulty__btn" id="difficulty-hard">Hard</div>
+    </div>
+    <!-- Carousel themes block -->
+    <div class="carousel hide" id="carousel">
+      <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
+        <i class="fas fa-arrow-left btn-carousel"></i>
+      </button>
+      <ul class="carousel__track">
+        <li class="carousel__slide carousel__images--visible">
+          <h2 class="carousel__slide--title">Beach</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
+          </div>
+          <a class="btn btn__play btn__play--theme" id="beach-game">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+        <li class="carousel__slide carousel__images--hidden">
+          <h2 class="carousel__slide--title">River</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
+            <!-- <img class="carousel__images" src="assets/images/river55.png" alt="" /> -->
+          </div>
+          <a class="btn btn__play btn__play--theme" id="river-game">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+        <li class="carousel__slide carousel__images--hidden">
+          <h2 class="carousel__slide--title">Ocean</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
+          </div>
+          <a class="btn btn__play btn__play--theme" id="ocean-game">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+      </ul>
+      <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
+        <i class="fas fa-arrow-right btn-carousel"></i>
+      </button>
+    </div>
+    <!-- Rules Section -->
+    <div class="rules__section hide" id="rules">
+      <div class="game__rules">
+        <h1>How to Play?</h1>
+        <p>
+          Identify three different waste types and which bins they belong in...
+        </p>
+        <div class="rules__bins">
+          <div class="rules__bin" id="organic__bin">
+            <!-- <h3 class="">What is Organic Waste?</h3> -->
+            <img class="bin__rules--img" src="/assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
+          </div>
+          <div class="rules__bin">
+            <!-- <h3 class="">What are Soft Plastics?</h3> -->
+            <img class="bin__rules--img" src="/assets/images/blue_bin.svg" alt="Image of a red bin for organic waste">
+
+          </div>
+          <div class="rules__bin" id="recyclable__bin">
+            <!-- <h3 class="">What are Recyclable Materials?</h3> -->
+            <img class="bin__rules--img" src="/assets/images/green_bin.svg" alt="Image of a red bin for organic waste">
+          </div>
+          <div class="rules__bin" id="organic__bin">
+            <!-- <h3 class="">What is Organic Waste?</h3> -->
+            <img class="bin__rules--img" src="/assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
+          </div>
+        </div>
+      </div>
+      <div class="eco__facts">
+        <h1>Did you know?</h1>
+        <p id="eco__text"></p>
+      </div>
+      <a class="btn btn__play play-btn" id="rules__play">
+        <img src="assets/images/play.svg" alt="" />
+      </a>
+    </div>
+
     <!-- <div class="game"></div> -->
+
+    <!-- Scene Section -->
+    <!-- Ocean game -->
+    <div class="ocean__game--section hide" id="ocean-game">
+      <div class="ocean__game--header">
+        <h2 class="game__scene--title">Help Clean Up the Ocean!</h2>
+      </div>
+
+      <div class="ocean__background">
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+        <div class="fish" id="fish3"></div>
+
+        <div class="stingray" id="stingray"></div>
+        <div class="stingray" id="stingray2"></div>
+
+        <div class="jellyfish" id="jellyfish"></div>
+        <div class="jellyfish" id="jellyfish2"></div>
+      </div>
+    </div>
+
+    <!-- Beach game -->
+    <div class="beach__game--section hide" id="beach-game">
+      <div class="beach__scene">
+        <div class="sky">
+          <div class="cloud"></div>
+          <div class="cloud"></div>
+          <div class="cloud"></div>
+        </div>
+        <div class="earth">
+          <div class="sea"></div>
+          <div class="beach">
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
   <footer class="footer">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse consequatur excepturi atque voluptatibus, tempore
-    omnis ut repudiandae ducimus voluptates, exercitationem ipsa minus? Consequatur est eveniet quia corporis similique
-    eius iure!
+    <p>Copyright bla bla bla</p>
+    <div>
+      <h3>creators</h3>
+      <ul>
+        <li>
+          <a href="">
+            <div class="footer__image--container">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
+            </div>
+            <p class="team-name">Name</p>
+            <p class="team-info">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis"
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="footer__image--container">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
+            </div>
+            <p class="team-name">Name</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="footer__image--container">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 3">
+            </div>
+            <p class="team-name">Name</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="footer__image--container">
+              <img class="footer__avatar" avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 4">
+            </div>
+            <p class="team-name">Name</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="footer__image--container">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 5">
+            </div>
+            <p class="team-name">Name</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="footer__image--container">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 6">
+            </div>
+            <p class="team-name">Name</p>
+          </a>
+        </li>
+      </ul>
+    </div>
   </footer>
-
   <script type="module" src="assets/js/script.js"></script>
-
-
 </body>
 
 </html>
