@@ -254,16 +254,14 @@ body {
   max-width: 80rem;
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.4fr;
-  align-items: center;
   margin: 0 auto;
-  height: 50vh;
+  /* height: 50vh; */
 }
 
 .carousel__track {
   padding: 0;
   margin: 0;
   list-style: none;
-
   align-self: center;
   justify-self: center;
   max-width: 60rem;
@@ -278,7 +276,20 @@ body {
   padding: 2em;
   position: relative;
   height: 50vh;
-  gap: 5vh;
+  /* gap: 5vh; */
+  margin: 0 auto;
+}
+
+.carousel__slide {
+  width: 100%;
+  max-width: 60rem;
+  border-radius: 1.5rem;
+  display: grid;
+  grid-template-rows: 0.2fr 0.5fr;
+  background-color: var(--clr-neutral--800);
+  padding: 2em 1em;
+  position: relative;
+  height: 60vh;
 }
 
 .carousel__slide a {
@@ -312,16 +323,18 @@ body {
 
 .carousel__images--container {
   align-self: center;
-  justify-self: center;
-  width: fit-content;
-  /* display: flex;
+
+  width: 100%;
+  display: flex;
+
   justify-content: center;
-  align-items: center; */
+  align-items: center;
   margin: 0 auto;
 }
 
 .carousel__images {
-  height: 30vh;
+  height: 50vh;
+
 }
 
 .carousel__button {
@@ -433,6 +446,133 @@ p {
 
 .hide {
   display: none;
+}
+
+/* ---- Games Section ---- */
+.ocean__game--header {
+  height: 20vh;
+  background: url('http://www.geertjanhendriks.nl/codepen/form/golf.png') repeat-x bottom;
+  text-align: center;
+}
+
+/* Ocean animation */
+@keyframes ocean-swim {
+  0% {
+    margin-left: -235px
+  }
+
+  70% {
+    margin-left: 100%;
+  }
+
+  100% {
+    margin-left: 80%;
+  }
+}
+
+@-webkit-keyframes ocean-swim {
+  0% {
+    margin-left: -235px;
+  }
+
+  70% {
+    margin-left: 50%;
+  }
+
+  100% {
+    margin-left: 80%;
+  }
+}
+
+/* Fish */
+.fish {
+  background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
+  width: 235px;
+  height: 104px;
+  margin-left: -235px;
+  position: absolute;
+  animation: ocean-swim 24s;
+  -webkit-animation: ocean-swim 24s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+#fish {
+  top: 45vh;
+}
+
+#fish2 {
+  top: 60vh;
+  animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+}
+
+#fish3 {
+  top: 90vh;
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+}
+
+/* Stingray */
+.stingray {
+  background-image: url('/assets/images/stingray.svg');
+  width: 200px;
+  height: 91px;
+  margin-left: -235px;
+  position: absolute;
+  animation: ocean-swim 24s;
+  -webkit-animation: ocean-swim 24s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+#stingray {
+  top: 50vh;
+  animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+}
+
+#stingray2 {
+  top: 90vh;
+  animation-delay: 18s;
+  -webkit-animation-delay: 18s;
+}
+
+/* Jellyfish */
+.jellyfish {
+  background-image: url('/assets/images/jellyfish.svg');
+  width: 100px;
+  height: 114px;
+  margin-left: -235px;
+  position: absolute;
+  animation: ocean-swim 24s;
+  -webkit-animation: ocean-swim 24s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+}
+
+#jellyfish {
+  top: 25vh;
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+}
+
+#jellyfish2 {
+  top: 70vh;
+  animation-delay: 16s;
+  -webkit-animation-delay: 16s;
+}
+
+.ocean__background {
+  background-image: linear-gradient(#98d4f3, #07496b);
+  height: 80%;
+  overflow: hidden;
 }
 
 /* ----- Footer ----- */
