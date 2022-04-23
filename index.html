@@ -15,89 +15,190 @@
 </head>
 
 <body>
+  <!-- Overlay for Modal Operation -->
+  <div id="overlay"></div>
+  <!-- Modal Pop-up Window (Game Instructions) -->
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Instructions</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error fuga
+        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
+        maiores.
+      </p>
+    </div>
+  </div>
   <nav class="navbar">
     <ul class="navbar__items">
       <li><a href="index.html">Home</a></li>
       <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
+    <div class="game__bar">
+
+      <div class="timer__control hide">
+        <span id="timer">05:00</span>
+      </div>
+      <div class="lives__control hide">
+        <span id="lives">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart"></i>
+        </span>
+      </div>
+      <div class="score__control hide">
+        <span id="score">3000</span>
+      </div>
+      <div class="sound__control">
+        <i class="fas fa-volume-up hide" id="sound-on"></i>
+        <i class="fas fa-volume-mute" id="sound-off"></i>
+      </div>
+    </div>
   </nav>
   <main class="main" id="main">
-    <div class="image__holder">
+    <div class="image__holder" id="earth-image">
       <img src="assets/images/earth1.png" alt="" />
     </div>
     <!-- Start Game block -->
     <div class="main__block" id="main-block">
       <h1 class="main__title">Earth Protectors</h1>
       <a class="btn btn__play play-btn">
-        <img src="assets/images/play.svg" alt="" />
+        <img src="assets/images/play.svg" alt="Play button icon" />
       </a>
+    </div>
+    <!-- Game difficulty -->
+    <div class="difficulty hide" id="difficulty-block">
+      <div class="difficulty__btn" id="difficulty-easy">Easy</div>
+      <div class="difficulty__btn" id="difficulty-hard">Hard</div>
     </div>
     <!-- Carousel themes block -->
     <div class="carousel hide" id="carousel">
       <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
         <i class="fas fa-arrow-left btn-carousel"></i>
       </button>
-      <div class="carousel__track--container">
-        <ul class="carousel__track">
-          <div class="carousel__track--top">
-            <li class="carousel__slide carousel__images--visible">
-              <h2 class="carousel__slide--title">Beach</h2>
-              <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
-              </div>
-            </li>
-            <li class="carousel__slide carousel__images--hidden">
-              <h2 class="carousel__slide--title">River</h2>
-              <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
-              </div>
-            </li>
-            <li class="carousel__slide carousel__images--hidden">
-              <h2 class="carousel__slide--title">Ocean</h2>
-              <div class="carousel__images--container">
-                <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
-              </div>
-            </li>
+      <ul class="carousel__track">
+        <li class="carousel__slide carousel__images--visible">
+          <h2 class="carousel__slide--title">Beach</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
           </div>
-        </ul>
-      </div>
+          <a class="btn btn__play btn__play--theme" id="beach-theme">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+        <li class="carousel__slide carousel__images--hidden">
+          <h2 class="carousel__slide--title">River</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
+            <!-- <img class="carousel__images" src="assets/images/river55.png" alt="" /> -->
+          </div>
+          <a class="btn btn__play btn__play--theme" id="river-theme">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+        <li class="carousel__slide carousel__images--hidden">
+          <h2 class="carousel__slide--title">Ocean</h2>
+          <div class="carousel__images--container">
+            <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
+          </div>
+          <a class="btn btn__play btn__play--theme" id="ocean-theme">
+            <img src="assets/images/play.svg" alt="Play button icon" />
+          </a>
+        </li>
+      </ul>
       <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
         <i class="fas fa-arrow-right btn-carousel"></i>
       </button>
     </div>
     <!-- Rules Section -->
     <div class="rules__section hide" id="rules">
-      <div class="eco__facts">
-        <h1>Did you know?</h1>
-        <div>
-          <p id="eco__text"></p>
-        </div>
-      </div>
+      <!-- data-modal-target is a selector for JS that points out to element to be open with button -->
       <div class="game__rules">
         <h1>How to Play?</h1>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque soluta qui quis iure facilis doloremque
-            perferendis, quidem ab modi veniam assumenda hic molestias dolores fugiat, natus ullam tempore tempora
-            delectus.
-          </p>
+        <p>
+          Identify three different waste types and which bins they belong in...
+        </p>
+        <div class="rules__bins">
+          <div class="rules__bin" id="organic__bin">
+            <img data-modal-target="#modal" class="bin__rules--img animate pop" src="/assets/images/red_bin.svg"
+              alt="Image of a red bin for organic waste">
+          </div>
+          <div class="rules__bin">
+            <!-- <h3 class="">What are Soft Plastics?</h3> -->
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1"
+              src="/assets/images/blue_bin_new.svg" alt="Image of a red bin for organic waste">
+
+          </div>
+          <div class="rules__bin" id="recyclable__bin">
+            <!-- <h3 class="">What are Recyclable Materials?</h3> -->
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2"
+              src="/assets/images/green_bin_new.svg" alt="Image of a red bin for organic waste">
+          </div>
+          <div class="rules__bin" id="organic__bin">
+            <!-- <h3 class="">What is Organic Waste?</h3> -->
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3"
+              src="/assets/images/yellow_bin_new.svg" alt="Image of a red bin for organic waste">
+          </div>
         </div>
       </div>
-      <a class="btn btn__rules play-btn">
+      <div class="eco__facts">
+        <h1>Did you know?</h1>
+        <p id="eco__text"></p>
+      </div>
+      <a class="btn btn__play play-btn" id="rules__play">
         <img src="assets/images/play.svg" alt="" />
       </a>
     </div>
-    </div>
-    </div>
 
     <!-- <div class="game"></div> -->
+
+    <!-- Scene Section -->
+    <!-- Ocean game -->
+    <div class="combo" id="combo-block">
+
+    </div>
+    <div class="ocean__game--section hide" id="ocean-game">
+      <div class="ocean__game--header">
+        <h2 class="game__scene--title">Help Clean Up the Ocean!</h2>
+      </div>
+
+      <div class="ocean__background">
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+        <div class="fish" id="fish3"></div>
+
+        <div class="stingray" id="stingray"></div>
+        <div class="stingray" id="stingray2"></div>
+
+        <div class="jellyfish" id="jellyfish"></div>
+        <div class="jellyfish" id="jellyfish2"></div>
+      </div>
+    </div>
+
+    <!-- Beach game -->
+    <div class="beach__game--section hide" id="beach-game">
+      <div class="beach__scene">
+        <div class="sky">
+          <div class="cloud"></div>
+          <div class="cloud"></div>
+          <div class="cloud"></div>
+        </div>
+        <div class="earth">
+          <div class="sea"></div>
+          <div class="beach"></div>
+        </div>
+      </div>
+    </div>
+
   </main>
   <footer class="footer">
     <p>Copyright bla bla bla</p>
     <div>
       <h3>creators</h3>
-      <ul>
+      <ul class="footer__creators">
         <li>
           <a href="">
             <div class="footer__image--container">
@@ -152,6 +253,20 @@
     </div>
   </footer>
   <script type="module" src="assets/js/script.js"></script>
+    <!-- jquery and jquery ui scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jquery ui touch punch script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script type="module" src="assets/js/game.js"></script>
 </body>
 
 </html>
