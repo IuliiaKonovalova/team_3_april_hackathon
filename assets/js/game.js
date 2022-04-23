@@ -69,14 +69,17 @@ export default class Game {
     this.garbageItems.shift();
     garbageItem.remove(this.gameScreen);
   }
-  updateScore(score) {
-    this.score += score;
+  updateScore() {
+    this.score += 10 * this.combo;
   }
   updateLives(lives) {
     this.lives += lives;
   }
-  updateCombo(combo) {
-    this.combo += combo;
+  increaseCombo(combo) {
+    this.combo += 1;
+  }
+  resetCombo() {
+    this.combo = 0;
   }
   gameOver() {
     this.gameOver = true;
@@ -111,6 +114,7 @@ $(redBin).droppable({
     let itemCategory = ui.draggable.attr("data-category");
     if (itemCategory === "organic") {
       popSound.play();
+
       $(ui.draggable).effect("explode", {
         pieces: 50,
         complete: () => {
