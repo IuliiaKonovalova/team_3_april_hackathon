@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #game-screen {
-            width: 100vw;
-            max-height: 100vh;
-            min-height: 90vh;
-            /* background-color: #000; */
-            overflow: hidden;
-            position: relative;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #game-screen {
+      width: 100vw;
+      max-height: 100vh;
+      min-height: 90vh;
+      /* background-color: #000; */
+      overflow: hidden;
+      position: relative;
+    }
 
-        .bin {
-            position: absolute;
-            width: 150px;
-            height: 200px;
-            /* background-color: #000; */
-            bottom: 50px;
+    .bin {
+      position: absolute;
+      width: 150px;
+      height: 200px;
+      /* background-color: #000; */
+      bottom: 50px;
 
-        }
+    }
 
-        #red-bin {
-            left: 100px;
-            /* background-color: #f00; */
-        }
+    #red-bin {
+      left: 100px;
+      /* background-color: #f00; */
+    }
 
-        #blue-bin {
-            left: 500px;
-            /* background-color: #00f; */
-        }
+    #blue-bin {
+      left: 500px;
+      /* background-color: #00f; */
+    }
 
-        #green-bin {
-            left: 900px;
-            /* background-color: #0f0; */
-        }
+    #green-bin {
+      left: 900px;
+      /* background-color: #0f0; */
+    }
 
-        #red-bin img,
-        #blue-bin img,
-        #green-bin img {
-            width: 100%;
-            /* height: 100px; */
-            /* position: absolute; */
-            /* top: 50px; */
-            /* left: 50px; */
-        }
-    </style>
+    #red-bin img,
+    #blue-bin img,
+    #green-bin img {
+      width: 100%;
+      /* height: 100px; */
+      /* position: absolute; */
+      /* top: 50px; */
+      /* left: 50px; */
+    }
+  </style>
 </head>
 
 <body>
 
-    <div id="game-scores">
-        <p id="player">J</p>
-        <p id="score">10</p>
-        <button type="submit" id="submit">Submit score</button>
-    <div>
-        <p id="name">James</p>
-        <p id="score">30</p>
-    </div>
+  <div id="game-scores">
+    <p id="player">J</p>
+    <p id="score">10</p>
+    <button type="submit" id="submit">Submit score</button>
+
+
     <div id="game-screen">
-        <div id="blue-bin" class="bin">
-            <img src="assets/images/blue_bin.svg" alt="">
-        </div>
-        <div id="red-bin" class="bin">
-            <img src="assets/images/red_bin.svg" alt="">
-        </div>
-        <div id="green-bin" class="bin">
-            <img src="assets/images/green_bin.svg" alt="">
-        </div>
+      <div id="blue-bin" class="bin">
+
+        <img src="assets/images/blue_bin.svg" alt="">
+      </div>
+      <div id="red-bin" class="bin">
+        <img src="assets/images/red_bin.svg" alt="">
+      </div>
+      <div id="green-bin" class="bin">
+        <img src="assets/images/green_bin.svg" alt="">
+
+      </div>
     </div>
+    <!-- jquery and jquery ui scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jquery ui touch punch script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script type="module" src="assets/js/game.js"></script>
-      
+
     <!-- Firebase configuration -->
     <script type="module" src="assets/js/leaderboard.js"></script>
-    <!-- jquery and jquery ui scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-</body>
 
+  </body>
 </html>
+
