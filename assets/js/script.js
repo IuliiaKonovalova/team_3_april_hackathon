@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // variables
   const playBtn = document.getElementsByClassName('play-btn');
   const mainBlock = document.getElementById('main-block');
+  const difficultyBlock = document.getElementById('difficulty-block');
   const rulesLink = document.getElementById('rules__link');
 
   const carousel = document.getElementById('carousel');
@@ -23,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener('click', () => {
       mainBlock.classList.add('hide');
       rulesSection.classList.add('hide');
-      carousel.classList.remove('hide');
+      // carousel.classList.remove('hide');
+      difficultyBlock.classList.remove('hide');
     })
   }
 

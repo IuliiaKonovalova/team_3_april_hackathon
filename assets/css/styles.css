@@ -244,6 +244,42 @@ body {
   display: none;
 }
 
+/* ----- Difficulty ----- */
+.difficulty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  background-color: var(--clr-neutral--800);
+  padding: 2em 1em;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 1.5rem;
+}
+
+.difficulty__btn {
+  padding: 1vh 2vw;
+  border-radius: var(--br);
+  background-color: var(--clr-accent--900);
+  color: var(--clr-neutral--800);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2vh;
+  font-family: var(--ff-secondary);
+}
+
+.difficulty__btn:hover {
+  background-color: var(--clr-accent--100);
+  color: var(--clr-neutral--100);
+}
+
 /* ----- Carousel ----- */
 .carousel {
   position: absolute;
@@ -274,7 +310,7 @@ body {
   background-color: var(--clr-neutral--800);
   padding: 2em;
   position: relative;
-  height: 50vh;
+  height: 60vh;
   margin: 0 auto;
 }
 
