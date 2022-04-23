@@ -141,16 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
     slideNext();
   });
 
-  let gameOn = false;
   // Iteration through every button element in HTML to execute an openModal function for elements with specified selector - come from https://www.youtube.com/watch?v=MBaw_6cPmAw
   document.querySelectorAll('[data-modal-target]').forEach(button => {
     button.addEventListener('click', () => {
-      if (gameOn === false) {
-        const modal = document.querySelector(button.dataset.modalTarget);
-        openModal(modal);
-      } else {
-        alert("Game is ON! You can access the instruction only if the game is stopped.");
-      }
+      const modal = document.querySelector(button.dataset.modalTarget);
+      openModal(modal);
     });
   });
 

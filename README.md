@@ -57,6 +57,7 @@ The overall goal of this game is to drive home a newfound knowledge base for rec
 
 
 ## Credits
+- Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
 
 ## Acknowledgements
 
