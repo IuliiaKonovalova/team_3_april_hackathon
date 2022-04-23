@@ -614,340 +614,427 @@ body {
   animation-delay: 0.8s;
 }
 
-.hide {
-  display: none;
-}
-
+<<<<<<< HEAD
 /* ---- Games Section ---- */
-.ocean__game--section {
-  width: 100vw;
-  height: 70vh;
-  z-index: 999;
-  margin: 0;
-}
+/* Combo */
 
-.ocean__game--header {
-  height: 20vh;
-  background: url("http://www.geertjanhendriks.nl/codepen/form/golf.png")
-    repeat-x bottom;
-  text-align: center;
-}
+.combo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.05em 1em 0.3em 1em;
+  background-color: orange;
+  color: black;
+  border-radius: 0.2em;
+  font-family: var(--ff-secondary);
+  font-size: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-/* Ocean animation */
-@keyframes ocean-swim {
-  0% {
+  =======.hide {
+    display: none;
+    >>>>>>>88a7c2c2993839a41ecd2410c9bbc05dac3e1aed
+  }
+
+
+  .combo__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  /* Ocean */
+
+  .ocean__game--section {
+    width: 100vw;
+    height: 70vh;
+    z-index: 999;
+    margin: 0;
+  }
+
+  .ocean__game--header {
+    height: 20vh;
+    background: url("http://www.geertjanhendriks.nl/codepen/form/golf.png") repeat-x bottom;
+    text-align: center;
+  }
+
+  /* Ocean animation */
+  @keyframes ocean-swim {
+    0% {
+      margin-left: -235px;
+    }
+
+    70% {
+      margin-left: 50vw;
+    }
+
+    100% {
+      margin-left: calc(100vw - 235px);
+    }
+  }
+
+  @-webkit-keyframes ocean-swim {
+    0% {
+      margin-left: -235px;
+    }
+
+    70% {
+      margin-left: 50vw;
+    }
+
+    100% {
+      margin-left: calc(100vw - 235px);
+    }
+  }
+
+  /* Fish */
+  .fish {
+    background-image: url("http://www.geertjanhendriks.nl/codepen/form/fish.png");
+    width: 235px;
+    height: 104px;
     margin-left: -235px;
+    position: absolute;
+    animation: ocean-swim 24s;
+    -webkit-animation: ocean-swim 24s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
   }
 
-  70% {
-    margin-left: 50vw;
+  #fish {
+    top: 45vh;
   }
 
-  100% {
-    margin-left: calc(100vw - 235px);
+  #fish2 {
+    top: 30vh;
+    animation-delay: 12s;
+    -webkit-animation-delay: 12s;
   }
-}
 
-@-webkit-keyframes ocean-swim {
-  0% {
+  #fish3 {
+    top: 65vh;
+    animation-delay: 7s;
+    -webkit-animation-delay: 1s;
+  }
+
+  /* Stingray */
+  .stingray {
+    background-image: url("/assets/images/stingray.svg");
+    width: 200px;
+    height: 91px;
     margin-left: -235px;
+    position: absolute;
+    animation: ocean-swim 24s;
+    -webkit-animation: ocean-swim 24s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
   }
 
-  70% {
-    margin-left: 50vw;
+  #stingray {
+    top: 50vh;
+    animation-delay: 4s;
+    -webkit-animation-delay: 5s;
   }
 
-  100% {
-    margin-left: calc(100vw - 235px);
+  #stingray2 {
+    top: 65vh;
+    animation-delay: 18s;
+    -webkit-animation-delay: 18s;
   }
-}
 
-/* Fish */
-.fish {
-  background-image: url("http://www.geertjanhendriks.nl/codepen/form/fish.png");
-  width: 235px;
-  height: 104px;
-  margin-left: -235px;
-  position: absolute;
-  animation: ocean-swim 24s;
-  -webkit-animation: ocean-swim 24s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
-}
+  /* Jellyfish */
+  .jellyfish {
+    background-image: url("/assets/images/jellyfish.svg");
+    width: 100px;
+    height: 114px;
+    margin-left: -235px;
+    position: absolute;
+    animation: ocean-swim 24s;
+    -webkit-animation: ocean-swim 24s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+  }
 
-#fish {
-  top: 45vh;
-}
+  #jellyfish {
+    top: 25vh;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+  }
 
-#fish2 {
-  top: 30vh;
-  animation-delay: 12s;
-  -webkit-animation-delay: 12s;
-}
+  #jellyfish2 {
+    top: 50vh;
+    animation-delay: 16s;
+    -webkit-animation-delay: 16s;
+  }
 
-#fish3 {
-  top: 65vh;
-  animation-delay: 7s;
-  -webkit-animation-delay: 1s;
-}
+  .ocean__background {
+    background-image: linear-gradient(#98d4f3, #07496b);
+    height: 60vh;
+    overflow: hidden;
+  }
 
-/* Stingray */
-.stingray {
-  background-image: url("/assets/images/stingray.svg");
-  width: 200px;
-  height: 91px;
-  margin-left: -235px;
-  position: absolute;
-  animation: ocean-swim 24s;
-  -webkit-animation: ocean-swim 24s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
-}
+  /* Beach animation */
 
-#stingray {
-  top: 50vh;
-  animation-delay: 4s;
-  -webkit-animation-delay: 5s;
-}
-
-#stingray2 {
-  top: 65vh;
-  animation-delay: 18s;
-  -webkit-animation-delay: 18s;
-}
-
-/* Jellyfish */
-.jellyfish {
-  background-image: url("/assets/images/jellyfish.svg");
-  width: 100px;
-  height: 114px;
-  margin-left: -235px;
-  position: absolute;
-  animation: ocean-swim 24s;
-  -webkit-animation: ocean-swim 24s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
-}
-
-#jellyfish {
-  top: 25vh;
-  animation-delay: 2s;
-  -webkit-animation-delay: 2s;
-}
-
-#jellyfish2 {
-  top: 50vh;
-  animation-delay: 16s;
-  -webkit-animation-delay: 16s;
-}
-
-.ocean__background {
-  background-image: linear-gradient(#98d4f3, #07496b);
-  height: 60vh;
-  overflow: hidden;
-}
-
-/* Beach animation */
-
-.beach__game--section {
-  /* margin: 0;
+  .beach__game--section {
+    /* margin: 0;
   width: 100vw;
   height: 70vh;
   overflow: hidden;
   z-index: 999; */
 
-  width: 100vw;
-  height: 70vh;
-  z-index: 999;
-  margin: 0;
-}
-
-.beach__scene {
-  /* display: grid; */
-  grid-template-rows: 2fr 3fr;
-  --height: 98vh;
-  height: var(--height);
-  padding: calc((100vh - var(--height)) / 2);
-  z-index: 999;
-  background-color: #005aff;
-}
-
-.sky {
-  padding: 20px;
-  /* background: var(--clr-primary--sky); */
-  background-color: #00daff;
-  z-index: -1;
-  z-index: 999;
-}
-
-.earth {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  z-index: 999;
-  background-color: #ffa500;
-}
-
-.beach {
-  padding: 10px;
-  background: var(--clr-primary--beach);
-  background-color: yellow;
-  z-index: -1;
-}
-
-.sea {
-  padding: 20px;
-  background: var(--clr-primary--sea);
-  background-color: #122335;
-  border-radius: 0 59% 56% 0;
-  animation: tide 10s ease-in-out infinite;
-  box-shadow: 0 0 var(--clr-primary--sea), 0 0 var(--clr-primary--sea),
-    5vw 0 var(--clr-primary--sea), 10vw 0 var(--clr-secondary--sea),
-    22vw 0 var(--clr-tertiary--sea), 30vw 0 var(--clr-secondary--beach);
-}
-
-@keyframes tide {
-  50% {
-    box-shadow: 14vw 0 var(--clr-primary--sea), 10vw 0 var(--clr-primary--sea),
-      27vw 0 var(--clr-primary--sea), 28vw 0 var(--clr-secondary--sea),
-      29vw 0 var(--clr-tertiary--sea), 30vw 0 var(--clr-secondary--beach);
+    width: 100vw;
+    height: 70vh;
+    z-index: 999;
+    margin: 0;
   }
-}
 
-.cloud {
-  position: absolute;
-  border-radius: 80px 80px 50px 50px;
-  background: var(--bg-1);
-  opacity: 0;
-  height: var(--cloud-height);
-  width: var(--cloud-width);
-  box-shadow: var(--box-shadow);
-  animation: var(--cloud-dur) linear var(--cloud-delay) infinite cloudMove;
-  z-index: 999;
-}
+  .beach__scene {
+    /* display: grid; */
+    grid-template-rows: 2fr 3fr;
+    --height: 98vh;
+    height: var(--height);
+    padding: calc((100vh - var(--height)) / 2);
+    z-index: 999;
+    background-color: #005aff;
+  }
 
-@keyframes cloudMove {
-  0% {
+  .sky {
+    padding: 20px;
+    /* background: var(--clr-primary--sky); */
+    background-color: #00daff;
+    z-index: -1;
+    z-index: 999;
+  }
+
+  .earth {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    z-index: 999;
+    background-color: #ffa500;
+  }
+
+  .beach {
+    padding: 10px;
+    background: var(--clr-primary--beach);
+    background-color: yellow;
+    z-index: -1;
+  }
+
+  .sea {
+    padding: 20px;
+    background: var(--clr-primary--sea);
+    background-color: #122335;
+    border-radius: 0 59% 56% 0;
+    animation: tide 10s ease-in-out infinite;
+    box-shadow: 0 0 var(--clr-primary--sea), 0 0 var(--clr-primary--sea),
+      5vw 0 var(--clr-primary--sea), 10vw 0 var(--clr-secondary--sea),
+      22vw 0 var(--clr-tertiary--sea), 30vw 0 var(--clr-secondary--beach);
+  }
+
+  @keyframes tide {
+    50% {
+      box-shadow: 14vw 0 var(--clr-primary--sea), 10vw 0 var(--clr-primary--sea),
+        27vw 0 var(--clr-primary--sea), 28vw 0 var(--clr-secondary--sea),
+        29vw 0 var(--clr-tertiary--sea), 30vw 0 var(--clr-secondary--beach);
+    }
+  }
+
+  .cloud {
+    position: absolute;
+    border-radius: 80px 80px 50px 50px;
+    background: var(--bg-1);
     opacity: 0;
+    height: var(--cloud-height);
+    width: var(--cloud-width);
+    box-shadow: var(--box-shadow);
+    animation: var(--cloud-dur) linear var(--cloud-delay) infinite cloudMove;
+    z-index: 999;
   }
 
-  1% {
-    opacity: 1;
-    transform: translate(-20vw, var(--y-offset));
+  @keyframes cloudMove {
+    0% {
+      opacity: 0;
+    }
+
+    1% {
+      opacity: 1;
+      transform: translate(-20vw, var(--y-offset));
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(110vw, var(--y-offset));
+    }
   }
 
-  100% {
-    opacity: 1;
-    transform: translate(110vw, var(--y-offset));
+  .cloud:nth-child(1) {
+    --bg-1: var(--clr-primary--cloud);
+    --bg-2: var(--clr-secondary--cloud);
+    --y-offset: 34px;
+    --cloud-dur: 50s;
+    --cloud-delay: 0s;
+    --cloud-height: 70px;
+    --cloud-width: 100px;
+    --box-shadow: 50px 16px 0 -16px var(--bg-2), -48px 8px 0 -8px var(--bg-2),
+      -86px 19px 0 -19px var(--bg-1);
   }
-}
 
-.cloud:nth-child(1) {
-  --bg-1: var(--clr-primary--cloud);
-  --bg-2: var(--clr-secondary--cloud);
-  --y-offset: 34px;
-  --cloud-dur: 50s;
-  --cloud-delay: 0s;
-  --cloud-height: 70px;
-  --cloud-width: 100px;
-  --box-shadow: 50px 16px 0 -16px var(--bg-2), -48px 8px 0 -8px var(--bg-2),
-    -86px 19px 0 -19px var(--bg-1);
-}
+  .cloud:nth-child(2) {
+    --bg-1: var(--clr--tertiary--cloud);
+    --bg-2: var(--clr--fourthly--cloud);
+    --y-offset: 10px;
+    --cloud-dur: 60s;
+    --cloud-delay: 10s;
+    --cloud-height: 60px;
+    --cloud-width: 100px;
+    --box-shadow: 45px 6px 0 -6px var(--bg-2), -62px 12px 0 -12px var(--bg-2);
+  }
 
-.cloud:nth-child(2) {
-  --bg-1: var(--clr--tertiary--cloud);
-  --bg-2: var(--clr--fourthly--cloud);
-  --y-offset: 10px;
-  --cloud-dur: 60s;
-  --cloud-delay: 10s;
-  --cloud-height: 60px;
-  --cloud-width: 100px;
-  --box-shadow: 45px 6px 0 -6px var(--bg-2), -62px 12px 0 -12px var(--bg-2);
-}
+  .cloud:nth-child(3) {
+    --bg-1: var(--clr--fifthly--cloud);
+    --bg-2: var(--clr--sixthly-cloud);
+    --y-offset: 60px;
+    --cloud-dur: 45s;
+    --cloud-delay: 20s;
+    --cloud-height: 70px;
+    --cloud-width: 100px;
+    --box-shadow: 52px 5px 0 -5px var(--bg-2), 93px 17px 0 -17px var(--bg-1),
+      -55px 10px 0 -10px var(--bg-2);
+  }
 
-.cloud:nth-child(3) {
-  --bg-1: var(--clr--fifthly--cloud);
-  --bg-2: var(--clr--sixthly-cloud);
-  --y-offset: 60px;
-  --cloud-dur: 45s;
-  --cloud-delay: 20s;
-  --cloud-height: 70px;
-  --cloud-width: 100px;
-  --box-shadow: 52px 5px 0 -5px var(--bg-2), 93px 17px 0 -17px var(--bg-1),
-    -55px 10px 0 -10px var(--bg-2);
-}
+  /* ----- Footer ----- */
 
-/* ----- Footer ----- */
+  .footer {
+    background-color: var(--clr-neutral--800);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 10vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
 
-.footer {
-  background-color: var(--clr-neutral--800);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 2em;
-  height: 10vh;
-}
+  .footer__header {
+    color: var(--clr-neutral--100);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing);
+    justify-content: start;
+    width: 100%;
+    text-align: center;
+  }
 
-.team-info {
-  display: none;
-}
+  .footer__btn {
+    cursor: pointer;
+    color: var(--clr-accent--900);
+  }
 
-.team-show {
-  display: block;
-  height: 100px;
-  width: 100px;
-  background-color: black;
-}
+  .footer__btn:hover {
+    color: var(--clr-accent--100);
+    text-decoration: underline;
+  }
 
-.footer__creators {
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
-  margin-top: 2em;
-  display: none;
-}
+  .footer__content {
+    color: var(--clr-neutral--100);
+    font-size: 1rem;
+    letter-spacing: var(--spacing);
+    background-color: var(--clr-neutral--800);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
 
-/* ----- Footer Avatars ----- */
-.footer__avatar {
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--clr-neutral--100);
-}
+  .footer__creators {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 30rem;
+    padding: 2vh;
+  }
 
-/* ----- Game Garbage bins ----- */
-.game__bins--section {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 100vw;
-  z-index: 99999999;
-  bottom: -2rem;
-  right: 0;
-  position: absolute;
-}
+  .footer__creators--item {
+    color: var(--clr-neutral--100);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 5rem;
+  }
 
-.game__bin {
-  width: 100px;
-  z-index: 999999;
-  margin: 0 1em;
-}
+  .footer__creators--item:not(:first-child) {
+    margin-left: 1rem;
+  }
 
-.game__bin img {
-  width: 100%;
-  z-index: 999999999;
-}
+  .footer__creators--item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: var(--clr-neutral--100);
+  }
 
-.hide {
-  display: none;
-}
+  .footer__creators--item a:hover {
+    color: var(--clr-accent--900);
+  }
+
+  .team-show {
+    display: block;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+  }
+
+  /* ----- Footer Avatars ----- */
+  .footer__avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--clr-neutral--100);
+  }
+
+  /* ----- Game Garbage bins ----- */
+  .game__bins--section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100vw;
+    z-index: 99999999;
+    bottom: -2rem;
+    right: 0;
+    position: absolute;
+  }
+
+  .game__bin {
+    width: 100px;
+    z-index: 999999;
+    margin: 0 1em;
+  }
+
+  .game__bin img {
+    width: 100%;
+    z-index: 999999999;
+  }
+
+  .hide {
+    display: none;
+  }
