@@ -1,73 +1,54 @@
 {
-
-    "paper": {
-        "type": {
-            "paper": "assets/images/paper.jpg",
-            "plate": "assets/images/paper_plate.jpg",
-            "cup": "assets/images/paper_cup.jpg",
-            "book": "assets/images/book.jpg",
-            "newspaper": "assets/images/newspaper.jpg",
-            "cardboard": "assets/images/cardboard.jpg"
-        },
-        "description": "Items made of paper or carboard"
+  "paper": {
+    "type": {
+      "paper": "assets/images/paper/paper.jpg",
+      "plate": "assets/images/paper/paper_plate.jpg",
+      "cup": "assets/images/paper/paper_cup.jpg",
+      "book": "assets/images/paper/book.jpg",
+      "newspaper": "assets/images/paper/newspaper.jpg",
+      "cardboard": "assets/images/paper/cardboard.jpg",
+      "napkin": "assets/images/paper/paper_napkin.jpg",
+      "tissue": "assets/images/paper/paper_tissue.jpg"
     },
-    "plastic": {
-        "type": {
-            "bottle": "assets/images/plastic_bottle.jpg",
-            "plate": "assets/images/plastic_plate.jpg",
-            "cup": "assets/images/plastic_cup.jpg",
-            "cutlery": "assets/images/plastic_cutlery.jpg",
-            "tub": "assets/images/plastic_tub.jpg",
-            "chair": "assets/images/plastic_chair.jpg",
-            "toy": "assets/images/toy.jpg",
-            "sweetWrapper": "assets/images/sweetwrapper.jpg",
-            "bootlecaps": "assets/images/bootlecaps.jpg",
-            "crate": "assets/images/crate.jpg"
-        },
-        "description": "Items made of plastic"
+    "description": "Items made of paper or carboard"
+  },
+  "plastic": {
+    "type": {
+      "bottle": "assets/images/plastic/plastic_bottle.jpg",
+      "plate": "assets/images/plastic/plastic_plate.jpg",
+      "cup": "assets/images/plastic/plastic_cup.jpg",
+      "cutlery": "assets/images/plastic/plastic_cutlery.jpg",
+      "tub": "assets/images/plastic/plastic_tub.jpg",
+      "toy": "assets/images/plastic/broken_toy.jpg",
+      "sweetWrapper": "assets/images/plastic/sweet_wrapper.jpg",
+      "bootlecaps": "assets/images/plastic/bootle_cap.jpg"
     },
-    "glass": {
-        "type": {
-            "bottle": "assets/images/glass_bottle.jpg",
-            "plate": "assets/images/glass_plate.jpg",
-            "cup": "assets/images/glass_cup.jpg",
-            "container": "assets/images/glass_container.jpg",
-            "mirror": "assets/images/mirror.jpg",
-            "windowpane": "assets/images/windowpane.jpg"
-        },
-        "description": "Items made of glass"
+    "description": "Items made of plastic"
+  },
+  "glass": {
+    "type": {
+      "bottle": "assets/images/glass/glass_bottle.jpg",
+      "plate": "assets/images/glass/glass_plate.jpg",
+      "cup": "assets/images/glass/glass.jpg",
+      "container": "assets/images/glass/glass_container.jpg",
+      "mirror": "assets/images/glass/broken_mirror.jpg",
+      "window": "assets/images/glass/broken_window.jpg",
+      "glass": "assets/images/glass/broken_glass.jpg",
+      "vase": "assets/images/glass/broken_vase.jpg"
     },
-    "metal": {
-        "type": {
-            "cans": "assets/images/cans.jpg",
-            "screws": "assets/images/screws.jpg",
-            "bootleCaps": "assets/images/bootleCaps.jpg"
-        },
-        "description": "Any materials made of metal"
+    "description": "Items made of glass"
+  },
+  "organic": {
+    "type": {
+      "meat": "assets/images/organic/meat.jpg",
+      "vegetable": "assets/images/organic/vegetable.jpg",
+      "fruit": "assets/images/organic/fruit.jpg",
+      "branch": "assets/images/organic/branch.jpg",
+      "leaves": "assets/images/organic/leaves.jpg",
+      "grass": "assets/images/organic/grass.jpg",
+      "flower": "assets/images/organic/flower.jpg",
+      "cork": "assets/images/organic/cork.jpg"
     },
-    "organic": {
-        "type": {
-            "meat": "assets/images/meat.jpg",
-            "vegetable": "assets/images/vegetable.jpg",
-            "fruit": "assets/images/fruit.jpg",
-            "woodenFurniture": "assets/images/woodenfurniture.jpg",
-            "treeBranch": "assets/images/treebranch.jpg",
-            "leaves": "assets/images/leaves.jpg",
-            "grass": "assets/images/grass.jpg",
-            "flower": "assets/images/flower.jpg",
-            "cork": "assets/images/cork.jpg"
-        },
-        "description": "Materials that may be turned into compost at a composting site."
-    },
-    "buildingMaterial": {
-        "type": {
-            "ceramic": "assets/images/ceramic.jpg",
-            "brick": "assets/images/brick.jpg",
-            "concrete": "assets/images/concrete.jpg",
-            "stone": "assets/images/stone.jpg"
-        },
-        "description": "Material can be broken down and coverted to building material used in construction."
-
-
-    }
+    "description": "Materials that may be turned into compost at a composting site."
+  }
 }
