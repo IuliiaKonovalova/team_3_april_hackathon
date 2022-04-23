@@ -16,6 +16,10 @@ The overall goal of this game is to drive home a newfound knowledge base for rec
 
 ### Target Audience
 
+For our project the intention is to mainly advertise the game to the younger generations mainly within the age bracket of 6-12 years old. In particular, the demographic the project is aimed at is for those that want to learn more about the enivornment around them. 
+The following areas were looked into in order to ahieve this goal of obtaining this age demographic: Gamification, Interactivity and Visual and Audio cues. A combination and the correct use of all four allows for the target audience to be attracted towards the project. The different difficulty levels provides for prolonged interest in the game itself also.
+
+
 ### User Stories:
 
 

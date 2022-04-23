@@ -1,12 +1,17 @@
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
 document.addEventListener("DOMContentLoaded", () => {
   // variables
-  const playBtn = document.getElementsByClassName("play-btn");
-  const mainBlock = document.getElementById("main-block");
-  const difficultyBlock = document.getElementById("difficulty-block");
-  const difficultyBtnEasy = document.getElementById("difficulty-easy");
-  const difficultyBtnHard = document.getElementById("difficulty-hard");
-  const rulesLink = document.getElementById("rules__link");
+
+  const playBtn = document.getElementsByClassName('play-btn');
+  const mainBlock = document.getElementById('main-block');
+  const main = document.getElementById('main');
+  const difficultyBlock = document.getElementById('difficulty-block');
+  const difficultyBtnEasy = document.getElementById('difficulty-easy');
+  const difficultyBtnHard = document.getElementById('difficulty-hard');
+  const rulesLink = document.getElementById('rules__link');
+
+  const rulesSection = document.getElementById('rules');
+
 
   const rulesSection = document.getElementById("rules");
 
@@ -130,6 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
+  // Function comes from https://stackoverflow.com/questions/1462138/event-listener-for-when-element-becomes-visible
+  function onVisible(element, callback) {
+    new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          callback(element);
+          observer.disconnect();
+        }
+      });
+    }).observe(element);
+  }
+
   // Click Previous Button
   prevButton.addEventListener("click", function () {
     if (current === 0) {
@@ -191,6 +208,20 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
   }
+
+  onVisible(rulesSection, () => {
+    main.addEventListener('click', function (e) {
+      console.log("click");
+      if (rulesSection.classList.contains("hide") === false) {
+        if (!rulesSection.contains(e.target)) {
+          mainBlock.classList.remove('hide');
+          rulesSection.classList.add('hide');
+          difficultyBlock.classList.add('hide');
+        }
+      }
+    });
+  });
+
 
   startSlide();
 
