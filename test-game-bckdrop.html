@@ -24,23 +24,8 @@
       text-align: center;
     }
 
-    /* Animation webkit */
-    @-webkit-keyframes myfirst {
-      0% {
-        margin-left: -235px
-      }
-
-      90% {
-        margin-left: 100%;
-      }
-
-      100% {
-        margin-left: 100%;
-      }
-    }
-
-    /* Animation */
-    @keyframes myfirst {
+    /* Ocean animation */
+    @keyframes ocean-swim {
       0% {
         margin-left: -235px
       }
@@ -50,7 +35,21 @@
       }
 
       100% {
-        margin-left: 100%;
+        margin-left: 80%;
+      }
+    }
+
+    @-webkit-keyframes ocean-swim {
+      0% {
+        margin-left: -235px;
+      }
+
+      70% {
+        margin-left: 50%;
+      }
+
+      100% {
+        margin-left: 80%;
       }
     }
 
@@ -61,8 +60,8 @@
       height: 104px;
       margin-left: -235px;
       position: absolute;
-      animation: myfirst 24s;
-      -webkit-animation: myfirst 24s;
+      animation: ocean-swim 24s;
+      -webkit-animation: ocean-swim 24s;
       animation-iteration-count: infinite;
       -webkit-animation-iteration-count: infinite;
       animation-timing-function: linear;
@@ -70,7 +69,7 @@
     }
 
     #fish {
-      top: 50vh;
+      top: 45vh;
     }
 
     #fish2 {
@@ -92,8 +91,8 @@
       height: 91px;
       margin-left: -235px;
       position: absolute;
-      animation: myfirst 24s;
-      -webkit-animation: myfirst 24s;
+      animation: ocean-swim 24s;
+      -webkit-animation: ocean-swim 24s;
       animation-iteration-count: infinite;
       -webkit-animation-iteration-count: infinite;
       animation-timing-function: linear;
@@ -119,8 +118,8 @@
       height: 114px;
       margin-left: -235px;
       position: absolute;
-      animation: myfirst 24s;
-      -webkit-animation: myfirst 24s;
+      animation: ocean-swim 24s;
+      -webkit-animation: ocean-swim 24s;
       animation-iteration-count: infinite;
       -webkit-animation-iteration-count: infinite;
       animation-timing-function: linear;
@@ -142,6 +141,7 @@
     .ocean__background {
       background-image: linear-gradient(#98d4f3, #07496b);
       height: 80%;
+      overflow: hidden;
     }
   </style>
 </head>
