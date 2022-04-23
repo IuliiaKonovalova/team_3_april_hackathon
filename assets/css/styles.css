@@ -439,12 +439,12 @@ body {
 }
 
 .modal-header {
-  padding: 10px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--clr-neutral--100);
   font-family: var(--ff-secondary);
+  padding: 1rem;
 }
 
 .modal-header .title {
@@ -464,7 +464,7 @@ body {
 }
 
 .modal-body {
-  padding: 10px 15px;
+  padding: 1.5rem;
   font-family: var(--ff-primary);
 
 }
@@ -517,6 +517,10 @@ body {
   top: 2%;
   right: 2%;
   font-size: 4vh;
+}
+
+#rules__close:hover {
+  color: var(--clr-accent--100);
 }
 
 .eco__facts,
