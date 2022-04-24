@@ -16,7 +16,6 @@
   --ff-primary: "Lato", sans-serif;
   --ff-secondary: "Rubik Moonrocks", cursive;
   --br: 0.1em;
-
   /* Animation classes */
   --clr-primary--sky: #2dc7ff;
   --clr-primary--beach: #ff9f1c;
@@ -105,9 +104,9 @@ body {
 /* Style the hamburger menu */
 #hamburger {
   display: none;
-
 }
 
+/* Navbar items */
 .navbar__items {
   width: 100%;
   padding: 1em;
@@ -150,7 +149,7 @@ body {
   font-size: 2vh;
 }
 
-/* Game mode */
+/* Game mode Bar */
 .game__bar {
   display: flex;
   align-items: center;
@@ -196,15 +195,13 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 2vh 5vw;
-  background-image: url("/assets/images/cloud_background.jpg");
+  background-image: url('../images/cloud_background.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   margin: 0 auto;
   position: relative;
   height: 80vh;
-  /* NB: overflow hidden to keep animations from creating overscroll */
-  /* overflow: hidden; */
 }
 
 .main__block {
@@ -426,38 +423,15 @@ body {
   right: 5%;
 }
 
-/* ----- Carousel slide animation ----- */
-.fade {
-  -webkit-animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -ms-animation: fadein 2s;
-  -o-animation: fadein 2s;
-  animation: fadein 2s;
-}
-
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 /* ----- Modal Pop-Up Window - Game Rules ----- */
-
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-
   /* scale(0) sets modal to invisible */
   transform: translate(-50%, -50%) scale(0);
-
   /* Gradually apears/disapears over set time frame */
   transition: 200ms ease-in-out;
-
   border-radius: 10px;
   z-index: 15;
   width: 500px;
@@ -515,7 +489,6 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-
   /* If overlay is invisible, it will remove the option to capture any click events */
   pointer-events: none;
 }
@@ -539,7 +512,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  /* outline: 4px solid blue; */
   padding: 1vh;
 }
 
@@ -565,7 +537,6 @@ body {
 .game__rules {
   margin: 0 auto;
   text-align: center;
-  /* outline: 4px solid violet; */
 }
 
 .game__rules {
@@ -580,7 +551,6 @@ body {
 }
 
 .rules__bins {
-  /* outline: 4px solid brown; */
   margin: 2vh 0;
   display: flex;
   flex-wrap: wrap;
@@ -590,7 +560,6 @@ body {
 
 .rules__bin {
   margin: 0 auto;
-  /* outline: 4px solid green; */
 }
 
 .rules__bin h3 {
@@ -710,7 +679,6 @@ body {
 }
 
 .ocean__background {
-  /* background-image: linear-gradient(#98d4f3, #07496b); */
   background-image: linear-gradient(#48cae4, #023e8a);
   height: 60vh;
   overflow: hidden;
@@ -848,7 +816,6 @@ body {
 }
 
 .sky {
-  /* background: var(--clr-primary--sky); */
   z-index: -1;
   z-index: 999;
 }
@@ -857,7 +824,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   z-index: 999;
-  /* width: 50vw; */
 }
 
 .beach {
@@ -969,8 +935,6 @@ body {
 .riverbank__front {
   z-index: 1;
   bottom: 0;
-  /* left: 0; */
-  /* right: 0; */
 }
 
 .riverbank {
@@ -1008,12 +972,9 @@ body {
 
 .mountain-3 {
   border-radius: 80% 0% 0 0/100% 100% 0 0;
-  /* right: -85vmin; */
   right: -30vw;
-  /* width: 20vmin; */
   width: 10vw;
   left: 90%;
-  /* height: 12vmin; */
   color: var(--clr-fourthly--grass);
   background-image: linear-gradient(var(--clr-primary--grass), var(--clr-fourthly--grass));
   box-shadow: inset 15px 0 10px -10px var(--clr-neutral--800);
@@ -1104,7 +1065,6 @@ body {
   right: 0;
   width: 100vw;
   background: linear-gradient(var(--clr-primary--river), var(--clr-neutral--800));
-  /* overflow: hidden; */
   box-shadow: inset 0 1px 4px -3px var(--clr-neutral--900);
 }
 
@@ -1186,7 +1146,6 @@ body {
   70% {
     transform: rotate(0);
   }
-
 }
 
 @keyframes verticalise-1 {
@@ -1251,7 +1210,6 @@ body {
 }
 
 .splash-4 {
-  /* bottom: 5vmin; */
   left: auto;
   bottom: 25vmin;
   right: 20vmin;
@@ -1311,7 +1269,6 @@ body {
 }
 
 /* ----- Footer ----- */
-
 .footer {
   background-color: var(--clr-neutral--800);
   display: flex;
@@ -1462,7 +1419,6 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-flow: dense;
   gap: 2rem;
-
 }
 
 .leader__data {
@@ -1474,12 +1430,12 @@ body {
   justify-content: space-between;
 }
 
-
+/* --- Hide Class --- */
 .hide {
   display: none;
 }
 
-
+/* ----- Media Query ----- */
 @media all and (max-width: 80rem) {
 
   .navbar {
