@@ -691,7 +691,7 @@ body {
   width: 100vw;
   height: auto;
   z-index: 999;
-  margin-bottom: -8rem;
+  margin-bottom: -12vh;
 }
 
 .ocean__game--header {
@@ -824,17 +824,11 @@ body {
 /* Beach animation */
 
 .beach__game--section {
-  /* margin: 0;
-  width: 100vw;
-  height: 70vh;
-  overflow: hidden;
-  z-index: 999; */
-
+  height: 60vh;
   width: 100vw;
   height: auto;
   z-index: 999;
-  margin-bottom: -5rem;
-  overflow: hidden;
+  margin-bottom: -2vh;
 }
 
 .beach__scene {
@@ -1053,8 +1047,8 @@ body {
   align-items: flex-end;
   width: 100vw;
   z-index: 99999999;
-  bottom: -2rem;
-  right: 0;
+  bottom: -0vh;
+  right: 2vw;
   position: absolute;
 }
 
@@ -1149,4 +1143,16 @@ body {
   }
 
 
+}
+
+@media all and (max-height: 722px) {
+
+  /* Media for ocean theme */
+  #fish3 {
+    display: none;
+  }
+
+  #stingray2 {
+    display: none;
+  }
 }
