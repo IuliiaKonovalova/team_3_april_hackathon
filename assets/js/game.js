@@ -183,13 +183,13 @@ export default class Game {
     }
     $("#score-submit").click((e) => {
       e.preventDefault();
+      $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
         saveScoreToDb(name, this.score);
       } else {
         saveScoreToDb("Anonymous", this.score);
       }
-      $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       
       database.ref("scores").on("value", (snapshot) => {
         for(let key in snapshot.val()) {
@@ -198,7 +198,9 @@ export default class Game {
         this.leaders.sort((a, b) => {
           return b.score - a.score;
         });
-        this.leaders.splice(10, this.leaders.length - 10);
+        // need to leave only 10 scores
+        this.leaders = this.leaders.slice(0, 10);
+        $(".leaders__board--content").empty();
         for (let leader of this.leaders) {
           let leaderData = document.createElement("div");
           leaderData.classList.add("leader__data");
@@ -292,6 +294,10 @@ export default class Game {
     }, 2000);
   }
   stop() {
+    let pauseScreen = document.getElementsByClassName("pause-screen")[0];
+    if (pauseScreen) {
+      pauseScreen.remove();
+    }
     this.gameOverTrigger();
   }  
 }
