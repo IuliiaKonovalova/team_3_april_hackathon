@@ -71,9 +71,24 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 [Click Here](TESTING.md) to view the full testing steps that were completed on every device and browser.
 
 ## Deployment
+Github
+The repository was first created by logging into a GitHub account:
+
+Clicking the 'new' green button.
+
+This then prompts to another page with asks for a name for the new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. The Code Institute template was chosen in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
 
 **How to fork the GitHub Repository**
 
+### Cloning and Forking 
+
+In order to clone the repository, the user must visit the repository page.
+
+Cloning by command line: Click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
+
+### Forking
+
+Go to the repositary page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
 
 **How to run this project locally**
 
