@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const difficultyBtnHard = document.getElementById('difficulty-hard');
   const rulesLink = document.getElementById('rules__link');
   const rulesSection = document.getElementById('rules');
-  const rulesCloseBtn = document.getElementById('rules__close');
+  const rulesCloseBtn = document.getElementById('rules-close');
   const carousel = document.getElementById("carousel");
   const slides = document.querySelectorAll(".carousel__slide");
   const prevButton = document.getElementById("carousel-prev");
@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const playItems = document.getElementsByClassName("play__item");
   const soundBtn = document.getElementById("sound-control");
   const garbageBins = document.getElementsByClassName('rules__bin')
+  const leaderBoardLink = document.getElementById('leaders-link')
+  const leaderBoard = document.getElementById('leaders-board');
+  const leaderBoardClose = document.getElementById('leader-close')
 
   // Set the current carousel slide
   let current = 0;
@@ -43,19 +46,31 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let btn of playBtn) {
     btn.addEventListener("click", () => {
       addHideClass();
-      main.removeEventListener('click', rulesEventHandler);
+      main.removeEventListener('click', sectionEventHandler);
       difficultyBlock.classList.remove("hide");
     });
   }
 
   // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
-    main.addEventListener('click', rulesEventHandler);
+    let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn)
+    main.addEventListener('click', sectionEventHandler);
     addHideClass();
+    document.getElementById("earth-image").classList.remove("hide");
     rulesSection.classList.remove("hide");
 
     fetchEcoFacts();
   });
+
+  // Displays Leaders Board on user's click
+  leaderBoardLink.addEventListener("click", () => {
+    let sectionEventHandler = myFunction(leaderBoard, leaderBoardClose)
+    main.addEventListener('click', sectionEventHandler);
+    addHideClass();
+    document.getElementById("earth-image").classList.remove("hide");
+    leaderBoard.classList.remove("hide");
+  });
+
 
   // If the user clicks easy level, hide the difficulty block and show the theme block
   difficultyBtnEasy.addEventListener("click", (e) => {
@@ -89,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Adds hide elements to main parts of UI
   function addHideClass() {
-    document.getElementById("earth-image").classList.add("hide");
+
     document.getElementById("beach-game").classList.add("hide");
     document.getElementById("river-game").classList.add("hide");
     document.getElementById("garbage-bins").classList.add("hide");
@@ -98,6 +113,23 @@ document.addEventListener("DOMContentLoaded", () => {
     difficultyBlock.classList.add('hide');
     carousel.classList.add("hide");
     difficultyBlock.classList.add("hide");
+    leaderBoard.classList.add("hide");
+  }
+
+  // Curried function to add and remove event listeners for Rules and Leaders Board sections
+  let myFunction = function (section, closeBtn) {
+    return function curriedFunc(e) {
+      myFunction(e, section, closeBtn);
+      if (!section.classList.contains("hide")) {
+        if (!section.contains(e.target) || closeBtn.contains(e.target)) {
+          addHideClass();
+          document.getElementById("earth-image").classList.remove("hide");
+          mainBlock.classList.remove('hide');
+          main.removeEventListener('click', sectionEventHandler);
+
+        }
+      }
+    }
   }
 
   // Reset all slides
@@ -164,16 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ecoText.innerText = fact;
   }
 
-  // Event handler to close Rules Section
-  function rulesEventHandler(event) {
-    if (!rulesSection.classList.contains("hide")) {
-      if (!rulesSection.contains(event.target) || rulesCloseBtn.contains(event.target)) {
-        addHideClass();
-        mainBlock.classList.remove('hide');
-        main.removeEventListener('click', rulesEventHandler);
-      }
-    }
-  }
 
   // Click Previous Button
   prevButton.addEventListener("click", function () {
@@ -196,18 +218,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Iteration through every button element in HTML to execute an openModal function for elements with specified selector
   document.querySelectorAll('[data-modal-target]').forEach(button => {
     let modalText;
+    let modalHeading;
     button.addEventListener('click', () => {
       if (button.id === "organic-bin") {
         modalText = "i'm organic";
+        modalHeading = "i'm organic title"
       } else if (button.id === "plastic-bin") {
         modalText = "i'm plastic";
+        modalHeading = "i'm plastic title";
       } else if (button.id === "glass-bin") {
         modalText = "i'm glass";
+        modalHeading = "i'm glass title";
       } else if (button.id === "paper-bin") {
         modalText = "i'm paper";
+        modalHeading = "i'm paper heading"
       }
       const modal = document.querySelector(button.dataset.modalTarget);
-      openModal(modal, modalText);
+      openModal(modal, modalText, modalHeading);
     });
   });
 
@@ -228,12 +255,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Function adds class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
-  function openModal(modal, modalText) {
+  function openModal(modal, modalText, modalHeading) {
     if (modal === null) return;
     modal.classList.add("active");
     document.getElementById("overlay").classList.add("active");
     document.getElementById('modal-text').innerHTML = modalText;
-    document.getElementById('modal-title').innerHTML = modalText;
+    document.getElementById('modal-title').innerHTML = modalHeading;
 
   }
 

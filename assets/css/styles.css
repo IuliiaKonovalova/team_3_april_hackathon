@@ -464,7 +464,7 @@ body {
 }
 
 .modal-header .close-button,
-#rules__close {
+.rules__close {
   cursor: pointer;
   border: none;
   background: none;
@@ -534,7 +534,14 @@ body {
   display: inline-block;
 }
 
-#rules__close:hover {
+.rules__close {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 4vh;
+}
+
+.rules__close:hover {
   color: var(--clr-accent--100);
 }
 
