@@ -32,7 +32,8 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - As a frequent user, I want to enjoy the game, so I can play it regularly.
 - As a frequent user, I want to be able to compete with other users, so I can motivate myself to play the game.
 - As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience.
-- As a frequent user, I want to be able to learn interesting facts about environment, so I can improve my recycling habits.
+- As a frequent user, I want to be able to learn interesting facts about the environment, so I can improve my recycling habits.
+
 #### Parent Goals:
 - As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game.
 - As a parent of a frequent user, I want to be sure that the is no advertisement, so I can freely let my child play the game.
@@ -43,7 +44,23 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ## Scope
 
-**Features**
+### Features
+
+- Home page (which includes a navbar with links to all pages of the site)
+- Rules page
+- Leaderboard page
+- Play button (located on home screen and rules page)
+- Game difficulty choice
+- Game theme option
+- A footer which includes all team members names
+- Neat and presentable UI for the game
+- Countdown clock for the game
+- Performance analytics for the player (including time left, score and lives)
+- A sound feature to toggle on and off
+- Sounds to accompany correct and incorrect game moves
+- An overlay which allows a player to supply their name and score to the global leaderboard
+- A game pause button
+- A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
 - Rules Section
 
