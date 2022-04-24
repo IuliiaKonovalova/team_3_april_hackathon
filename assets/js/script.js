@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerContent = document.getElementById("footer-content");
   const playItems = document.getElementsByClassName("play__item");
   const soundBtn = document.getElementById("sound-control");
+  const garbageBins = document.getElementsByClassName('rules__bin')
 
   // Set the current carousel slide
   let current = 0;
@@ -194,9 +195,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Iteration through every button element in HTML to execute an openModal function for elements with specified selector
   document.querySelectorAll('[data-modal-target]').forEach(button => {
+    let modalText;
     button.addEventListener('click', () => {
+      if (button.id === "organic-bin") {
+        modalText = "i'm organic";
+      } else if (button.id === "plastic-bin") {
+        modalText = "i'm plastic";
+      } else if (button.id === "glass-bin") {
+        modalText = "i'm glass";
+      } else if (button.id === "paper-bin") {
+        modalText = "i'm paper";
+      }
       const modal = document.querySelector(button.dataset.modalTarget);
-      openModal(modal);
+      openModal(modal, modalText);
     });
   });
 
@@ -217,10 +228,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Function adds class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
-  function openModal(modal) {
+  function openModal(modal, modalText) {
     if (modal === null) return;
     modal.classList.add("active");
     document.getElementById("overlay").classList.add("active");
+    document.getElementById('modal-text').innerHTML = modalText;
+    document.getElementById('modal-title').innerHTML = modalText;
+
   }
 
   /// Function removes class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
@@ -266,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     footerContent.classList.toggle("hide");
   });
 
+  console.log(soundBtn);
   // Displays sound icon
   soundBtn.addEventListener('click', () => {
     soundBtn.querySelectorAll('i').forEach(icon => {

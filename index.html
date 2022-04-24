@@ -16,22 +16,6 @@
 </head>
 
 <body>
-  <!-- Overlay for Modal Operation -->
-  <div id="overlay"></div>
-  <!-- Modal Pop-up Window (Game Instructions) -->
-  <div class="modal" id="modal">
-    <div class="modal-header">
-      <div class="title">Instructions</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error fuga
-        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
-        maiores.
-      </p>
-    </div>
-  </div>
   <nav class="navbar topbar">
     <button id="hamburger" class="hamburger hamburger--elastic-r" type="button"
       aria-label="Click to display menu on smaller screens">
@@ -130,24 +114,24 @@
           Identify three different waste types and which bins they belong in...
         </p>
         <div class="rules__bins">
-          <div class="rules__bin" id="organic__bin">
-            <img data-modal-target="#modal" class="bin__rules--img animate pop" src="/assets/images/red_bin.svg"
-              alt="Image of a red bin for organic waste">
+          <div class="rules__bin">
+            <img data-modal-target="#modal" class="bin__rules--img animate pop" id="organic-bin"
+              src="/assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
           </div>
           <div class="rules__bin">
             <!-- <h3 class="">What are Soft Plastics?</h3> -->
-            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1"
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1" id="plastic-bin"
               src="/assets/images/blue_bin_new.svg" alt="Image of a red bin for organic waste">
 
           </div>
-          <div class="rules__bin" id="recyclable__bin">
+          <div class="rules__bin">
             <!-- <h3 class="">What are Recyclable Materials?</h3> -->
-            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2"
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2" id="glass-bin"
               src="/assets/images/green_bin_new.svg" alt="Image of a red bin for organic waste">
           </div>
-          <div class="rules__bin" id="organic__bin">
+          <div class="rules__bin">
             <!-- <h3 class="">What is Organic Waste?</h3> -->
-            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3"
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3" id="paper-bin"
               src="/assets/images/yellow_bin_new.svg" alt="Image of a red bin for organic waste">
           </div>
         </div>
@@ -262,15 +246,11 @@
   <!-- Modal Pop-up Window (Game Instructions) -->
   <div class="modal" id="modal">
     <div class="modal-header">
-      <div class="title">Instructions</div>
+      <div class="title" id="modal-title">Instructions</div>
       <button data-close-button class="close-button">&times;</button>
     </div>
     <div class="modal-body">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error
-        fuga
-        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
-        maiores.
+      <p id="modal-text">
       </p>
     </div>
   </div>
