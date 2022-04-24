@@ -1,3 +1,4 @@
+/* jshint esversion: 8, jquery: true */
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
 document.addEventListener("DOMContentLoaded", () => {
   // variables

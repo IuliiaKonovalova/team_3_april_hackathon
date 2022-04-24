@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8, jquery: true */
 import GarbageItem from "./GarbageItem.js";
 
 // Game rules:
@@ -133,15 +133,15 @@ export default class Game {
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft -= 1;
-      if(this.timeLeft > 59){
+      if (this.timeLeft > 59) {
         this.timerElement.innerHTML = `${Math.floor(this.timeLeft / 60)}:${this.timeLeft % 60}`;
 
-      } else if(this.timeLeft < 60 && this.timeLeft > 9){
+      } else if (this.timeLeft < 60 && this.timeLeft > 9) {
         this.timerElement.innerHTML = `0:${this.timeLeft}`;
 
-      } else if(this.timeLeft < 10 && this.timeLeft > 0){
+      } else if (this.timeLeft < 10 && this.timeLeft > 0) {
         this.timerElement.innerHTML = `0:0${this.timeLeft}`;
-      } 
+      }
       if (this.timeLeft === 0) {
         this.timerElement.innerHTML = "00:00";
         this.gameOverTrigger();
@@ -182,7 +182,7 @@ export default class Game {
       });
     }, 2000);
   }
-  
+
 }
 
 // audio
@@ -230,14 +230,15 @@ const checkAnswer = (event, ui, bin) => {
     if (game.checkSound()) {
       fartSound.play();
     }
-    $(ui.draggable).animate(
-      {
+    $(ui.draggable).animate({
         left: Math.floor(Math.random() * 90) + "%",
         top: Math.floor(Math.random() * 90) + "%",
       },
       500
     );
-    $(bin).effect("shake", { times: 2 }, 500);
+    $(bin).effect("shake", {
+      times: 2
+    }, 500);
     console.log("wrong");
     game.takeLife();
     game.resetCombo();
