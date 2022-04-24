@@ -542,7 +542,8 @@ body {
   padding: 1vh;
 }
 
-.rules__section h1 {
+.rules__section h1,
+#end-game h2 {
   font-family: var(--ff-secondary);
   font-size: 6vh;
   display: inline-block;
@@ -1285,6 +1286,27 @@ body {
 .delay-6 {
   animation-delay: 6s;
 }
+
+/* ----- End Game Window ----- */
+
+#end-game {
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+#player-name {
+  padding: 1vh 2vw;
+  border-radius: var(--br);
+  /* background-color: var(--clr-accent--900); */
+  color: var(--clr-neutral--800);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2vh;
+  font-family: var(--ff-secondary);
+}
+
 
 /* ----- Footer ----- */
 
