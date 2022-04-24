@@ -40,6 +40,8 @@ export default class Game {
   start(mode) {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
+    this.removeAllGarbage();
+    document.getElementById("menu-bar").style.visibility = "hidden";
     this.timeLeft = 60;
     this.timerElement.innerHTML = '01:00';
     this.gameMode = mode;
@@ -135,6 +137,7 @@ export default class Game {
     this.endGameElement.style.zIndex = "999999999999999999999";
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
+    document.getElementById("menu-bar").style.visibility = "visible";
   }
   removeAllGarbage() {
     let garbageItems = this.gameScreen.getElementsByClassName("garbage-item");
