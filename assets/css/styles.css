@@ -168,6 +168,12 @@ body {
   margin-right: 3vw;
 }
 
+.timer__control span {
+  width: 9rem;
+  display: flex;
+  justify-content: start;
+}
+
 .lives__control span {
   display: flex;
 }
