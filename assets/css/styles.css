@@ -186,6 +186,20 @@ body {
   color: var(--clr-accent--100);
 }
 
+.game__bar .pause-stop__control {
+  color: var(--clr-accent--900);
+  font-size: 3vh;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.game__bar .pause-stop__control i:not(:last-child) {
+  margin-right: 1vw;
+}
+
 /* ----- Main ----- */
 .main {
   display: flex;
@@ -1476,7 +1490,7 @@ label {
 
 /* --- Hide Class --- */
 .hide {
-  display: none;
+  display: none !important;
 }
 
 /* ----- Media Query ----- */
