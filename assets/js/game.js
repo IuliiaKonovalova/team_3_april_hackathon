@@ -22,8 +22,42 @@ const saveScoreToDb = (name, score) => {
   database.ref("scores").push({
     name: name,
     score: score,
+  }, (error) => {
+    if (error) {
+      console.log(error);
+      return false;
+    } else {
+      console.log("score saved");
+      return true;
+    }
   });
-}
+};
+
+// const fetchDateFromDb = (arr) => {
+//   database.ref("scores").on("value", (snapshot) => {
+//     for(let key in snapshot.val()) {
+//       arr.push(snapshot.val()[key]);
+//       // console.log(snapshot.val()[key]);
+//     }
+//   }, (error) => {
+//     if (error) {
+//       console.log(error);
+//       return false;
+//     } else {
+//       console.log("scores fetched");
+//       return true;
+//     }
+//   });
+// };
+
+// const fetchTopTen = (arr) => {
+//   database.ref("scores").orderByChild("score").limitToLast(10).on("value", (snapshot) => {
+//     for(let key in snapshot.val()) {
+//       arr.push(snapshot.val()[key]);
+//       // console.log(snapshot.val()[key]);
+//     }
+//   });
+// }:
 
 // Game rules:
 // There will be two game modes: "easy" and "hard".
@@ -53,6 +87,7 @@ export default class Game {
     this.timerInterval = null;
     this.timeLeft = 60;
     this.sound = true;
+    this.leaders = [];
     this.timerElement = document.getElementById("timer");
     this.livesElement = document.getElementById("lives");
     this.scoreElement = document.getElementById("score");
@@ -63,6 +98,7 @@ export default class Game {
     this.playButton = document.getElementsByClassName("fa-play")[0];
     this.stopButton = document.getElementsByClassName("fa-stop")[0];
     this.pauseButton = document.getElementsByClassName("fa-pause")[0];
+    this.leaderBoardElement = document.getElementsByClassName("leaders__board")[0];
   }
   start(mode) {
     // document.body.style.overflow = "hidden";
@@ -174,6 +210,61 @@ export default class Game {
     for(let item of gameItems) {
       item.classList.add("hide");
     }
+    $("#score-submit").click((e) => {
+      // prevent default behavior
+      e.preventDefault();
+      let name = document.getElementById("player-name").value;
+      if (name.length > 0) {
+        saveScoreToDb(name, this.score);
+      } else {
+        saveScoreToDb("Anonymous", this.score);
+      }
+      $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
+      // this.getTopTen();
+      // setTimeout(() => {
+      //   $("#score-submit").replaceWith(`<i class="fas fa-check"></i>`);
+      // }, 1000);
+      // setTimeout(() => {
+      //   this.endGameElement.classList.add("hide");
+      // }, 1000);
+      // for (let leader of this.leaders) {
+      //   let leaderData = document.createElement("div");
+      //   leaderData.classList.add("leader__data");
+      //   leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+      //   <div class="leader__data--score">${leader.score}</div>`;
+      //   $(".leaders__board--content").append(leaderData);
+      // }
+      // this.leaderBoardElement.classList.remove("hide");
+      database.ref("scores").on("value", (snapshot) => {
+        for(let key in snapshot.val()) {
+          this.leaders.push(snapshot.val()[key]);
+          // console.log(snapshot.val()[key]);
+        }
+        this.leaders.sort((a, b) => {
+          return b.score - a.score;
+        });
+        this.leaders.splice(10, this.leaders.length - 10);
+        for (let leader of this.leaders) {
+          let leaderData = document.createElement("div");
+          leaderData.classList.add("leader__data");
+          leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+          <div class="leader__data--score">${leader.score}</div>`;
+          $(".leaders__board--content").append(leaderData);
+        }
+        this.leaderBoardElement.classList.remove("hide");
+        this.leaderBoardElement.style.zIndex = "999999999999999999999";
+        this.endGameElement.classList.add("hide");
+      });
+      // for(let leader of this.leaders) {
+      //   let leaderData = document.createElement("div");
+      //   leaderData.classList.add("leader__data");
+      //   leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+      //   <div class="leader__data--score">${leader.score}</div>`;
+      //   $(".leaders__board--content").append(leaderData);
+      // }
+      // this.leaderBoardElement.classList.remove("hide");
+      // this.leaderBoardElement.style.zIndex = "999999999999999999999";
+    });
   }
   removeAllGarbage() {
     let garbageItems = this.gameScreen.getElementsByClassName("garbage-item");
@@ -257,7 +348,18 @@ export default class Game {
   stop() {
     this.gameOverTrigger();
   }
-  
+  // getScores() {
+  //   this.leaders = [];
+  //   fetchDateFromDb(this.leaders);
+  //   console.log(this.leaders);
+  // }
+  // getTopTen() {    
+  //   this.getScores();
+  //   this.leaders.sort((a, b) => {
+  //     return b.score - a.score;
+  //   }).slice(0, 10);
+  //   console.log(this.leaders);
+  // }
 }
 
 // audio
@@ -343,6 +445,8 @@ $(".game__bin").droppable({
 });
 
 const game = new Game(gameJson);
+// game.getScores();
+// game.getTopTen();
 // game.start("hard");
 // console.log(gameDifficulty);
 
