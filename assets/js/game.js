@@ -402,13 +402,3 @@ $(game.playButton).click(() => {
 $(game.stopButton).click(() => {
   game.stop();
 });
-
-const gameScreen = document.getElementById("game-screen");
-const easyGameButton = document.getElementById("easy-game-button");
-const hardGameButton = document.getElementById("hard-game-button");
-const scoreDisplay = document.getElementById("score-display");
-const livesDisplay = document.getElementById("lives-display");
-const comboDisplay = document.getElementById("combo-display");
-const gameOverDisplay = document.getElementById("game-over-display");
-const stopGameButton = document.getElementById("stop-game-button");
-const restartGameButton = document.getElementById("restart-game-button");
