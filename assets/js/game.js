@@ -191,27 +191,53 @@ export default class Game {
         saveScoreToDb("Anonymous", this.score);
       }
       
-      database.ref("scores").on("value", (snapshot) => {
-        for(let key in snapshot.val()) {
-          this.leaders.push(snapshot.val()[key]);
-        }
-        this.leaders.sort((a, b) => {
-          return b.score - a.score;
-        });
-        // need to leave only 10 scores
-        this.leaders = this.leaders.slice(0, 10);
-        $(".leaders__board--content").empty();
-        for (let leader of this.leaders) {
-          let leaderData = document.createElement("div");
-          leaderData.classList.add("leader__data");
-          leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
-          <div class="leader__data--score">${leader.score}</div>`;
-          $(".leaders__board--content").append(leaderData);
-        }
-        this.leaderBoardElement.classList.remove("hide");
-        this.leaderBoardElement.style.zIndex = "999999999999999999999";
-        this.endGameElement.classList.add("hide");
-      });
+      // database.ref("scores").on("value", (snapshot) => {
+      //   this.leaders = [];
+      //   for(let key in snapshot.val()) {
+      //     this.leaders.push(snapshot.val()[key]);
+      //   }
+      //   this.leaders.sort((a, b) => {
+      //     return b.score - a.score;
+      //   });
+      //   // need to leave only 10 scores
+      //   this.leaders = this.leaders.slice(0, 10);
+      //   $(".leaders__board--content").empty();
+      //   for (let leader of this.leaders) {
+      //     let leaderData = document.createElement("div");
+      //     leaderData.classList.add("leader__data");
+      //     leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+      //     <div class="leader__data--score">${leader.score}</div>`;
+      //     $(".leaders__board--content").append(leaderData);
+      //   }
+      // });
+      // let dbRef = firebase.database().ref("scores");
+      // dbRef.get().then((snapshot) => {
+      //   this.leaders = [];
+      //   for(let key in snapshot.val()) {
+      //     this.leaders.push(snapshot.val()[key]);
+      //   }
+      //   this.leaders.sort((a, b) => {
+      //     return b.score - a.score;
+      //   });
+      //   // need to leave only 10 scores
+      //   this.leaders = this.leaders.slice(0, 10);
+      //   $(".leaders__board--content").empty();
+      //   for (let leader of this.leaders) {
+      //     let leaderData = document.createElement("div");
+      //     leaderData.classList.add("leader__data");
+      //     leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+      //     <div class="leader__data--score">${leader.score}</div>`;
+      //     $(".leaders__board--content").append(leaderData);
+      //   }
+      // }).catch((error) => {
+      //   console.log(error);
+      // });
+      this.getLeaders();
+      // setTimeout(() => {
+      this.leaderBoardElement.classList.remove("hide");
+      this.leaderBoardElement.style.zIndex = "999999999999999999999";
+      this.endGameElement.classList.add("hide");
+      // }, 3000);
     });
   }
   removeAllGarbage() {
@@ -299,7 +325,31 @@ export default class Game {
       pauseScreen.remove();
     }
     this.gameOverTrigger();
-  }  
+  }
+  getLeaders() {
+    let dbRef = firebase.database().ref("scores");
+    dbRef.get().then((snapshot) => {
+      this.leaders = [];
+      for(let key in snapshot.val()) {
+        this.leaders.push(snapshot.val()[key]);
+      }
+      this.leaders.sort((a, b) => {
+        return b.score - a.score;
+      });
+      // need to leave only 10 scores
+      this.leaders = this.leaders.slice(0, 10);
+      $(".leaders__board--content").empty();
+      for (let leader of this.leaders) {
+        let leaderData = document.createElement("div");
+        leaderData.classList.add("leader__data");
+        leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+        <div class="leader__data--score">${leader.score}</div>`;
+        $(".leaders__board--content").append(leaderData);
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
 }
 
 // audio
@@ -373,6 +423,7 @@ $(".game__bin").droppable({
 });
 
 const game = new Game(gameJson);
+game.getLeaders();
 
 
 $(".btn__play--theme").click(() => {
