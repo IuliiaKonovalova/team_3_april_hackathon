@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerBtn = document.getElementById("footer-btn");
   const footerContent = document.getElementById("footer-content");
   const playItems = document.getElementsByClassName("play__item");
+  const soundBtn = document.getElementById("sound-control");
 
   // Set the current carousel slide
   let current = 0;
@@ -194,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Iteration through every button element in HTML to execute an openModal function for elements with specified selector
   document.querySelectorAll('[data-modal-target]').forEach(button => {
     button.addEventListener('click', () => {
-
       const modal = document.querySelector(button.dataset.modalTarget);
       openModal(modal);
     });
@@ -204,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('[data-close-button]').forEach(button => {
     button.addEventListener('click', () => {
       const modal = button.closest('.modal'); // looks for the closest parent with 'modal' class
-
       closeModal(modal);
     });
   });
@@ -213,7 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('overlay').addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active');
     modals.forEach(modal => {
-
       closeModal(modal);
     });
   });
@@ -267,5 +265,14 @@ document.addEventListener("DOMContentLoaded", () => {
   footerBtn.addEventListener('click', () => {
     footerContent.classList.toggle("hide");
   });
+
+  // Displays sound icon
+  soundBtn.addEventListener('click', () => {
+    soundBtn.querySelectorAll('i').forEach(icon => {
+      icon.classList.toggle('hide');
+    });
+  });
+
+
 
 });
