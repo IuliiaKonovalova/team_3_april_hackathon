@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("beach-game").classList.remove("hide");
     document.getElementById("ocean-game").classList.add("hide");
-    for(let item of playItems){
+    for (let item of playItems) {
       item.classList.remove("hide");
     }
   });
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("river-game").classList.remove("hide");
     document.getElementById("beach-game").classList.add("hide");
-    for(let item of playItems){
+    for (let item of playItems) {
       item.classList.remove("hide");
     }
   });
@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("ocean-game").classList.remove("hide");
     document.getElementById("beach-game").classList.add("hide");
-    for(let item of playItems){
+    for (let item of playItems) {
       item.classList.remove("hide");
     }
   });
