@@ -107,7 +107,6 @@ export default class Game {
           },
         });
       }
-      console.log(this.garbageItems + " garbage items generated");
     } else if (this.gameMode === "hard") {
       this.startTimer();
       let numberOfGarbageItems = 15;
@@ -311,7 +310,6 @@ $.ajax({
     gameJson = data;
   }
 });
-console.log(gameJson);
 
 const checkAnswer = (event, ui, bin) => {
   let itemCategory = ui.draggable.attr("data-category");
@@ -334,10 +332,6 @@ const checkAnswer = (event, ui, bin) => {
     game.increaseCombo();
     game.updateScore();
     checkGameOver();
-    console.log("right");
-    console.log("score: " + game.score);
-    console.log("combo: " + game.combo);
-    console.log("items: " + game.garbageItems);
   } else {
     if (game.checkSound()) {
       fartSound.play();
@@ -350,26 +344,19 @@ const checkAnswer = (event, ui, bin) => {
       500
     );
     $(bin).effect("shake", { times: 2 }, 500);
-    console.log("wrong");
     game.takeLife();
     game.resetCombo();
     checkGameOver();
-    console.log("lives: " + game.lives);
   }
 };
 
 const checkGameOver = () => {
   if (game.lives === 0) {
     game.gameOverTrigger();
-    console.log("game over");
   } else if (game.garbageItems === 0) {
     game.gameOverTrigger();
-    console.log("game over");
   } else if (game.timeLeft === 0) {
     game.gameOverTrigger();
-    console.log("game over");
-  } else {
-    console.log("game not over");
   }
 };
 
