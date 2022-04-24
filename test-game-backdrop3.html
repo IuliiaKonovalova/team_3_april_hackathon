@@ -43,11 +43,6 @@
       --clr-tertiary--river: #90e0ef;
     }
 
-    *,
-    *:before,
-    *:after {
-      //animation:none!important;
-    }
 
     .river__game--section:after,
     .river__game--section:before,
@@ -81,18 +76,6 @@
       background: var(--clr-fourthly--grass);
       background-image: linear-gradient(var(--clr-primary--grass), var(--clr-secondary--grass) 30%, var(--clr-neutral--800));
       box-shadow: inset -10px 0 10px -10px var(--clr-neutral--800);
-
-      &:before {
-        content: "";
-        bottom: 0;
-        width: inherit;
-        height: inherit;
-        background: inherit;
-        border-radius: inherit;
-        transform-origin: bottom center;
-        transform: scaleX(1) scaleY(-0.6);
-        filter: blur(3px);
-      }
     }
 
     .mountain-2 {
