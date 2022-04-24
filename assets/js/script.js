@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const leaderBoard = document.getElementById('leaders-board');
   const leaderBoardClose = document.getElementById('leader-close')
 
+
   // Set the current carousel slide
   let current = 0;
 
@@ -42,15 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleMenu);
   }
 
-  // Starts the game sequence on button clicks
-  for (let btn of playBtn) {
-    btn.addEventListener("click", () => {
-      addHideClass();
-      main.removeEventListener('click', sectionEventHandler);
-      difficultyBlock.classList.remove("hide");
-    });
-  }
-
   // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
     let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn)
@@ -61,6 +53,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchEcoFacts();
   });
+
+  // Starts the game sequence on button clicks
+  for (let btn of playBtn) {
+    btn.addEventListener("click", () => {
+      addHideClass();
+      difficultyBlock.classList.remove("hide");
+      let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
+      main.removeEventListener('click', sectionEventHandler);
+      difficultyBlock.classList.remove("hide");
+    });
+  }
 
   // Displays Leaders Board on user's click
   leaderBoardLink.addEventListener("click", () => {
@@ -104,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Adds hide elements to main parts of UI
   function addHideClass() {
-
+    document.getElementById("earth-image").classList.add("hide");
     document.getElementById("beach-game").classList.add("hide");
     document.getElementById("river-game").classList.add("hide");
     document.getElementById("garbage-bins").classList.add("hide");
@@ -123,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!section.classList.contains("hide")) {
         if (!section.contains(e.target) || closeBtn.contains(e.target)) {
           addHideClass();
+          let sectionEventHandler;
           document.getElementById("earth-image").classList.remove("hide");
           mainBlock.classList.remove('hide');
           main.removeEventListener('click', sectionEventHandler);
