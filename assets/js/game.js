@@ -1,5 +1,37 @@
-/* jshint esversion: 8, jquery: true */
+/* jshint esversion: 6 */
 import GarbageItem from "./GarbageItem.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBeXh7AxiEzrwJ6l76e4za337uEFlUr9ZM",
+  authDomain: "april-ci-hackathon-team3.firebaseapp.com",
+  databaseURL: "https://april-ci-hackathon-team3-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "april-ci-hackathon-team3",
+  storageBucket: "april-ci-hackathon-team3.appspot.com",
+  messagingSenderId: "383315248126",
+  appId: "1:383315248126:web:b7e6094ffdd4ced9fdf6af",
+  measurementId: "G-KPE5CFX4GW"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+        
+const database = firebase.database();
+
+
+const saveScoreToDb = (name, score) => {
+  database.ref("scores").push({
+    name: name,
+    score: score,
+  }, (error) => {
+    if (error) {
+      console.log(error);
+      return false;
+    } else {
+      console.log("score saved");
+      return true;
+    }
+  });
+};
 
 // Game rules:
 // There will be two game modes: "easy" and "hard".
@@ -29,15 +61,25 @@ export default class Game {
     this.timerInterval = null;
     this.timeLeft = 60;
     this.sound = true;
+    this.leaders = [];
     this.timerElement = document.getElementById("timer");
     this.livesElement = document.getElementById("lives");
     this.scoreElement = document.getElementById("score");
     this.comboElement = document.getElementById("combo");
     this.soundControl = document.getElementsByClassName("sound__control")[0];
+    this.endGameElement = document.getElementById("end-game");
+    this.garbageBinsElement = document.getElementById("garbage-bins");
+    this.playButton = document.getElementsByClassName("fa-play")[0];
+    this.stopButton = document.getElementsByClassName("fa-stop")[0];
+    this.pauseButton = document.getElementsByClassName("fa-pause")[0];
+    this.leaderBoardElement = document.getElementsByClassName("leaders__board")[0];
   }
   start(mode) {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
+    this.removeAllGarbage();
+    document.getElementById("menu-bar").style.visibility = "hidden";
+    document.getElementById("hamburger").classList.add("hide");
     this.timeLeft = 60;
     this.timerElement.innerHTML = '01:00';
     this.gameMode = mode;
@@ -65,7 +107,6 @@ export default class Game {
           },
         });
       }
-      console.log(this.garbageItems + " garbage items generated");
     } else if (this.gameMode === "hard") {
       this.startTimer();
       let numberOfGarbageItems = 15;
@@ -129,19 +170,67 @@ export default class Game {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.gameOver = true;
+    this.endGameElement.classList.remove("hide");
+    this.endGameElement.style.zIndex = "999999999999999999999";
+    document.getElementById("player-score").value = this.score;
+    this.garbageBinsElement.classList.add("hide");
+    this.removeAllGarbage();
+    document.getElementById("menu-bar").style.visibility = "visible";
+    document.getElementById("hamburger").classList.remove("hide");
+    let gameItems = document.getElementsByClassName("play__item");
+    for(let item of gameItems) {
+      item.classList.add("hide");
+    }
+    $("#score-submit").click((e) => {
+      e.preventDefault();
+      let name = document.getElementById("player-name").value;
+      if (name.length > 0) {
+        saveScoreToDb(name, this.score);
+      } else {
+        saveScoreToDb("Anonymous", this.score);
+      }
+      $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
+      
+      database.ref("scores").on("value", (snapshot) => {
+        for(let key in snapshot.val()) {
+          this.leaders.push(snapshot.val()[key]);
+        }
+        this.leaders.sort((a, b) => {
+          return b.score - a.score;
+        });
+        this.leaders.splice(10, this.leaders.length - 10);
+        for (let leader of this.leaders) {
+          let leaderData = document.createElement("div");
+          leaderData.classList.add("leader__data");
+          leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+          <div class="leader__data--score">${leader.score}</div>`;
+          $(".leaders__board--content").append(leaderData);
+        }
+        this.leaderBoardElement.classList.remove("hide");
+        this.leaderBoardElement.style.zIndex = "999999999999999999999";
+        this.endGameElement.classList.add("hide");
+      });
+    });
+  }
+  removeAllGarbage() {
+    let garbageItems = this.gameScreen.getElementsByClassName("garbage-item");
+    while (garbageItems.length > 0) {
+      garbageItems[0].remove();
+      this.garbageItems -= 1;
+    }
   }
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft -= 1;
-      if (this.timeLeft > 59) {
+      if(this.timeLeft > 59){
         this.timerElement.innerHTML = `${Math.floor(this.timeLeft / 60)}:${this.timeLeft % 60}`;
 
-      } else if (this.timeLeft < 60 && this.timeLeft > 9) {
+      } else if(this.timeLeft < 60 && this.timeLeft > 9){
         this.timerElement.innerHTML = `0:${this.timeLeft}`;
 
-      } else if (this.timeLeft < 10 && this.timeLeft > 0) {
+      } else if(this.timeLeft < 10 && this.timeLeft > 0){
         this.timerElement.innerHTML = `0:0${this.timeLeft}`;
-      }
+      } 
       if (this.timeLeft === 0) {
         this.timerElement.innerHTML = "00:00";
         this.gameOverTrigger();
@@ -166,8 +255,28 @@ export default class Game {
   pause() {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
+    let pauseScreen = document.createElement("div");
+    pauseScreen.classList.add("pause-screen");
+    pauseScreen.style.position = "absolute";
+    pauseScreen.style.top = "0";
+    pauseScreen.style.left = "0";
+    pauseScreen.style.width = "100%";
+    pauseScreen.style.height = "100%";
+    pauseScreen.style.backgroundColor = "rgba(0,0,0,0.8)";
+    pauseScreen.style.zIndex = "99999999999999999999";
+    pauseScreen.style.display = "flex";
+    pauseScreen.style.justifyContent = "center";
+    pauseScreen.style.alignItems = "center";
+    pauseScreen.style.flexDirection = "column";
+    pauseScreen.style.fontSize = "5rem";
+    pauseScreen.style.color = "#fff";
+    pauseScreen.style.textAlign = "center";
+    pauseScreen.innerHTML = '<p>Game Paused</p>';
+    this.gameScreen.appendChild(pauseScreen);
   }
   resume() {
+    let pauseScreen = document.getElementsByClassName("pause-screen")[0];
+    pauseScreen.remove();
     this.startTimer();
     this.garbageInterval = setInterval(() => {
       let garbageItem = new GarbageItem(this.garbageJson);
@@ -182,7 +291,9 @@ export default class Game {
       });
     }, 2000);
   }
-
+  stop() {
+    this.gameOverTrigger();
+  }  
 }
 
 // audio
@@ -199,7 +310,6 @@ $.ajax({
     gameJson = data;
   }
 });
-console.log(gameJson);
 
 const checkAnswer = (event, ui, bin) => {
   let itemCategory = ui.draggable.attr("data-category");
@@ -222,43 +332,31 @@ const checkAnswer = (event, ui, bin) => {
     game.increaseCombo();
     game.updateScore();
     checkGameOver();
-    console.log("right");
-    console.log("score: " + game.score);
-    console.log("combo: " + game.combo);
-    console.log("items: " + game.garbageItems);
   } else {
     if (game.checkSound()) {
       fartSound.play();
     }
-    $(ui.draggable).animate({
+    $(ui.draggable).animate(
+      {
         left: Math.floor(Math.random() * 90) + "%",
         top: Math.floor(Math.random() * 90) + "%",
       },
       500
     );
-    $(bin).effect("shake", {
-      times: 2
-    }, 500);
-    console.log("wrong");
+    $(bin).effect("shake", { times: 2 }, 500);
     game.takeLife();
     game.resetCombo();
     checkGameOver();
-    console.log("lives: " + game.lives);
   }
 };
 
 const checkGameOver = () => {
   if (game.lives === 0) {
     game.gameOverTrigger();
-    console.log("game over");
   } else if (game.garbageItems === 0) {
     game.gameOverTrigger();
-    console.log("game over");
   } else if (game.timeLeft === 0) {
     game.gameOverTrigger();
-    console.log("game over");
-  } else {
-    console.log("game not over");
   }
 };
 
@@ -269,20 +367,25 @@ $(".game__bin").droppable({
 });
 
 const game = new Game(gameJson);
-// game.start("hard");
-// console.log(gameDifficulty);
+
 
 $(".btn__play--theme").click(() => {
   let difficulty = $("#garbage-bins").attr("data-mode");
   game.start(difficulty);
 });
 
-const gameScreen = document.getElementById("game-screen");
-const easyGameButton = document.getElementById("easy-game-button");
-const hardGameButton = document.getElementById("hard-game-button");
-const scoreDisplay = document.getElementById("score-display");
-const livesDisplay = document.getElementById("lives-display");
-const comboDisplay = document.getElementById("combo-display");
-const gameOverDisplay = document.getElementById("game-over-display");
-const stopGameButton = document.getElementById("stop-game-button");
-const restartGameButton = document.getElementById("restart-game-button");
+$(game.pauseButton).click(() => {
+  game.pause();
+  $(game.pauseButton).addClass("hide");
+  $(game.playButton).removeClass("hide");
+});
+
+$(game.playButton).click(() => {
+  game.resume();
+  $(game.playButton).addClass("hide");
+  $(game.pauseButton).removeClass("hide");
+});
+
+$(game.stopButton).click(() => {
+  game.stop();
+});
