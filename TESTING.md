@@ -1,3 +1,18 @@
+# Testing
+## **Contents**
+* [Manual Testing](#manual-testing)
+* [Testing User Story](#testing-user-story)
+* [Bugs](#bugs)
+  * [Known bugs](#known-bugs)
+  * [Solved bugs](#solved-bugs)
+* [Validation](#validation)
+  * [HTML validation](#html-validation)
+  * [CSS validation](#css-validation)
+  * [JS validation](#js-validation)
+* [Lighthouse Report](#lighthouse-report)
+* [Compatibility](#compatibility)
+* [Responsiveness](#responsiveness)
+
 |     | User Actions           | Expected Results | Y/N | Comments    |
 |-------------|------------------------|------------------|------|-------------|
 | **Navigation** | | |
