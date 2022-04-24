@@ -16,7 +16,6 @@
   --ff-primary: "Lato", sans-serif;
   --ff-secondary: "Rubik Moonrocks", cursive;
   --br: 0.1em;
-
   /* Animation classes */
   --clr-primary--sky: #2dc7ff;
   --clr-primary--beach: #ff9f1c;
@@ -105,9 +104,9 @@ body {
 /* Style the hamburger menu */
 #hamburger {
   display: none;
-
 }
 
+/* Navbar items */
 .navbar__items {
   width: 100%;
   padding: 1em;
@@ -126,7 +125,6 @@ body {
 
 .navbar__items li {
   display: inline-block;
-  padding: 1vh 2vw;
   border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
@@ -148,9 +146,10 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2vh;
+  padding: 1vh 2vw;
 }
 
-/* Game mode */
+/* Game mode Bar */
 .game__bar {
   display: flex;
   align-items: center;
@@ -167,6 +166,12 @@ body {
 
 .game__bar div:not(:last-child) {
   margin-right: 3vw;
+}
+
+.timer__control span {
+  width: 9rem;
+  display: flex;
+  justify-content: start;
 }
 
 .lives__control span {
@@ -187,6 +192,20 @@ body {
   color: var(--clr-accent--100);
 }
 
+.game__bar .pause-stop__control {
+  color: var(--clr-accent--900);
+  font-size: 3vh;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.game__bar .pause-stop__control i:not(:last-child) {
+  margin-right: 1vw;
+}
+
 /* ----- Main ----- */
 .main {
   display: flex;
@@ -196,15 +215,14 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 2vh 5vw;
-  background-image: url(/assets/images/cloud_background.jpg);
+  background-image: url('../images/cloud_background.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   margin: 0 auto;
   position: relative;
   height: 80vh;
-  /* NB: overflow hidden to keep animations from creating overscroll */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .main__block {
@@ -276,12 +294,13 @@ body {
 }
 
 /* ----- Difficulty ----- */
-.difficulty {
+.difficulty,
+.leaders__board {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 90%;
   max-width: 50rem;
   margin: 0 auto;
   background-color: var(--clr-neutral--800);
@@ -425,38 +444,15 @@ body {
   right: 5%;
 }
 
-/* ----- Carousel slide animation ----- */
-.fade {
-  -webkit-animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -ms-animation: fadein 2s;
-  -o-animation: fadein 2s;
-  animation: fadein 2s;
-}
-
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 /* ----- Modal Pop-Up Window - Game Rules ----- */
-
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-
   /* scale(0) sets modal to invisible */
   transform: translate(-50%, -50%) scale(0);
-
   /* Gradually apears/disapears over set time frame */
   transition: 200ms ease-in-out;
-
   border-radius: 10px;
   z-index: 15;
   width: 500px;
@@ -489,14 +485,20 @@ body {
 }
 
 .modal-header .close-button,
-#rules__close {
+.rules__close {
   cursor: pointer;
   border: none;
-  outline: none;
   background: none;
-  font-size: 1.25rem;
+  font-size: 3vh;
   font-weight: bold;
   color: var(--clr-neutral--100);
+}
+
+.game__rules--close {
+  position: absolute;
+  top: -4vh;
+  right: 1rem;
+  font-size: 6vh !important;
 }
 
 .modal-body {
@@ -514,7 +516,6 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-
   /* If overlay is invisible, it will remove the option to capture any click events */
   pointer-events: none;
 }
@@ -531,31 +532,37 @@ body {
   position: absolute;
   top: 50%;
   max-width: 100rem;
-  max-height: 75vh;
+  min-height: 60vh;
   background-color: var(--clr-neutral--800);
   color: var(--clr-neutral--100);
   border-radius: 20px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  /* outline: 4px solid blue; */
   padding: 1vh;
 }
 
-.rules__section h1 {
+
+.rules__section--data {
+  position: relative;
+  padding: 0 3vw 10vh 3vw;
+}
+
+.rules__section h1,
+#end-game h2 {
   font-family: var(--ff-secondary);
   font-size: 6vh;
   display: inline-block;
 }
 
-#rules__close {
+.rules__close {
   position: absolute;
   top: 2%;
   right: 2%;
   font-size: 4vh;
 }
 
-#rules__close:hover {
+.rules__close:hover {
   color: var(--clr-accent--100);
 }
 
@@ -563,7 +570,16 @@ body {
 .game__rules {
   margin: 0 auto;
   text-align: center;
-  /* outline: 4px solid violet; */
+}
+
+.eco__facts {
+  max-width: 90%;
+}
+
+.eco__facts--title,
+.game__rules--title {
+  font-size: 4vh;
+  font-family: var(--ff-secondary);
 }
 
 .game__rules {
@@ -574,11 +590,10 @@ body {
 .eco__facts p,
 .game__rules p {
   padding: 10px;
-  font-size: 3.5vh;
+  font-size: 2.5vh;
 }
 
 .rules__bins {
-  /* outline: 4px solid brown; */
   margin: 2vh 0;
   display: flex;
   flex-wrap: wrap;
@@ -588,7 +603,6 @@ body {
 
 .rules__bin {
   margin: 0 auto;
-  /* outline: 4px solid green; */
 }
 
 .rules__bin h3 {
@@ -606,8 +620,9 @@ body {
 }
 
 #rules__play {
-  margin-top: 1vh;
-  float: right;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
 }
 
 .eco__facts {
@@ -708,7 +723,6 @@ body {
 }
 
 .ocean__background {
-  /* background-image: linear-gradient(#98d4f3, #07496b); */
   background-image: linear-gradient(#48cae4, #023e8a);
   height: 60vh;
   overflow: hidden;
@@ -839,14 +853,13 @@ body {
 
 .beach__scene {
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 2fr 3fr;
   width: 100vw;
   height: 80vh;
   z-index: 999;
 }
 
 .sky {
-  /* background: var(--clr-primary--sky); */
   z-index: -1;
   z-index: 999;
 }
@@ -855,7 +868,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   z-index: 999;
-  /* width: 50vw; */
 }
 
 .beach {
@@ -967,8 +979,6 @@ body {
 .riverbank__front {
   z-index: 1;
   bottom: 0;
-  /* left: 0; */
-  /* right: 0; */
 }
 
 .riverbank {
@@ -1006,12 +1016,9 @@ body {
 
 .mountain-3 {
   border-radius: 80% 0% 0 0/100% 100% 0 0;
-  /* right: -85vmin; */
   right: -30vw;
-  /* width: 20vmin; */
   width: 10vw;
   left: 90%;
-  /* height: 12vmin; */
   color: var(--clr-fourthly--grass);
   background-image: linear-gradient(var(--clr-primary--grass), var(--clr-fourthly--grass));
   box-shadow: inset 15px 0 10px -10px var(--clr-neutral--800);
@@ -1091,7 +1098,7 @@ body {
   top: 15vmin;
   opacity: 0.2;
   filter: blur(1px);
-  animation-delay: 0;
+  animation-delay: 0s;
   animation-duration: 100s;
 }
 
@@ -1102,7 +1109,6 @@ body {
   right: 0;
   width: 100vw;
   background: linear-gradient(var(--clr-primary--river), var(--clr-neutral--800));
-  /* overflow: hidden; */
   box-shadow: inset 0 1px 4px -3px var(--clr-neutral--900);
 }
 
@@ -1184,7 +1190,6 @@ body {
   70% {
     transform: rotate(0);
   }
-
 }
 
 @keyframes verticalise-1 {
@@ -1249,7 +1254,6 @@ body {
 }
 
 .splash-4 {
-  /* bottom: 5vmin; */
   left: auto;
   bottom: 25vmin;
   right: 20vmin;
@@ -1288,8 +1292,71 @@ body {
   animation-delay: 6s;
 }
 
-/* ----- Footer ----- */
+/* ----- End Game Window ----- */
 
+#end-game * {
+  margin: 1vh 0;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#end-game {
+  height: auto;
+  max-width: 40rem;
+}
+
+#end-game ul li,
+#end-game h2 {
+  cursor: default;
+}
+
+#end-game input {
+  padding: 1vh 2vw;
+  /* border-radius: var(--br); */
+  color: var(--clr-neutral--800);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2vh;
+  font-family: var(--ff-primary);
+}
+
+#end-game input,
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#end-game label {
+  font-size: 3vh;
+}
+
+#player-score {
+  height: 6vh;
+  margin: auto;
+  background: none;
+  /* border: 1px solid white; */
+  border-radius: 50%;
+  max-width: 10rem;
+  color: var(--clr-accent--100);
+  background-color: var(--clr-accent--900);
+  cursor: default;
+}
+
+#player-score::placeholder {
+  color: var(--clr-neutral--800);
+  font-weight: bold;
+  font-size: 2vh;
+  font-family: var(--ff-secondary);
+}
+
+#score-submit {
+  cursor: pointer;
+}
+
+/* ----- Footer ----- */
 .footer {
   background-color: var(--clr-neutral--800);
   display: flex;
@@ -1415,10 +1482,48 @@ body {
   z-index: 999999999;
 }
 
-.hide {
-  display: none;
+
+
+/* ----- leaders__board ----- */
+.leaders__board {
+  min-height: 30vh;
+  height: unset;
+  justify-content: start;
+  padding: 1em 2em 1.5em 2em;
+
 }
 
+.leaders__board--title {
+  font-family: var(--ff-secondary);
+  font-size: 3vh;
+  text-transform: uppercase;
+  padding-bottom: 3vh;
+}
+
+.leaders__board--content {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-auto-flow: dense;
+  gap: 2rem;
+}
+
+.leader__data {
+  justify-self: stretch;
+  align-items: center;
+  font-size: 2vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* --- Hide Class --- */
+.hide {
+  display: none !important;
+}
+
+/* ----- Media Query ----- */
 @media all and (max-width: 80rem) {
 
   .navbar {
@@ -1493,8 +1598,99 @@ body {
   .menu-items>li a {
     font-size: 2em;
   }
+}
 
+@media all and (max-width: 784px) {
+  .main__title {
+    font-size: 2rem;
+  }
 
+  .eco__facts p,
+  .game__rules p {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  .eco__facts p {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #rules__play {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+  }
+
+  .carousel__images--visible {
+    padding: 2em;
+    position: relative;
+    height: 50vh;
+    margin: 0 auto;
+  }
+
+  .carousel__slide {
+    border-radius: 1rem;
+    grid-template-rows: 0.1fr 0.4fr;
+    gap: 1rem;
+    background-color: var(--clr-neutral--800);
+    padding: 2em 0.5em;
+  }
+
+  .carousel__images {
+    height: 30vh;
+  }
+
+  .carousel__slide a {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media all and (max-width: 600px) and (min-height: 900px) {
+  .rules__bin img {
+    height: 7rem;
+    transition: transform 0.7s ease-in-out;
+  }
+
+  #rules__play {
+    position: absolute;
+    bottom: -0.5em;
+    right: -0.5em;
+  }
+
+}
+
+@media all and (max-width: 500px) {
+  .rules__section {
+    min-height: 60vh;
+  }
+
+  .main__title {
+    font-size: 1.5rem;
+  }
+
+  .rules__section--data {
+    position: relative;
+    padding: 0 3vw 12vh 3vw;
+  }
+
+  .eco__facts p,
+  .game__rules p {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .rules__bin img {
+    height: 4rem;
+    transition: transform 0.7s ease-in-out;
+  }
+
+  #rules__play {
+    position: absolute;
+    bottom: -0.5em;
+    right: -0.5em;
+  }
 }
 
 @media all and (max-height: 722px) {

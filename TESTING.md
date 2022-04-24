@@ -54,6 +54,7 @@
 | Leader board | | |N/A | In progress
 
 
+
 ## Testing user stories
 
 ### First Time Visitor Goals:
@@ -126,6 +127,7 @@ A future feature intended to be implemented within the game is the formation of 
 preserving our environment.
 
 The game aims to promote a more heightened awareness of environmental cleanliness by means of having fun and competing with others. In this fashion, children can become more motivated to increase their awareness and effort in acquiring a newfound knowledge base when it comes to cleaning up rubbish whilst out in the world.
+
 
 
 ## Validation:
