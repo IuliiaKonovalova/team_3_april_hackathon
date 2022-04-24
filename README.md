@@ -7,10 +7,12 @@
 In line with this edition of the Hackathon, we have decided to develop an interactive game based on the importance of environmental cleanliness. To achieve this, we have developed a game whereby players must sort through various randomly generated items of rubbish that which they can then deem recyclable or not. In tandem with this, players will be up against a time parameter with players that finish the game in a shorter period achieving a higher position on the overall leader board. 
 The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
 
+
+
+
 # User Experience Design
 
 ## Strategy
-
 
 ### Target Audience
 
@@ -52,6 +54,20 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ### Color Scheme
 
+A variety of colours were tested before settling on a combination that incorporated complementary colours that were bold, modern and most importantly fun, since the target audience is young children. 
+
+The background colour for the navigation and footer was chosen for contrast - against the navigation content as well as the screen content, since the nav and footer are always fixed. 
+
+- Colour Scheme 1
+<img src="/DOCUMENTATION/Design/colour_scheme.png" width="400">
+
+- Colour Scheme 2
+<img src="/DOCUMENTATION/Design/colour_scheme1.png" width="400">
+
+- Nav & Footer 
+<img src="/DOCUMENTATION/Design/nav_colour.png" width="400">
+
+
 ### Typography
 
 ### Imagery
@@ -71,7 +87,8 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 [Click Here](TESTING.md) to view the full testing steps that were completed on every device and browser.
 
 ## Deployment
-Github
+
+### Github
 The repository was first created by logging into a GitHub account:
 
 Clicking the 'new' green button.
@@ -96,6 +113,10 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 ## Credits
 - Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
 
+
 ## Acknowledgements
 
 ## Collaborators
+
+
+
