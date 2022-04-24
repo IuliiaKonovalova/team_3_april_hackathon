@@ -1,7 +1,8 @@
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
 document.addEventListener("DOMContentLoaded", () => {
   // variables
-
+  const navBar = document.querySelector("#menu-bar");
+  const hamburger = document.querySelector("#hamburger");
   const playBtn = document.getElementsByClassName('play-btn');
   const mainBlock = document.getElementById('main-block');
   const main = document.getElementById('main');
@@ -25,6 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const ecoFactsJson = "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json";
   // Set the current carousel slide
   let current = 0;
+
+
+
+  const toggleMenu = () => {
+    navBar.classList.toggle("open");
+    hamburger.classList.toggle("is-active");
+    // disable page scrolling
+    document.body.style.overflow = navBar.classList.contains("open") ? "hidden" : "auto";
+  };
+  if (hamburger) {
+    hamburger.addEventListener("click", toggleMenu);
+  }
 
   for (let btn of playBtn) {
     btn.addEventListener("click", () => {
@@ -227,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Go to ocean mode
-    oceanTheme.addEventListener("click", () => {
+  oceanTheme.addEventListener("click", () => {
     carousel.classList.add("hide");
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("ocean-game").classList.remove("hide");
@@ -245,21 +258,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
   });
 
-
-  // Hamburger menu
-  const x = document.querySelector('.icon');
-  // const navMenu = document.getElementById('toggleMenu');
-  const navMenu = document.querySelector('.navbar__items');
-  x.addEventListener('click', () => {
-    console.log(navMenu);
-    console.log(navMenu.style.display);
-    if (navMenu.style.display == "flex") {
-      console.log("flex")
-      navMenu.setAttribute("style", "display: none");
-    } else {
-      console.log("none")
-      navMenu.setAttribute("style", "display: flex");
-
-    }
-  });
 });

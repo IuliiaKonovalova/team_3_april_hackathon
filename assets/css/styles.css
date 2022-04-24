@@ -96,49 +96,31 @@ body {
 }
 
 /* Style the hamburger menu */
-.topbar a {
-  color: white;
-  padding: 0 1%;
+#hamburger {
+  display: none;
 
-  /* margin-left: 1%; */
-  text-decoration: none;
-  font-size: 300%;
-  display: block;
-}
-
-/* Style the hamburger menu */
-.icon {
-  background: black;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .navbar__items {
-  /* width: 100%; */
-  /* max-width: 100rem; */
-  width: 25%;
-
-  padding: 3.5em 40em 3.5em 3em;
-  /* display: block; */
-  /* flex-direction: column; */
-  /* justify-content: left; */
-  display: none;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
   flex-direction: row;
-  /* justify-content: start; */
+  justify-content: start;
   align-items: center;
 
 }
 
-/* .navbar__items li:not(:first-child) {
+.navbar__items li:not(:first-child) {
   margin-left: 2em;
-} */
+}
 
 .navbar__items li {
-  /* display: inline-block;
+  display: inline-block;
   padding: 1vh 2vw;
-  border-radius: var(--br); */
+  border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
   font-weight: 900;
@@ -211,7 +193,7 @@ body {
   position: relative;
   height: 80vh;
   /* NB: overflow hidden to keep animations from creating overscroll */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .main__block {
@@ -859,7 +841,7 @@ body {
   display: grid;
   grid-template-rows: 2fr 3fr;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   z-index: 999;
 }
 
@@ -1089,4 +1071,82 @@ body {
 
 .hide {
   display: none;
+}
+
+@media all and (max-width: 80rem) {
+
+  .navbar {
+    position: relative;
+    justify-content: end;
+  }
+
+  #menu-bar {
+    background-color: var(--clr-neutral--800) !important;
+  }
+
+  .navbar__items {
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar__items li:not(:first-child) {
+    margin: 0;
+    margin-top: 5vh;
+  }
+
+
+  .hamburger .hamburger-inner,
+  .hamburger .hamburger-inner:after,
+  .hamburger .hamburger-inner:before,
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner:after,
+  .hamburger.is-active .hamburger-inner:before {
+    background-color: var(--clr-accent--900) !important;
+  }
+
+  #hamburger {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 5em;
+    height: 5em;
+    outline: none;
+    z-index: 999;
+    color: #53d23c;
+  }
+
+  #menu-bar {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #menu-bar.open {
+    left: 0;
+  }
+
+  .menu-items {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-items>li a {
+    font-size: 2em;
+  }
+
+
 }
