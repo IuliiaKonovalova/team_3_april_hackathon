@@ -196,7 +196,7 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 2vh 5vw;
-  background-image: url(/assets/images/cloud_background.jpg);
+  background-image: url('/assets/images/cloud_background.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
