@@ -1,5 +1,6 @@
 /* jshint esversion: 6 */
 import GarbageItem from "./GarbageItem.js";
+import { myFunction } from './leaderboard-ops.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeXh7AxiEzrwJ6l76e4za337uEFlUr9ZM",
@@ -14,7 +15,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-        
+
 const database = firebase.database();
 
 
@@ -178,7 +179,7 @@ export default class Game {
     document.getElementById("menu-bar").style.visibility = "visible";
     document.getElementById("hamburger").classList.remove("hide");
     let gameItems = document.getElementsByClassName("play__item");
-    for(let item of gameItems) {
+    for (let item of gameItems) {
       item.classList.add("hide");
     }
     $("#score-submit").click((e) => {
@@ -190,9 +191,9 @@ export default class Game {
       } else {
         saveScoreToDb("Anonymous", this.score);
       }
-      
+
       database.ref("scores").on("value", (snapshot) => {
-        for(let key in snapshot.val()) {
+        for (let key in snapshot.val()) {
           this.leaders.push(snapshot.val()[key]);
         }
         this.leaders.sort((a, b) => {
@@ -209,6 +210,16 @@ export default class Game {
           $(".leaders__board--content").append(leaderData);
         }
         this.leaderBoardElement.classList.remove("hide");
+
+        // ------------------- milo add to fix leaderboard closing bug
+        const leaderBoard = document.getElementById('leaders-board');
+        const leaderBoardClose = document.getElementById('leader-close')
+
+        let sectionEventHandler = myFunction(leaderBoard, leaderBoardClose);
+        main.addEventListener('click', sectionEventHandler);
+
+        // -------------------------------------
+
         this.leaderBoardElement.style.zIndex = "999999999999999999999";
         this.endGameElement.classList.add("hide");
       });
@@ -224,15 +235,15 @@ export default class Game {
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft -= 1;
-      if(this.timeLeft > 59){
+      if (this.timeLeft > 59) {
         this.timerElement.innerHTML = `${Math.floor(this.timeLeft / 60)}:${this.timeLeft % 60}`;
 
-      } else if(this.timeLeft < 60 && this.timeLeft > 9){
+      } else if (this.timeLeft < 60 && this.timeLeft > 9) {
         this.timerElement.innerHTML = `0:${this.timeLeft}`;
 
-      } else if(this.timeLeft < 10 && this.timeLeft > 0){
+      } else if (this.timeLeft < 10 && this.timeLeft > 0) {
         this.timerElement.innerHTML = `0:0${this.timeLeft}`;
-      } 
+      }
       if (this.timeLeft === 0) {
         this.timerElement.innerHTML = "00:00";
         this.gameOverTrigger();
@@ -299,7 +310,7 @@ export default class Game {
       pauseScreen.remove();
     }
     this.gameOverTrigger();
-  }  
+  }
 }
 
 // audio
