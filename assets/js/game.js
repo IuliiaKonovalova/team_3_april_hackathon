@@ -35,13 +35,18 @@ export default class Game {
     this.comboElement = document.getElementById("combo");
     this.soundControl = document.getElementsByClassName("sound__control")[0];
     this.endGameElement = document.getElementById("end-game");
-    this.garbageBinsElement = document.getElementById("garbage-bins");    
+    this.garbageBinsElement = document.getElementById("garbage-bins");
+    this.playButton = document.getElementsByClassName("fa-play")[0];
+    this.stopButton = document.getElementsByClassName("fa-stop")[0];
+    this.pauseButton = document.getElementsByClassName("fa-pause")[0];
   }
   start(mode) {
+    // document.body.style.overflow = "hidden";
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.removeAllGarbage();
     document.getElementById("menu-bar").style.visibility = "hidden";
+    document.getElementById("hamburger").classList.add("hide");
     this.timeLeft = 60;
     this.timerElement.innerHTML = '01:00';
     this.gameMode = mode;
@@ -130,6 +135,7 @@ export default class Game {
     }, 1000);
   }
   gameOverTrigger() {
+    // document.body.style.overflow = "auto";
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.gameOver = true;
@@ -138,6 +144,11 @@ export default class Game {
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
     document.getElementById("menu-bar").style.visibility = "visible";
+    document.getElementById("hamburger").classList.remove("hide");
+    let gameItems = document.getElementsByClassName("play__item");
+    for(let item of gameItems) {
+      item.classList.add("hide");
+    }
   }
   removeAllGarbage() {
     let garbageItems = this.gameScreen.getElementsByClassName("garbage-item");
@@ -182,8 +193,28 @@ export default class Game {
   pause() {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
+    let pauseScreen = document.createElement("div");
+    pauseScreen.classList.add("pause-screen");
+    pauseScreen.style.position = "absolute";
+    pauseScreen.style.top = "0";
+    pauseScreen.style.left = "0";
+    pauseScreen.style.width = "100%";
+    pauseScreen.style.height = "100%";
+    pauseScreen.style.backgroundColor = "rgba(0,0,0,0.8)";
+    pauseScreen.style.zIndex = "99999999999999999999";
+    pauseScreen.style.display = "flex";
+    pauseScreen.style.justifyContent = "center";
+    pauseScreen.style.alignItems = "center";
+    pauseScreen.style.flexDirection = "column";
+    pauseScreen.style.fontSize = "5rem";
+    pauseScreen.style.color = "#fff";
+    pauseScreen.style.textAlign = "center";
+    pauseScreen.innerHTML = '<p>Game Paused</p>';
+    this.gameScreen.appendChild(pauseScreen);
   }
   resume() {
+    let pauseScreen = document.getElementsByClassName("pause-screen")[0];
+    pauseScreen.remove();
     this.startTimer();
     this.garbageInterval = setInterval(() => {
       let garbageItem = new GarbageItem(this.garbageJson);
@@ -197,6 +228,9 @@ export default class Game {
         }
       });
     }, 2000);
+  }
+  stop() {
+    this.gameOverTrigger();
   }
   
 }
@@ -290,6 +324,22 @@ const game = new Game(gameJson);
 $(".btn__play--theme").click(() => {
   let difficulty = $("#garbage-bins").attr("data-mode");
   game.start(difficulty);
+});
+
+$(game.pauseButton).click(() => {
+  game.pause();
+  $(game.pauseButton).addClass("hide");
+  $(game.playButton).removeClass("hide");
+});
+
+$(game.playButton).click(() => {
+  game.resume();
+  $(game.playButton).addClass("hide");
+  $(game.pauseButton).removeClass("hide");
+});
+
+$(game.stopButton).click(() => {
+  game.stop();
 });
 
 const gameScreen = document.getElementById("game-screen");
