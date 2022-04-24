@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Go to ocean mode
-    oceanTheme.addEventListener("click", () => {
+  oceanTheme.addEventListener("click", () => {
     carousel.classList.add("hide");
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("ocean-game").classList.remove("hide");
@@ -253,12 +253,12 @@ document.addEventListener("DOMContentLoaded", () => {
   x.addEventListener('click', () => {
     console.log(navMenu);
     console.log(navMenu.style.display);
-    if (navMenu.style.display == "block") {
-      console.log("flexbox")
+    if (navMenu.style.display == "flex") {
+      console.log("flex")
       navMenu.setAttribute("style", "display: none");
     } else {
       console.log("none")
-      navMenu.setAttribute("style", "display: block");
+      navMenu.setAttribute("style", "display: flex");
     }
   });
 });

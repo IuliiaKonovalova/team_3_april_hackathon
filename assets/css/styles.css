@@ -86,7 +86,7 @@ body {
 .topbar a {
   color: white;
   padding: 0 1%;
-  margin-left: 1%;
+  /* margin-left: 1%; */
   text-decoration: none;
   font-size: 300%;
   display: block;
@@ -105,24 +105,24 @@ body {
   /* width: 100%; */
   /* max-width: 100rem; */
   width: 25%;
-  padding: 3.5em 2em 0em 0.75em;
-  display: block;
-  flex-direction: column;
-  justify-content: left;
-  /* display: flex; */
-  /* flex-direction: row; */
+  padding: 3.5em 40em 3.5em 3em;
+  /* display: block; */
+  /* flex-direction: column; */
+  /* justify-content: left; */
+  display: none;
+  flex-direction: row;
   /* justify-content: start; */
-  /* align-items: center; */
+  align-items: center;
 }
 
-/* .navbar__items li:not(:first-child) {
+.navbar__items li:not(:first-child) {
   margin-left: 2em;
-} */
+}
 
 .navbar__items li {
-  /* display: inline-block; */
-  /* padding: 1vh 2vw; */
-  /* border-radius: var(--br); */
+  display: inline-block;
+  padding: 1vh 2vw;
+  border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
   font-weight: 900;
