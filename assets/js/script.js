@@ -231,6 +231,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("beach-game").classList.remove("hide");
     document.getElementById("ocean-game").classList.add("hide");
+    for(let item of playItems){
+      item.classList.remove("hide");
+    }
   });
 
   // Go to river mode
@@ -238,6 +241,10 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.classList.add("hide");
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("river-game").classList.remove("hide");
+    document.getElementById("beach-game").classList.add("hide");
+    for(let item of playItems){
+      item.classList.remove("hide");
+    }
   });
 
   // Go to ocean mode
@@ -246,7 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("ocean-game").classList.remove("hide");
     document.getElementById("beach-game").classList.add("hide");
-    document.getElementById("garbage-bins").classList.remove("hide");
+    for(let item of playItems){
+      item.classList.remove("hide");
+    }
   });
 
   // Display creators GitHub links
