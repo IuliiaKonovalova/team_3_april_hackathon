@@ -58,8 +58,6 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 ### Wireframes
 
-[Wireframes]()
-
 
 - [Wireframes](documentation/wireframes/WIREFRAMES_EARTH_DAY_HKTHN.pdf)
 
