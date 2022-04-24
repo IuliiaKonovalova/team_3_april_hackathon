@@ -59,13 +59,15 @@ A variety of colours were tested before settling on a combination that incorpora
 The background colour for the navigation and footer was chosen for contrast - against the navigation content as well as the screen content, since the nav and footer are always fixed. 
 
 - Colour Scheme 1
-<img src="/DOCUMENTATION/Design/colour_scheme.png" width="400">
+
+![Colour Scheme 1](documentation/design/colour_scheme.png)
 
 - Colour Scheme 2
-<img src="/DOCUMENTATION/Design/colour_scheme1.png" width="400">
+
+![Colour Scheme 2](documentation/design/colour_scheme.png)
 
 - Nav & Footer 
-<img src="/DOCUMENTATION/Design/nav_colour.png" width="400">
+![Colour Scheme 1](documentation/design/nav_colour.png)
 
 
 ### Typography
@@ -74,10 +76,8 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 ### Wireframes
 
-[Wireframes]()
 
-
-
+- [Wireframes](documentation/wireframes/WIREFRAMES_EARTH_DAY_HKTHN.pdf)
 
 ## Technologies Used
 
