@@ -122,6 +122,26 @@ export default class Game {
   soundOff() {
     this.sound = false;
   }
+  pause() {
+    clearInterval(this.garbageInterval);
+    clearInterval(this.timerInterval);
+  }
+  resume() {
+    this.startTimer();
+    this.garbageInterval = setInterval(() => {
+      let garbageItem = new GarbageItem(this.garbageJson);
+      this.garbageItems += 1;
+      garbageItem.draw(this.gameScreen);
+      $(`img[data-id="${garbageItem.id}"]`).draggable({
+        cursor: "move",
+        containment: "window",
+        start: (event, ui) => {
+          ui.helper.css("z-index", "999999999999");
+        }
+      });
+    }
+  }
+  
 }
 
 // audio
