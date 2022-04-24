@@ -141,6 +141,7 @@ export default class Game {
     this.gameOver = true;
     this.endGameElement.classList.remove("hide");
     this.endGameElement.style.zIndex = "999999999999999999999";
+    document.getElementById("player-score").value = this.score;
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
     document.getElementById("menu-bar").style.visibility = "visible";
