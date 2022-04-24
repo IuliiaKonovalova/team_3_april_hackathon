@@ -9,9 +9,10 @@
   <meta name="robots" content="index, follow" />
   <meta keywords="Environment, Rubbish, Game, Organic, Recyclable, Plastic, Clean, Awareness, 
                   Planet, Greenhouse Gases" />
-  <title>Garbage Run | Enviromental Awareness Game</title>
   <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/hamburgers.min.css">
+  <title>Garbage Run | Enviromental Awareness Game</title>
 </head>
 
 <body>
@@ -31,28 +32,34 @@
       </p>
     </div>
   </div>
-  <nav class="navbar">
-    <ul class="navbar__items">
+  <nav class="navbar topbar">
+    <button id="hamburger" class="hamburger hamburger--elastic-r" type="button"
+      aria-label="Click to display menu on smaller screens">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <ul class="navbar__items" id="menu-bar">
       <li><a href="index.html">Home</a></li>
       <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
     <div class="game__bar">
 
-      <div class="timer__control hide">
+      <div class="timer__control hide play__item">
         <span id="timer">05:00</span>
       </div>
-      <div class="lives__control hide">
+      <div class="lives__control hide play__item">
         <span id="lives">
           <i class="fas fa-heart"></i>
           <i class="fas fa-heart"></i>
           <i class="fas fa-heart"></i>
         </span>
       </div>
-      <div class="score__control hide">
+      <div class="score__control hide play__item">
         <span id="score">3000</span>
       </div>
-      <div class="sound__control">
+      <div class="sound__control" id="sound-control">
         <i class="fas fa-volume-up hide" id="sound-on"></i>
         <i class="fas fa-volume-mute" id="sound-off"></i>
       </div>
@@ -118,6 +125,7 @@
       <!-- data-modal-target is a selector for JS that points out to element to be open with button -->
       <div class="game__rules">
         <h1>How to Play?</h1>
+        <button id="rules__close">&times;</button>
         <p>
           Identify three different waste types and which bins they belong in...
         </p>
@@ -157,13 +165,12 @@
 
     <!-- Scene Section -->
     <!-- Ocean game -->
-    <div class="combo" id="combo-block">
-
+    <div class="combo hide play__item" id="combo-block">
+      <p>x <span id="combo">0</span></p>
+      <p class="combo__title">combo</p>
     </div>
     <div class="ocean__game--section hide" id="ocean-game">
-      <div class="ocean__game--header">
-        <h2 class="game__scene--title">Help Clean Up the Ocean!</h2>
-      </div>
+      <div class="ocean__game--header"></div>
 
       <div class="ocean__background">
         <div class="fish" id="fish"></div>
@@ -193,80 +200,143 @@
       </div>
     </div>
 
+    <!-- River game -->
+    <div class="river__game--section hide" id="river-game">
+      <div class="mountain"></div>
+      <div class="mountain mountain-2"></div>
+      <div class="mountain mountain-3"></div>
+      <div class="river-cloud"></div>
+      <div class="river-cloud cloud-1"></div>
+      <div class="river"></div>
+      <div class="splash"></div>
+      <div class="splash delay-1"></div>
+      <div class="splash delay-2"></div>
+      <div class="splash splash-4 delay-2"></div>
+      <div class="splash splash-4 delay-3"></div>
+      <div class="splash splash-4 delay-4"></div>
+      <div class="splash splash-stone delay-3"></div>
+      <div class="splash splash-stone splash-4"></div>
+      <div class="splash splash-stone splash-5"></div>
+      <div class="lotus lotus-1"></div>
+      <div class="lotus lotus-2"></div>
+      <div class="lotus lotus-3"></div>
+      <div class="splash"></div>
+      <div class="grass"></div>
+      <div class="grass grass-1"></div>
+      <div class="grass grass-2"></div>
+      <div class="reed"></div>
+      <div class="reed reed-1"></div>
+      <div class="riverbank__front">
+        <div class="riverbank"></div>
+      </div>
+    </div>
+
+
+    <!-- Garbage bins for game -->
+    <div class="game__bins--section hide play__item" id="garbage-bins">
+      <div class="game__bin" data-category="organic">
+        <img src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste" />
+      </div>
+      <div class="game__bin" data-category="plastic">
+        <img src="assets/images/blue_bin_new.svg" alt="Image of a blue bin for plastic waste" />
+      </div>
+      <div class="game__bin" data-category="glass">
+        <img src="assets/images/green_bin_new.svg" alt="Image of a green bin for glass waste" />
+      </div>
+      <div class="game__bin" data-category="paper">
+        <img src="assets/images/yellow_bin_new.svg" alt="Image of a yellow bin for paper waste" />
+      </div>
+    </div>
+
   </main>
+  <!-- Overlay for Modal Operation -->
+  <div id="overlay"></div>
+  <!-- Modal Pop-up Window (Game Instructions) -->
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Instructions</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error
+        fuga
+        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
+        maiores.
+      </p>
+    </div>
+  </div>
   <footer class="footer">
-    <p>Copyright bla bla bla</p>
-    <div>
-      <h3>creators</h3>
+    <h3 class="footer__header">Copyright bla bla bla</h3>
+    <div class="footer__btn" id="footer-btn">creators</div>
+    <div class="footer__content hide" id="footer-content">
       <ul class="footer__creators">
-        <li>
-          <a href="">
+        <li class="footer__creators--item">
+          <a href="https://github.com/lexach91" target="_blank" rel="noopener"
+            aria-label="Visit Aleksei Konovalov GitHub page">
             <div class="footer__image--container">
               <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
             </div>
-            <p class="team-name">Name</p>
-            <p class="team-info">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis"
-            </p>
+            <p class="team-name">Aleksei</p>
           </a>
         </li>
-        <li>
-          <a href="">
+        <li class="footer__creators--item">
+          <a href="https://github.com/stuartj073" target="_blank" rel="noopener"
+            aria-label="Visit James Stuart GitHub page">
             <div class="footer__image--container">
               <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
             </div>
-            <p class="team-name">Name</p>
+            <p class="team-name">James</p>
           </a>
         </li>
-        <li>
-          <a href="">
+        <li class="footer__creators--item">
+          <a href="https://github.com/JPRodrigues-gh" target="_blank" rel="noopener"
+            aria-label="Visit Joao Paulo Rodrigues GitHub page">
             <div class="footer__image--container">
               <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 3">
             </div>
-            <p class="team-name">Name</p>
+            <p class="team-name">JP</p>
           </a>
         </li>
-        <li>
-          <a href="">
+        <li class="footer__creators--item">
+          <a href="https://github.com/IuliiaKonovalova" target="_blank" rel="noopener"
+            aria-label="Visit Iuliia Konovalova GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 4">
+              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 4">
             </div>
-            <p class="team-name">Name</p>
+            <p class="team-name">Iuliia</p>
           </a>
         </li>
-        <li>
-          <a href="">
+        <li class="footer__creators--item">
+          <a href="https://github.com/miloszmisiek" target="_blank" rel="noopener"
+            aria-label="Visit Milosz Misiek GitHub page">
             <div class="footer__image--container">
               <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 5">
             </div>
-            <p class="team-name">Name</p>
+            <p class="team-name">Milosz</p>
           </a>
         </li>
-        <li>
-          <a href="">
+        <li class="footer__creators--item">
+          <a href="https://github.com/Wingkelinks" target="_blank" rel="noopener"
+            aria-label="Visit Whitney Turner GitHub page">
             <div class="footer__image--container">
               <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 6">
             </div>
-            <p class="team-name">Name</p>
+            <p class="team-name">Whitney</p>
           </a>
         </li>
       </ul>
     </div>
   </footer>
   <script type="module" src="assets/js/script.js"></script>
-    <!-- jquery and jquery ui scripts -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"
-    ></script>
-    <!-- jquery ui touch punch script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script type="module" src="assets/js/game.js"></script>
+  <!-- jquery and jquery ui scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <!-- jquery ui touch punch script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script type="module" src="assets/js/game.js"></script>
 </body>
 
 </html>
