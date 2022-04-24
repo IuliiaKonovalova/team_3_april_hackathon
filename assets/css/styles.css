@@ -1093,7 +1093,7 @@ body {
   top: 15vmin;
   opacity: 0.2;
   filter: blur(1px);
-  animation-delay: 0;
+  animation-delay: 0s;
   animation-duration: 100s;
 }
 
