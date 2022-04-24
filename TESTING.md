@@ -105,6 +105,29 @@ As well the 'learning by playing' nature of the game itself, the visitor can als
 
 (Frequent 4)[assets/images/user-stories/frequent-4.png]
 
+#### Parent Goals:
+- As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game.
+
+A key part of the process of the design of the game was ensuring that it was as safe and attractable to children as possible. The live animation that accompanies each theme whitin the game works to ensure the game is as fun as it is safe for children that play it.
+
+- As a parent of a frequent user, I want to be sure that the is no advertisement, so I can freely let my child play the game.
+
+As can be seen from the website (on all pages) it is free of any advertising of any kind. The main ethos is that it is a free learning environment for anyone looking to increase their environmental awareness.
+
+- As a parent of a frequent user, I want to know that my child develops good recycling habits, so I can be sure that my child will be able to recycle in real life.
+
+From playing the game more frequently, any visitor to the site should be learning more about recycling as they look to increase their score as time goes on.
+
+- As a parent of a frequent user, I want to be sure that my child is not addicted to the game, so I can be sure that my child will be able to play the game regularly. (for the future development)
+
+A future feature intended to be implemented within the game is the formation of a 'time-limit' within the game itself. This will notify players to take breaks if they play a certain amount of times in a row, thus restricting their time to that of a healthy amount behind the screen.
+
+- As a parent of a frequent user, I want to be sure that my child is motivated to play the game, so I can be sure that my child receives enough motivation to recycle and actively participate in 
+preserving our environment.
+
+The game aims to promote a more heightened awareness of environmental cleanliness by means of having fun and competing with others. In this fashion, children can become more motivated to increase their awareness and effort in acquiring a newfound knowledge base when it comes to cleaning up rubbish whilst out in the world.
+
+
 ## Validation:
 ### HTML Validation:
 
