@@ -96,41 +96,17 @@ body {
 }
 
 /* Style the hamburger menu */
-
 #hamburger {
   display: none;
 
 }
 
-/* .topbar a {
-  color: white;
-  padding: 0 1%;
-
-  /* margin-left: 1%;
-  text-decoration: none;
-  font-size: 300%;
-  display: block;
-} */
-
-/* Style the hamburger menu */
-/* .icon {
-  background: black;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-} */
-
 .navbar__items {
   width: 100%;
-  /* max-width: 100rem; */
-  /* width: 25%; */
-
   padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* display: none; */
   flex-direction: row;
   justify-content: start;
   align-items: center;

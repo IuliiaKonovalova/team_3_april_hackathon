@@ -258,21 +258,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
   });
 
-
-  // Hamburger menu
-  const x = document.querySelector('.icon');
-  // const navMenu = document.getElementById('toggleMenu');
-  const navMenu = document.querySelector('.navbar__items');
-  x.addEventListener('click', () => {
-    console.log(navMenu);
-    console.log(navMenu.style.display);
-    if (navMenu.style.display == "flex") {
-      console.log("flex")
-      navMenu.setAttribute("style", "display: none");
-    } else {
-      console.log("none")
-      navMenu.setAttribute("style", "display: flex");
-
-    }
-  });
 });
