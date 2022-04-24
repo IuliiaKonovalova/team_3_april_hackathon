@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
+    toggleMenu() ? hamburger : null;
     let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn)
     main.addEventListener('click', sectionEventHandler);
     addHideClass();
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Displays Leaders Board on user's click
   leaderBoardLink.addEventListener("click", () => {
+    toggleMenu() ? hamburger : null;
     let sectionEventHandler = myFunction(leaderBoard, leaderBoardClose)
     main.addEventListener('click', sectionEventHandler);
     addHideClass();
