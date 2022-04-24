@@ -175,12 +175,11 @@ export default class Game {
     document.getElementById("player-score").value = this.score;
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
-    document.getElementById("menu-bar").style.visibility = "visible";
-    document.getElementById("hamburger").classList.remove("hide");
-    let gameItems = document.getElementsByClassName("play__item");
-    for(let item of gameItems) {
-      item.classList.add("hide");
-    }
+    this.stopButton.classList.add("hide");
+    this.pauseButton.classList.add("hide");
+    this.playButton.classList.add("hide");
+    
+    
     $("#score-submit").click((e) => {
       e.preventDefault();
       let submitButtonBackup = $("#score-submit");
@@ -194,6 +193,12 @@ export default class Game {
       
       this.getLeaders();
       this.endGameElement.classList.add("hide");
+      let gameItems = document.getElementsByClassName("play__item");
+      for(let item of gameItems) {
+        item.classList.add("hide");
+      }
+      document.getElementById("menu-bar").style.visibility = "visible";
+      document.getElementById("hamburger").classList.remove("hide");
       $("i.fas.fa-spinner.fa-spin").replaceWith(submitButtonBackup);
       this.leaderBoardElement.classList.remove("hide");
       $(this.leaderBoardElement).effect("highlight", {
