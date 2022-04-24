@@ -32,7 +32,8 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - As a frequent user, I want to enjoy the game, so I can play it regularly.
 - As a frequent user, I want to be able to compete with other users, so I can motivate myself to play the game.
 - As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience.
-- As a frequent user, I want to be able to learn interesting facts about environment, so I can improve my recycling habits.
+- As a frequent user, I want to be able to learn interesting facts about the environment, so I can improve my recycling habits.
+
 #### Parent Goals:
 - As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game.
 - As a parent of a frequent user, I want to be sure that the is no advertisement, so I can freely let my child play the game.

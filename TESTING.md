@@ -76,6 +76,35 @@ If the visitor wants to check out the rules of the game, they will be prompted w
 
 (First time 3)[assets/images/user-stories/first-time-visitor-3.png]
 
+#### Frequent User Goals:
+- As a frequent user, I want to be able to learn about sorting garbage for recycling, so I can recycle my garbage in real life.
+
+The objective of the game posits that players will become more aware of what pieces of rubbish go into which section of recycling. As the game goes on players are given live feedback including the score they have and lives they have lost for successfully and unsuccesffully placing specific items of rubbish in the various different bins.
+
+(Frequent 1)[assets/images/user-stories/frequent-1.png]
+
+- As a frequent user, I want to enjoy the game, so I can play it regularly.
+
+The score feedback of the game of the game aims to gauge a players interest and enjoyment so they can improve on their score with each time of returning.
+
+- As a frequent user, I want to be able to compete with other users, so I can motivate myself to play the game.
+
+The leaderboard section of the game increase the competitive nature of the game as visitors look to rise the ladder and become the best player.
+
+(Frequent 2)[assets/images/user-stories/frequent-2.png]
+
+- As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience.
+
+Users can freely decide on the specific theme they'd like to have as a backdrop for the game. Using the arrows as seen in the below screenshot, players can freely decide on choosing the ocean, river and beach theme to accompany their experience whilst playing the game.
+
+(Frequent 3)[assets/images/user-stories/frequent-3.png]
+
+- As a frequent user, I want to be able to learn interesting facts about the environment, so I can improve my recycling habits.
+
+As well the 'learning by playing' nature of the game itself, the visitor can also find some interesting facts within the rules section of the website itself as seen below.
+
+(Frequent 4)[assets/images/user-stories/frequent-4.png]
+
 ## Validation:
 ### HTML Validation:
 
