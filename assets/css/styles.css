@@ -183,6 +183,8 @@ body {
   margin: 0 auto;
   position: relative;
   height: 80vh;
+  /* NB: overflow hidden to keep animations from creating overscroll */
+  overflow: hidden;
 }
 
 .main__block {
@@ -678,7 +680,7 @@ body {
 
 .ocean__game--section {
   width: 100vw;
-  height: 70vh;
+  height: auto;
   z-index: 999;
   margin: 0;
 }
@@ -686,7 +688,6 @@ body {
 .ocean__game--header {
   height: 20vh;
   background: url("http://www.geertjanhendriks.nl/codepen/form/golf.png") repeat-x bottom;
-  text-align: center;
 }
 
 /* Ocean animation */
@@ -804,7 +805,8 @@ body {
 }
 
 .ocean__background {
-  background-image: linear-gradient(#98d4f3, #07496b);
+  /* background-image: linear-gradient(#98d4f3, #07496b); */
+  background-image: linear-gradient(#023e8a, #48cae4);
   height: 60vh;
   overflow: hidden;
 }
@@ -821,24 +823,16 @@ body {
   width: 100vw;
   height: auto;
   z-index: 999;
-  margin: 0;
-  overflow: auto;
-  animation: hide-scroll 1.2s infinite;
+  margin-bottom: -5rem;
+  overflow: hidden;
 }
 
 .beach__scene {
   display: grid;
   grid-template-rows: 2fr 3fr;
+  width: 100vw;
   height: 100vh;
   z-index: 999;
-}
-
-@keyframes hide-scroll {
-
-  from,
-  to {
-    overflow: hidden;
-  }
 }
 
 .sky {
@@ -854,13 +848,11 @@ body {
 }
 
 .beach {
-  padding: 10px;
   background-color: var(--clr-primary--beach);
   z-index: -1;
 }
 
 .sea {
-  padding: 20px;
   background-color: var(--clr-primary--sea);
   border-radius: 0 59% 56% 0;
   animation: tide 10s ease-in-out infinite;
