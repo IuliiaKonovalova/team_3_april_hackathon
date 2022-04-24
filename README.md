@@ -36,6 +36,20 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ### Color Scheme
 
+A variety of colours were tested before settling on a combination that incorporated complementary colours that were bold, modern and most importantly fun, since the target audience is young children. 
+
+The background colour for the navigation and footer was chosen for contrast - against the navigation content as well as the screen content, since the nav and footer are always fixed. 
+
+- Colour Scheme 1
+<img src="/DOCUMENTATION/Design/colour_scheme.png" width="400">
+
+- Colour Scheme 2
+<img src="/DOCUMENTATION/Design/colour_scheme1.png" width="400">
+
+- Nav & Footer 
+<img src="/DOCUMENTATION/Design/nav_colour.png" width="400">
+
+
 ### Typography
 
 ### Imagery
