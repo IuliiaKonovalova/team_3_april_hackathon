@@ -33,32 +33,6 @@ const saveScoreToDb = (name, score) => {
   });
 };
 
-// const fetchDateFromDb = (arr) => {
-//   database.ref("scores").on("value", (snapshot) => {
-//     for(let key in snapshot.val()) {
-//       arr.push(snapshot.val()[key]);
-//       // console.log(snapshot.val()[key]);
-//     }
-//   }, (error) => {
-//     if (error) {
-//       console.log(error);
-//       return false;
-//     } else {
-//       console.log("scores fetched");
-//       return true;
-//     }
-//   });
-// };
-
-// const fetchTopTen = (arr) => {
-//   database.ref("scores").orderByChild("score").limitToLast(10).on("value", (snapshot) => {
-//     for(let key in snapshot.val()) {
-//       arr.push(snapshot.val()[key]);
-//       // console.log(snapshot.val()[key]);
-//     }
-//   });
-// }:
-
 // Game rules:
 // There will be two game modes: "easy" and "hard".
 // In "easy" mode, a number of garbage items will be randomly generated on the screen
@@ -101,7 +75,6 @@ export default class Game {
     this.leaderBoardElement = document.getElementsByClassName("leaders__board")[0];
   }
   start(mode) {
-    // document.body.style.overflow = "hidden";
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.removeAllGarbage();
@@ -195,7 +168,6 @@ export default class Game {
     }, 1000);
   }
   gameOverTrigger() {
-    // document.body.style.overflow = "auto";
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.gameOver = true;
@@ -211,7 +183,6 @@ export default class Game {
       item.classList.add("hide");
     }
     $("#score-submit").click((e) => {
-      // prevent default behavior
       e.preventDefault();
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
@@ -220,25 +191,10 @@ export default class Game {
         saveScoreToDb("Anonymous", this.score);
       }
       $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
-      // this.getTopTen();
-      // setTimeout(() => {
-      //   $("#score-submit").replaceWith(`<i class="fas fa-check"></i>`);
-      // }, 1000);
-      // setTimeout(() => {
-      //   this.endGameElement.classList.add("hide");
-      // }, 1000);
-      // for (let leader of this.leaders) {
-      //   let leaderData = document.createElement("div");
-      //   leaderData.classList.add("leader__data");
-      //   leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
-      //   <div class="leader__data--score">${leader.score}</div>`;
-      //   $(".leaders__board--content").append(leaderData);
-      // }
-      // this.leaderBoardElement.classList.remove("hide");
+      
       database.ref("scores").on("value", (snapshot) => {
         for(let key in snapshot.val()) {
           this.leaders.push(snapshot.val()[key]);
-          // console.log(snapshot.val()[key]);
         }
         this.leaders.sort((a, b) => {
           return b.score - a.score;
@@ -255,15 +211,6 @@ export default class Game {
         this.leaderBoardElement.style.zIndex = "999999999999999999999";
         this.endGameElement.classList.add("hide");
       });
-      // for(let leader of this.leaders) {
-      //   let leaderData = document.createElement("div");
-      //   leaderData.classList.add("leader__data");
-      //   leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
-      //   <div class="leader__data--score">${leader.score}</div>`;
-      //   $(".leaders__board--content").append(leaderData);
-      // }
-      // this.leaderBoardElement.classList.remove("hide");
-      // this.leaderBoardElement.style.zIndex = "999999999999999999999";
     });
   }
   removeAllGarbage() {
@@ -347,19 +294,7 @@ export default class Game {
   }
   stop() {
     this.gameOverTrigger();
-  }
-  // getScores() {
-  //   this.leaders = [];
-  //   fetchDateFromDb(this.leaders);
-  //   console.log(this.leaders);
-  // }
-  // getTopTen() {    
-  //   this.getScores();
-  //   this.leaders.sort((a, b) => {
-  //     return b.score - a.score;
-  //   }).slice(0, 10);
-  //   console.log(this.leaders);
-  // }
+  }  
 }
 
 // audio
@@ -445,10 +380,7 @@ $(".game__bin").droppable({
 });
 
 const game = new Game(gameJson);
-// game.getScores();
-// game.getTopTen();
-// game.start("hard");
-// console.log(gameDifficulty);
+
 
 $(".btn__play--theme").click(() => {
   let difficulty = $("#garbage-bins").attr("data-mode");
