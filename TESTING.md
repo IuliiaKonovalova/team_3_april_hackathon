@@ -52,3 +52,29 @@
 | User clicks on the bins | specific rules appear | | |
 | User clicks on the play button | leads to chose difficulty page | | Y| After clicking the play button the user will then be led onto choosing the game difficulty
 | Leader board | | |N/A | In progress
+
+
+## Validation:
+### HTML Validation:
+
+![Full HTML Validation](documentation/validation/html_validation.pdf)
+
+- No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator. This checking was done manually by copying view page source code (Ctrl+U) and pasting it into the validator.
+
+### CSS Validation:
+
+![Full CSS Validation](documentation/validation/css_validation.png)
+
+- No errors or warnings were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator except the warnings about the use of css root variables and webkits for the box-shadow. However, css code works perfectly on various devices. 
+
+### JS Validation:
+
+![Full JS Validation](documentation/validation/js_validation.png)
+
+- No errors or warning messages were found when passing through the official [JSHint](https://www.jshint.com/) validator. However, the validator has pointed that module variable is not used, but this variable is needed for the automated testing. Needless to say, that as the modern js syntax was used (the Optional Chaining method - `?.`) `/* jshint esversion: 11 */` was added to the top of the file.
+
+[Back to contents](#contents)
+
+---
+## Lighthouse Report
+![Lighthouse Report. Home Page](documentation/lighthouse_reports/lighthouse_home.png)
