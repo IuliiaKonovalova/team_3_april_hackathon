@@ -1,6 +1,30 @@
 /* jshint esversion: 6 */
 import GarbageItem from "./GarbageItem.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBeXh7AxiEzrwJ6l76e4za337uEFlUr9ZM",
+  authDomain: "april-ci-hackathon-team3.firebaseapp.com",
+  databaseURL: "https://april-ci-hackathon-team3-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "april-ci-hackathon-team3",
+  storageBucket: "april-ci-hackathon-team3.appspot.com",
+  messagingSenderId: "383315248126",
+  appId: "1:383315248126:web:b7e6094ffdd4ced9fdf6af",
+  measurementId: "G-KPE5CFX4GW"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+        
+const database = firebase.database();
+
+
+const saveScoreToDb = (name, score) => {
+  database.ref("scores").push({
+    name: name,
+    score: score,
+  });
+}
+
 // Game rules:
 // There will be two game modes: "easy" and "hard".
 // In "easy" mode, a number of garbage items will be randomly generated on the screen
