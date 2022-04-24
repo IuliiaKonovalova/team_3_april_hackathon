@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ecoText = document.getElementById("eco__text");
   const footerBtn = document.getElementById("footer-btn");
   const footerContent = document.getElementById("footer-content");
+  const playItems = document.getElementsByClassName("play__item");
 
   const ecoFactsJson = "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json";
   // Set the current carousel slide
