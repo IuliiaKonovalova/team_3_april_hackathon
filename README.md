@@ -22,10 +22,45 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ### User Stories:
 
+#### First Time Visitor Goals:
+- As a first time visitor, I want to be able to easily understand the purpose of the website, so I can decide whether I want to use it or not.
+- As a first time visitor, I want to be able to easily navigate the website, so I can find what I am looking for.
+- As a first time visitor, I want to be able to easily understand the rules of the game, so I can play freely.
+
+#### Frequent User Goals:
+- As a frequent user, I want to be able to learn about sorting garbage for recycling, so I can recycle my garbage in real life.
+- As a frequent user, I want to enjoy the game, so I can play it regularly.
+- As a frequent user, I want to be able to compete with other users, so I can motivate myself to play the game.
+- As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience.
+- As a frequent user, I want to be able to learn interesting facts about the environment, so I can improve my recycling habits.
+
+#### Parent Goals:
+- As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game.
+- As a parent of a frequent user, I want to be sure that the is no advertisement, so I can freely let my child play the game.
+- As a parent of a frequent user, I want to know that my child develops good recycling habits, so I can be sure that my child will be able to recycle in real life.
+- As a parent of a frequent user, I want to be sure that my child is not addicted to the game, so I can be sure that my child will be able to play the game regularly. (for the future development)
+- As a parent of a frequent user, I want to be sure that my child is motivated to play the game, so I can be sure that my child receives enough motivation to recycle and actively participate in preserving our environment.
+- As a parent of a frequent user, I want my child to learn additional facts about the environment, so I can be sure that my child will be able to improve his recycling habits.
 
 ## Scope
 
-**Features**
+### Features
+
+- Home page (which includes a navbar with links to all pages of the site)
+- Rules page
+- Leaderboard page
+- Play button (located on home screen and rules page)
+- Game difficulty choice
+- Game theme option
+- A footer which includes all team members names
+- Neat and presentable UI for the game
+- Countdown clock for the game
+- Performance analytics for the player (including time left, score and lives)
+- A sound feature to toggle on and off
+- Sounds to accompany correct and incorrect game moves
+- An overlay which allows a player to supply their name and score to the global leaderboard
+- A game pause button
+- A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
 **Future features**
 
@@ -41,13 +76,15 @@ A variety of colours were tested before settling on a combination that incorpora
 The background colour for the navigation and footer was chosen for contrast - against the navigation content as well as the screen content, since the nav and footer are always fixed. 
 
 - Colour Scheme 1
-<img src="/DOCUMENTATION/Design/colour_scheme.png" width="400">
+
+![Colour Scheme 1](documentation/design/colour_scheme.png)
 
 - Colour Scheme 2
-<img src="/DOCUMENTATION/Design/colour_scheme1.png" width="400">
+
+![Colour Scheme 2](documentation/design/colour_scheme.png)
 
 - Nav & Footer 
-<img src="/DOCUMENTATION/Design/nav_colour.png" width="400">
+![Colour Scheme 1](documentation/design/nav_colour.png)
 
 
 ### Typography
@@ -56,10 +93,8 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 ### Wireframes
 
-[Wireframes]()
 
-
-
+- [Wireframes](documentation/wireframes/WIREFRAMES_EARTH_DAY_HKTHN.pdf)
 
 ## Technologies Used
 
@@ -70,8 +105,24 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 ## Deployment
 
+### Github
+The repository was first created by logging into a GitHub account:
+
+Clicking the 'new' green button.
+
+This then prompts to another page with asks for a name for the new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. The Code Institute template was chosen in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
+
 **How to fork the GitHub Repository**
 
+### Cloning and Forking 
+
+In order to clone the repository, the user must visit the repository page.
+
+Cloning by command line: Click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
+
+### Forking
+
+Go to the repositary page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
 
 **How to run this project locally**
 

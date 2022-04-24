@@ -1,3 +1,4 @@
+/* jshint esversion: 8, jquery: true */
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
 document.addEventListener("DOMContentLoaded", () => {
   // variables
@@ -9,9 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const difficultyBlock = document.getElementById('difficulty-block');
   const difficultyBtnEasy = document.getElementById('difficulty-easy');
   const difficultyBtnHard = document.getElementById('difficulty-hard');
+  const homePage = document.getElementById('home-link');
   const rulesLink = document.getElementById('rules__link');
   const rulesSection = document.getElementById('rules');
-  const rulesCloseBtn = document.getElementById('rules__close');
+  const rulesCloseBtn = document.getElementById('rules-close');
   const carousel = document.getElementById("carousel");
   const slides = document.querySelectorAll(".carousel__slide");
   const prevButton = document.getElementById("carousel-prev");
@@ -23,12 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerBtn = document.getElementById("footer-btn");
   const footerContent = document.getElementById("footer-content");
   const playItems = document.getElementsByClassName("play__item");
+  const soundBtn = document.getElementById("sound-control");
+  const garbageBins = document.getElementsByClassName('rules__bin')
+  const leaderBoardLink = document.getElementById('leaders-link')
+  const leaderBoard = document.getElementById('leaders-board');
+  const leaderBoardClose = document.getElementById('leader-close')
 
-  const ecoFactsJson = "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json";
+
   // Set the current carousel slide
   let current = 0;
-
-
 
   const toggleMenu = () => {
     navBar.classList.toggle("open");
@@ -40,35 +45,60 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleMenu);
   }
 
-  for (let btn of playBtn) {
-    btn.addEventListener("click", () => {
-      main.removeEventListener('click', rulesEventHandler);
-      mainBlock.classList.add("hide");
-      rulesSection.classList.add("hide");
-      difficultyBlock.classList.remove("hide");
-    });
-  }
+  // Displays Home Page on user's clicks
+  homePage.addEventListener("click", () => {
+    toggleMenu() ? hamburger : null;
+    addHideClass();
+    mainBlock.classList.remove("hide");
+    document.getElementById("earth-image").classList.remove("hide");
+  });
 
+  // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
-    main.addEventListener('click', rulesEventHandler);
-    mainBlock.classList.add("hide");
-    carousel.classList.add("hide");
+    toggleMenu() ? hamburger : null;
+    let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn)
+    main.addEventListener('click', sectionEventHandler);
+    addHideClass();
+    document.getElementById("earth-image").classList.remove("hide");
     rulesSection.classList.remove("hide");
 
     fetchEcoFacts();
   });
 
+  // Starts the game sequence on button clicks
+  for (let btn of playBtn) {
+    btn.addEventListener("click", () => {
+      addHideClass();
+      document.getElementById("earth-image").classList.remove("hide");
+      difficultyBlock.classList.remove("hide");
+      let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
+      main.removeEventListener('click', sectionEventHandler);
+      difficultyBlock.classList.remove("hide");
+    });
+  }
+
+  // Displays Leaders Board on user's click
+  leaderBoardLink.addEventListener("click", () => {
+    toggleMenu() ? hamburger : null;
+    let sectionEventHandler = myFunction(leaderBoard, leaderBoardClose)
+    main.addEventListener('click', sectionEventHandler);
+    addHideClass();
+    document.getElementById("earth-image").classList.remove("hide");
+    leaderBoard.classList.remove("hide");
+  });
+
+
   // If the user clicks easy level, hide the difficulty block and show the theme block
   difficultyBtnEasy.addEventListener("click", (e) => {
+    addHideClass();
     carousel.classList.remove("hide");
-    difficultyBlock.classList.add("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "easy");
   });
 
   // If the user clicks hard level, hide the difficulty block and show the theme block
   difficultyBtnHard.addEventListener("click", (e) => {
+    addHideClass();
     carousel.classList.remove("hide");
-    difficultyBlock.classList.add("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "hard");
   });
 
@@ -87,6 +117,38 @@ document.addEventListener("DOMContentLoaded", () => {
   //     mainBlock.classList.remove('hide');
   //   })
   // })
+
+  // Adds hide elements to main parts of UI
+  function addHideClass() {
+    document.getElementById("earth-image").classList.add("hide");
+    document.getElementById("beach-game").classList.add("hide");
+    document.getElementById("river-game").classList.add("hide");
+    document.getElementById("garbage-bins").classList.add("hide");
+    mainBlock.classList.add('hide');
+    rulesSection.classList.add('hide');
+    difficultyBlock.classList.add('hide');
+    carousel.classList.add("hide");
+    difficultyBlock.classList.add("hide");
+    leaderBoard.classList.add("hide");
+  }
+
+  // Curried function to add and remove event listeners for Rules and Leaders Board sections
+  let myFunction = function (section, closeBtn) {
+    return function curriedFunc(e) {
+      myFunction(e, section, closeBtn);
+      if (!section.classList.contains("hide")) {
+        console.log("click");
+        if (!section.contains(e.target) || closeBtn.contains(e.target)) {
+          addHideClass();
+          let sectionEventHandler;
+          document.getElementById("earth-image").classList.remove("hide");
+          mainBlock.classList.remove('hide');
+          main.removeEventListener('click', sectionEventHandler);
+
+        }
+      }
+    }
+  }
 
   // Reset all slides
   function reset() {
@@ -152,17 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ecoText.innerText = fact;
   }
 
-  // Event handler to close Rules Section
-  function rulesEventHandler(event) {
-    if (!rulesSection.classList.contains("hide")) {
-      if (!rulesSection.contains(event.target) || rulesCloseBtn.contains(event.target)) {
-        mainBlock.classList.remove('hide');
-        rulesSection.classList.add('hide');
-        difficultyBlock.classList.add('hide');
-        main.removeEventListener('click', rulesEventHandler);
-      }
-    }
-  }
 
   // Click Previous Button
   prevButton.addEventListener("click", function () {
@@ -184,10 +235,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Iteration through every button element in HTML to execute an openModal function for elements with specified selector
   document.querySelectorAll('[data-modal-target]').forEach(button => {
+    let modalText;
+    let modalHeading;
     button.addEventListener('click', () => {
-
+      if (button.id === "organic-bin") {
+        modalText = "i'm organic";
+        modalHeading = "i'm organic title"
+      } else if (button.id === "plastic-bin") {
+        modalText = "i'm plastic";
+        modalHeading = "i'm plastic title";
+      } else if (button.id === "glass-bin") {
+        modalText = "i'm glass";
+        modalHeading = "i'm glass title";
+      } else if (button.id === "paper-bin") {
+        modalText = "i'm paper";
+        modalHeading = "i'm paper heading"
+      }
       const modal = document.querySelector(button.dataset.modalTarget);
-      openModal(modal);
+      openModal(modal, modalText, modalHeading);
     });
   });
 
@@ -195,7 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('[data-close-button]').forEach(button => {
     button.addEventListener('click', () => {
       const modal = button.closest('.modal'); // looks for the closest parent with 'modal' class
-
       closeModal(modal);
     });
   });
@@ -204,16 +268,18 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('overlay').addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active');
     modals.forEach(modal => {
-
       closeModal(modal);
     });
   });
 
   // Function adds class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
-  function openModal(modal) {
+  function openModal(modal, modalText, modalHeading) {
     if (modal === null) return;
     modal.classList.add("active");
     document.getElementById("overlay").classList.add("active");
+    document.getElementById('modal-text').innerHTML = modalText;
+    document.getElementById('modal-title').innerHTML = modalHeading;
+
   }
 
   /// Function removes class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
@@ -227,10 +293,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Go to beach mode
   beachTheme.addEventListener("click", () => {
-    carousel.classList.add("hide");
-    document.getElementById("earth-image").classList.add("hide");
+    addHideClass();
     document.getElementById("beach-game").classList.remove("hide");
-    document.getElementById("ocean-game").classList.add("hide");
     for (let item of playItems) {
       item.classList.remove("hide");
     }
@@ -238,10 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Go to river mode
   riverTheme.addEventListener("click", () => {
-    carousel.classList.add("hide");
-    document.getElementById("earth-image").classList.add("hide");
+    addHideClass();
     document.getElementById("river-game").classList.remove("hide");
-    document.getElementById("beach-game").classList.add("hide");
+
     for (let item of playItems) {
       item.classList.remove("hide");
     }
@@ -249,23 +312,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Go to ocean mode
   oceanTheme.addEventListener("click", () => {
-    carousel.classList.add("hide");
-    document.getElementById("earth-image").classList.add("hide");
+    addHideClass();
     document.getElementById("ocean-game").classList.remove("hide");
-    document.getElementById("beach-game").classList.add("hide");
+
     for (let item of playItems) {
       item.classList.remove("hide");
     }
   });
 
   // Display creators GitHub links
-  footerBtn.addEventListener('click', (e) => {
-    footerContent.classList.remove('hide');
-    // footerBtn.classList.add('hide');
-    // document.querySelector("footer").addEventListener("click", (e) => {
-    //   document.querySelectorAll("footer a").forEach(function () {
-    //   })
-    // });
+  footerBtn.addEventListener('click', () => {
+    footerContent.classList.toggle("hide");
+  });
+
+  console.log(soundBtn);
+  // Displays sound icon
+  soundBtn.addEventListener('click', () => {
+    soundBtn.querySelectorAll('i').forEach(icon => {
+      icon.classList.toggle('hide');
+    });
   });
 
 });
