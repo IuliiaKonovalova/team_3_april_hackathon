@@ -155,10 +155,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--clr-accent--900);
+  color: var(--clr-accent--100);
   font-family: var(--ff-secondary);
   font-weight: 900;
   font-size: 3vh;
+}
+
+.game__bar span#lives {
+  color: var(--clr-accent--900);
 }
 
 .game__bar div:not(:last-child) {
