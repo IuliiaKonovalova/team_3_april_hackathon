@@ -279,7 +279,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 90%;
   max-width: 50rem;
   margin: 0 auto;
   background-color: var(--clr-neutral--800);
@@ -1504,8 +1504,6 @@ body {
   .menu-items>li a {
     font-size: 2em;
   }
-
-
 }
 
 @media all and (max-width: 784px) {
