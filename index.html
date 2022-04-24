@@ -46,17 +46,17 @@
     </ul>
     <div class="game__bar">
 
-      <div class="timer__control hide">
+      <div class="timer__control hide play__item">
         <span id="timer">05:00</span>
       </div>
-      <div class="lives__control hide">
+      <div class="lives__control hide play__item">
         <span id="lives">
           <i class="fas fa-heart"></i>
           <i class="fas fa-heart"></i>
           <i class="fas fa-heart"></i>
         </span>
       </div>
-      <div class="score__control hide">
+      <div class="score__control hide play__item">
         <span id="score">3000</span>
       </div>
       <div class="sound__control">
@@ -165,8 +165,8 @@
 
     <!-- Scene Section -->
     <!-- Ocean game -->
-    <div class="combo hide" id="combo-block">
-      <p>x <span id="">0</span></p>
+    <div class="combo hide play__item" id="combo-block">
+      <p>x <span id="combo">0</span></p>
       <p class="combo__title">combo</p>
     </div>
     <div class="ocean__game--section hide" id="ocean-game">
@@ -200,9 +200,55 @@
       </div>
     </div>
 
+    <!-- River game -->
+    <div class="river__game--section hide" id="river-game">
+      <div class="mountain"></div>
+      <div class="mountain mountain-2"></div>
+      <div class="mountain mountain-3"></div>
+      <div class="sun-container sun-container-1">
+      </div>
+      <div class="sun-container">
+        <div class="sun"></div>
+      </div>
+      <div class="cloud"></div>
+      <div class="cloud cloud-1"></div>
+      <div class="sun-container sun-container-reflection">
+        <div class="sun"></div>
+      </div>
+      <div class="light"></div>
+      <div class="light light-1"></div>
+      <div class="light light-2"></div>
+      <div class="light light-3"></div>
+      <div class="light light-4"></div>
+      <div class="light light-5"></div>
+      <div class="light light-6"></div>
+      <div class="light light-7"></div>
+      <div class="river"></div>
+      <div class="splash"></div>
+      <div class="splash delay-1"></div>
+      <div class="splash delay-2"></div>
+      <div class="splash splash-4 delay-2"></div>
+      <div class="splash splash-4 delay-3"></div>
+      <div class="splash splash-4 delay-4"></div>
+      <div class="splash splash-stone delay-3"></div>
+      <div class="splash splash-stone splash-4"></div>
+      <div class="splash splash-stone splash-5"></div>
+      <div class="lotus lotus-1"></div>
+      <div class="lotus lotus-2"></div>
+      <div class="lotus lotus-3"></div>
+      <div class="grass"></div>
+      <div class="grass grass-1"></div>
+      <div class="grass grass-2"></div>
+      <div class="reed"></div>
+      <div class="reed reed-1"></div>
+      <div class="riverbank__front">
+        <div class="riverbank"></div>
+      </div>
+    </div>
+
 
     <!-- Garbage bins for game -->
-    <div class="game__bins--section hide" id="garbage-bins">
+    <div class="game__bins--section hide play__item" id="garbage-bins">
       <div class="game__bin" data-category="organic">
         <img src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste" />
       </div>

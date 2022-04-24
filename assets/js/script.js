@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ecoText = document.getElementById("eco__text");
   const footerBtn = document.getElementById("footer-btn");
   const footerContent = document.getElementById("footer-content");
+  const playItems = document.getElementsByClassName("play__item");
 
   const ecoFactsJson = "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json";
   // Set the current carousel slide
@@ -230,6 +231,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("beach-game").classList.remove("hide");
     document.getElementById("ocean-game").classList.add("hide");
+    for (let item of playItems) {
+      item.classList.remove("hide");
+    }
   });
 
   // Go to river mode
@@ -237,6 +241,10 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.classList.add("hide");
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("river-game").classList.remove("hide");
+    document.getElementById("beach-game").classList.add("hide");
+    for (let item of playItems) {
+      item.classList.remove("hide");
+    }
   });
 
   // Go to ocean mode
@@ -245,7 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("ocean-game").classList.remove("hide");
     document.getElementById("beach-game").classList.add("hide");
-    document.getElementById("garbage-bins").classList.remove("hide");
+    for (let item of playItems) {
+      item.classList.remove("hide");
+    }
   });
 
   // Display creators GitHub links
