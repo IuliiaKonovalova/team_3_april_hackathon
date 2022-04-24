@@ -39,10 +39,12 @@ export default class Game {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.timeLeft = 60;
+    this.timerElement.innerHTML = '01:00';
     this.gameMode = mode;
     this.gameOver = false;
     this.lives = 3;
     this.score = 0;
+    this.scoreElement.innerHTML = this.score;
     this.combo = 0;
     this.garbageItems = 0;
     this.generateGarbage();
@@ -98,9 +100,16 @@ export default class Game {
   }
   updateScore() {
     this.score += 10 * this.combo;
+    this.scoreElement.innerHTML = this.score;
   }
   takeLife() {
     this.lives -= 1;
+    let hearts = this.livesElement.getElementsByTagName("i");
+    hearts[this.lives].classList.remove("fas");
+    hearts[this.lives].classList.add("far");
+    if (this.lives === 0) {
+      this.gameOverTrigger();
+    }
   }
   increaseCombo() {
     this.combo += 1;
