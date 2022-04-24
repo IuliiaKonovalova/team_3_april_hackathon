@@ -222,6 +222,7 @@ export default class Game {
 
         this.leaderBoardElement.style.zIndex = "999999999999999999999";
         this.endGameElement.classList.add("hide");
+        $(".fa-spin").replaceWith(`<button class="difficulty__btn" id="score-submit">SUBMIT</button>`);
       });
     });
   }

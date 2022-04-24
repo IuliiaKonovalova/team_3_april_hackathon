@@ -45,6 +45,23 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 **Features**
 
+- Rules Section
+
+![Rules Feature](DOCUMENTATION/Features/rules-feature.png)
+
+The purpose of the Rules Feature is to give users a brief description of how to play the game.
+The four bins located in the centre of the screen are buttons, which show what kind of garbage must be placed in a respective bin.
+The bins appear on the screen with CSS animation delaying every bin to be displayed one after another.
+When users hover over bins, CSS animation is triggered to rotate respective bins 360 deg.
+Information about proper segregation of garbage is presented to a user using a modal pop-up window.
+
+**IMAGE OF UPDATED MODAL HERE**
+
+Below the garbage bin section users can find randomly selected facts related to ecology. The information is fetched from a JSON file using jQuery and presented in UI.
+This section allows users to start a game with the use of the Play Button located in the right bottom corner of the section background window.
+Users can exit the Rules Section with any click outside the section window (excluding the navbar and footer) or by clicking the exit button in the top left corner.
+
+
 **Future features**
 
 
