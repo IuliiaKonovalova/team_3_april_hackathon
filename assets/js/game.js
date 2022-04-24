@@ -34,6 +34,8 @@ export default class Game {
     this.scoreElement = document.getElementById("score");
     this.comboElement = document.getElementById("combo");
     this.soundControl = document.getElementsByClassName("sound__control")[0];
+    this.endGameElement = document.getElementById("end-game");
+    this.garbageBinsElement = document.getElementById("garbage-bins");    
   }
   start(mode) {
     clearInterval(this.garbageInterval);
@@ -129,6 +131,17 @@ export default class Game {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.gameOver = true;
+    this.endGameElement.classList.remove("hide");
+    this.endGameElement.style.zIndex = "999999999999999999999";
+    this.garbageBinsElement.classList.add("hide");
+    this.removeAllGarbage();
+  }
+  removeAllGarbage() {
+    let garbageItems = this.gameScreen.getElementsByClassName("garbage-item");
+    while (garbageItems.length > 0) {
+      garbageItems[0].remove();
+      this.garbageItems -= 1;
+    }
   }
   startTimer() {
     this.timerInterval = setInterval(() => {
