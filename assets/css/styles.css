@@ -125,7 +125,6 @@ body {
 
 .navbar__items li {
   display: inline-block;
-  padding: 1vh 2vw;
   border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
@@ -147,6 +146,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2vh;
+  padding: 1vh 2vw;
 }
 
 /* Game mode Bar */
@@ -166,6 +166,12 @@ body {
 
 .game__bar div:not(:last-child) {
   margin-right: 3vw;
+}
+
+.timer__control span {
+  width: 9rem;
+  display: flex;
+  justify-content: start;
 }
 
 .lives__control span {
@@ -294,7 +300,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 90%;
   max-width: 50rem;
   margin: 0 auto;
   background-color: var(--clr-neutral--800);
@@ -479,14 +485,20 @@ body {
 }
 
 .modal-header .close-button,
-#rules__close {
+.rules__close {
   cursor: pointer;
   border: none;
-  outline: none;
   background: none;
-  font-size: 1.25rem;
+  font-size: 3vh;
   font-weight: bold;
   color: var(--clr-neutral--100);
+}
+
+.game__rules--close {
+  position: absolute;
+  top: -4vh;
+  right: 1rem;
+  font-size: 6vh !important;
 }
 
 .modal-body {
@@ -520,7 +532,7 @@ body {
   position: absolute;
   top: 50%;
   max-width: 100rem;
-  max-height: 75vh;
+  min-height: 60vh;
   background-color: var(--clr-neutral--800);
   color: var(--clr-neutral--100);
   border-radius: 20px;
@@ -530,6 +542,12 @@ body {
   padding: 1vh;
 }
 
+
+.rules__section--data {
+  position: relative;
+  padding: 0 3vw 10vh 3vw;
+}
+
 .rules__section h1,
 #end-game h2 {
   font-family: var(--ff-secondary);
@@ -537,14 +555,14 @@ body {
   display: inline-block;
 }
 
-#rules__close {
+.rules__close {
   position: absolute;
   top: 2%;
   right: 2%;
   font-size: 4vh;
 }
 
-#rules__close:hover {
+.rules__close:hover {
   color: var(--clr-accent--100);
 }
 
@@ -552,6 +570,16 @@ body {
 .game__rules {
   margin: 0 auto;
   text-align: center;
+}
+
+.eco__facts {
+  max-width: 90%;
+}
+
+.eco__facts--title,
+.game__rules--title {
+  font-size: 4vh;
+  font-family: var(--ff-secondary);
 }
 
 .game__rules {
@@ -562,7 +590,7 @@ body {
 .eco__facts p,
 .game__rules p {
   padding: 10px;
-  font-size: 3.5vh;
+  font-size: 2.5vh;
 }
 
 .rules__bins {
@@ -592,8 +620,9 @@ body {
 }
 
 #rules__play {
-  margin-top: 1vh;
-  float: right;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
 }
 
 .eco__facts {
@@ -824,7 +853,7 @@ body {
 
 .beach__scene {
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 2fr 3fr;
   width: 100vw;
   height: 80vh;
   z-index: 999;
@@ -1569,8 +1598,99 @@ label {
   .menu-items>li a {
     font-size: 2em;
   }
+}
 
+@media all and (max-width: 784px) {
+  .main__title {
+    font-size: 2rem;
+  }
 
+  .eco__facts p,
+  .game__rules p {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  .eco__facts p {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #rules__play {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+  }
+
+  .carousel__images--visible {
+    padding: 2em;
+    position: relative;
+    height: 50vh;
+    margin: 0 auto;
+  }
+
+  .carousel__slide {
+    border-radius: 1rem;
+    grid-template-rows: 0.1fr 0.4fr;
+    gap: 1rem;
+    background-color: var(--clr-neutral--800);
+    padding: 2em 0.5em;
+  }
+
+  .carousel__images {
+    height: 30vh;
+  }
+
+  .carousel__slide a {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media all and (max-width: 600px) and (min-height: 900px) {
+  .rules__bin img {
+    height: 7rem;
+    transition: transform 0.7s ease-in-out;
+  }
+
+  #rules__play {
+    position: absolute;
+    bottom: -0.5em;
+    right: -0.5em;
+  }
+
+}
+
+@media all and (max-width: 500px) {
+  .rules__section {
+    min-height: 60vh;
+  }
+
+  .main__title {
+    font-size: 1.5rem;
+  }
+
+  .rules__section--data {
+    position: relative;
+    padding: 0 3vw 12vh 3vw;
+  }
+
+  .eco__facts p,
+  .game__rules p {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .rules__bin img {
+    height: 4rem;
+    transition: transform 0.7s ease-in-out;
+  }
+
+  #rules__play {
+    position: absolute;
+    bottom: -0.5em;
+    right: -0.5em;
+  }
 }
 
 @media all and (max-height: 722px) {
