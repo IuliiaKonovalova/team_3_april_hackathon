@@ -59,13 +59,15 @@ A variety of colours were tested before settling on a combination that incorpora
 The background colour for the navigation and footer was chosen for contrast - against the navigation content as well as the screen content, since the nav and footer are always fixed. 
 
 - Colour Scheme 1
-<img src="/DOCUMENTATION/Design/colour_scheme.png" width="400">
+
+![Colour Scheme 1](documentation/design/colour_scheme.png)
 
 - Colour Scheme 2
-<img src="/DOCUMENTATION/Design/colour_scheme1.png" width="400">
+
+![Colour Scheme 2](documentation/design/colour_scheme.png)
 
 - Nav & Footer 
-<img src="/DOCUMENTATION/Design/nav_colour.png" width="400">
+![Colour Scheme 1](documentation/design/nav_colour.png)
 
 
 ### Typography
@@ -74,10 +76,8 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 ### Wireframes
 
-[Wireframes]()
 
-
-
+- [Wireframes](documentation/wireframes/WIREFRAMES_EARTH_DAY_HKTHN.pdf)
 
 ## Technologies Used
 
@@ -88,8 +88,24 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 ## Deployment
 
+### Github
+The repository was first created by logging into a GitHub account:
+
+Clicking the 'new' green button.
+
+This then prompts to another page with asks for a name for the new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. The Code Institute template was chosen in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
+
 **How to fork the GitHub Repository**
 
+### Cloning and Forking 
+
+In order to clone the repository, the user must visit the repository page.
+
+Cloning by command line: Click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
+
+### Forking
+
+Go to the repositary page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
 
 **How to run this project locally**
 
