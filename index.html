@@ -15,13 +15,31 @@
 </head>
 
 <body>
-
-  <nav class="navbar">
+  <!-- Overlay for Modal Operation -->
+  <div id="overlay"></div>
+  <!-- Modal Pop-up Window (Game Instructions) -->
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">Instructions</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error fuga
+        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
+        maiores.
+      </p>
+    </div>
+  </div>
+  <nav class="navbar topbar">
     <ul class="navbar__items">
       <li><a href="index.html">Home</a></li>
       <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)">Leaders Board</a></li>
     </ul>
+    <a class="icon">
+      <i class="fa fa-bars"></i>
+    </a>
     <div class="game__bar">
 
       <div class="timer__control hide">
