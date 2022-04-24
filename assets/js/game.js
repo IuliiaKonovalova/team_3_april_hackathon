@@ -292,6 +292,10 @@ export default class Game {
     }, 2000);
   }
   stop() {
+    let pauseScreen = document.getElementsByClassName("pause-screen")[0];
+    if (pauseScreen) {
+      pauseScreen.remove();
+    }
     this.gameOverTrigger();
   }  
 }
