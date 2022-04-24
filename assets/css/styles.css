@@ -521,12 +521,14 @@ body {
   padding: 1vh;
 }
 
+
 .rules__section--data {
   position: relative;
   padding: 0 3vw 10vh 3vw;
 }
 
-.rules__section h1 {
+.rules__section h1,
+#end-game h2 {
   font-family: var(--ff-secondary);
   font-size: 6vh;
   display: inline-block;
@@ -1260,6 +1262,70 @@ body {
 
 .delay-6 {
   animation-delay: 6s;
+}
+
+/* ----- End Game Window ----- */
+
+#end-game * {
+  margin: 1vh 0;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#end-game {
+  height: auto;
+  max-width: 40rem;
+}
+
+#end-game ul li,
+#end-game h2 {
+  cursor: default;
+}
+
+#end-game input {
+  padding: 1vh 2vw;
+  /* border-radius: var(--br); */
+  color: var(--clr-neutral--800);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2vh;
+  font-family: var(--ff-primary);
+}
+
+#end-game input,
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#end-game label {
+  font-size: 3vh;
+}
+
+#player-score {
+  height: 6vh;
+  margin: auto;
+  background: none;
+  /* border: 1px solid white; */
+  border-radius: 50%;
+  max-width: 10rem;
+  color: var(--clr-accent--100);
+  background-color: var(--clr-accent--900);
+  cursor: default;
+}
+
+#player-score::placeholder {
+  color: var(--clr-neutral--800);
+  font-weight: bold;
+  font-size: 2vh;
+  font-family: var(--ff-secondary);
+}
+
+#score-submit {
+  cursor: pointer;
 }
 
 /* ----- Footer ----- */

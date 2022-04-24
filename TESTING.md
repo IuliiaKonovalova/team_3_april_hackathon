@@ -1,3 +1,18 @@
+# Testing
+## **Contents**
+* [Manual Testing](#manual-testing)
+* [Testing User Story](#testing-user-story)
+* [Bugs](#bugs)
+  * [Known bugs](#known-bugs)
+  * [Solved bugs](#solved-bugs)
+* [Validation](#validation)
+  * [HTML validation](#html-validation)
+  * [CSS validation](#css-validation)
+  * [JS validation](#js-validation)
+* [Lighthouse Report](#lighthouse-report)
+* [Compatibility](#compatibility)
+* [Responsiveness](#responsiveness)
+
 |     | User Actions           | Expected Results | Y/N | Comments    |
 |-------------|------------------------|------------------|------|-------------|
 | **Navigation** | | |
@@ -10,24 +25,24 @@
 | *Mobile menu*     |            |             |          |
 | Hamburger menu  | Opens menu on the whole screen |             | If menu is opened during the game, game is paused    |
 | **Difficulty level** | |             |          |
-| Easy button     | Difficulty level is set to easy + leads to theme gallery |    Y         |   After choosing the easy mode, the user continues on to choose the game theme for them       |
-| Hard button     | Difficulty level is set to hard + leads to theme gallery |      Y       | After choosing the difficult mode, the user continues on to choose the game theme for them         |
+| Easy button     | Difficulty level is set to easy + leads to theme gallery |             |  Y |After choosing the easy mode, the user continues on to choose the game theme for them       
+| Hard button     | Difficulty level is set to hard + leads to theme gallery |             |    Y   |After choosing the difficult mode, the user continues on to choose the game theme for them   
 | **Theme Gallery** | | | |
-| Arrow left     | Moves to the previous theme + leads to theme gallery |     N/A        |  In progress        |
-| Arrow right     | Moves to the next theme + leads to theme gallery |     N/A        |    in Progress      |
-| Button Play     | Starts the game |    Y         |    Game begins as expected after the play button is pressed      |
+| Arrow left     | Moves to the previous theme + leads to theme gallery |      N/A      |  |In progress        
+| Arrow right     | Moves to the next theme + leads to theme gallery |          |  N/A      |In progress
+| Button Play     | Starts the game |            |  Y   |Game begins as expected after the play button is pressed     
 | **Footer** | | |
-| Creators Button | Opens dropdown menu with creators |             |   In progress       | N/A
-| Creator Avatar + Name | leads to creator's github page |             |   In progress       |N/A
+| Creators Button | Opens dropdown menu with creators |             |   N/A       | In progress
+| Creator Avatar + Name | leads to creator's github page |             |   N/A      |In progress
 | **Game View**| | | Game bar appears In the top right corner with timer, lives, and scores |
-| If the user plays easy mode | No new items appear |          |    In progress      |N/A
-| If the user plays hard mode | New items appear with time |           |  In progress        |N/A
-| Garbage Item | moves on drag with |             |  Items stays where the user left it        |N/A
-| User drops correct organic garbage item in the red bin | Success + item disappear + add scores | | sound effect if it was set by the user| N/A
-| User drops correct plastic garbage item in the blue bin | Success + item disappear + add scores | | sound effect if it was set by the user |N/A
-| User drops correct glass garbage item in the green bin | Success + item disappear + add scores | | sound effect if it was set by the user|N/A
-| User drops correct paper garbage item in the yellow bin | Success + item disappear + add scores | | sound effect if it was set by the user|N/A
-| User drops item in the correct bin | combo increase by 1 + item disappear + add scores | | sound effect if it was set by the user|N/A
+| If the user plays easy mode | No new items appear |          |    N/A      |In progress
+| If the user plays hard mode | New items appear with time |           |  N/A    |In progress
+| Garbage Item | moves on drag with |             |  N/A        |Items stays where the user left it
+| User drops correct organic garbage item in the red bin | Success + item disappear + add scores | |N/A | sound effect if it was set by the user
+| User drops correct plastic garbage item in the blue bin | Success + item disappear + add scores | | N/A |sound effect if it was set by the user
+| User drops correct glass garbage item in the green bin | Success + item disappear + add scores | | N/A|sound effect if it was set by the user
+| User drops correct paper garbage item in the yellow bin | Success + item disappear + add scores | | N/A|sound effect if it was set by the user
+| User drops item in the correct bin | combo increase by 1 + item disappear + add scores | | N/A|sound effect if it was set by the user
 | User drops item in the wrong bin | combo drops to 0 + item  goes back to screen + user loses 1 life | | sound effect if it was set by the user|
 | The user cleans all screen from garbage items | All items disappear + add scores + game over + goes to the leader board | | |
 | **Rules section** | | |  |
@@ -37,3 +52,52 @@
 | User clicks on the bins | specific rules appear | | |
 | User clicks on the play button | leads to chose difficulty page | | Y| After clicking the play button the user will then be led onto choosing the game difficulty
 | Leader board | | |N/A | In progress
+
+
+## Validation:
+### HTML Validation:
+
+![Full HTML Validation](documentation/validation/html_validation.pdf)
+
+- No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator. This checking was done manually by copying view page source code (Ctrl+U) and pasting it into the validator.
+
+### CSS Validation:
+
+![Full CSS Validation](documentation/validation/css_validation.png)
+
+- No errors or warnings were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator except the warnings about the use of css root variables and webkits for the box-shadow. However, css code works perfectly on various devices. 
+
+### JS Validation:
+
+![Full JS Validation](documentation/validation/js_validation.png)
+
+- No errors or warning messages were found when passing through the official [JSHint](https://www.jshint.com/) validator. However, the validator has pointed that module variable is not used, but this variable is needed for the automated testing. Needless to say, that as the modern js syntax was used (the Optional Chaining method - `?.`) `/* jshint esversion: 11 */` was added to the top of the file.
+
+[Back to contents](#contents)
+
+---
+## Lighthouse Report
+![Lighthouse Report. Home Page](documentation/lighthouse_reports/lighthouse_home.png)
+
+## Compatibility
+
+Testing conducted on the following browsers;
+
+- Brave;
+- Chrome;
+- Microsoft Edge;
+- Firefox;
+
+[Back to contents](#contents)
+---
+
+## Responsiveness
+
+Testing conducted outside of the Chrome development tool on the following;
+
+- Oppo K7;
+- Oppo K7x;
+- Xiaomi Mi PAD 4;
+
+
+[Back to contents](#contents)
