@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const difficultyBlock = document.getElementById('difficulty-block');
   const difficultyBtnEasy = document.getElementById('difficulty-easy');
   const difficultyBtnHard = document.getElementById('difficulty-hard');
+  const homePage = document.getElementById('home-link');
   const rulesLink = document.getElementById('rules__link');
   const rulesSection = document.getElementById('rules');
   const rulesCloseBtn = document.getElementById('rules-close');
@@ -44,6 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleMenu);
   }
 
+  // Displays Home Page on user's clicks
+  homePage.addEventListener("click", () => {
+    toggleMenu() ? hamburger : null;
+    addHideClass();
+    mainBlock.classList.remove("hide");
+    document.getElementById("earth-image").classList.remove("hide");
+  });
+
   // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
     toggleMenu() ? hamburger : null;
@@ -60,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let btn of playBtn) {
     btn.addEventListener("click", () => {
       addHideClass();
+      document.getElementById("earth-image").classList.remove("hide");
       difficultyBlock.classList.remove("hide");
       let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
       main.removeEventListener('click', sectionEventHandler);
@@ -127,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return function curriedFunc(e) {
       myFunction(e, section, closeBtn);
       if (!section.classList.contains("hide")) {
+        console.log("click");
         if (!section.contains(e.target) || closeBtn.contains(e.target)) {
           addHideClass();
           let sectionEventHandler;
