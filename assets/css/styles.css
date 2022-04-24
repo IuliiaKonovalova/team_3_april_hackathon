@@ -95,7 +95,6 @@ body {
   padding: 1em 1.5em;
 }
 
-
 /* Style the hamburger menu */
 .topbar a {
   color: white;
@@ -134,9 +133,9 @@ body {
 } */
 
 .navbar__items li {
-  /* display: inline-block; */
-  /* padding: 1vh 2vw; */
-  /* border-radius: var(--br); */
+  /* display: inline-block;
+  padding: 1vh 2vw;
+  border-radius: var(--br); */
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
   font-weight: 900;
@@ -707,12 +706,20 @@ body {
   width: 100vw;
   height: auto;
   z-index: 999;
-  margin: 0;
+  margin-bottom: -8rem;
 }
 
 .ocean__game--header {
-  height: 20vh;
-  background: url("http://www.geertjanhendriks.nl/codepen/form/golf.png") repeat-x bottom;
+  height: 10vh;
+  background: url(/assets/images/waves.svg) repeat-x bottom;
+  margin-bottom: -5px;
+}
+
+.ocean__background {
+  /* background-image: linear-gradient(#98d4f3, #07496b); */
+  background-image: linear-gradient(#48cae4, #023e8a);
+  height: 60vh;
+  overflow: hidden;
 }
 
 /* Ocean animation */
@@ -827,13 +834,6 @@ body {
   top: 50vh;
   animation-delay: 16s;
   -webkit-animation-delay: 16s;
-}
-
-.ocean__background {
-  /* background-image: linear-gradient(#98d4f3, #07496b); */
-  background-image: linear-gradient(#023e8a, #48cae4);
-  height: 60vh;
-  overflow: hidden;
 }
 
 /* Beach animation */
