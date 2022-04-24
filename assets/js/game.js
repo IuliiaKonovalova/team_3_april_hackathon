@@ -183,6 +183,7 @@ export default class Game {
     }
     $("#score-submit").click((e) => {
       e.preventDefault();
+      let submitButtonBackup = $("#score-submit");
       $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
@@ -192,9 +193,21 @@ export default class Game {
       }
       
       this.getLeaders();
-      this.leaderBoardElement.classList.remove("hide");
-      this.leaderBoardElement.style.zIndex = "999999999999999999999";
       this.endGameElement.classList.add("hide");
+      $("i.fas.fa-spinner.fa-spin").replaceWith(submitButtonBackup);
+      this.leaderBoardElement.classList.remove("hide");
+      $(this.leaderBoardElement).effect("highlight", {
+        color: "#00ff00",
+      }, 1000);
+      $("#leader-close").click(() => {
+        this.leaderBoardElement.classList.add("hide");
+      });
+      
+      $("#ocean-game").addClass("hide");
+      $("#beach-game").addClass("hide");
+      $("#river-game").addClass("hide");
+      $("#main-block").removeClass("hide");
+      $("#earth-image").removeClass("hide");
     });
   }
   removeAllGarbage() {
