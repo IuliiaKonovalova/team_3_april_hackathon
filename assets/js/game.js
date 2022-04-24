@@ -175,9 +175,7 @@ export default class Game {
     document.getElementById("player-score").value = this.score;
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
-    this.stopButton.classList.add("hide");
-    this.pauseButton.classList.add("hide");
-    this.playButton.classList.add("hide");
+    $(".pause-stop__control").addClass("hide");
     
     
     $("#score-submit").click((e) => {
@@ -206,12 +204,12 @@ export default class Game {
       }, 1000);
       $("#leader-close").click(() => {
         this.leaderBoardElement.classList.add("hide");
+        $("#main-block").removeClass("hide");
       });
       
       $("#ocean-game").addClass("hide");
       $("#beach-game").addClass("hide");
       $("#river-game").addClass("hide");
-      $("#main-block").removeClass("hide");
       $("#earth-image").removeClass("hide");
     });
   }
