@@ -10,6 +10,10 @@
   <meta name="keywords" content="Environment, Rubbish, Game, Organic, Recyclable, Plastic, Clean, Awareness, 
                   Planet, Greenhouse Gases" />
   <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
+  <!-- scripts for firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/hamburgers.min.css">
   <title>Garbage Run | Enviromental Awareness Game</title>
@@ -29,6 +33,11 @@
       <li><a href="javascript:void(0)" id="leaders-link">Leaders Board</a></li>
     </ul>
     <div class="game__bar">
+      <div class="play__item pause-stop__control hide">
+        <i class="fas fa-pause"></i>
+        <i class="fas fa-play hide"></i>
+        <i class="fas fa-stop"></i>
+      </div>
 
       <div class="timer__control hide play__item">
         <span id="timer">05:00</span>
@@ -41,7 +50,7 @@
         </span>
       </div>
       <div class="score__control hide play__item">
-        <span id="score">3000</span>
+        <span id="score">0000</span>
       </div>
       <div class="sound__control" id="sound-control">
         <i class="fas fa-volume-up hide" id="sound-on"></i>
@@ -150,12 +159,14 @@
     <!-- Leaders board Block -->
     <div class="leaders__board hide" id="leaders-board">
       <h3 class="leaders__board--title">Leaders</h3>
+
       <button class="rules__close" id="leader-close">&times;</button>
       <div class="leaders__board--content">
         <div class="leader__data">
           <div class="leader__data--name"></div>
           <div class="leader__data--score"></div>
         </div>
+
       </div>
     </div>
     <!-- Scene Section -->
@@ -257,7 +268,7 @@
             <input type="text" name="player-name" id="player-name">
           </li>
           <li>
-            <button type="submit" class="difficulty__btn" id="score-submit">SUBMIT</button>
+            <button class="difficulty__btn" id="score-submit">SUBMIT</button>
           </li>
         </ul>
       </form>
