@@ -34,7 +34,7 @@
         const analytics = getAnalytics(app);
         const database = getDatabase();
         const dbRef = ref(getDatabase());
-        get(child(dbRef, "scores"));
+        // get(child(dbRef, "scores"));
 
         const writeScoreToDb = (name, score) => {
             set(ref(database, "scores"), {
