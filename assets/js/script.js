@@ -24,11 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerContent = document.getElementById("footer-content");
   const playItems = document.getElementsByClassName("play__item");
 
-  const ecoFactsJson = "https://raw.githubusercontent.com/IuliiaKonovalova/team_3_april_hackathon/225c5e309bab8d3770c8200ed45e34f446f8ddea/assets/js/JSON/eco-facts.json";
   // Set the current carousel slide
   let current = 0;
-
-
 
   const toggleMenu = () => {
     navBar.classList.toggle("open");
@@ -40,19 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleMenu);
   }
 
+  // Starts the game sequence on button clicks
   for (let btn of playBtn) {
     btn.addEventListener("click", () => {
+      addHideClass();
       main.removeEventListener('click', rulesEventHandler);
-      mainBlock.classList.add("hide");
-      rulesSection.classList.add("hide");
       difficultyBlock.classList.remove("hide");
     });
   }
 
+  // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
     main.addEventListener('click', rulesEventHandler);
-    mainBlock.classList.add("hide");
-    carousel.classList.add("hide");
+    addHideClass();
     rulesSection.classList.remove("hide");
 
     fetchEcoFacts();
@@ -60,15 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // If the user clicks easy level, hide the difficulty block and show the theme block
   difficultyBtnEasy.addEventListener("click", (e) => {
+    addHideClass();
     carousel.classList.remove("hide");
-    difficultyBlock.classList.add("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "easy");
   });
 
   // If the user clicks hard level, hide the difficulty block and show the theme block
   difficultyBtnHard.addEventListener("click", (e) => {
+    addHideClass();
     carousel.classList.remove("hide");
-    difficultyBlock.classList.add("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "hard");
   });
 
@@ -87,6 +84,19 @@ document.addEventListener("DOMContentLoaded", () => {
   //     mainBlock.classList.remove('hide');
   //   })
   // })
+
+  // Adds hide elements to main parts of UI
+  function addHideClass() {
+    document.getElementById("earth-image").classList.add("hide");
+    document.getElementById("beach-game").classList.add("hide");
+    document.getElementById("river-game").classList.add("hide");
+    document.getElementById("garbage-bins").classList.add("hide");
+    mainBlock.classList.add('hide');
+    rulesSection.classList.add('hide');
+    difficultyBlock.classList.add('hide');
+    carousel.classList.add("hide");
+    difficultyBlock.classList.add("hide");
+  }
 
   // Reset all slides
   function reset() {
@@ -156,9 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function rulesEventHandler(event) {
     if (!rulesSection.classList.contains("hide")) {
       if (!rulesSection.contains(event.target) || rulesCloseBtn.contains(event.target)) {
+        addHideClass();
         mainBlock.classList.remove('hide');
-        rulesSection.classList.add('hide');
-        difficultyBlock.classList.add('hide');
         main.removeEventListener('click', rulesEventHandler);
       }
     }
@@ -227,10 +236,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Go to beach mode
   beachTheme.addEventListener("click", () => {
-    carousel.classList.add("hide");
-    document.getElementById("earth-image").classList.add("hide");
+    addHideClass();
     document.getElementById("beach-game").classList.remove("hide");
-    document.getElementById("ocean-game").classList.add("hide");
     for (let item of playItems) {
       item.classList.remove("hide");
     }
@@ -238,10 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Go to river mode
   riverTheme.addEventListener("click", () => {
-    carousel.classList.add("hide");
-    document.getElementById("earth-image").classList.add("hide");
+    addHideClass();
     document.getElementById("river-game").classList.remove("hide");
-    document.getElementById("beach-game").classList.add("hide");
+
     for (let item of playItems) {
       item.classList.remove("hide");
     }
@@ -249,23 +255,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Go to ocean mode
   oceanTheme.addEventListener("click", () => {
-    carousel.classList.add("hide");
-    document.getElementById("earth-image").classList.add("hide");
+    addHideClass();
     document.getElementById("ocean-game").classList.remove("hide");
-    document.getElementById("beach-game").classList.add("hide");
+
     for (let item of playItems) {
       item.classList.remove("hide");
     }
   });
 
   // Display creators GitHub links
-  footerBtn.addEventListener('click', (e) => {
-    footerContent.classList.remove('hide');
-    // footerBtn.classList.add('hide');
-    // document.querySelector("footer").addEventListener("click", (e) => {
-    //   document.querySelectorAll("footer a").forEach(function () {
-    //   })
-    // });
+  footerBtn.addEventListener('click', () => {
+    footerContent.classList.toggle("hide");
   });
 
 });
