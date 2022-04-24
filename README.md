@@ -62,8 +62,9 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - A game pause button
 - A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
-**Future features**
+### Future features
 
+- In the future, the intention is to implement a 'time-limit' on the frequency a player can play the game. If a player plays the game in a specified number of successions they will be given a prompt notifying them of the amount of time they have spent playing the game and a suggestion that asks them to consider taking a break and coming back later. This is to ensure that parents can feel at ease as to whether or not their child will be playing the game too much. This feature will be developed further as the lifespan of the game continues into the future.
 
 ## Design
 
