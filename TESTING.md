@@ -78,3 +78,26 @@
 ---
 ## Lighthouse Report
 ![Lighthouse Report. Home Page](documentation/lighthouse_reports/lighthouse_home.png)
+
+## Compatibility
+
+Testing conducted on the following browsers;
+
+- Brave;
+- Chrome;
+- Microsoft Edge;
+- Firefox;
+
+[Back to contents](#contents)
+---
+
+## Responsiveness
+
+Testing conducted outside of the Chrome development tool on the following;
+
+- Oppo K7;
+- Oppo K7x;
+- Xiaomi Mi PAD 4;
+
+
+[Back to contents](#contents)
