@@ -54,6 +54,28 @@
 | Leader board | | |N/A | In progress
 
 
+## Testing user stories
+
+### First Time Visitor Goals:
+
+- As a first time visitor, I want to be able to easily understand the purpose of the website, so I can decide whether I want to use it or not.
+
+When the user enters the page they are met with a neatly displayed home page which has the headings 'Home', 'Rules' and 'Leaderboard' in the navigation menu. It should be quite clear that the website is hosting an game for which users can freely play by pressing the play button.
+
+(First time 1)[assets/images/user-stories/first-time-visitor-1.png]
+
+- As a first time visitor, I want to be able to easily navigate the website, so I can find what I am looking for.
+
+On all pages of the game (exluding when in the game) a first time visitor will easily be able to navigate their way around the website. The navigation menu clearly points toward the short and simple points of direction the website has to offer.
+
+(First time 2)[assets/images/user-stories/first-time-visitor-2.png]
+
+- As a first time visitor, I want to be able to easily understand the rules of the game, so I can play freely.
+
+If the visitor wants to check out the rules of the game, they will be prompted with this overlay which simply outlines the objective of the game.
+
+(First time 3)[assets/images/user-stories/first-time-visitor-3.png]
+
 ## Validation:
 ### HTML Validation:
 
