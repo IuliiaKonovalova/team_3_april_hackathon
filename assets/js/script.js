@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Go to ocean mode
-  oceanTheme.addEventListener("click", () => {
+    oceanTheme.addEventListener("click", () => {
     carousel.classList.add("hide");
     document.getElementById("earth-image").classList.add("hide");
     document.getElementById("ocean-game").classList.remove("hide");
@@ -259,6 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       console.log("none")
       navMenu.setAttribute("style", "display: flex");
+
     }
   });
 });
