@@ -125,7 +125,6 @@ body {
 
 .navbar__items li {
   display: inline-block;
-  padding: 1vh 2vw;
   border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
@@ -147,6 +146,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2vh;
+  padding: 1vh 2vw;
 }
 
 /* Game mode Bar */
