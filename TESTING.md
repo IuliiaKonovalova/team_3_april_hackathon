@@ -1,6 +1,5 @@
 |     | User Actions           | Expected Results | Y/N | Comments    |
 |-------------|------------------------|------------------|------|-------------|
-
 | **Navigation** | | |
 | *Desktop menu* | | |
 | Home button     | Leads to the main display      |     Y        |  Button is working as expected       |
