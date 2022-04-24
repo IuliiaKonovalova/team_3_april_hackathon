@@ -29,6 +29,11 @@ export default class Game {
     this.timerInterval = null;
     this.timeLeft = 60;
     this.sound = true;
+    this.timerElement = document.getElementById("timer");
+    this.livesElement = document.getElementById("lives");
+    this.scoreElement = document.getElementById("score");
+    this.comboElement = document.getElementById("combo");
+    this.soundControl = document.getElementsByClassName("sound__control")[0];
   }
   start(mode) {
     clearInterval(this.garbageInterval);
@@ -99,9 +104,17 @@ export default class Game {
   }
   increaseCombo() {
     this.combo += 1;
+    this.comboElement.innerHTML = this.combo;
+    $(this.comboElement).parent().parent().effect("highlight", {
+      color: "#00ff00",
+    }, 1000);
   }
   resetCombo() {
     this.combo = 0;
+    this.comboElement.innerHTML = this.combo;
+    $(this.comboElement).effect("pulsate", {
+      times: 3,
+    }, 1000);
   }
   gameOverTrigger() {
     clearInterval(this.garbageInterval);
@@ -111,7 +124,17 @@ export default class Game {
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft -= 1;
+      if(this.timeLeft > 59){
+        this.timerElement.innerHTML = `${Math.floor(this.timeLeft / 60)}:${this.timeLeft % 60}`;
+
+      } else if(this.timeLeft < 60 && this.timeLeft > 9){
+        this.timerElement.innerHTML = `0:${this.timeLeft}`;
+
+      } else if(this.timeLeft < 10 && this.timeLeft > 0){
+        this.timerElement.innerHTML = `0:0${this.timeLeft}`;
+      } 
       if (this.timeLeft === 0) {
+        this.timerElement.innerHTML = "00:00";
         this.gameOverTrigger();
       }
     }, 1000);
@@ -121,6 +144,15 @@ export default class Game {
   }
   soundOff() {
     this.sound = false;
+  }
+  checkSound() {
+    let soundOn = this.soundControl.getElementsByClassName("fa-volume-up")[0];
+    if (soundOn.classList.contains("hide")) {
+      this.soundOff();
+    } else {
+      this.soundOn();
+    }
+    return this.sound;
   }
   pause() {
     clearInterval(this.garbageInterval);
@@ -139,7 +171,7 @@ export default class Game {
           ui.helper.css("z-index", "999999999999");
         }
       });
-    }
+    }, 2000);
   }
   
 }
@@ -147,6 +179,7 @@ export default class Game {
 // audio
 const popSound = new Audio("assets/audio/pop.mp3");
 const fartSound = new Audio("assets/audio/fart.mp3");
+
 
 
 let gameJson = {};
@@ -163,7 +196,7 @@ const checkAnswer = (event, ui, bin) => {
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
   if (itemCategory === binCategory) {
-    if (game.sound) {
+    if (game.checkSound()) {
       popSound.play();
     }
     $(ui.draggable).effect("explode", {
@@ -185,7 +218,7 @@ const checkAnswer = (event, ui, bin) => {
     console.log("combo: " + game.combo);
     console.log("items: " + game.garbageItems);
   } else {
-    if (game.sound) {
+    if (game.checkSound()) {
       fartSound.play();
     }
     $(ui.draggable).animate(
