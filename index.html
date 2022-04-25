@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
   <!-- Navigation Bar -->
   <nav class="navbar topbar">
     <button id="hamburger" class="hamburger hamburger--elastic-r" type="button"
@@ -35,14 +34,13 @@
       <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
       <li><a href="javascript:void(0)" id="leaders-link">Leaders Board</a></li>
     </ul>
+    <!-- Game Controls -->
     <div class="game__bar">
       <div class="play__item pause-stop__control hide">
         <i class="fas fa-pause"></i>
         <i class="fas fa-play hide"></i>
         <i class="fas fa-stop"></i>
       </div>
-
-      <!-- Game Controls -->
       <div class="timer__control hide play__item">
         <span id="timer">05:00</span>
       </div>
@@ -62,11 +60,11 @@
       <i class="fas fa-volume-mute" id="sound-off"></i>
     </div>
   </nav>
+  <!-- Main Content -->
   <main class="main" id="main">
     <div class="image__holder" id="earth-image">
       <img src="assets/images/earth1.png" alt="Image of the green and blue earth" />
     </div>
-
     <!-- Start Game block -->
     <div class="main__block" id="main-block">
       <h1 class="main__title">Earth Protectors</h1>
@@ -74,19 +72,19 @@
         <img src="assets/images/play.svg" alt="Play button icon" />
       </a>
     </div>
-
     <!-- Game difficulty -->
     <div class="difficulty hide" id="difficulty-block">
       <div class="difficulty__btn" id="difficulty-easy">Easy</div>
       <div class="difficulty__btn" id="difficulty-hard">Hard</div>
     </div>
-
     <!-- Carousel themes block -->
     <div class="carousel hide" id="carousel">
+      <!-- Button previous -->
       <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
         <i class="fas fa-arrow-left btn-carousel"></i>
       </button>
       <ul class="carousel__track">
+        <!-- Theme Beach card -->
         <li class="carousel__slide carousel__images--visible">
           <h2 class="carousel__slide--title">Beach</h2>
           <div class="carousel__images--container">
@@ -97,6 +95,7 @@
             <img src="assets/images/play.svg" alt="Play button icon" />
           </a>
         </li>
+        <!-- Theme River card -->
         <li class="carousel__slide carousel__images--hidden">
           <h2 class="carousel__slide--title">River</h2>
           <div class="carousel__images--container">
@@ -106,6 +105,7 @@
             <img src="assets/images/play.svg" alt="Play button icon" />
           </a>
         </li>
+        <!-- Theme Ocean card -->
         <li class="carousel__slide carousel__images--hidden">
           <h2 class="carousel__slide--title">Ocean</h2>
           <div class="carousel__images--container">
@@ -117,41 +117,42 @@
           </a>
         </li>
       </ul>
+      <!-- Button next -->
       <button id="carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
         <i class="fas fa-arrow-right btn-carousel"></i>
       </button>
     </div>
-
     <!-- Rules Section -->
     <div class="rules__section hide" id="rules">
+      <!-- Game Rules -->
       <div class="game__rules">
         <h1 class="game__rules--title">How to Play?</h1>
+        <!-- Closing button -->
         <button class="rules__close" id="rules-close">&times;</button>
         <p>
           Identify four different waste types and which bins they belong in. Score points with proper waste segregation.
         </p>
+        <!-- Bins section -->
         <div class="rules__bins">
           <div class="rules__bin">
             <img data-modal-target="#modal" class="bin__rules--img animate pop" id="organic-bin"
               src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
           </div>
           <div class="rules__bin">
-            <!-- <h3 class="">What are Soft Plastics?</h3> -->
             <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1" id="plastic-bin"
               src="assets/images/blue_bin.svg" alt="Image of a blue bin for organic waste">
           </div>
           <div class="rules__bin">
-            <!-- <h3 class="">What are Recyclable Materials?</h3> -->
             <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2" id="glass-bin"
               src="assets/images/green_bin.svg" alt="Image of a green bin for organic waste">
           </div>
           <div class="rules__bin">
-            <!-- <h3 class="">What is Organic Waste?</h3> -->
             <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3" id="paper-bin"
               src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for organic waste">
           </div>
         </div>
       </div>
+      <!-- Eco facts section -->
       <div class="eco__facts">
         <h2 class="eco__facts--title">Did you know?</h2>
         <p id="eco__text"></p>
@@ -162,14 +163,12 @@
         </a>
       </div>
     </div>
-
     <!-- Leaders Board Block -->
     <div class="leaders__board hide" id="leaders-board">
       <h3 class="leaders__board--title">Leaders</h3>
       <button class="rules__close" id="leader-close">&times;</button>
       <div class="leaders__board--content"></div>
     </div>
-
     <!-- Scene Section -->
     <!-- Ocean game -->
     <div class="combo hide play__item" id="combo-block">
@@ -178,20 +177,16 @@
     </div>
     <div class="ocean__game--section hide" id="ocean-game">
       <div class="ocean__game--header"></div>
-
       <div class="ocean__background">
         <div class="fish" id="fish"></div>
         <div class="fish" id="fish2"></div>
         <div class="fish" id="fish3"></div>
-
         <div class="stingray" id="stingray"></div>
         <div class="stingray" id="stingray2"></div>
-
         <div class="jellyfish" id="jellyfish"></div>
         <div class="jellyfish" id="jellyfish2"></div>
       </div>
     </div>
-
     <!-- Beach game -->
     <div class="beach__game--section hide" id="beach-game">
       <div class="beach__scene">
@@ -206,7 +201,6 @@
         </div>
       </div>
     </div>
-
     <!-- River game -->
     <div class="river__game--section hide" id="river-game">
       <div class="mountain"></div>
@@ -237,7 +231,6 @@
         <div class="riverbank"></div>
       </div>
     </div>
-
     <!-- Garbage Bins For The Game -->
     <div class="game__bins--section hide play__item" id="garbage-bins">
       <div class="game__bin" data-category="organic">
@@ -253,7 +246,6 @@
         <img src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for paper waste" />
       </div>
     </div>
-
     <!-- End Game Window -->
     <div class="difficulty hide" id="end-game">
       <h2>Good Job!</h2>
@@ -274,10 +266,8 @@
       </form>
     </div>
   </main>
-
   <!-- Overlay for Modal Operation -->
   <div id="overlay"></div>
-
   <!-- Modal Pop-up Window (Game Instructions) -->
   <div class="modal" id="modal">
     <div class="modal-header">
@@ -289,7 +279,6 @@
       </p>
     </div>
   </div>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="copyrights__wrapper">
