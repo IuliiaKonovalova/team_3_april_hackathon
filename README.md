@@ -65,6 +65,7 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - A game pause button
 - A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
+
 **Navbar**
 
 The web application has navigation buttons to navigate to the Home view, Rules Section, Leadersboard Section and a Sound control button.
@@ -126,27 +127,13 @@ We built the CSS animations by pulling the code from the existing pens, and then
 - Beach Theme Materialized
 ![Theme Feature](documentation/features/beach_game.png)
 
+**Footer Feature**
 
-![Theme Feature](documentation/features/.png)
-![Theme Feature](documentation/features/.png)
+The footer is a fixed feature - always visible to the user. In addition to the copyright information, the footer includes a fun dropdown function that displays an avatar of each developer involved in the creation of this project. Each avatar links to the developers personal GitHub page. 
 
+![Footer Display](INSERT FINAL IMAGE HERE)
+![Footer With Dropdown Avatars](INSERT FINAL IMAGE HERE)
 
-
-- Home page (which includes a navbar with links to all pages of the site)
-- Rules page
-- Leaderboard page
-- Play button (located on home screen and rules page)
-- Game difficulty choice
-- Game theme option
-- A footer which includes all team members names
-- Neat and presentable UI for the game
-- Countdown clock for the game
-- Performance analytics for the player (including time left, score and lives)
-- A sound feature to toggle on and off
-- Sounds to accompany correct and incorrect game moves
-- An overlay which allows a player to supply their name and score to the global leaderboard
-- A game pause button
-- A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
 ### Future features
 
