@@ -346,12 +346,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Display creators GitHub links
   footerBtn.addEventListener('click', (e) => {
-    if (document.getElementById('show-creators').contains(e.target)) {
-      footerContent.classList.remove("hide");
-    }
-    if (document.getElementById('hide-creators').contains(e.target)) {
-      footerContent.classList.add("hide");
-    }
+    footerContent.classList.toggle("hide");
+    footerContent.classList.contains('hide') ?
+      footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>` :
+      footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-down"></i>`;
   });
 
   console.log(soundBtn);
