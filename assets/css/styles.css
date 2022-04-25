@@ -1547,7 +1547,7 @@ label {
 
   .navbar {
     position: relative;
-    justify-content: end;
+    justify-content: center;
   }
 
   #menu-bar {
