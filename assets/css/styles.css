@@ -205,6 +205,11 @@ body {
   margin-right: 1vw;
 }
 
+.game__bar .pause-stop__control i:hover {
+  color: var(--clr-accent--100);
+}
+
+
 /* ----- Main ----- */
 .main {
   display: flex;
