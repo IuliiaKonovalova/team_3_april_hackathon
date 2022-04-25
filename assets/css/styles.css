@@ -1375,23 +1375,29 @@ label {
 
 .footer__header {
   color: var(--clr-neutral--100);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
   text-transform: uppercase;
+  font-family: var(--ff-secondary);
   letter-spacing: var(--spacing);
   justify-content: start;
   width: 100%;
   text-align: center;
 }
 
+.footer__copyright {
+  color: var(--clr-accent--100);
+}
+
 .footer__btn {
   cursor: pointer;
-  color: var(--clr-accent--900);
+  color: var(--clr-neutral-100);
+  text-transform: capitalize;
+  background-color: var(--clr-accent--900);
+  border-radius: var(--br);
 }
 
 .footer__btn:hover {
   color: var(--clr-accent--100);
-  text-decoration: underline;
 }
 
 .footer__content {
@@ -1443,7 +1449,7 @@ label {
 }
 
 .footer__creators--item a:hover {
-  color: var(--clr-accent--900);
+  color: var(--clr-accent--100);
 }
 
 .team-show {

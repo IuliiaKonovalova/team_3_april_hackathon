@@ -348,7 +348,8 @@
     </div>
   </div>
   <footer class="footer">
-    <h3 class="footer__header">Copyright bla bla bla</h3>
+    <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
+    <!-- <h3 class="footer__header">Copyright Earth Protectors</h3> -->
     <div class="footer__btn" id="footer-btn">creators</div>
     <div class="footer__content hide" id="footer-content">
       <ul class="footer__creators">
@@ -383,7 +384,7 @@
           <a href="https://github.com/IuliiaKonovalova" target="_blank" rel="noopener"
             aria-label="Visit Iuliia Konovalova GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 4">
+              <img class="footer__avatar" src="assets/images/Juliia_avatar.jpeg" alt="Avatar Developer 4">
             </div>
             <p class="team-name">Iuliia</p>
           </a>
@@ -392,7 +393,7 @@
           <a href="https://github.com/miloszmisiek" target="_blank" rel="noopener"
             aria-label="Visit Milosz Misiek GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 5">
+              <img class="footer__avatar" src="assets/images/Mila_avatar.jpeg" alt="Avatar Developer 5">
             </div>
             <p class="team-name">Milosz</p>
           </a>
@@ -401,7 +402,7 @@
           <a href="https://github.com/Wingkelinks" target="_blank" rel="noopener"
             aria-label="Visit Whitney Turner GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 6">
+              <img class="footer__avatar" src="assets/images/Whitney_avatar.png" alt="Avatar Developer 6">
             </div>
             <p class="team-name">Whitney</p>
           </a>
@@ -418,6 +419,10 @@
   <!-- jquery ui touch punch script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script type="module" src="assets/js/game.js"></script>
+  <!-- Render Current Date Function -->
+  <script>
+    $(".footer__copyright").text(new Date().getFullYear());
+  </script>
 </body>
 
 </html>
