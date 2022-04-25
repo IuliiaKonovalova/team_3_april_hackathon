@@ -32,7 +32,8 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - As a frequent user, I want to enjoy the game, so I can play it regularly.
 - As a frequent user, I want to be able to compete with other users, so I can motivate myself to play the game.
 - As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience.
-- As a frequent user, I want to be able to learn interesting facts about environment, so I can improve my recycling habits.
+- As a frequent user, I want to be able to learn interesting facts about the environment, so I can improve my recycling habits.
+
 #### Parent Goals:
 - As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game.
 - As a parent of a frequent user, I want to be sure that the is no advertisement, so I can freely let my child play the game.
@@ -43,7 +44,40 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ## Scope
 
-**Features**
+### Features
+
+- Home page (which includes a navbar with links to all pages of the site)
+- Rules page
+- Leaderboard page
+- Play button (located on home screen and rules page)
+- Game difficulty choice
+- Game theme option
+- A footer which includes all team members names
+- Neat and presentable UI for the game
+- Countdown clock for the game
+- Performance analytics for the player (including time left, score and lives)
+- A sound feature to toggle on and off
+- Sounds to accompany correct and incorrect game moves
+- An overlay which allows a player to supply their name and score to the global leaderboard
+- A game pause button
+- A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
+
+- Rules Section
+
+![Rules Feature](DOCUMENTATION/Features/rules-feature.png)
+
+The purpose of the Rules Feature is to give users a brief description of how to play the game.
+The four bins located in the centre of the screen are buttons, which show what kind of garbage must be placed in a respective bin.
+The bins appear on the screen with CSS animation delaying every bin to be displayed one after another.
+When users hover over bins, CSS animation is triggered to rotate respective bins 360 deg.
+Information about proper segregation of garbage is presented to a user using a modal pop-up window.
+
+**IMAGE OF UPDATED MODAL HERE**
+
+Below the garbage bin section users can find randomly selected facts related to ecology. The information is fetched from a JSON file using jQuery and presented in UI.
+This section allows users to start a game with the use of the Play Button located in the right bottom corner of the section background window.
+Users can exit the Rules Section with any click outside the section window (excluding the navbar and footer) or by clicking the exit button in the top left corner.
+
 
 **Future features**
 

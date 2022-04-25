@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Garbage Run is an environmental awareness interactive learning platform" />
+  <meta name="description" content="Earth Protectors is an environmental awareness interactive learning platform" />
   <meta name="author" content="Juliia Aleksei JP Milosz Whitney" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="Environment, Rubbish, Game, Organic, Recyclable, Plastic, Clean, Awareness, 
@@ -16,7 +16,8 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/hamburgers.min.css">
-  <title>Garbage Run | Enviromental Awareness Game</title>
+  <title>Earth Protectors | Enviromental Awareness Game</title>
+  <link rel="icon" type="image/png" href="assets/images/earth1.png">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
     <button id="hamburger" class="hamburger hamburger--elastic-r" type="button"
       aria-label="Click to display menu on smaller screens">
       <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
+        <span class="hamburger-inner" id="ham-span"></span>
       </span>
     </button>
     <ul class="navbar__items" id="menu-bar">
@@ -131,18 +132,18 @@
           <div class="rules__bin">
             <!-- <h3 class="">What are Soft Plastics?</h3> -->
             <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1" id="plastic-bin"
-              src="assets/images/blue_bin_new.svg" alt="Image of a red bin for organic waste">
+              src="assets/images/blue_bin.svg" alt="Image of a red bin for organic waste">
 
           </div>
           <div class="rules__bin">
             <!-- <h3 class="">What are Recyclable Materials?</h3> -->
             <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2" id="glass-bin"
-              src="assets/images/green_bin_new.svg" alt="Image of a red bin for organic waste">
+              src="assets/images/green_bin.svg" alt="Image of a red bin for organic waste">
           </div>
           <div class="rules__bin">
             <!-- <h3 class="">What is Organic Waste?</h3> -->
             <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3" id="paper-bin"
-              src="assets/images/yellow_bin_new.svg" alt="Image of a red bin for organic waste">
+              src="assets/images/yellow_bin.svg" alt="Image of a red bin for organic waste">
           </div>
         </div>
       </div>
@@ -238,13 +239,13 @@
         <img src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste" />
       </div>
       <div class="game__bin" data-category="plastic">
-        <img src="assets/images/blue_bin_new.svg" alt="Image of a blue bin for plastic waste" />
+        <img src="assets/images/blue_bin.svg" alt="Image of a blue bin for plastic waste" />
       </div>
       <div class="game__bin" data-category="glass">
-        <img src="assets/images/green_bin_new.svg" alt="Image of a green bin for glass waste" />
+        <img src="assets/images/green_bin.svg" alt="Image of a green bin for glass waste" />
       </div>
       <div class="game__bin" data-category="paper">
-        <img src="assets/images/yellow_bin_new.svg" alt="Image of a yellow bin for paper waste" />
+        <img src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for paper waste" />
       </div>
     </div>
 
@@ -283,7 +284,8 @@
     </div>
   </div>
   <footer class="footer">
-    <h3 class="footer__header">Copyright bla bla bla</h3>
+    <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
+    <!-- <h3 class="footer__header">Copyright Earth Protectors</h3> -->
     <div class="footer__btn" id="footer-btn">creators</div>
     <div class="footer__content hide" id="footer-content">
       <ul class="footer__creators">
@@ -318,7 +320,7 @@
           <a href="https://github.com/IuliiaKonovalova" target="_blank" rel="noopener"
             aria-label="Visit Iuliia Konovalova GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 4">
+              <img class="footer__avatar" src="assets/images/Juliia_avatar.jpeg" alt="Avatar Developer 4">
             </div>
             <p class="team-name">Iuliia</p>
           </a>
@@ -327,7 +329,7 @@
           <a href="https://github.com/miloszmisiek" target="_blank" rel="noopener"
             aria-label="Visit Milosz Misiek GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 5">
+              <img class="footer__avatar" src="assets/images/Mila_avatar.jpeg" alt="Avatar Developer 5">
             </div>
             <p class="team-name">Milosz</p>
           </a>
@@ -336,7 +338,7 @@
           <a href="https://github.com/Wingkelinks" target="_blank" rel="noopener"
             aria-label="Visit Whitney Turner GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 6">
+              <img class="footer__avatar" src="assets/images/Whitney_avatar.png" alt="Avatar Developer 6">
             </div>
             <p class="team-name">Whitney</p>
           </a>
@@ -353,6 +355,10 @@
   <!-- jquery ui touch punch script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script type="module" src="assets/js/game.js"></script>
+  <!-- Render Current Date Function -->
+  <script>
+    $(".footer__copyright").text(new Date().getFullYear());
+  </script>
 </body>
 
 </html>

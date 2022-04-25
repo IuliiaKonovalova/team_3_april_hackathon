@@ -1,4 +1,8 @@
 /* jshint esversion: 8, jquery: true */
+import {
+  addHideClass,
+  myFunction
+} from './leaderboard-ops.js';
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
 document.addEventListener("DOMContentLoaded", () => {
   // variables
@@ -26,10 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerContent = document.getElementById("footer-content");
   const playItems = document.getElementsByClassName("play__item");
   const soundBtn = document.getElementById("sound-control");
-  const garbageBins = document.getElementsByClassName('rules__bin')
   const leaderBoardLink = document.getElementById('leaders-link')
   const leaderBoard = document.getElementById('leaders-board');
-  const leaderBoardClose = document.getElementById('leader-close')
+  const leaderBoardClose = document.getElementById('leader-close');
 
 
   // Set the current carousel slide
@@ -47,7 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Displays Home Page on user's clicks
   homePage.addEventListener("click", () => {
-    toggleMenu() ? hamburger : null;
+    if (hamburger.classList.contains("is-active")) {
+      toggleMenu();
+    }
+    // toggleMenu() ? hamburger.classList.contains("is-active") : null;
     addHideClass();
     mainBlock.classList.remove("hide");
     document.getElementById("earth-image").classList.remove("hide");
@@ -55,7 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
-    toggleMenu() ? hamburger : null;
+    if (hamburger.classList.contains("is-active")) {
+      toggleMenu();
+    }
     let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn)
     main.addEventListener('click', sectionEventHandler);
     addHideClass();
@@ -73,14 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
       difficultyBlock.classList.remove("hide");
       let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
       main.removeEventListener('click', sectionEventHandler);
-      difficultyBlock.classList.remove("hide");
     });
   }
 
   // Displays Leaders Board on user's click
   leaderBoardLink.addEventListener("click", () => {
-    toggleMenu() ? hamburger : null;
-    let sectionEventHandler = myFunction(leaderBoard, leaderBoardClose)
+    if (hamburger.classList.contains("is-active")) {
+      toggleMenu();
+    }
+    let sectionEventHandler = myFunction(leaderBoard, leaderBoardClose);
     main.addEventListener('click', sectionEventHandler);
     addHideClass();
     document.getElementById("earth-image").classList.remove("hide");
@@ -117,38 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //     mainBlock.classList.remove('hide');
   //   })
   // })
-
-  // Adds hide elements to main parts of UI
-  function addHideClass() {
-    document.getElementById("earth-image").classList.add("hide");
-    document.getElementById("beach-game").classList.add("hide");
-    document.getElementById("river-game").classList.add("hide");
-    document.getElementById("garbage-bins").classList.add("hide");
-    mainBlock.classList.add('hide');
-    rulesSection.classList.add('hide');
-    difficultyBlock.classList.add('hide');
-    carousel.classList.add("hide");
-    difficultyBlock.classList.add("hide");
-    leaderBoard.classList.add("hide");
-  }
-
-  // Curried function to add and remove event listeners for Rules and Leaders Board sections
-  let myFunction = function (section, closeBtn) {
-    return function curriedFunc(e) {
-      myFunction(e, section, closeBtn);
-      if (!section.classList.contains("hide")) {
-        console.log("click");
-        if (!section.contains(e.target) || closeBtn.contains(e.target)) {
-          addHideClass();
-          let sectionEventHandler;
-          document.getElementById("earth-image").classList.remove("hide");
-          mainBlock.classList.remove('hide');
-          main.removeEventListener('click', sectionEventHandler);
-
-        }
-      }
-    }
-  }
 
   // Reset all slides
   function reset() {
@@ -239,17 +216,60 @@ document.addEventListener("DOMContentLoaded", () => {
     let modalHeading;
     button.addEventListener('click', () => {
       if (button.id === "organic-bin") {
-        modalText = "i'm organic";
-        modalHeading = "i'm organic title"
+        modalText = `
+        <p>Organic matter comes from a living organism and when it is not living anymore, it will decay over time.</p>
+        <ul class="modal__bullet-points">
+          <li>Fruit</li>
+          <li>Vegetables</li>
+          <li>Plants</li>
+          <li>Meat & Fish</li>
+          <li>Egg Shells</li>
+        </ul>
+        `;
+        modalHeading = "<h2>Organic Bin</h2>"
       } else if (button.id === "plastic-bin") {
-        modalText = "i'm plastic";
-        modalHeading = "i'm plastic title";
+        modalText = `
+        <p>Plastic - It is everywhere! Soft plastics and hard plastics can be recycled and turned into other items.</p>
+        <ul class="modal__bullet-points">
+          <li>Shopping Bags</li>
+          <li>Chip Packets</li>
+          <li>Lolly Wrappers</li>
+          <li>Plastic Toys</li>
+          <li>Bottled Water</li>
+          <li>Straws</li>
+          <li>Takeaway Coffee Cups</li>
+          <li>Cleaning Product Bottles</li>
+        </ul>
+        `;
+        modalHeading = "<h2>Plastic Bin</h2>";
       } else if (button.id === "glass-bin") {
-        modalText = "i'm glass";
-        modalHeading = "i'm glass title";
+        modalText = `
+        <p>Glass is a hard material that can be easily recycled and made into many new things. It is mainly made of silica, which is actually sand!</p>
+        <ul class="modal__bullet-points">
+          <li>Glass Jars</li>
+          <li>Wine & Beer Bottles</li>
+          <li>Drinking Glasses</li>
+          <li>Seeing Glasses</li>
+          <li>Window Panes</li>
+        </ul>
+        `;
+        modalHeading = "<h2>Glass Bin</h2>";
       } else if (button.id === "paper-bin") {
-        modalText = "i'm paper";
-        modalHeading = "i'm paper heading"
+        modalText = `
+        <p>Paper is a thin material and is mostly made of wood fibres from trees. Card is a heavy type of paper, known for being stiff and quite durable!</p>
+        <ul class="modal__bullet-points">
+          <li>Cardboard Boxes</li>
+          <li>Newspaper</li>
+          <li>Project Card</li>
+          <li>Envelopes</li>
+          <li>Paper Shopping Bags</li>
+          <li>Printer Paper</li>
+          <li>Brown Paper Bags</li>
+          <li>Tissue Paper</li>
+          <li>Toilet Rolls</li>
+        </ul>
+        `;
+        modalHeading = "<h2>Paper & Card Bin</h2>"
       }
       const modal = document.querySelector(button.dataset.modalTarget);
       openModal(modal, modalText, modalHeading);
