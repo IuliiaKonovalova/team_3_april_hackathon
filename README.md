@@ -182,7 +182,7 @@ The repository was first created by logging into a GitHub account:
 
 Clicking the 'new' green button.
 
-This then prompts to another page with asks for a name for the new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. The Code Institute template was chosen in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
+This then prompts to another page with asks for a name for the new repository. Above this input there is a dropdown menu offering a selection of various templates to utilize with the repository. The Code Institute template was chosen in order to facilitate all the shortcuts included within it to make my workflow as fast as possible.
 
 Link to the deployed site is [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html).
 
@@ -196,7 +196,7 @@ Cloning by command line: Click the button beside the green button titled 'code',
 
 ### Forking
 
-Go to the repositary page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
+Go to the repository page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
 
 **How to run this project locally**
 
