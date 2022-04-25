@@ -234,6 +234,7 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 - The modal pop-up window used for the game's instructions were based on this Web Dev Simplified [video](https://www.youtube.com/watch?v=MBaw_6cPmAw).
 - Passing multiple arguments with the event included to event listener based on this [thread](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event).
 - [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices.
+- [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE).
 
 ## Acknowledgements
 
