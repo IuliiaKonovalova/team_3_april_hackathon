@@ -199,15 +199,19 @@ The background colour for the navigation and footer was chosen for contrast - ag
 ## Deployment
 
 ### Github
-The repository was first created by logging into a GitHub account:
 
-Clicking the 'new' green button.
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the [GitHub repository](https://github.com/IuliiaKonovalova/team_3_april_hackathon), navigate to the Settings tab
+- From the source section drop-down menu, select the **Main** Branch, then click "Save".
+- The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-This then prompts to another page with asks for a name for the new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. The Code Institute template was chosen in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
+The live link can be found [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html)
 
-Link to the deployed site is [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html).
-
-**How to fork the GitHub Repository**
+### Local Deployment
+In order to make a local copy of this project, you can clone it.
+In your IDE Terminal, type the following command to clone my repository:
+- `git clone https://github.com/IuliiaKonovalova/team_3_april_hackathon.git`
+- Alternatively, if you use Gitpod, you can [click here](https://github.com/IuliiaKonovalova/team_3_april_hackathon), which will start the Gitpod workspace for you.
 
 ### Cloning and Forking 
 
@@ -235,11 +239,11 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 - Passing multiple arguments with the event included to event listener based on this [thread](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event).
 - [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices.
 - [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE).
+- [Obfuscate]( https://obfuscator.io/) Was used to obfuscate the api key to firebase.
+
 
 ## Acknowledgements
 
 
 ## Collaborators
-
-
 
