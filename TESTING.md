@@ -175,7 +175,13 @@ The game aims to promote a more heightened awareness of environmental cleanlines
 
 ---
 ## Lighthouse Report
-![Lighthouse Report. Home Page](documentation/lighthouse_reports/lighthouse_home.png)
+
+**Desktop**
+
+![Lighthouse Report - Desktop](documentation/lighthouse/lighthouse-desktop.png)
+
+**Mobile**
+![Lighthouse Report - Mobile](documentation/lighthouse/lighthouse-mobile.png)
 
 ## Compatibility
 
