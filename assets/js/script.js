@@ -191,6 +191,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ecoText.innerText = fact;
   }
 
+  // jQuery function to display current year in the footer
+  $(".footer__copyright").text(new Date().getFullYear());
 
   // Click Previous Button
   prevButton.addEventListener("click", function () {
@@ -319,6 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
   beachTheme.addEventListener("click", () => {
     addHideClass();
     document.getElementById("beach-game").classList.remove("hide");
+    document.getElementById("garbage-bins").setAttribute("data-theme", "beach");
     for (let item of playItems) {
       item.classList.remove("hide");
     }
@@ -328,6 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
   riverTheme.addEventListener("click", () => {
     addHideClass();
     document.getElementById("river-game").classList.remove("hide");
+    document.getElementById("garbage-bins").setAttribute("data-theme", "river");
 
     for (let item of playItems) {
       item.classList.remove("hide");
@@ -338,6 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
   oceanTheme.addEventListener("click", () => {
     addHideClass();
     document.getElementById("ocean-game").classList.remove("hide");
+    document.getElementById("garbage-bins").setAttribute("data-theme", "ocean");
 
     for (let item of playItems) {
       item.classList.remove("hide");

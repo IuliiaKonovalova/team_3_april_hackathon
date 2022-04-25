@@ -1401,6 +1401,14 @@ label {
   text-align: center;
 }
 
+.copyrights__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 25rem;
+}
+
 .footer__copyright {
   color: var(--clr-accent--100);
 }
