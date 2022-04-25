@@ -4,10 +4,7 @@
  */
 export default class GarbageItem {
   constructor(jsonFile) {
-    // new Garbage item should randomly choose one of the categories
     this.category = Object.keys(jsonFile)[Math.floor(Math.random() * Object.keys(jsonFile).length)];
-    console.log(this.category);
-    // new Garbage item should randomly choose one of the items in the category
     this.item = Object.keys(jsonFile[this.category]["type"])[Math.floor(Math.random() * Object.keys(jsonFile[this.category]["type"]).length)];
     this.imageUrl = jsonFile[this.category]["type"][this.item];
     this.x = 0;
@@ -22,7 +19,6 @@ export default class GarbageItem {
     let item = document.createElement("img");
     item.classList.add("garbage-item");
     item.src = this.imageUrl;
-    // add data-id attribute to the item
     item.setAttribute("data-id", this.id);
     item.setAttribute("data-category", this.category);
     item.style.position = "absolute";
@@ -34,7 +30,6 @@ export default class GarbageItem {
     element.appendChild(item);
   }
   remove(screen) {
-    // need to choose this exact item to remove
     let item = screen.querySelector(`img[data-id="${this.id}"]`);
     screen.removeChild(item);
   }
