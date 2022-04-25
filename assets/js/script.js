@@ -191,6 +191,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ecoText.innerText = fact;
   }
 
+  // jQuery function to display current year in the footer
+  $(".footer__copyright").text(new Date().getFullYear());
 
   // Click Previous Button
   prevButton.addEventListener("click", function () {

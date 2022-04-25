@@ -283,10 +283,12 @@
     </div>
   </div>
   <footer class="footer">
-    <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
-    <div class="footer__creators--title footer__btn" id="footer-btn">
-      <div class="footer__btn" id="footer-btn">
-        <i class="fas fa-arrow-alt-circle-up"></i>
+    <div class="copyrights__wrapper">
+      <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
+      <div class="footer__creators--title footer__btn" id="footer-btn">
+        <div class="footer__btn" id="footer-btn">
+          <i class="fas fa-arrow-alt-circle-up"></i>
+        </div>
       </div>
     </div>
     <div class="footer__content hide" id="footer-content">
@@ -357,10 +359,6 @@
   <!-- jquery ui touch punch script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script type="module" src="assets/js/game.js"></script>
-  <!-- Render Current Date Function -->
-  <script>
-    $(".footer__copyright").text(new Date().getFullYear());
-  </script>
 </body>
 
 </html>
