@@ -63,6 +63,31 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - A game pause button
 - A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
+**Home Page**
+
+The Earth Protectors Home Page is structured with a Navbar on the top, the logo heading centred on the web page, followed by the Play button, which clicked will prompt the users to choose the basic gameplay settings. The bottom of the page is occupied by the Footer section.
+
+![Home Page](documentation/features/home-page.png)
+
+**Difficulty Selection**
+
+When users click the Play button, they can choose between **Easy** and **Hard** modes.
+- **Easy**: garbage appears on the screen and users must segregate it into proper bins.
+- **Hard**: new garbage appears every 2 seconds.
+
+![Difficulty Selection](documentation/features/difficulty-selection.png)
+
+**Game Arena Themes Selection**
+When players choose their difficulty preference, they must select the Game Arena Theme. They have three options which bring users to their respective scenery:
+- **Beach**,
+- **River**,
+- **Ocean**.
+
+Players can choose scenery with arrow buttons located on the left & right parts of the screen. When they decide they can click the Play button to start the game session.
+
+Every scene has a different musical background.
+
+![Game Arena Scenes](documentation/features/game-arena-selection.png)
 
 **Navbar**
 
@@ -124,6 +149,20 @@ We built the CSS animations by pulling the code from the existing pens, and then
 ![Theme Feature](documentation/features/beach_theme_test.png)
 - Beach Theme Materialized
 ![Theme Feature](documentation/features/beach_game.png)
+
+**End Game Window**
+
+After the game is finished, users are notified about their score. They can submit their score to Leader Boards by typing their name or anonymously if they prefer. Below name input, the Submit button sends the data to the Firebase database and the user is informed about the latest results hierarchy.
+
+![End Game Window](documentation/features/end-game-window.png)
+
+**Leaders Board**
+
+Users are able to see scores of previous players. The Leaders Board section is displayed after players submit their scores or by clicking in the respective button on the Navigation Bar.
+
+[Firebase](https://firebase.google.com/) database is implemented to store players scores.
+
+![Leaders Board](documentation/features/leaders-board.png)
 
 **Footer Feature**
 
