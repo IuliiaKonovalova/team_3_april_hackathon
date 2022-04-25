@@ -1,16 +1,7 @@
 /* jshint esversion: 6 */
 import GarbageItem from "./GarbageItem.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBeXh7AxiEzrwJ6l76e4za337uEFlUr9ZM",
-  authDomain: "april-ci-hackathon-team3.firebaseapp.com",
-  databaseURL: "https://april-ci-hackathon-team3-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "april-ci-hackathon-team3",
-  storageBucket: "april-ci-hackathon-team3.appspot.com",
-  messagingSenderId: "383315248126",
-  appId: "1:383315248126:web:b7e6094ffdd4ced9fdf6af",
-  measurementId: "G-KPE5CFX4GW"
-};
+(function(_0x26e91c,_0x51d2f2){const _0x401737=_0x2e0b,_0x1cf3e6=_0x26e91c();while(!![]){try{const _0x1a578d=parseInt(_0x401737(0x96))/0x1*(parseInt(_0x401737(0x99))/0x2)+-parseInt(_0x401737(0x92))/0x3+parseInt(_0x401737(0x9e))/0x4+-parseInt(_0x401737(0xa0))/0x5*(-parseInt(_0x401737(0x9f))/0x6)+-parseInt(_0x401737(0xa2))/0x7*(parseInt(_0x401737(0x98))/0x8)+parseInt(_0x401737(0x95))/0x9+-parseInt(_0x401737(0x9c))/0xa;if(_0x1a578d===_0x51d2f2)break;else _0x1cf3e6['push'](_0x1cf3e6['shift']());}catch(_0x2ab8a3){_0x1cf3e6['push'](_0x1cf3e6['shift']());}}}(_0x5f52,0xd4e3b));function _0x2e0b(_0x47fb6c,_0x289ea8){const _0x5f5284=_0x5f52();return _0x2e0b=function(_0x2e0b0c,_0x55f162){_0x2e0b0c=_0x2e0b0c-0x92;let _0x724290=_0x5f5284[_0x2e0b0c];return _0x724290;},_0x2e0b(_0x47fb6c,_0x289ea8);}function returnFirebaseConfig(){const _0x23ffa7=_0x2e0b;return{'apiKey':_0x23ffa7(0x94),'authDomain':_0x23ffa7(0x9a),'databaseURL':_0x23ffa7(0x97),'projectId':_0x23ffa7(0x93),'storageBucket':_0x23ffa7(0xa3),'messagingSenderId':_0x23ffa7(0xa1),'appId':_0x23ffa7(0x9d),'measurementId':_0x23ffa7(0x9b)};}function _0x5f52(){const _0x1c2f42=['592508UfTpXa','6fxtJcU','2051160hEyQlh','383315248126','10913riXVKq','april-ci-hackathon-team3.appspot.com','203472Uuueou','april-ci-hackathon-team3','AIzaSyBeXh7AxiEzrwJ6l76e4za337uEFlUr9ZM','12541158ZXGpsq','739066VPfQUw','https://april-ci-hackathon-team3-default-rtdb.europe-west1.firebasedatabase.app','3704FehDLi','2CRkECW','april-ci-hackathon-team3.firebaseapp.com','G-KPE5CFX4GW','10292510nXSnEX','1:383315248126:web:b7e6094ffdd4ced9fdf6af'];_0x5f52=function(){return _0x1c2f42;};return _0x5f52();}const firebaseConfig=returnFirebaseConfig();
 
 firebase.initializeApp(firebaseConfig);
 
