@@ -279,21 +279,25 @@ export default class Game {
     let pauseScreen = document.getElementsByClassName("pause-screen")[0];
     pauseScreen.remove();
     this.startTimer();
-    this.garbageInterval = setInterval(() => {
-      let garbageItem = new GarbageItem(this.garbageJson);
-      this.garbageItems += 1;
-      garbageItem.draw(this.gameScreen);
-      $(`img[data-id="${garbageItem.id}"]`).draggable({
-        cursor: "move",
-        containment: "window",
-        start: (event, ui) => {
-          ui.helper.css("z-index", "999999999999");
-        }
-      });
-    }, 2000);
+    if (this.gameMode === "hard") {
+      this.garbageInterval = setInterval(() => {
+        let garbageItem = new GarbageItem(this.garbageJson);
+        this.garbageItems += 1;
+        garbageItem.draw(this.gameScreen);
+        $(`img[data-id="${garbageItem.id}"]`).draggable({
+          cursor: "move",
+          containment: "window",
+          start: (event, ui) => {
+            ui.helper.css("z-index", "999999999999");
+          }
+        });
+      }, 2000);
+    }
   }
   stop() {
     let pauseScreen = document.getElementsByClassName("pause-screen")[0];
+    this.playButton.classList.add("hide");
+    this.pauseButton.classList.remove("hide");
     if (pauseScreen) {
       pauseScreen.remove();
     }
