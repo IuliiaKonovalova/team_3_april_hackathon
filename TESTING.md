@@ -54,6 +54,40 @@
 | Leader board | | |N/A | In progress
 
 
+
+## Testing User Story
+
+|-------------------------------|--------------------------|-------------------|
+|       **User Stories**        |   **Requirements met**   |     **Image**     |
+|-------------------------------|--------------------------|-------------------|
+| **First Time Visitor Goals:** | | |
+| As a first time visitor, I want to be able to easily understand the purpose of the website, so I can decide whether I want to use it or not. | On the landing page of the site it is clear where the user may go to learn the rules of the game. It is also clear how to play the game with the play button clearly displayed. |  |
+| As a first time visitor, I want to be able to easily navigate the website, so I can find what I am looking for. | Users can navigate the site by use of a menu navigation bar | (Landing Page)[assets/images/userstories/landing.png] |
+| As a first time visitor, I want to be able to easily understand the rules of the game, so I can play freely. | There is a rules menu option that pops up a window containing the rules | (Nav Menu)[assets/images/userstories/navmenu.png] |
+|                               | | (Rules Popup)[assets/images/userstories/rulepopup.png] |
+|                               | | |
+| **Frequent User Goals:**      | | |
+| As a frequent user, I want to be able to learn about sorting garbage for recycling, so I can recycle my garbage in real life. | A user has the has 3 game options, beach, river and ocean. The aim of the game is to sort the items on the screen into the correct bin. For example a book goes to the paper bin, a plastic bottle to the plastics bin| (Beach game)[assets/images/userstories/beachgame.png] |
+|                               | | (River game)[assets/images/userstories/rivergame.png] |
+|                               | | (Ocean game)[assets/images/userstories/oceangame.png]|
+|                               | | (Play game)[assets/images/userstories/playgame.png] |
+|                               | | |
+| As a frequent user, I want to enjoy the game, so I can play it regularly. | At the end of a play a score board pops-up where the user may enter their game name and submit their score. Thereafter a leader board pops-up to show the scores of top players. | (Score board)[assets/images/userstories/scoreboard.png] |
+|                               | | (Leader Board)[assets/images/userstories/scoreboard.png] |
+|                               | | |
+| As a frequent user, I want to be able to compete with other users, so I can motivate myself to play the game. | | |
+| As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience. | | |
+| As a frequent user, I want to be able to learn interesting facts about environment, so I can improve my recycling habits. | | |
+|                               | | |
+| **Parent Goals:**             | | |
+| As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game. | | |
+| As a parent of a frequent user, I want to be sure that the is no advertisement, so I can freely let my child play the game. | | |
+| As a parent of a frequent user, I want to know that my child develops good recycling habits, so I can be sure that my child will be able to recycle in real life. | | |
+| As a parent of a frequent user, I want to be sure that my child is not addicted to the game, so I can be sure that my child will be able to play the game regularly. (for the future development) | | |
+| As a parent of a frequent user, I want to be sure that my child is motivated to play the game, so I can be sure that my child receives enough motivation to recycle and actively participate in preserving our environment. | | |
+| As a parent of a frequent user, I want my child to learn additional facts about the environment, so I can be sure that my child will be able to improve his recycling habits. | | |
+
+
 ## Testing user stories
 
 ### First Time Visitor Goals:
@@ -62,26 +96,26 @@
 
 When the user enters the page they are met with a neatly displayed home page which has the headings 'Home', 'Rules' and 'Leaderboard' in the navigation menu. It should be quite clear that the website is hosting an game for which users can freely play by pressing the play button.
 
-![First time 1](assets/images/user-stories/first-time-visitor-1.png)
+(First time 1)[assets/images/user-stories/first-time-visitor-1.png]
 
 - As a first time visitor, I want to be able to easily navigate the website, so I can find what I am looking for.
 
 On all pages of the game (exluding when in the game) a first time visitor will easily be able to navigate their way around the website. The navigation menu clearly points toward the short and simple points of direction the website has to offer.
 
-![First time 2](assets/images/user-stories/first-time-visitor-2.png)
+(First time 2)[assets/images/user-stories/first-time-visitor-2.png]
 
 - As a first time visitor, I want to be able to easily understand the rules of the game, so I can play freely.
 
 If the visitor wants to check out the rules of the game, they will be prompted with this overlay which simply outlines the objective of the game.
 
-![First time 3](assets/images/user-stories/first-time-visitor-3.png)
+(First time 3)[assets/images/user-stories/first-time-visitor-3.png]
 
 #### Frequent User Goals:
 - As a frequent user, I want to be able to learn about sorting garbage for recycling, so I can recycle my garbage in real life.
 
 The objective of the game posits that players will become more aware of what pieces of rubbish go into which section of recycling. As the game goes on players are given live feedback including the score they have and lives they have lost for successfully and unsuccesffully placing specific items of rubbish in the various different bins.
 
-![Frequent 1](assets/images/user-stories/frequent-1.png)
+(Frequent 1)[assets/images/user-stories/frequent-1.png]
 
 - As a frequent user, I want to enjoy the game, so I can play it regularly.
 
@@ -91,19 +125,19 @@ The score feedback of the game of the game aims to gauge a players interest and 
 
 The leaderboard section of the game increase the competitive nature of the game as visitors look to rise the ladder and become the best player.
 
-![Frequent 2](assets/images/user-stories/frequent-2.png)
+(Frequent 2)[assets/images/user-stories/frequent-2.png]
 
 - As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience.
 
 Users can freely decide on the specific theme they'd like to have as a backdrop for the game. Using the arrows as seen in the below screenshot, players can freely decide on choosing the ocean, river and beach theme to accompany their experience whilst playing the game.
 
-![Frequent 3](assets/images/user-stories/frequent-3.png)
+(Frequent 3)[assets/images/user-stories/frequent-3.png]
 
 - As a frequent user, I want to be able to learn interesting facts about the environment, so I can improve my recycling habits.
 
 As well the 'learning by playing' nature of the game itself, the visitor can also find some interesting facts within the rules section of the website itself as seen below.
 
-![Frequent 4](assets/images/user-stories/frequent-4.png)
+(Frequent 4)[assets/images/user-stories/frequent-4.png]
 
 #### Parent Goals:
 - As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game.

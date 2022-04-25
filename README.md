@@ -62,10 +62,70 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - A game pause button
 - A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
+**Navbar**
+
+The web application has navigation buttons to navigate to the Home view, Rules Section, Leadersboard Section and a Sound control button.
+
+![Navbar desktop](documentation/features/navbar_desktop.png)
+
+The sound control button allows users to toggle the sound on and off. It looks different depending on whether the sound is on or off.
+
+![Navbar desktop. Sound on](documentation/features/sound_on.png)
+![Navbar desktop. Sound off](documentation/features/sound_off.png)
+
+On the mobile version of the application the user will see a hamburger menu icon on the left side on the navigation bar, which will open the navigation menu, and the sound control button will be located on the right side of the navigation bar.
+
+![Navbar mobile](documentation/features/navbar_mobile.png)
+When the user clicks on the hamburger menu icon, the navigation menu will appear on the whole screen.
+
+![Navbar mobile. Navigation menu open](documentation/features/navbar_mobile_open.png)
+
+When the user starts the game, the Home, Rules and Leaders board buttons will be hidden. The game will be seen on the right side of the navigation bar.
+
+![Navbar Desktop. Game view open](documentation/features/navbar_game_on.png)
+
+On the mobile device the game bar will be seen in the middle of the navigation bar.
+
+![Navbar mobile. Game view open](documentation/features/navbar_game_on_mobile.png)
+
+- Rules Section
+
+![Rules Feature](documentation/features/rules-feature.png)
+
+The purpose of the Rules Feature is to give users a brief description of how to play the game.
+The four bins located in the centre of the screen are buttons, which show what kind of garbage must be placed in a respective bin.
+The bins appear on the screen with CSS animation delaying every bin to be displayed one after another.
+When users hover over bins, CSS animation is triggered to rotate respective bins 360 deg.
+Information about proper segregation of garbage is presented to a user using a modal pop-up window.
+
+**IMAGE OF UPDATED MODAL HERE**
+
+Below the garbage bin section users can find randomly selected facts related to ecology. The information is fetched from a JSON file using jQuery and presented in UI.
+This section allows users to start a game with the use of the Play Button located in the right bottom corner of the section background window.
+Users can exit the Rules Section with any click outside the section window (excluding the navbar and footer) or by clicking the exit button in the top left corner.
+
+
+- Home page (which includes a navbar with links to all pages of the site)
+- Rules page
+- Leaderboard page
+- Play button (located on home screen and rules page)
+- Game difficulty choice
+- Game theme option
+- A footer which includes all team members names
+- Neat and presentable UI for the game
+- Countdown clock for the game
+- Performance analytics for the player (including time left, score and lives)
+- A sound feature to toggle on and off
+- Sounds to accompany correct and incorrect game moves
+- An overlay which allows a player to supply their name and score to the global leaderboard
+- A game pause button
+- A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
+
 ### Future features
 
 - In the future, the intention is to implement a 'time-limit' on the frequency a player can play the game. If a player plays the game in a specified number of successions they will be given a prompt notifying them of the amount of time they have spent playing the game and a suggestion that asks them to consider taking a break and coming back later. This is to ensure that parents can feel at ease as to whether or not their child will be playing the game too much. This feature will be developed further as the lifespan of the game continues into the future.
 
+!
 ## Design
 
 ### Structure

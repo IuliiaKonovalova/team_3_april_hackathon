@@ -43,8 +43,8 @@
   "organic": {
     "type": {
       "meat": "assets/images/organic/meat.png",
-      "tomato": "assets/images/organic/tomato.jpg",
-      "chicken": "assets/images/organic/chicken.jpg",
+      "tomato": "assets/images/organic/tomato.png",
+      "chicken": "assets/images/organic/chicken.png",
       "cake": "assets/images/organic/cake.png",
       "leaves": "assets/images/organic/leaves.png",
       "watermelon": "assets/images/organic/watermelon.png",

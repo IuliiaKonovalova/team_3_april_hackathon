@@ -4,47 +4,41 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Garbage Run is an environmental awareness interactive learning platform" />
+  <meta name="description" content="Earth Protectors is an environmental awareness interactive learning platform" />
   <meta name="author" content="Juliia Aleksei JP Milosz Whitney" />
   <meta name="robots" content="index, follow" />
-  <meta keywords="Environment, Rubbish, Game, Organic, Recyclable, Plastic, Clean, Awareness, 
+  <meta name="keywords" content="Environment, Rubbish, Game, Organic, Recyclable, Plastic, Clean, Awareness, 
                   Planet, Greenhouse Gases" />
   <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
+  <!-- scripts for firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/hamburgers.min.css">
-  <title>Garbage Run | Enviromental Awareness Game</title>
+  <title>Earth Protectors | Enviromental Awareness Game</title>
+  <link rel="icon" type="image/png" href="assets/images/earth1.png">
 </head>
 
 <body>
-  <!-- Overlay for Modal Operation -->
-  <div id="overlay"></div>
-  <!-- Modal Pop-up Window (Game Instructions) -->
-  <div class="modal" id="modal">
-    <div class="modal-header">
-      <div class="title">Instructions</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error fuga
-        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
-        maiores.
-      </p>
-    </div>
-  </div>
   <nav class="navbar topbar">
     <button id="hamburger" class="hamburger hamburger--elastic-r" type="button"
       aria-label="Click to display menu on smaller screens">
       <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
+        <span class="hamburger-inner" id="ham-span"></span>
       </span>
     </button>
     <ul class="navbar__items" id="menu-bar">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="javascript:void(0)" id="home-link">Home</a></li>
       <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
-      <li><a href="javascript:void(0)">Leaders Board</a></li>
+      <li><a href="javascript:void(0)" id="leaders-link">Leaders Board</a></li>
     </ul>
     <div class="game__bar">
+      <div class="play__item pause-stop__control hide">
+        <i class="fas fa-pause"></i>
+        <i class="fas fa-play hide"></i>
+        <i class="fas fa-stop"></i>
+      </div>
 
       <div class="timer__control hide play__item">
         <span id="timer">05:00</span>
@@ -57,7 +51,7 @@
         </span>
       </div>
       <div class="score__control hide play__item">
-        <span id="score">3000</span>
+        <span id="score">0000</span>
       </div>
       <div class="sound__control" id="sound-control">
         <i class="fas fa-volume-up hide" id="sound-on"></i>
@@ -67,7 +61,7 @@
   </nav>
   <main class="main" id="main">
     <div class="image__holder" id="earth-image">
-      <img src="assets/images/earth1.png" alt="" />
+      <img src="assets/images/earth1.png" alt="Image of the green and blue earth" />
     </div>
     <!-- Start Game block -->
     <div class="main__block" id="main-block">
@@ -90,7 +84,8 @@
         <li class="carousel__slide carousel__images--visible">
           <h2 class="carousel__slide--title">Beach</h2>
           <div class="carousel__images--container">
-            <img class="carousel__images" src="assets/images/beach_clean.png" alt="" />
+            <img class="carousel__images" src="assets/images/beach_clean.png"
+              alt="Boy on a beach with a bag of garbage" />
           </div>
           <a class="btn btn__play btn__play--theme" id="beach-theme">
             <img src="assets/images/play.svg" alt="Play button icon" />
@@ -99,8 +94,7 @@
         <li class="carousel__slide carousel__images--hidden">
           <h2 class="carousel__slide--title">River</h2>
           <div class="carousel__images--container">
-            <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="" />
-            <!-- <img class="carousel__images" src="assets/images/river55.png" alt="" /> -->
+            <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="Dog cleaning the river" />
           </div>
           <a class="btn btn__play btn__play--theme" id="river-theme">
             <img src="assets/images/play.svg" alt="Play button icon" />
@@ -109,7 +103,8 @@
         <li class="carousel__slide carousel__images--hidden">
           <h2 class="carousel__slide--title">Ocean</h2>
           <div class="carousel__images--container">
-            <img class="carousel__images" src="assets/images/ocean_clean.png" alt="" />
+            <img class="carousel__images" src="assets/images/ocean_clean.png"
+              alt="Plastic bottle in the Ocean cartoon image" />
           </div>
           <a class="btn btn__play btn__play--theme" id="ocean-theme">
             <img src="assets/images/play.svg" alt="Play button icon" />
@@ -125,44 +120,49 @@
       <!-- data-modal-target is a selector for JS that points out to element to be open with button -->
       <div class="game__rules">
         <h1>How to Play?</h1>
-        <button id="rules__close">&times;</button>
+        <button class="rules__close" id="rules-close">&times;</button>
         <p>
-          Identify three different waste types and which bins they belong in...
+          Identify four different waste types and which bins they belong in. Score points with proper waste segregation.
         </p>
         <div class="rules__bins">
-          <div class="rules__bin" id="organic__bin">
-            <img data-modal-target="#modal" class="bin__rules--img animate pop" src="/assets/images/red_bin.svg"
-              alt="Image of a red bin for organic waste">
+          <div class="rules__bin">
+            <img data-modal-target="#modal" class="bin__rules--img animate pop" id="organic-bin"
+              src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
           </div>
           <div class="rules__bin">
             <!-- <h3 class="">What are Soft Plastics?</h3> -->
-            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1"
-              src="/assets/images/blue_bin_new.svg" alt="Image of a red bin for organic waste">
-
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1" id="plastic-bin"
+              src="assets/images/blue_bin.svg" alt="Image of a blue bin for organic waste">
           </div>
-          <div class="rules__bin" id="recyclable__bin">
+          <div class="rules__bin">
             <!-- <h3 class="">What are Recyclable Materials?</h3> -->
-            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2"
-              src="/assets/images/green_bin_new.svg" alt="Image of a red bin for organic waste">
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2" id="glass-bin"
+              src="assets/images/green_bin.svg" alt="Image of a green bin for organic waste">
           </div>
-          <div class="rules__bin" id="organic__bin">
+          <div class="rules__bin">
             <!-- <h3 class="">What is Organic Waste?</h3> -->
-            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3"
-              src="/assets/images/yellow_bin_new.svg" alt="Image of a red bin for organic waste">
+            <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3" id="paper-bin"
+              src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for organic waste">
           </div>
         </div>
       </div>
       <div class="eco__facts">
-        <h1>Did you know?</h1>
+        <h2 class="eco__facts--title">Did you know?</h2>
         <p id="eco__text"></p>
       </div>
       <a class="btn btn__play play-btn" id="rules__play">
-        <img src="assets/images/play.svg" alt="" />
+        <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
       </a>
     </div>
+    </div>
 
-    <!-- <div class="game"></div> -->
+    <!-- Leaders board Block -->
+    <div class="leaders__board hide" id="leaders-board">
+      <h3 class="leaders__board--title">Leaders</h3>
 
+      <button class="rules__close" id="leader-close">&times;</button>
+      <div class="leaders__board--content"></div>
+    </div>
     <!-- Scene Section -->
     <!-- Ocean game -->
     <div class="combo hide play__item" id="combo-block">
@@ -238,14 +238,34 @@
         <img src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste" />
       </div>
       <div class="game__bin" data-category="plastic">
-        <img src="assets/images/blue_bin_new.svg" alt="Image of a blue bin for plastic waste" />
+        <img src="assets/images/blue_bin.svg" alt="Image of a blue bin for plastic waste" />
       </div>
       <div class="game__bin" data-category="glass">
-        <img src="assets/images/green_bin_new.svg" alt="Image of a green bin for glass waste" />
+        <img src="assets/images/green_bin.svg" alt="Image of a green bin for glass waste" />
       </div>
       <div class="game__bin" data-category="paper">
-        <img src="assets/images/yellow_bin_new.svg" alt="Image of a yellow bin for paper waste" />
+        <img src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for paper waste" />
       </div>
+    </div>
+
+    <!-- End Game Window -->
+    <div class="difficulty hide" id="end-game">
+      <h2>Good Job!</h2>
+      <form>
+        <ul>
+          <li>
+            <label for="player-score">Score</label>
+            <input id="player-score" name="player-score" placeholder="9999" readonly>
+          </li>
+          <li>
+            <label for="player-name">Enter your name</label>
+            <input type="text" name="player-name" id="player-name">
+          </li>
+          <li>
+            <button class="difficulty__btn" id="score-submit">SUBMIT</button>
+          </li>
+        </ul>
+      </form>
     </div>
 
   </main>
@@ -254,28 +274,30 @@
   <!-- Modal Pop-up Window (Game Instructions) -->
   <div class="modal" id="modal">
     <div class="modal-header">
-      <div class="title">Instructions</div>
+      <div class="title" id="modal-title">Instructions</div>
       <button data-close-button class="close-button">&times;</button>
     </div>
     <div class="modal-body">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus tempora corrupti, vero et, error
-        fuga
-        eligendi officia asperiores magnam, aliquam nihil molestiae sit molestias deserunt natus labore doloremque
-        maiores.
+      <p id="modal-text">
       </p>
     </div>
   </div>
   <footer class="footer">
-    <h3 class="footer__header">Copyright bla bla bla</h3>
-    <div class="footer__btn" id="footer-btn">creators</div>
+    <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
+    <div class="footer__creators--title footer__btn" id="footer-btn">
+      <h3>Creators</h3>
+      <div class="footer__btn" id="footer-btn">
+        <i class="fas fa-arrow-alt-circle-up" id="hide-creators"></i>
+        <i class="fas fa-arrow-alt-circle-down" id="show-creators"></i>
+      </div>
+    </div>
     <div class="footer__content hide" id="footer-content">
       <ul class="footer__creators">
         <li class="footer__creators--item">
           <a href="https://github.com/lexach91" target="_blank" rel="noopener"
             aria-label="Visit Aleksei Konovalov GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
+              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 2">
             </div>
             <p class="team-name">Aleksei</p>
           </a>
@@ -284,7 +306,7 @@
           <a href="https://github.com/stuartj073" target="_blank" rel="noopener"
             aria-label="Visit James Stuart GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 2">
+              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 2">
             </div>
             <p class="team-name">James</p>
           </a>
@@ -293,7 +315,7 @@
           <a href="https://github.com/JPRodrigues-gh" target="_blank" rel="noopener"
             aria-label="Visit Joao Paulo Rodrigues GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 3">
+              <img class="footer__avatar" src="assets/images/dev2_avatar.png" alt="Avatar Developer 3">
             </div>
             <p class="team-name">JP</p>
           </a>
@@ -302,7 +324,7 @@
           <a href="https://github.com/IuliiaKonovalova" target="_blank" rel="noopener"
             aria-label="Visit Iuliia Konovalova GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 4">
+              <img class="footer__avatar" src="assets/images/Juliia_avatar.jpeg" alt="Avatar Developer 4">
             </div>
             <p class="team-name">Iuliia</p>
           </a>
@@ -311,7 +333,7 @@
           <a href="https://github.com/miloszmisiek" target="_blank" rel="noopener"
             aria-label="Visit Milosz Misiek GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 5">
+              <img class="footer__avatar" src="assets/images/Mila_avatar.jpeg" alt="Avatar Developer 5">
             </div>
             <p class="team-name">Milosz</p>
           </a>
@@ -320,7 +342,7 @@
           <a href="https://github.com/Wingkelinks" target="_blank" rel="noopener"
             aria-label="Visit Whitney Turner GitHub page">
             <div class="footer__image--container">
-              <img class="footer__avatar" src="/assets/images/dev2_avatar.png" alt="Avatar Developer 6">
+              <img class="footer__avatar" src="assets/images/Whitney_avatar.png" alt="Avatar Developer 6">
             </div>
             <p class="team-name">Whitney</p>
           </a>
@@ -337,6 +359,10 @@
   <!-- jquery ui touch punch script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script type="module" src="assets/js/game.js"></script>
+  <!-- Render Current Date Function -->
+  <script>
+    $(".footer__copyright").text(new Date().getFullYear());
+  </script>
 </body>
 
 </html>
