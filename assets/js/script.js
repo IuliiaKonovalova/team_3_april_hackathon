@@ -345,8 +345,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Display creators GitHub links
-  footerBtn.addEventListener('click', () => {
-    footerContent.classList.toggle("hide");
+  footerBtn.addEventListener('click', (e) => {
+    if (document.getElementById('show-creators').contains(e.target)) {
+      footerContent.classList.remove("hide");
+    }
+    if (document.getElementById('hide-creators').contains(e.target)) {
+      footerContent.classList.add("hide");
+    }
   });
 
   console.log(soundBtn);
