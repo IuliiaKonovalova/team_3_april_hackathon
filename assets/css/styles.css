@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lato:wght@300&family=Moo+Lah+Lah&family=Roboto+Slab:wght@200&family=Roboto:wght@100&family=Rubik+Microbe&family=Rubik+Moonrocks&family=Titan+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lato:wght@300&family=Moo+Lah+Lah&family=Roboto+Slab:wght@200&family=Roboto:wght@100&family=Rubik+Microbe&family=Rubik+Moonrocks&family=Titan+One&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Rubik+Moonrocks&display=swap');
 
 :root {
   --clr-primary--100: #005aff;
@@ -127,7 +128,6 @@ body {
   border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
-  font-weight: 900;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -143,7 +143,7 @@ body {
   color: var(--clr-neutral--800);
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 2vh;
   padding: 1vh 2vw;
 }
@@ -258,10 +258,10 @@ body {
 
 .btn__play {
   margin-top: 10vh;
-  width: 8rem;
+  width: 6rem;
   background-color: #ffffff;
   border-radius: 50%;
-  padding: 1em 1em 1em 1.5em;
+  padding: 0.5em 0.5em 0.5em 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1374,7 +1374,7 @@ label {
   align-items: center;
   justify-content: start;
   width: 100%;
-  height: 10vh;
+  /* height: 10vh; */
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
@@ -1392,6 +1392,12 @@ label {
 
 .footer__copyright {
   color: var(--clr-accent--100);
+}
+
+#footer-btn>h3 {
+  font-size: 2vh;
+  color: var(--clr-neutral--100);
+  font-weight: 900;
 }
 
 .footer__btn {
@@ -1423,19 +1429,18 @@ label {
   align-items: center;
   justify-content: space-around;
   max-width: 30rem;
-  padding: 2vh;
+  padding: 1vh;
 }
 
 .footer__creators--title {
-  color: var(--clr-accent--100);
+  color: var(--clr-accent--900);
   display: flex;
   text-align: center;
 }
 
 .footer__creators--item {
   color: var(--clr-neutral--100);
-  font-size: 1.2rem;
-  font-weight: 400;
+  /* font-size: 1rem; */
   letter-spacing: var(--spacing);
   display: flex;
   flex-direction: column;
@@ -1456,6 +1461,11 @@ label {
   justify-content: center;
   width: 100%;
   color: var(--clr-neutral--100);
+  text-transform: uppercase;
+}
+
+.footer__creators p.team-name {
+  padding-top: 1vh;
 }
 
 .footer__creators--item a:hover {
@@ -1474,6 +1484,7 @@ label {
   vertical-align: middle;
   width: 50px;
   height: 50px;
+  border: 2px solid var(--clr-neutral--100);
   border-radius: 50%;
   background-color: var(--clr-neutral--100);
 }
