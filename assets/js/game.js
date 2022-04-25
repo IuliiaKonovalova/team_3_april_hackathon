@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8, jquery: true */
 import GarbageItem from "./GarbageItem.js";
 
 const firebaseConfig = {
@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-        
+
 const database = firebase.database();
 
 
@@ -102,7 +102,7 @@ export default class Game {
       } else if (theme === "beach") {
         beachBackground.play();
       }
-      if(!this.sound) {
+      if (!this.sound) {
         oceanBackground.muted = true;
         riverBackground.muted = true;
         beachBackground.muted = true;
@@ -111,7 +111,7 @@ export default class Game {
         riverBackground.muted = false;
         beachBackground.muted = false;
       }
-    }, 100);  
+    }, 100);
   }
   generateGarbage() {
     if (this.gameMode === "easy") {
@@ -201,8 +201,8 @@ export default class Game {
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
     $(".pause-stop__control").addClass("hide");
-    
-    
+
+
     $("#score-submit").click((e) => {
       e.preventDefault();
       let submitButtonBackup = $("#score-submit");
@@ -213,11 +213,11 @@ export default class Game {
       } else {
         saveScoreToDb("Anonymous", this.score);
       }
-      
+
       this.getLeaders();
       this.endGameElement.classList.add("hide");
       let gameItems = document.getElementsByClassName("play__item");
-      for(let item of gameItems) {
+      for (let item of gameItems) {
         item.classList.add("hide");
       }
       document.getElementById("menu-bar").style.visibility = "visible";
@@ -231,7 +231,7 @@ export default class Game {
         this.leaderBoardElement.classList.add("hide");
         $("#main-block").removeClass("hide");
       });
-      
+
       $("#ocean-game").addClass("hide");
       $("#beach-game").addClass("hide");
       $("#river-game").addClass("hide");
@@ -248,15 +248,15 @@ export default class Game {
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft -= 1;
-      if(this.timeLeft > 59){
+      if (this.timeLeft > 59) {
         this.timerElement.innerHTML = `${Math.floor(this.timeLeft / 60)}:${this.timeLeft % 60}`;
 
-      } else if(this.timeLeft < 60 && this.timeLeft > 9){
+      } else if (this.timeLeft < 60 && this.timeLeft > 9) {
         this.timerElement.innerHTML = `0:${this.timeLeft}`;
 
-      } else if(this.timeLeft < 10 && this.timeLeft > 0){
+      } else if (this.timeLeft < 10 && this.timeLeft > 0) {
         this.timerElement.innerHTML = `0:0${this.timeLeft}`;
-      } 
+      }
       if (this.timeLeft === 0) {
         this.timerElement.innerHTML = "00:00";
         this.gameOverTrigger();
@@ -272,7 +272,7 @@ export default class Game {
   checkSound() {
     let soundOn = this.soundControl.getElementsByClassName("fa-volume-up")[0];
     if (soundOn.classList.contains("hide")) {
-      this.soundOff();      
+      this.soundOff();
     } else {
       this.soundOn();
     }
@@ -332,7 +332,7 @@ export default class Game {
     let dbRef = firebase.database().ref("scores");
     dbRef.get().then((snapshot) => {
       this.leaders = [];
-      for(let key in snapshot.val()) {
+      for (let key in snapshot.val()) {
         this.leaders.push(snapshot.val()[key]);
       }
       this.leaders.sort((a, b) => {
@@ -439,7 +439,7 @@ game.getLeaders();
 
 $(".btn__play--theme").click(() => {
   let difficulty = $("#garbage-bins").attr("data-mode");
-  game.start(difficulty);  
+  game.start(difficulty);
 });
 
 $(game.pauseButton).click(() => {
@@ -459,7 +459,7 @@ $(game.stopButton).click(() => {
 });
 
 $(".sound__control").click(() => {
-  if(game.checkSound()) {
+  if (game.checkSound()) {
     oceanBackground.muted = true;
     beachBackground.muted = true;
     riverBackground.muted = true;
