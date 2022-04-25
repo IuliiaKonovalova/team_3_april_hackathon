@@ -105,8 +105,25 @@ This section allows users to start a game with the use of the Play Button locate
 Users can exit the Rules Section with any click outside the section window (excluding the navbar and footer) or by clicking the exit button in the top left corner.
 
 
-**Future features**
+- Home page (which includes a navbar with links to all pages of the site)
+- Rules page
+- Leaderboard page
+- Play button (located on home screen and rules page)
+- Game difficulty choice
+- Game theme option
+- A footer which includes all team members names
+- Neat and presentable UI for the game
+- Countdown clock for the game
+- Performance analytics for the player (including time left, score and lives)
+- A sound feature to toggle on and off
+- Sounds to accompany correct and incorrect game moves
+- An overlay which allows a player to supply their name and score to the global leaderboard
+- A game pause button
+- A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
+### Future features
+
+- In the future, the intention is to implement a 'time-limit' on the frequency a player can play the game. If a player plays the game in a specified number of successions they will be given a prompt notifying them of the amount of time they have spent playing the game and a suggestion that asks them to consider taking a break and coming back later. This is to ensure that parents can feel at ease as to whether or not their child will be playing the game too much. This feature will be developed further as the lifespan of the game continues into the future.
 
 !
 ## Design
