@@ -161,13 +161,53 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 - Bin Design 
 
-The bin SVGs were custom designed by a team member in Adobe Illustrator and based on the following image obatined 
+The bin SVGs were custom designed by a team member in [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE) and based on the following image obatined from [Vecteezy](https://www.vecteezy.com/vector-art/302905-set-of-different-trash-bin)
+
 ![Bin Design](documentation/design/bin_design.png)
+
+Final Custom Bin Design: 
+
+![Bin Design](documentation/design/bin_design1.png)
 
 
 ### Typography
 
+Google Fonts was used to obtain our two chosen fonts:
+
+  - [Rubik Moonrocks](https://fonts.google.com/specimen/Rubik+Moonrocks?query=rubik+moonrocks&preview.text=Earth%20Protectors&preview.text_type=custom)
+
+![Rubik Moonrocks](documentation/design/typography.png)
+
+  - [Lato](https://fonts.google.com/specimen/Lato?query=lato&preview.text=Earth%20Protectors&preview.text_type=custom)
+
+
+![Lato](documentation/design/typography1.png)
+
+Rubik Moonrocks was chosen for its rock-like, earthy appearance which was an appropriate choice given the theme of Earth Day. It also has a very fun and playful appeal, which is important since the target audience is comprised of young game-players. 
+
+Lato is sans serif typeface and works well in contrast to the header/title font, providing balance while maintaining a modern, simple appearance. 
+  
+
 ### Imagery
+
+Most of the imagery in the form of icons and illustrations was obtained from [Icons8](https://icons8.com/), including the rubbish icons used in all of the games as well as the cloud background image that helped inform many of the cartoon-like design choices. 
+
+![Cloud image](assets/images/cloud_background.jpg)
+
+Many of our images were custom designed using [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE), for example the bins (mentioned above) as well as other SVGs used in the animation themes.
+
+Designed for use in the Ocean animation:
+
+- **Stingray**
+Designed for use in the Ocean animation
+![Stingray](assets/images/stingray.svg)
+
+- **Waves**
+![Stingray](assets/images/waves.svg)
+
+- **Jellyfish** 
+![Stingray](assets/images/jellyfish.svg)
+
 
 ### Wireframes
 
