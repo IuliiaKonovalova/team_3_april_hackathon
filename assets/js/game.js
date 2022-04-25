@@ -175,14 +175,12 @@ export default class Game {
     document.getElementById("player-score").value = this.score;
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
-    document.getElementById("menu-bar").style.visibility = "visible";
-    document.getElementById("hamburger").classList.remove("hide");
-    let gameItems = document.getElementsByClassName("play__item");
-    for(let item of gameItems) {
-      item.classList.add("hide");
-    }
+    $(".pause-stop__control").addClass("hide");
+    
+    
     $("#score-submit").click((e) => {
       e.preventDefault();
+      let submitButtonBackup = $("#score-submit");
       $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
@@ -191,27 +189,28 @@ export default class Game {
         saveScoreToDb("Anonymous", this.score);
       }
       
-      database.ref("scores").on("value", (snapshot) => {
-        for(let key in snapshot.val()) {
-          this.leaders.push(snapshot.val()[key]);
-        }
-        this.leaders.sort((a, b) => {
-          return b.score - a.score;
-        });
-        // need to leave only 10 scores
-        this.leaders = this.leaders.slice(0, 10);
-        $(".leaders__board--content").empty();
-        for (let leader of this.leaders) {
-          let leaderData = document.createElement("div");
-          leaderData.classList.add("leader__data");
-          leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
-          <div class="leader__data--score">${leader.score}</div>`;
-          $(".leaders__board--content").append(leaderData);
-        }
-        this.leaderBoardElement.classList.remove("hide");
-        this.leaderBoardElement.style.zIndex = "999999999999999999999";
-        this.endGameElement.classList.add("hide");
+      this.getLeaders();
+      this.endGameElement.classList.add("hide");
+      let gameItems = document.getElementsByClassName("play__item");
+      for(let item of gameItems) {
+        item.classList.add("hide");
+      }
+      document.getElementById("menu-bar").style.visibility = "visible";
+      document.getElementById("hamburger").classList.remove("hide");
+      $("i.fas.fa-spinner.fa-spin").replaceWith(submitButtonBackup);
+      this.leaderBoardElement.classList.remove("hide");
+      $(this.leaderBoardElement).effect("highlight", {
+        color: "#00ff00",
+      }, 1000);
+      $("#leader-close").click(() => {
+        this.leaderBoardElement.classList.add("hide");
+        $("#main-block").removeClass("hide");
       });
+      
+      $("#ocean-game").addClass("hide");
+      $("#beach-game").addClass("hide");
+      $("#river-game").addClass("hide");
+      $("#earth-image").removeClass("hide");
     });
   }
   removeAllGarbage() {
@@ -299,7 +298,31 @@ export default class Game {
       pauseScreen.remove();
     }
     this.gameOverTrigger();
-  }  
+  }
+  getLeaders() {
+    let dbRef = firebase.database().ref("scores");
+    dbRef.get().then((snapshot) => {
+      this.leaders = [];
+      for(let key in snapshot.val()) {
+        this.leaders.push(snapshot.val()[key]);
+      }
+      this.leaders.sort((a, b) => {
+        return b.score - a.score;
+      });
+      // need to leave only 10 scores
+      this.leaders = this.leaders.slice(0, 10);
+      $(".leaders__board--content").empty();
+      for (let leader of this.leaders) {
+        let leaderData = document.createElement("div");
+        leaderData.classList.add("leader__data");
+        leaderData.innerHTML = `<div class="leader__data--name">${leader.name}</div>
+        <div class="leader__data--score">${leader.score}</div>`;
+        $(".leaders__board--content").append(leaderData);
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
 }
 
 // audio
@@ -373,6 +396,7 @@ $(".game__bin").droppable({
 });
 
 const game = new Game(gameJson);
+game.getLeaders();
 
 
 $(".btn__play--theme").click(() => {
