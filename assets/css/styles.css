@@ -565,8 +565,8 @@ body {
 
 .rules__close {
   position: absolute;
-  top: 2%;
-  right: 2%;
+  top: 0.1em;
+  right: 0.3em;
   font-size: 4vh;
 }
 
@@ -1551,7 +1551,7 @@ label {
 
   .navbar {
     position: relative;
-    justify-content: end;
+    justify-content: center;
   }
 
   #menu-bar {
