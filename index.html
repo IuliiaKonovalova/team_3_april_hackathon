@@ -53,10 +53,10 @@
       <div class="score__control hide play__item">
         <span id="score">0000</span>
       </div>
-      <div class="sound__control" id="sound-control">
-        <i class="fas fa-volume-up hide" id="sound-on"></i>
-        <i class="fas fa-volume-mute" id="sound-off"></i>
-      </div>
+    </div>
+    <div class="sound__control" id="sound-control">
+      <i class="fas fa-volume-up hide" id="sound-on"></i>
+      <i class="fas fa-volume-mute" id="sound-off"></i>
     </div>
   </nav>
   <main class="main" id="main">
@@ -119,7 +119,7 @@
     <div class="rules__section hide" id="rules">
       <!-- data-modal-target is a selector for JS that points out to element to be open with button -->
       <div class="game__rules">
-        <h1>How to Play?</h1>
+        <h1 class="game__rules--title">How to Play?</h1>
         <button class="rules__close" id="rules-close">&times;</button>
         <p>
           Identify four different waste types and which bins they belong in. Score points with proper waste segregation.
@@ -150,11 +150,13 @@
         <h2 class="eco__facts--title">Did you know?</h2>
         <p id="eco__text"></p>
       </div>
-      <a class="btn btn__play play-btn" id="rules__play">
-        <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
-      </a>
+      <div class="rules__play--container">
+        <a class="btn btn__play play-btn" id="rules__play">
+          <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
+        </a>
+      </div>
     </div>
-    </div>
+
 
     <!-- Leaders board Block -->
     <div class="leaders__board hide" id="leaders-board">
@@ -283,10 +285,12 @@
     </div>
   </div>
   <footer class="footer">
-    <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
-    <div class="footer__creators--title footer__btn" id="footer-btn">
-      <div class="footer__btn" id="footer-btn">
-        <i class="fas fa-arrow-alt-circle-up"></i>
+    <div class="copyrights__wrapper">
+      <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
+      <div class="footer__creators--title footer__btn" id="footer-btn">
+        <div class="footer__btn" id="footer-btn">
+          <i class="fas fa-arrow-alt-circle-up"></i>
+        </div>
       </div>
     </div>
     <div class="footer__content hide" id="footer-content">
@@ -357,10 +361,6 @@
   <!-- jquery ui touch punch script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script type="module" src="assets/js/game.js"></script>
-  <!-- Render Current Date Function -->
-  <script>
-    $(".footer__copyright").text(new Date().getFullYear());
-  </script>
 </body>
 
 </html>

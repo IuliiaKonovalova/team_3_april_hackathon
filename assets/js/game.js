@@ -60,7 +60,7 @@ export default class Game {
     this.garbageInterval = null;
     this.timerInterval = null;
     this.timeLeft = 60;
-    this.sound = true;
+    this.sound = false;
     this.leaders = [];
     this.timerElement = document.getElementById("timer");
     this.livesElement = document.getElementById("lives");
@@ -77,6 +77,7 @@ export default class Game {
   start(mode) {
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
+    this.checkSound();
     this.removeAllGarbage();
     document.getElementById("menu-bar").style.visibility = "hidden";
     document.getElementById("hamburger").classList.add("hide");
@@ -90,6 +91,27 @@ export default class Game {
     this.combo = 0;
     this.garbageItems = 0;
     this.generateGarbage();
+    let theme;
+    setTimeout(() => {
+      theme = $("#garbage-bins").attr("data-theme");
+      // console.log(theme);
+      if (theme === "ocean") {
+        oceanBackground.play();
+      } else if (theme === "river") {
+        riverBackground.play();
+      } else if (theme === "beach") {
+        beachBackground.play();
+      }
+      if(!this.sound) {
+        oceanBackground.muted = true;
+        riverBackground.muted = true;
+        beachBackground.muted = true;
+      } else {
+        oceanBackground.muted = false;
+        riverBackground.muted = false;
+        beachBackground.muted = false;
+      }
+    }, 100);  
   }
   generateGarbage() {
     if (this.gameMode === "easy") {
@@ -167,6 +189,9 @@ export default class Game {
     }, 1000);
   }
   gameOverTrigger() {
+    beachBackground.pause();
+    riverBackground.pause();
+    oceanBackground.pause();
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.gameOver = true;
@@ -247,7 +272,7 @@ export default class Game {
   checkSound() {
     let soundOn = this.soundControl.getElementsByClassName("fa-volume-up")[0];
     if (soundOn.classList.contains("hide")) {
-      this.soundOff();
+      this.soundOff();      
     } else {
       this.soundOn();
     }
@@ -332,6 +357,15 @@ export default class Game {
 // audio
 const popSound = new Audio("assets/audio/pop.mp3");
 const fartSound = new Audio("assets/audio/fart.mp3");
+const oceanBackground = new Audio("assets/audio/ocean-bg.mp3");
+const beachBackground = new Audio("assets/audio/beach-bg.mp3");
+const riverBackground = new Audio("assets/audio/river-bg.mp3");
+oceanBackground.loop = true;
+beachBackground.loop = true;
+riverBackground.loop = true;
+oceanBackground.volume = 0.2;
+beachBackground.volume = 0.2;
+riverBackground.volume = 0.2;
 
 
 
@@ -405,7 +439,7 @@ game.getLeaders();
 
 $(".btn__play--theme").click(() => {
   let difficulty = $("#garbage-bins").attr("data-mode");
-  game.start(difficulty);
+  game.start(difficulty);  
 });
 
 $(game.pauseButton).click(() => {
@@ -422,4 +456,16 @@ $(game.playButton).click(() => {
 
 $(game.stopButton).click(() => {
   game.stop();
+});
+
+$(".sound__control").click(() => {
+  if(game.checkSound()) {
+    oceanBackground.muted = true;
+    beachBackground.muted = true;
+    riverBackground.muted = true;
+  } else {
+    oceanBackground.muted = false;
+    beachBackground.muted = false;
+    riverBackground.muted = false;
+  }
 });
