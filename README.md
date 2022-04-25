@@ -210,8 +210,20 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 
 
 ## Credits
-- Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
-
+- [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/): Garbage bins animation pop-up in **Rules Section** come from: 
+- [Icons8](https://icons8.com/): for providing free access to amazing icons and illustrations
+- [FontAwesome](https://fontawesome.com/): for providing free icons
+- [Google Fonts](https://fonts.google.com/): for providing the chosen text fonts
+- [jQuery](https://jquery.com/): simple and fast syntax allowed to create functionality  of the game within short period of time
+- [jQuery User Interface](https://jqueryui.com/): for free libraries which increase user interaction
+- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices
+- CSS Animation Resources:
+  - [CodePen](http://codepen.io/wendko/pen/dyoRRbm): Beach Game Inspiration
+  - [CodePen](https://codepen.io/geertjanhendriks/pen/ZEWrmd): Ocean Game Inspiration
+  - [CodePen](https://codepen.io/pehaa/pen/yLVeLNg): River Game Inspiration
+- [Firebase](https://firebase.google.com/): for providing a free platform to store the data
+- [Build a Popup with JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw): The modal pop-up window used for the game’s instructions section
+- [Stack Overflow](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event): Passing multiple arguments with the event included to event listener 
 
 ## Acknowledgements
 
