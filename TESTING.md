@@ -195,7 +195,17 @@ The game aims to promote a more heightened awareness of environmental cleanlines
 
 ### JS Validation:
 
-![Full JS Validation](documentation/validation/js_validation.png)
+- ![Game.js](documentation/code-validators/game-js.png)
+
+- ![GarbageItem.js](documentation/code-validators/garbageItem-js.png)
+
+- ![LeaderboardOps.js](documentation/code-validators/leaderboard-ops-js.png)
+
+- ![Leaderboard.js](documentation/code-validators/leaderboard-js.png)
+
+- ![Script.js](documentation/code-validators/script-js.png)
+
+
 
 - No errors or warning messages were found when passing through the official [JSHint](https://www.jshint.com/) validator. However, the validator has pointed that module variable is not used, but this variable is needed for the automated testing. Needless to say, that as the modern js syntax was used (the Optional Chaining method - `?.`) `/* jshint esversion: 11 */` was added to the top of the file.
 

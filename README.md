@@ -203,9 +203,19 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 
 ## Credits
 - Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
-
+- [Icons8]
+- [jQuery](https://jquery.com/): as simple and fast syntax allowed to create functionality  of the game within short period of time
+- [jQuery User Interface](https://jqueryui.com/) for free libraries which increase user interaction
+- [River Game](https://codepen.io/pehaa/pen/yLVeLNg) - The templates from this link were utilised in the 'river' theme of the game.
+- [Ocean Game](https://codepen.io/geertjanhendriks/pen/ZEWrmd) - The templates from this link were utilised in the 'ocean' theme of the game.
+- [Beach Game](codepen.io/wendko/pen/dyoRRbm) - The templates from this link were utilised in the 'beach' theme of the game.
+- [Firebase](https://firebase.google.com/) for providing a free platform to host and store the leaderboard data.
+- The modal pop-up window used for the game's instructions were based on this Web Dev Simplified [video](https://www.youtube.com/watch?v=MBaw_6cPmAw).
+- Passing multiple arguments with the event included to event listener based on this [thread](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event).
+- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices.
 
 ## Acknowledgements
+
 
 ## Collaborators
 
