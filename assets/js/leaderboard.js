@@ -6,9 +6,6 @@ const submitButton = document.getElementById('submit');
 import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
-import {
-  getAnalytics
-} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-analytics.js";
 
 import {
   getDatabase,
