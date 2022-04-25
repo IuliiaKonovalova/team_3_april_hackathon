@@ -43,6 +43,30 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ## Scope
 
+## Technologies Used
+
+### Languages
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
+- [JS](https://www.javascript.com/): the main language used to develop the client side of the website.
+
+### Frameworks and libraries:
+
+- [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
+- [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
+
+### Other tools
+
+- [Git](https://git-scm.com/): the version control system used to manage the code.
+- [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+- [JShint](https://jshint.com/): was used to validate JS code for the website.
+- [GitHub](https://github.com/): used to host the source code of the website.
+- [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+- [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+
 ### Features
 
 - Home page (which includes a navbar with links to all pages of the site)
@@ -61,6 +85,31 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - A game pause button
 - A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
+**Home Page**
+
+The Earth Protectors Home Page is structured with a Navbar on the top, the logo heading centred on the web page, followed by the Play button, which clicked will prompt the users to choose the basic gameplay settings. The bottom of the page is occupied by the Footer section.
+
+![Home Page](documentation/features/home-page.png)
+
+**Difficulty Selection**
+
+When users click the Play button, they can choose between **Easy** and **Hard** modes.
+- **Easy**: garbage appears on the screen and users must segregate it into proper bins.
+- **Hard**: new garbage appears every 2 seconds.
+
+![Difficulty Selection](documentation/features/difficulty-selection.png)
+
+**Game Arena Themes Selection**
+When players choose their difficulty preference, they must select the Game Arena Theme. They have three options which bring users to their respective scenery:
+- **Beach**,
+- **River**,
+- **Ocean**.
+
+Players can choose scenery with arrow buttons located on the left & right parts of the screen. When they decide they can click the Play button to start the game session.
+
+Every scene has a different musical background.
+
+![Game Arena Scenes](documentation/features/game-arena-selection.png)
 
 **Navbar**
 
@@ -122,6 +171,20 @@ We built the CSS animations by pulling the code from the existing pens, and then
 ![Theme Feature](documentation/features/beach_theme_test.png)
 - Beach Theme Materialized
 ![Theme Feature](documentation/features/beach_game.png)
+
+**End Game Window**
+
+After the game is finished, users are notified about their score. They can submit their score to Leader Boards by typing their name or anonymously if they prefer. Below name input, the Submit button sends the data to the Firebase database and the user is informed about the latest results hierarchy.
+
+![End Game Window](documentation/features/end-game-window.png)
+
+**Leaders Board**
+
+Users are able to see scores of previous players. The Leaders Board section is displayed after players submit their scores or by clicking in the respective button on the Navigation Bar.
+
+[Firebase](https://firebase.google.com/) database is implemented to store players scores.
+
+![Leaders Board](documentation/features/leaders-board.png)
 
 **Footer Feature**
 
@@ -214,9 +277,6 @@ Designed for use in the Ocean animation
 
 - [Wireframes](documentation/wireframes/WIREFRAMES_EARTH_DAY_HKTHN.pdf)
 
-## Technologies Used
-
-
 ## Testing
 
 [Click Here](TESTING.md) to view the full testing steps that were completed on every device and browser.
@@ -224,15 +284,21 @@ Designed for use in the Ocean animation
 ## Deployment
 
 ### Github
-The repository was first created by logging into a GitHub account:
 
-Clicking the 'new' green button.
 
-This then prompts to another page with asks for a name for the new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. The Code Institute template was chosen in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the [GitHub repository](https://github.com/IuliiaKonovalova/team_3_april_hackathon), navigate to the Settings tab
+- From the source section drop-down menu, select the **Main** Branch, then click "Save".
+- The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-Link to the deployed site is [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html).
 
-**How to fork the GitHub Repository**
+The live link can be found [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html)
+
+### Local Deployment
+In order to make a local copy of this project, you can clone it.
+In your IDE Terminal, type the following command to clone my repository:
+- `git clone https://github.com/IuliiaKonovalova/team_3_april_hackathon.git`
+- Alternatively, if you use Gitpod, you can [click here](https://github.com/IuliiaKonovalova/team_3_april_hackathon), which will start the Gitpod workspace for you.
 
 ### Cloning and Forking 
 
@@ -242,26 +308,33 @@ Cloning by command line: Click the button beside the green button titled 'code',
 
 ### Forking
 
-Go to the repositary page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
+Go to the repository page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
 
 **How to run this project locally**
 
 
 ## Credits
-- [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/): Garbage bins animation pop-up in **Rules Section** come from: 
-- [Icons8](https://icons8.com/): for providing free access to amazing icons and illustrations
-- [FontAwesome](https://fontawesome.com/): for providing free icons
-- [Google Fonts](https://fonts.google.com/): for providing the chosen text fonts
-- [jQuery](https://jquery.com/): simple and fast syntax allowed to create functionality  of the game within short period of time
-- [jQuery User Interface](https://jqueryui.com/): for free libraries which increase user interaction
-- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices
+
+- Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
+- [jQuery](https://jquery.com/): as simple and fast syntax allowed to create functionality  of the game within short period of time
+- [jQuery User Interface](https://jqueryui.com/) for free libraries which increase user interaction
 - CSS Animation Resources:
   - [CodePen](http://codepen.io/wendko/pen/dyoRRbm): Beach Game Inspiration
   - [CodePen](https://codepen.io/geertjanhendriks/pen/ZEWrmd): Ocean Game Inspiration
   - [CodePen](https://codepen.io/pehaa/pen/yLVeLNg): River Game Inspiration
-- [Firebase](https://firebase.google.com/): for providing a free platform to store the data
+- [Firebase](https://firebase.google.com/) for providing a free platform to host and store the leaderboard data.
+- The modal pop-up window used for the game's instructions were based on this Web Dev Simplified [video](https://www.youtube.com/watch?v=MBaw_6cPmAw).
+- Passing multiple arguments with the event included to event listener based on this [thread](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event).
+- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices.
+- [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE).
+- [Obfuscate]( https://obfuscator.io/) Was used to obfuscate the api key to firebase.
+- [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/): Garbage bins animation pop-up in **Rules Section** come from: 
+- [Icons8](https://icons8.com/): for providing free access to amazing icons and illustrations
+- [FontAwesome](https://fontawesome.com/): for providing free icons
+- [Google Fonts](https://fonts.google.com/): for providing the chosen text fonts
 - [Build a Popup with JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw): The modal pop-up window used for the game’s instructions section
 - [Stack Overflow](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event): Passing multiple arguments with the event included to event listener 
+
 
 ## Acknowledgements
 
@@ -270,7 +343,9 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 - Thank you to our amazing, hard-working team of developers! We learned so much from one another.
 - And a big shout-out goes to Iuliia - our SCRUM Master :hugs: We would have been utterly lost without her!
 
+
 ## Collaborators
+
 
 Our team is made up of a wonderful group of people from around the world - all of which are either past or present students of the [Code Institue](https://codeinstitute.net/global/)
 
@@ -279,8 +354,5 @@ Our team is made up of a wonderful group of people from around the world - all o
 - Iuliia [@IuliiaKonovalova](https://github.com/IuliiaKonovalova)
 - Milosz [@miloszmisiek](https://github.com/miloszmisiek)
 - Whitney [@Wingkelinks](https://github.com/Wingkelinks)
-
-
-
 
 
