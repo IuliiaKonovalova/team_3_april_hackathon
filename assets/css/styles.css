@@ -157,6 +157,7 @@ body {
   font-family: var(--ff-secondary);
   font-weight: 900;
   font-size: 3vh;
+  position: relative;
 }
 
 .game__bar span#lives {
@@ -181,10 +182,16 @@ body {
   margin-right: 1vw;
 }
 
+.score__control {
+  padding-right: 4em;
+}
+
 .sound__control {
   color: var(--clr-accent--900);
   font-size: 5vh;
   cursor: pointer;
+  position: absolute;
+  right: 0.7em;
 }
 
 .sound__control:hover {
@@ -1547,7 +1554,11 @@ label {
 
   .navbar {
     position: relative;
-    justify-content: center;
+    justify-content: start;
+  }
+
+  .score__control {
+    padding-right: 0;
   }
 
   #menu-bar {
@@ -1623,6 +1634,14 @@ label {
     font-size: 2rem;
   }
 
+  .game__bar {
+    font-size: 2rem;
+  }
+
+  .sound__control {
+    font-size: 2.5rem;
+  }
+
   .eco__facts p,
   .game__rules p {
     padding: 10px;
@@ -1680,6 +1699,19 @@ label {
 }
 
 @media all and (max-width: 500px) {
+
+  .game__bar {
+    font-size: 1.5rem;
+  }
+
+  .sound__control {
+    font-size: 2rem;
+  }
+
+  .timer__control span {
+    width: 5.5rem
+  }
+
   .rules__section {
     min-height: 60vh;
   }
