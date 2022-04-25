@@ -1397,10 +1397,7 @@ label {
 .footer__btn {
   cursor: pointer;
   color: var(--clr-neutral-100);
-  text-transform: capitalize;
-  background-color: var(--clr-accent--900);
-  border-radius: var(--br);
-  padding: 0 0.2em 0.3em 0.2em;
+  font-size: 3vh;
 }
 
 .footer__btn:hover {
@@ -1427,6 +1424,12 @@ label {
   justify-content: space-around;
   max-width: 30rem;
   padding: 2vh;
+}
+
+.footer__creators--title {
+  color: var(--clr-accent--100);
+  display: flex;
+  text-align: center;
 }
 
 .footer__creators--item {
