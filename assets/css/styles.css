@@ -1374,7 +1374,7 @@ label {
   align-items: center;
   justify-content: start;
   width: 100%;
-  height: 10vh;
+  /* height: 10vh; */
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
@@ -1392,6 +1392,12 @@ label {
 
 .footer__copyright {
   color: var(--clr-accent--100);
+}
+
+#footer-btn>h3 {
+  font-size: 2vh;
+  color: var(--clr-neutral--100);
+  font-weight: 900;
 }
 
 .footer__btn {
@@ -1427,7 +1433,7 @@ label {
 }
 
 .footer__creators--title {
-  color: var(--clr-accent--100);
+  color: var(--clr-accent--900);
   display: flex;
   text-align: center;
 }
@@ -1456,6 +1462,8 @@ label {
   justify-content: center;
   width: 100%;
   color: var(--clr-neutral--100);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .footer__creators--item a:hover {
@@ -1474,6 +1482,7 @@ label {
   vertical-align: middle;
   width: 50px;
   height: 50px;
+  border: 2px solid var(--clr-neutral--100);
   border-radius: 50%;
   background-color: var(--clr-neutral--100);
 }
