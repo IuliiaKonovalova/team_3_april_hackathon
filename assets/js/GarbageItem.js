@@ -5,8 +5,8 @@
 export default class GarbageItem {
   constructor(jsonFile) {
     this.category = Object.keys(jsonFile)[Math.floor(Math.random() * Object.keys(jsonFile).length)];
-    this.item = Object.keys(jsonFile[this.category]["type"])[Math.floor(Math.random() * Object.keys(jsonFile[this.category]["type"]).length)];
-    this.imageUrl = jsonFile[this.category]["type"][this.item];
+    this.item = Object.keys(jsonFile[this.category].type)[Math.floor(Math.random() * Object.keys(jsonFile[this.category].type).length)];
+    this.imageUrl = jsonFile[this.category].type[this.item];
     this.x = 0;
     this.y = 0;
     this.id = Math.random();
