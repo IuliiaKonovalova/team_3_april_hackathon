@@ -1,13 +1,15 @@
 # Team: Earth Protectors - April Hackathon 
 
-# Contents
+![Am I responsive](documentation/amiresponsive/am-i-responsive.png)
 
 ## About 
 
+
+
 In line with the Earth Day theme, we have developed an interactive game for children to raise awareness around waste management. Players interact with different natural environments, as they sort out various types of waste materials by placing them in the correct bin. Before commencing the game, information is presented in the rules section which assists players in identifying which waste type goes into which bin. There are two difficulty levels for players to choose from; easy and hard. In game mode, a player works against the clock. The leaderboard displays players' success and ranks and records data accordingly.
 
-The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
 
+The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
 
 
 
