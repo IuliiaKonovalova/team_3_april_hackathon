@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerContent = document.getElementById("footer-content");
   const playItems = document.getElementsByClassName("play__item");
   const soundBtn = document.getElementById("sound-control");
-  const leaderBoardLink = document.getElementById('leaders-link')
+  const leaderBoardLink = document.getElementById('leaders-link');
   const leaderBoard = document.getElementById('leaders-board');
   const leaderBoardClose = document.getElementById('leader-close');
 
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hamburger.classList.contains("is-active")) {
       toggleMenu();
     }
-    let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn)
+    let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
     main.addEventListener('click', sectionEventHandler);
     addHideClass();
     document.getElementById("earth-image").classList.remove("hide");
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <li>Egg Shells</li>
         </ul>
         `;
-        modalHeading = "<h2>Organic Bin</h2>"
+        modalHeading = "<h2>Organic Bin</h2>";
       } else if (button.id === "plastic-bin") {
         modalText = `
         <p>Plastic - It is everywhere! Soft plastics and hard plastics can be recycled and turned into other items.</p>
@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <li>Toilet Rolls</li>
         </ul>
         `;
-        modalHeading = "<h2>Paper & Card Bin</h2>"
+        modalHeading = "<h2>Paper & Card Bin</h2>";
       }
       const modal = document.querySelector(button.dataset.modalTarget);
       openModal(modal, modalText, modalHeading);
