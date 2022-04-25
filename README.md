@@ -62,9 +62,35 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - A game pause button
 - A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
+**Navbar**
+
+The web application has navigation buttons to navigate to the Home view, Rules Section, Leadersboard Section and a Sound control button.
+
+![Navbar desktop](documentation/features/navbar_desktop.png)
+
+The sound control button allows users to toggle the sound on and off. It looks different depending on whether the sound is on or off.
+
+![Navbar desktop. Sound on](documentation/features/sound_on.png)
+![Navbar desktop. Sound off](documentation/features/sound_off.png)
+
+On the mobile version of the application the user will see a hamburger menu icon on the left side on the navigation bar, which will open the navigation menu, and the sound control button will be located on the right side of the navigation bar.
+
+![Navbar mobile](documentation/features/navbar_mobile.png)
+When the user clicks on the hamburger menu icon, the navigation menu will appear on the whole screen.
+
+![Navbar mobile. Navigation menu open](documentation/features/navbar_mobile_open.png)
+
+When the user starts the game, the Home, Rules and Leaders board buttons will be hidden. The game will be seen on the right side of the navigation bar.
+
+![Navbar Desktop. Game view open](documentation/features/navbar_game_on.png)
+
+On the mobile device the game bar will be seen in the middle of the navigation bar.
+
+![Navbar mobile. Game view open](documentation/features/navbar_game_on_mobile.png)
+
 - Rules Section
 
-![Rules Feature](DOCUMENTATION/Features/rules-feature.png)
+![Rules Feature](documentation/features/rules-feature.png)
 
 The purpose of the Rules Feature is to give users a brief description of how to play the game.
 The four bins located in the centre of the screen are buttons, which show what kind of garbage must be placed in a respective bin.
@@ -82,6 +108,7 @@ Users can exit the Rules Section with any click outside the section window (excl
 **Future features**
 
 
+!
 ## Design
 
 ### Structure
