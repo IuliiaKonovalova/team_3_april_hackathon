@@ -21,6 +21,8 @@
 </head>
 
 <body>
+
+  <!-- Navigation Bar -->
   <nav class="navbar topbar">
     <button id="hamburger" class="hamburger hamburger--elastic-r" type="button"
       aria-label="Click to display menu on smaller screens">
@@ -40,6 +42,7 @@
         <i class="fas fa-stop"></i>
       </div>
 
+      <!-- Game Controls -->
       <div class="timer__control hide play__item">
         <span id="timer">05:00</span>
       </div>
@@ -63,6 +66,7 @@
     <div class="image__holder" id="earth-image">
       <img src="assets/images/earth1.png" alt="Image of the green and blue earth" />
     </div>
+
     <!-- Start Game block -->
     <div class="main__block" id="main-block">
       <h1 class="main__title">Earth Protectors</h1>
@@ -70,11 +74,13 @@
         <img src="assets/images/play.svg" alt="Play button icon" />
       </a>
     </div>
+
     <!-- Game difficulty -->
     <div class="difficulty hide" id="difficulty-block">
       <div class="difficulty__btn" id="difficulty-easy">Easy</div>
       <div class="difficulty__btn" id="difficulty-hard">Hard</div>
     </div>
+
     <!-- Carousel themes block -->
     <div class="carousel hide" id="carousel">
       <button id="carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
@@ -115,9 +121,9 @@
         <i class="fas fa-arrow-right btn-carousel"></i>
       </button>
     </div>
+
     <!-- Rules Section -->
     <div class="rules__section hide" id="rules">
-      <!-- data-modal-target is a selector for JS that points out to element to be open with button -->
       <div class="game__rules">
         <h1 class="game__rules--title">How to Play?</h1>
         <button class="rules__close" id="rules-close">&times;</button>
@@ -157,14 +163,13 @@
       </div>
     </div>
 
-
-    <!-- Leaders board Block -->
+    <!-- Leaders Board Block -->
     <div class="leaders__board hide" id="leaders-board">
       <h3 class="leaders__board--title">Leaders</h3>
-
       <button class="rules__close" id="leader-close">&times;</button>
       <div class="leaders__board--content"></div>
     </div>
+
     <!-- Scene Section -->
     <!-- Ocean game -->
     <div class="combo hide play__item" id="combo-block">
@@ -233,8 +238,7 @@
       </div>
     </div>
 
-
-    <!-- Garbage bins for game -->
+    <!-- Garbage Bins For The Game -->
     <div class="game__bins--section hide play__item" id="garbage-bins">
       <div class="game__bin" data-category="organic">
         <img src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste" />
@@ -269,10 +273,11 @@
         </ul>
       </form>
     </div>
-
   </main>
+
   <!-- Overlay for Modal Operation -->
   <div id="overlay"></div>
+
   <!-- Modal Pop-up Window (Game Instructions) -->
   <div class="modal" id="modal">
     <div class="modal-header">
@@ -284,6 +289,8 @@
       </p>
     </div>
   </div>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="copyrights__wrapper">
       <p>&copy; <span class="footer__copyright"></span><span class="footer__header"> Earth Protectors</span></p>
@@ -352,6 +359,8 @@
       </ul>
     </div>
   </footer>
+
+  <!-- Scripts -->
   <script type="module" src="assets/js/script.js"></script>
   <!-- jquery and jquery ui scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -361,6 +370,7 @@
   <!-- jquery ui touch punch script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script type="module" src="assets/js/game.js"></script>
+
 </body>
 
 </html>
