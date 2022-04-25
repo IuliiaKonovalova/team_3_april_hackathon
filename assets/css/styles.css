@@ -157,6 +157,7 @@ body {
   font-family: var(--ff-secondary);
   font-weight: 900;
   font-size: 3vh;
+  position: relative;
 }
 
 .game__bar span#lives {
@@ -181,10 +182,16 @@ body {
   margin-right: 1vw;
 }
 
+.score__control {
+  padding-right: 4em;
+}
+
 .sound__control {
   color: var(--clr-accent--900);
   font-size: 5vh;
   cursor: pointer;
+  position: absolute;
+  right: 0.7em;
 }
 
 .sound__control:hover {
@@ -503,7 +510,7 @@ body {
   position: absolute;
   top: -4vh;
   right: 1rem;
-  font-size: 6vh !important;
+  font-size: 8vh !important;
 }
 
 .modal-body {
@@ -542,7 +549,7 @@ body {
   position: absolute;
   top: 50%;
   max-width: 100rem;
-  min-height: 60vh;
+  max-height: 75vh;
   background-color: var(--clr-neutral--800);
   color: var(--clr-neutral--100);
   border-radius: 20px;
@@ -555,7 +562,6 @@ body {
 
 .rules__section--data {
   position: relative;
-  padding: 0 3vw 10vh 3vw;
 }
 
 .rules__section h1,
@@ -588,7 +594,7 @@ body {
 
 .eco__facts--title,
 .game__rules--title {
-  font-size: 4vh;
+  font-size: 4vh !important;
   font-family: var(--ff-secondary);
 }
 
@@ -629,10 +635,18 @@ body {
   cursor: pointer;
 }
 
+.rules__play--container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
 #rules__play {
-  position: absolute;
-  bottom: 1em;
-  right: 1em;
+  position: unset;
+  margin: 0;
 }
 
 .eco__facts {
@@ -995,7 +1009,6 @@ body {
   bottom: -0vh;
   left: 0;
   height: 20vmin;
-  /* height: 20vh; */
   width: 97vw;
   background: linear-gradient(var(--clr-primary--grass), var(--clr-tertiary--grass));
   box-shadow: inset 0 0 20px -5px rgba(0, 0, 0, 0.2);
@@ -1323,7 +1336,6 @@ body {
 
 #end-game input {
   padding: 1vh 2vw;
-  /* border-radius: var(--br); */
   color: var(--clr-neutral--800);
   text-decoration: none;
   text-transform: uppercase;
@@ -1347,7 +1359,6 @@ label {
   height: 6vh;
   margin: auto;
   background: none;
-  /* border: 1px solid white; */
   border-radius: 50%;
   max-width: 10rem;
   color: var(--clr-accent--100);
@@ -1374,7 +1385,7 @@ label {
   align-items: center;
   justify-content: start;
   width: 100%;
-  /* height: 10vh; */
+  height: 10vh;
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
@@ -1440,7 +1451,6 @@ label {
 
 .footer__creators--item {
   color: var(--clr-neutral--100);
-  /* font-size: 1rem; */
   letter-spacing: var(--spacing);
   display: flex;
   flex-direction: column;
@@ -1567,7 +1577,11 @@ label {
 
   .navbar {
     position: relative;
-    justify-content: center;
+    justify-content: start;
+  }
+
+  .score__control {
+    padding-right: 0;
   }
 
   #menu-bar {
@@ -1636,11 +1650,25 @@ label {
   .menu-items>li a {
     font-size: 2em;
   }
+
+  .eco__facts p,
+  .game__rules p {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
 }
 
 @media all and (max-width: 784px) {
   .main__title {
     font-size: 2rem;
+  }
+
+  .game__bar {
+    font-size: 2rem;
+  }
+
+  .sound__control {
+    font-size: 2.5rem;
   }
 
   .eco__facts p,
@@ -1654,10 +1682,13 @@ label {
     margin: 0 auto;
   }
 
-  #rules__play {
-    position: absolute;
-    bottom: 0.5em;
-    right: 0.5em;
+  .rules__bin img {
+    height: 5rem;
+  }
+
+  .rules__play--container {
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   .carousel__images--visible {
@@ -1683,34 +1714,45 @@ label {
     bottom: 0;
     right: 0;
   }
+
+
 }
 
-@media all and (max-width: 600px) and (min-height: 900px) {
+@media all and (max-width: 650px) and (min-height: 900px) {
   .rules__bin img {
-    height: 7rem;
+    height: 5rem;
     transition: transform 0.7s ease-in-out;
   }
 
-  #rules__play {
-    position: absolute;
-    bottom: -0.5em;
-    right: -0.5em;
+  .eco__facts--title,
+  .game__rules--title {
+    font-size: 2rem !important;
+    font-family: var(--ff-secondary);
+  }
+
+  .btn__play {
+    width: 4rem;
+    padding: 0.5em 0.5em 0.5em 0.8em;
   }
 
 }
 
 @media all and (max-width: 500px) {
-  .rules__section {
-    min-height: 60vh;
+
+  .game__bar {
+    font-size: 1.5rem;
+  }
+
+  .sound__control {
+    font-size: 2rem;
+  }
+
+  .timer__control span {
+    width: 5.5rem
   }
 
   .main__title {
     font-size: 1.5rem;
-  }
-
-  .rules__section--data {
-    position: relative;
-    padding: 0 3vw 12vh 3vw;
   }
 
   .eco__facts p,
@@ -1723,15 +1765,9 @@ label {
     height: 4rem;
     transition: transform 0.7s ease-in-out;
   }
-
-  #rules__play {
-    position: absolute;
-    bottom: -0.5em;
-    right: -0.5em;
-  }
 }
 
-@media all and (max-height: 722px) {
+@media all and (max-height: 803px) {
 
   /* Media for ocean theme */
   #fish3 {
@@ -1740,5 +1776,26 @@ label {
 
   #stingray2 {
     display: none;
+  }
+
+  .game__rules p {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .rules__bins {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .eco__facts {
+    display: none;
+  }
+
+  .btn__play {
+    width: 4rem;
+    padding: 0.5em 0.5em 0.5em 0.8em;
   }
 }
