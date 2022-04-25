@@ -20,7 +20,6 @@ export let myFunction = function (section, closeBtn) {
     return function curriedFunc(e) {
         myFunction(e, section, closeBtn);
         if (!section.classList.contains("hide")) {
-            console.log("click");
             if (!section.contains(e.target) || closeBtn.contains(e.target)) {
                 addHideClass();
                 let sectionEventHandler;
