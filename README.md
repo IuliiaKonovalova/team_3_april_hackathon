@@ -1,6 +1,6 @@
 # Team: Earth Protectors - April Hackathon 
 
-![Am I responsive](documentation/amiresponsive/am-i-responsive.png)
+![Am I responsive](documentation/amiresponsive/am_i_responsive_new.png)
 
 ## About 
 
