@@ -116,7 +116,6 @@ body {
   flex-direction: row;
   justify-content: start;
   align-items: center;
-
 }
 
 .navbar__items li:not(:first-child) {
@@ -192,6 +191,25 @@ body {
   color: var(--clr-accent--100);
 }
 
+.game__bar .pause-stop__control {
+  color: var(--clr-accent--900);
+  font-size: 3vh;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.game__bar .pause-stop__control i:not(:last-child) {
+  margin-right: 1vw;
+}
+
+.game__bar .pause-stop__control i:hover {
+  color: var(--clr-accent--100);
+}
+
+
 /* ----- Main ----- */
 .main {
   display: flex;
@@ -208,6 +226,7 @@ body {
   margin: 0 auto;
   position: relative;
   height: 80vh;
+  overflow: hidden;
 }
 
 .main__block {
@@ -1356,23 +1375,30 @@ label {
 
 .footer__header {
   color: var(--clr-neutral--100);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
   text-transform: uppercase;
+  font-family: var(--ff-secondary);
   letter-spacing: var(--spacing);
   justify-content: start;
   width: 100%;
   text-align: center;
 }
 
+.footer__copyright {
+  color: var(--clr-accent--100);
+}
+
 .footer__btn {
   cursor: pointer;
-  color: var(--clr-accent--900);
+  color: var(--clr-neutral-100);
+  text-transform: capitalize;
+  background-color: var(--clr-accent--900);
+  border-radius: var(--br);
+  padding: 0 0.2em 0.3em 0.2em;
 }
 
 .footer__btn:hover {
   color: var(--clr-accent--100);
-  text-decoration: underline;
 }
 
 .footer__content {
@@ -1424,7 +1450,7 @@ label {
 }
 
 .footer__creators--item a:hover {
-  color: var(--clr-accent--900);
+  color: var(--clr-accent--100);
 }
 
 .team-show {
@@ -1475,7 +1501,7 @@ label {
   height: unset;
   justify-content: start;
   padding: 1em 2em 1.5em 2em;
-
+  border: solid 2px var(--clr-accent--100);
 }
 
 .leaders__board--title {
@@ -1492,6 +1518,7 @@ label {
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-flow: dense;
   gap: 2rem;
+  text-transform: capitalize;
 }
 
 .leader__data {
@@ -1501,11 +1528,18 @@ label {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  border-bottom: solid 2px rgb(255, 0, 230, 0.3);
+  padding-bottom: 5px;
+  font-weight: 900;
+}
+
+#leaders-board .leader__data--score {
+  color: var(--clr-accent--900);
 }
 
 /* --- Hide Class --- */
 .hide {
-  display: none;
+  display: none !important;
 }
 
 /* ----- Media Query ----- */
@@ -1539,7 +1573,7 @@ label {
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner:after,
   .hamburger.is-active .hamburger-inner:before {
-    background-color: var(--clr-accent--900) !important;
+    background-color: var(--clr-accent--100) !important;
   }
 
   #hamburger {
@@ -1552,7 +1586,6 @@ label {
     height: 5em;
     outline: none;
     z-index: 999;
-    color: #53d23c;
   }
 
   #menu-bar {
