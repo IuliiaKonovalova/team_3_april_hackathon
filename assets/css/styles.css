@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lato:wght@300&family=Moo+Lah+Lah&family=Roboto+Slab:wght@200&family=Roboto:wght@100&family=Rubik+Microbe&family=Rubik+Moonrocks&family=Titan+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lato:wght@300&family=Moo+Lah+Lah&family=Roboto+Slab:wght@200&family=Roboto:wght@100&family=Rubik+Microbe&family=Rubik+Moonrocks&family=Titan+One&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Rubik+Moonrocks&display=swap');
 
 :root {
   --clr-primary--100: #005aff;
@@ -127,7 +128,6 @@ body {
   border-radius: var(--br);
   background-color: var(--clr-accent--900);
   font-size: var(--fs);
-  font-weight: 900;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -143,7 +143,7 @@ body {
   color: var(--clr-neutral--800);
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 2vh;
   padding: 1vh 2vw;
 }
@@ -1429,7 +1429,7 @@ label {
   align-items: center;
   justify-content: space-around;
   max-width: 30rem;
-  padding: 2vh;
+  padding: 1vh;
 }
 
 .footer__creators--title {
@@ -1440,8 +1440,7 @@ label {
 
 .footer__creators--item {
   color: var(--clr-neutral--100);
-  font-size: 1.2rem;
-  font-weight: 400;
+  /* font-size: 1rem; */
   letter-spacing: var(--spacing);
   display: flex;
   flex-direction: column;
@@ -1463,7 +1462,10 @@ label {
   width: 100%;
   color: var(--clr-neutral--100);
   text-transform: uppercase;
-  font-weight: 700;
+}
+
+.footer__creators p.team-name {
+  padding-top: 1vh;
 }
 
 .footer__creators--item a:hover {
