@@ -184,6 +184,8 @@ Clicking the 'new' green button.
 
 This then prompts to another page with asks for a name for the new repositary. Above this input there is a dropdown menu offering a selection of various templates to utilise with the repository. The Code Institute template was chosen in order to faciliate all the shortcuts included within it to make my workflow as fast as possible.
 
+Link to the deployed site is [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html).
+
 **How to fork the GitHub Repository**
 
 ### Cloning and Forking 
