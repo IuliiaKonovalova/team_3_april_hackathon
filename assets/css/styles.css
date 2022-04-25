@@ -1558,7 +1558,7 @@ label {
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner:after,
   .hamburger.is-active .hamburger-inner:before {
-    background-color: var(--clr-accent--900) !important;
+    background-color: var(--clr-accent--100) !important;
   }
 
   #hamburger {
@@ -1571,7 +1571,6 @@ label {
     height: 5em;
     outline: none;
     z-index: 999;
-    color: #53d23c;
   }
 
   #menu-bar {
