@@ -485,6 +485,8 @@ body {
 
 .modal-header .title {
   font-size: 1.4rem;
+  color: var(--clr-accent--900);
+  text-shadow: 2px 2px var(--clr-neutral--800);
 }
 
 .modal-header .close-button,
