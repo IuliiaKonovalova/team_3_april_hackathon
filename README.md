@@ -43,6 +43,30 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ## Scope
 
+## Technologies Used
+
+### Languages
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
+- [JS](https://www.javascript.com/): the main language used to develop the client side of the website.
+
+### Frameworks and libraries:
+
+- [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
+- [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
+
+### Other tools
+
+- [Git](https://git-scm.com/): the version control system used to manage the code.
+- [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+- [JShint](https://jshint.com/): was used to validate JS code for the website.
+- [GitHub](https://github.com/): used to host the source code of the website.
+- [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+- [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+
 ### Features
 
 - Home page (which includes a navbar with links to all pages of the site)
@@ -213,9 +237,6 @@ The bin SVGs were custom designed by a team member in Adobe Illustrator and base
 
 - [Wireframes](documentation/wireframes/WIREFRAMES_EARTH_DAY_HKTHN.pdf)
 
-## Technologies Used
-
-
 ## Testing
 
 [Click Here](TESTING.md) to view the full testing steps that were completed on every device and browser.
@@ -223,15 +244,21 @@ The bin SVGs were custom designed by a team member in Adobe Illustrator and base
 ## Deployment
 
 ### Github
-The repository was first created by logging into a GitHub account:
 
-Clicking the 'new' green button.
 
-This then prompts to another page with asks for a name for the new repository. Above this input there is a dropdown menu offering a selection of various templates to utilize with the repository. The Code Institute template was chosen in order to facilitate all the shortcuts included within it to make my workflow as fast as possible.
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the [GitHub repository](https://github.com/IuliiaKonovalova/team_3_april_hackathon), navigate to the Settings tab
+- From the source section drop-down menu, select the **Main** Branch, then click "Save".
+- The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-Link to the deployed site is [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html).
 
-**How to fork the GitHub Repository**
+The live link can be found [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html)
+
+### Local Deployment
+In order to make a local copy of this project, you can clone it.
+In your IDE Terminal, type the following command to clone my repository:
+- `git clone https://github.com/IuliiaKonovalova/team_3_april_hackathon.git`
+- Alternatively, if you use Gitpod, you can [click here](https://github.com/IuliiaKonovalova/team_3_april_hackathon), which will start the Gitpod workspace for you.
 
 ### Cloning and Forking 
 
@@ -248,20 +275,26 @@ Go to the repository page. In the top right of the page, below the navbar, click
 
 ## Credits
 
-- [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/): Garbage bins animation pop-up in **Rules Section** come from: 
-- [Icons8](https://icons8.com/): for providing free access to amazing icons and illustrations
-- [FontAwesome](https://fontawesome.com/): for providing free icons
-- [Google Fonts](https://fonts.google.com/): for providing the chosen text fonts
-- [jQuery](https://jquery.com/): simple and fast syntax allowed to create functionality  of the game within short period of time
-- [jQuery User Interface](https://jqueryui.com/): for free libraries which increase user interaction
-- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices
+- Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
+- [jQuery](https://jquery.com/): as simple and fast syntax allowed to create functionality  of the game within short period of time
+- [jQuery User Interface](https://jqueryui.com/) for free libraries which increase user interaction
 - CSS Animation Resources:
   - [CodePen](http://codepen.io/wendko/pen/dyoRRbm): Beach Game Inspiration
   - [CodePen](https://codepen.io/geertjanhendriks/pen/ZEWrmd): Ocean Game Inspiration
   - [CodePen](https://codepen.io/pehaa/pen/yLVeLNg): River Game Inspiration
-- [Firebase](https://firebase.google.com/): for providing a free platform to store the data
+- [Firebase](https://firebase.google.com/) for providing a free platform to host and store the leaderboard data.
+- The modal pop-up window used for the game's instructions were based on this Web Dev Simplified [video](https://www.youtube.com/watch?v=MBaw_6cPmAw).
+- Passing multiple arguments with the event included to event listener based on this [thread](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event).
+- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices.
+- [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE).
+- [Obfuscate]( https://obfuscator.io/) Was used to obfuscate the api key to firebase.
+- [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/): Garbage bins animation pop-up in **Rules Section** come from: 
+- [Icons8](https://icons8.com/): for providing free access to amazing icons and illustrations
+- [FontAwesome](https://fontawesome.com/): for providing free icons
+- [Google Fonts](https://fonts.google.com/): for providing the chosen text fonts
 - [Build a Popup with JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw): The modal pop-up window used for the game’s instructions section
 - [Stack Overflow](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event): Passing multiple arguments with the event included to event listener 
+
 
 ## Acknowledgements
 
@@ -273,6 +306,7 @@ Go to the repository page. In the top right of the page, below the navbar, click
 
 ## Collaborators
 
+
 Our team is made up of a wonderful group of people from around the world - all of which are either past or present students of the [Code Institue](https://codeinstitute.net/global/)
 
 - Aleksei [@lexach91](https://github.com/lexach91)
@@ -280,8 +314,5 @@ Our team is made up of a wonderful group of people from around the world - all o
 - Iuliia [@IuliiaKonovalova](https://github.com/IuliiaKonovalova)
 - Milosz [@miloszmisiek](https://github.com/miloszmisiek)
 - Whitney [@Wingkelinks](https://github.com/Wingkelinks)
-
-
-
 
 

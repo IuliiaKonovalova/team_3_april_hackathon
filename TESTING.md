@@ -166,13 +166,11 @@ The game aims to promote a more heightened awareness of environmental cleanlines
 
 - ![LeaderboardOps.js](documentation/code-validators/leaderboard-ops-js.png)
 
-- ![Leaderboard.js](documentation/code-validators/leaderboard-js.png)
-
 - ![Script.js](documentation/code-validators/script-js.png)
 
 
+- No errors or warning messages were found when passing through the official [JSHint](https://www.jshint.com/) validator. However, the validator has pointed that module variable is not used, but this variable is needed for the automated testing. Needless to say, that as the modern js syntax was used (the Optional Chaining method - `?.`) `/* jshint esversion: 11 */` was added to the top of the file.
 
-- No errors or warning messages were found when passing through the official [JSHint](https://www.jshint.com/) validator. There were some warning regarding the use of firebase.
 [Back to contents](#contents)
 
 ---
