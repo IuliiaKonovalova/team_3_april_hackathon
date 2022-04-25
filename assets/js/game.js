@@ -1,6 +1,5 @@
 /* jshint esversion: 6 */
 import GarbageItem from "./GarbageItem.js";
-import { myFunction } from './leaderboard-ops.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeXh7AxiEzrwJ6l76e4za337uEFlUr9ZM",
@@ -15,7 +14,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-
+        
 const database = firebase.database();
 
 
@@ -176,12 +175,9 @@ export default class Game {
     document.getElementById("player-score").value = this.score;
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
-    document.getElementById("menu-bar").style.visibility = "visible";
-    document.getElementById("hamburger").classList.remove("hide");
-    let gameItems = document.getElementsByClassName("play__item");
-    for (let item of gameItems) {
-      item.classList.add("hide");
-    }
+    $(".pause-stop__control").addClass("hide");
+    
+    
     $("#score-submit").click((e) => {
       e.preventDefault();
       let submitButtonBackup = $("#score-submit");
@@ -192,11 +188,15 @@ export default class Game {
       } else {
         saveScoreToDb("Anonymous", this.score);
       }
-
-
       
       this.getLeaders();
       this.endGameElement.classList.add("hide");
+      let gameItems = document.getElementsByClassName("play__item");
+      for(let item of gameItems) {
+        item.classList.add("hide");
+      }
+      document.getElementById("menu-bar").style.visibility = "visible";
+      document.getElementById("hamburger").classList.remove("hide");
       $("i.fas.fa-spinner.fa-spin").replaceWith(submitButtonBackup);
       this.leaderBoardElement.classList.remove("hide");
       $(this.leaderBoardElement).effect("highlight", {
@@ -204,13 +204,12 @@ export default class Game {
       }, 1000);
       $("#leader-close").click(() => {
         this.leaderBoardElement.classList.add("hide");
-
+        $("#main-block").removeClass("hide");
       });
       
       $("#ocean-game").addClass("hide");
       $("#beach-game").addClass("hide");
       $("#river-game").addClass("hide");
-      $("#main-block").removeClass("hide");
       $("#earth-image").removeClass("hide");
     });
   }
@@ -224,15 +223,15 @@ export default class Game {
   startTimer() {
     this.timerInterval = setInterval(() => {
       this.timeLeft -= 1;
-      if (this.timeLeft > 59) {
+      if(this.timeLeft > 59){
         this.timerElement.innerHTML = `${Math.floor(this.timeLeft / 60)}:${this.timeLeft % 60}`;
 
-      } else if (this.timeLeft < 60 && this.timeLeft > 9) {
+      } else if(this.timeLeft < 60 && this.timeLeft > 9){
         this.timerElement.innerHTML = `0:${this.timeLeft}`;
 
-      } else if (this.timeLeft < 10 && this.timeLeft > 0) {
+      } else if(this.timeLeft < 10 && this.timeLeft > 0){
         this.timerElement.innerHTML = `0:0${this.timeLeft}`;
-      }
+      } 
       if (this.timeLeft === 0) {
         this.timerElement.innerHTML = "00:00";
         this.gameOverTrigger();
@@ -300,7 +299,6 @@ export default class Game {
     }
     this.gameOverTrigger();
   }
-
   getLeaders() {
     let dbRef = firebase.database().ref("scores");
     dbRef.get().then((snapshot) => {
@@ -325,7 +323,6 @@ export default class Game {
       console.log(error);
     });
   }
-
 }
 
 // audio
