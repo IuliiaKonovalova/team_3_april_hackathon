@@ -4,8 +4,6 @@
 
 ## About 
 
-![Am I responsive](documentation/amiresponsive/am-i-responsive.png)
-
 In line with this edition of the Hackathon, we have decided to develop an interactive game based on the importance of environmental cleanliness. To achieve this, we have developed a game whereby players must sort through various randomly generated items of rubbish that which they can then deem recyclable or not. In tandem with this, players will be up against a time parameter with players that finish the game in a shorter period achieving a higher position on the overall leader board. 
 The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
 
@@ -168,8 +166,11 @@ Users are able to see scores of previous players. The Leaders Board section is d
 
 The footer is a fixed feature - always visible to the user. In addition to the copyright information, the footer includes a fun dropdown function that displays an avatar of each developer involved in the creation of this project. Each avatar links to the developers personal GitHub page. 
 
-![Footer Display](INSERT FINAL IMAGE HERE)
-![Footer With Dropdown Avatars](INSERT FINAL IMAGE HERE)
+- Footer (Normal State)
+![Footer Display](DOCUMENTATION/Features/footer1.png)
+
+- Footer (Active State)
+![Footer With Dropdown Avatars](DOCUMENTATION/Features/footer2.png)
 
 
 ### Future features
@@ -195,7 +196,12 @@ The background colour for the navigation and footer was chosen for contrast - ag
 ![Colour Scheme 2](documentation/design/colour_scheme.png)
 
 - Nav & Footer 
-![Colour Scheme 1](documentation/design/nav_colour.png)
+![Nav/Footer Colors](documentation/design/nav_colour.png)
+
+- Bin Design 
+
+The bin SVGs were custom designed by a team member in Adobe Illustrator and based on the following image obatined 
+![Bin Design](documentation/design/bin_design.png)
 
 
 ### Typography
@@ -241,22 +247,41 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 
 
 ## Credits
-- Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
-- [Icons8]
-- [jQuery](https://jquery.com/): as simple and fast syntax allowed to create functionality  of the game within short period of time
-- [jQuery User Interface](https://jqueryui.com/) for free libraries which increase user interaction
-- [River Game](https://codepen.io/pehaa/pen/yLVeLNg) - The templates from this link were utilised in the 'river' theme of the game.
-- [Ocean Game](https://codepen.io/geertjanhendriks/pen/ZEWrmd) - The templates from this link were utilised in the 'ocean' theme of the game.
-- [Beach Game](codepen.io/wendko/pen/dyoRRbm) - The templates from this link were utilised in the 'beach' theme of the game.
-- [Firebase](https://firebase.google.com/) for providing a free platform to host and store the leaderboard data.
-- The modal pop-up window used for the game's instructions were based on this Web Dev Simplified [video](https://www.youtube.com/watch?v=MBaw_6cPmAw).
-- Passing multiple arguments with the event included to event listener based on this [thread](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event).
-- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices.
+
+- [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/): Garbage bins animation pop-up in **Rules Section** come from: 
+- [Icons8](https://icons8.com/): for providing free access to amazing icons and illustrations
+- [FontAwesome](https://fontawesome.com/): for providing free icons
+- [Google Fonts](https://fonts.google.com/): for providing the chosen text fonts
+- [jQuery](https://jquery.com/): simple and fast syntax allowed to create functionality  of the game within short period of time
+- [jQuery User Interface](https://jqueryui.com/): for free libraries which increase user interaction
+- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices
+- CSS Animation Resources:
+  - [CodePen](http://codepen.io/wendko/pen/dyoRRbm): Beach Game Inspiration
+  - [CodePen](https://codepen.io/geertjanhendriks/pen/ZEWrmd): Ocean Game Inspiration
+  - [CodePen](https://codepen.io/pehaa/pen/yLVeLNg): River Game Inspiration
+- [Firebase](https://firebase.google.com/): for providing a free platform to store the data
+- [Build a Popup with JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw): The modal pop-up window used for the game’s instructions section
+- [Stack Overflow](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event): Passing multiple arguments with the event included to event listener 
 
 ## Acknowledgements
 
+- Thank you to the Code Institute for hosting the Hackathon platform.
+- Thank you to Jim Morel, our group facilitator from the Code Institute.
+- Thank you to our amazing, hard-working team of developers! We learned so much from one another.
+- And a big shout-out goes to Iuliia - our SCRUM Master :hugs: We would have been utterly lost without her!
+
 
 ## Collaborators
+
+Our team is made up of a wonderful group of people from around the world - all of which are either past or present students of the [Code Institue](https://codeinstitute.net/global/)
+
+- Aleksei [@lexach91](https://github.com/lexach91)
+- James [@stuartj073](https://github.com/stuartj073)
+- Iuliia [@IuliiaKonovalova](https://github.com/IuliiaKonovalova)
+- Milosz [@miloszmisiek](https://github.com/miloszmisiek)
+- Whitney [@Wingkelinks](https://github.com/Wingkelinks)
+
+
 
 
 
