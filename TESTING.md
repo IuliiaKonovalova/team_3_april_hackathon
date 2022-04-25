@@ -3,8 +3,8 @@
 * [Manual Testing](#manual-testing)
 * [Testing User Story](#testing-user-story)
 * [Bugs](#bugs)
-  * [Known bugs](#known-bugs)
   * [Solved bugs](#solved-bugs)
+  * [Known bugs](#known-bugs)
 * [Validation](#validation)
   * [HTML validation](#html-validation)
   * [CSS validation](#css-validation)
@@ -161,6 +161,23 @@ A future feature intended to be implemented within the game is the formation of 
 preserving our environment.
 
 The game aims to promote a more heightened awareness of environmental cleanliness by means of having fun and competing with others. In this fashion, children can become more motivated to increase their awareness and effort in acquiring a newfound knowledge base when it comes to cleaning up rubbish whilst out in the world.
+
+## Bugs
+### Solved bugs
+- Because we decided to make the game a one-page application, we ran into many issues with z-indexing of the elements that are currently on the page. Many elements were overlapping each other, and the game was not playable. Through many iterations, we were able to fix these issues.
+
+- The game was not playable on mobile devices. Jquery UI's draggable feature was not working on mobile devices, because it does not support touch events by default. We had to use [Jquery UI Touch Punch](https://github.com/furf/jquery-ui-touch-punch) to make the game playable on mobile devices.
+
+- When we managed to connect our leaders board to the firebase database, we had an issue with fetching the data. It appeared that firebase's function `on('value')` was opening a websocket connection to the database to all the users who are currently online. This caused the situation where if one user just posted a score, the other users who are currently online would see the score board element appear on the page. We solved this issue by using the `get` function.
+
+- There was a bug when the user presses the "pause" button. The game would pause and the pause screen would appear, but if the user pressed "stop" button after that, the pause screen would not disappear. We solved this issue by refactoring the code for the pause and stop buttons.
+
+- Another bug with play/pause/stop buttons was that if the user paused the game and then pressed the "stop" button, the game would stop but when the users started the game again, the game process would start, but instead of the pause button there would be a play button. We solved this issue by refactoring the code for the pause, stop buttons.
+
+- After finishing the game, when the user pressed "submit" button, this button is replaced with a spinner to prevent the user from submitting multiple times. However, if the user would start a new game, the spinner would still be there instead of the "submit" button. We solved this issue by refactoring the code for the submit score function.
+
+### Known bugs
+- It is possible that even with using Jquery UI Touch Punch, the game would not be playable on some of the mobile devices.
 
 
 ## Validation:

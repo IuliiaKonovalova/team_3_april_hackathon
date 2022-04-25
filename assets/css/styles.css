@@ -456,13 +456,12 @@ body {
 }
 
 /* ----- Modal Pop-Up Window - Game Rules ----- */
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* scale(0) sets modal to invisible */
   transform: translate(-50%, -50%) scale(0);
-  /* Gradually apears/disapears over set time frame */
   transition: 200ms ease-in-out;
   border-radius: 10px;
   z-index: 15;
@@ -474,7 +473,6 @@ body {
 
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
-  /* Sets modal to be visible when active */
   z-index: 10;
   text-align: justify;
   max-height: 90%;
@@ -533,11 +531,9 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  /* If overlay is invisible, it will remove the option to capture any click events */
   pointer-events: none;
 }
 
-/* When overlay is active, we set opacity to be visible and pointer-events to capture events to disallow for button clicks */
 #overlay.active {
   opacity: 1;
   pointer-events: all;
@@ -545,6 +541,7 @@ body {
 }
 
 /* ----- Rules Section ----- */
+
 .rules__section {
   position: absolute;
   top: 50%;
@@ -558,7 +555,6 @@ body {
   width: 90%;
   padding: 1vh;
 }
-
 
 .rules__section--data {
   position: relative;
@@ -705,7 +701,7 @@ body {
 }
 
 
-/* ---- Gams Section ---- */
+/* ---- Game Section ---- */
 /* Combo */
 .combo {
   position: absolute;
@@ -1743,6 +1739,25 @@ label {
     padding: 0.5em 0.5em 0.5em 0.8em;
   }
 
+}
+
+@media all and (max-width: 520px) {
+  .copyrights__wrapper {
+    width: 95%;
+  }
+
+  .footer__header,
+  .footer__copyright {
+    font-size: 1rem;
+  }
+
+  .footer__creators {
+    flex-direction: column;
+  }
+
+  .footer__creators--item:not(:first-child) {
+    margin-left: 0;
+  }
 }
 
 @media all and (max-width: 500px) {
