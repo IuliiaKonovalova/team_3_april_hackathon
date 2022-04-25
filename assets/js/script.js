@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hamburger.classList.contains("is-active")) {
       toggleMenu();
     }
-    let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn)
+    let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
     main.addEventListener('click', sectionEventHandler);
     addHideClass();
     document.getElementById("earth-image").classList.remove("hide");
