@@ -55,6 +55,39 @@
 
 
 
+## Testing User Story
+
+|-------------------------------|--------------------------|-------------------|
+|       **User Stories**        |   **Requirements met**   |     **Image**     |
+|-------------------------------|--------------------------|-------------------|
+| **First Time Visitor Goals:** | | |
+| As a first time visitor, I want to be able to easily understand the purpose of the website, so I can decide whether I want to use it or not. | On the landing page of the site it is clear where the user may go to learn the rules of the game. It is also clear how to play the game with the play button clearly displayed. |  |
+| As a first time visitor, I want to be able to easily navigate the website, so I can find what I am looking for. | Users can navigate the site by use of a menu navigation bar | (Landing Page)[assets/images/userstories/landing.png] |
+| As a first time visitor, I want to be able to easily understand the rules of the game, so I can play freely. | There is a rules menu option that pops up a window containing the rules | (Nav Menu)[assets/images/userstories/navmenu.png] |
+|                               | | (Rules Popup)[assets/images/userstories/rulepopup.png] |
+|                               | | |
+| **Frequent User Goals:**      | | |
+| As a frequent user, I want to be able to learn about sorting garbage for recycling, so I can recycle my garbage in real life. | A user has the has 3 game options, beach, river and ocean. The aim of the game is to sort the items on the screen into the correct bin. For example a book goes to the paper bin, a plastic bottle to the plastics bin| (Beach game)[assets/images/userstories/beachgame.png] |
+|                               | | (River game)[assets/images/userstories/rivergame.png] |
+|                               | | (Ocean game)[assets/images/userstories/oceangame.png]|
+|                               | | (Play game)[assets/images/userstories/playgame.png] |
+|                               | | |
+| As a frequent user, I want to enjoy the game, so I can play it regularly. | At the end of a play a score board pops-up where the user may enter their game name and submit their score. Thereafter a leader board pops-up to show the scores of top players. | (Score board)[assets/images/userstories/scoreboard.png] |
+|                               | | (Leader Board)[assets/images/userstories/scoreboard.png] |
+|                               | | |
+| As a frequent user, I want to be able to compete with other users, so I can motivate myself to play the game. | | |
+| As a frequent user, I want to be able to change the theme of the game, so I can enjoy a different experience. | | |
+| As a frequent user, I want to be able to learn interesting facts about environment, so I can improve my recycling habits. | | |
+|                               | | |
+| **Parent Goals:**             | | |
+| As a parent of a frequent user, I want to be sure that the content is safe for children, so I can freely let my child play the game. | | |
+| As a parent of a frequent user, I want to be sure that the is no advertisement, so I can freely let my child play the game. | | |
+| As a parent of a frequent user, I want to know that my child develops good recycling habits, so I can be sure that my child will be able to recycle in real life. | | |
+| As a parent of a frequent user, I want to be sure that my child is not addicted to the game, so I can be sure that my child will be able to play the game regularly. (for the future development) | | |
+| As a parent of a frequent user, I want to be sure that my child is motivated to play the game, so I can be sure that my child receives enough motivation to recycle and actively participate in preserving our environment. | | |
+| As a parent of a frequent user, I want my child to learn additional facts about the environment, so I can be sure that my child will be able to improve his recycling habits. | | |
+
+
 ## Testing user stories
 
 ### First Time Visitor Goals:
@@ -127,7 +160,6 @@ A future feature intended to be implemented within the game is the formation of 
 preserving our environment.
 
 The game aims to promote a more heightened awareness of environmental cleanliness by means of having fun and competing with others. In this fashion, children can become more motivated to increase their awareness and effort in acquiring a newfound knowledge base when it comes to cleaning up rubbish whilst out in the world.
-
 
 
 ## Validation:
