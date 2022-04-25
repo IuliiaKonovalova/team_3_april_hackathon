@@ -94,7 +94,6 @@ export default class Game {
     let theme;
     setTimeout(() => {
       theme = $("#garbage-bins").attr("data-theme");
-      // console.log(theme);
       if (theme === "ocean") {
         oceanBackground.play();
       } else if (theme === "river") {
