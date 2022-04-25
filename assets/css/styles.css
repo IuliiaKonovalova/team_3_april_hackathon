@@ -1494,7 +1494,7 @@ label {
   height: unset;
   justify-content: start;
   padding: 1em 2em 1.5em 2em;
-
+  border: solid 2px var(--clr-accent--100);
 }
 
 .leaders__board--title {
@@ -1511,6 +1511,7 @@ label {
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-flow: dense;
   gap: 2rem;
+  text-transform: capitalize;
 }
 
 .leader__data {
@@ -1520,6 +1521,13 @@ label {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  border-bottom: solid 2px rgb(255, 0, 230, 0.3);
+  padding-bottom: 5px;
+  font-weight: 900;
+}
+
+#leaders-board .leader__data--score {
+  color: var(--clr-accent--900);
 }
 
 /* --- Hide Class --- */
