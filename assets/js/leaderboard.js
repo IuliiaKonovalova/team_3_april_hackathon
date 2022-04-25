@@ -1,6 +1,5 @@
 /* jshint esversion: 8, jquery: true */
 // variables
-const leaderBoard = document.getElementById('leaderboard');
 const submitButton = document.getElementById('submit');
 
 // Import the functions you need from the SDKs you need
