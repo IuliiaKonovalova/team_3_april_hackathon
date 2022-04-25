@@ -4,8 +4,6 @@
 
 ## About 
 
-![Am I responsive](documentation/amiresponsive/am-i-responsive.png)
-
 In line with this edition of the Hackathon, we have decided to develop an interactive game based on the importance of environmental cleanliness. To achieve this, we have developed a game whereby players must sort through various randomly generated items of rubbish that which they can then deem recyclable or not. In tandem with this, players will be up against a time parameter with players that finish the game in a shorter period achieving a higher position on the overall leader board. 
 The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
 
@@ -87,6 +85,31 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - A game pause button
 - A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
 
+**Home Page**
+
+The Earth Protectors Home Page is structured with a Navbar on the top, the logo heading centred on the web page, followed by the Play button, which clicked will prompt the users to choose the basic gameplay settings. The bottom of the page is occupied by the Footer section.
+
+![Home Page](documentation/features/home-page.png)
+
+**Difficulty Selection**
+
+When users click the Play button, they can choose between **Easy** and **Hard** modes.
+- **Easy**: garbage appears on the screen and users must segregate it into proper bins.
+- **Hard**: new garbage appears every 2 seconds.
+
+![Difficulty Selection](documentation/features/difficulty-selection.png)
+
+**Game Arena Themes Selection**
+When players choose their difficulty preference, they must select the Game Arena Theme. They have three options which bring users to their respective scenery:
+- **Beach**,
+- **River**,
+- **Ocean**.
+
+Players can choose scenery with arrow buttons located on the left & right parts of the screen. When they decide they can click the Play button to start the game session.
+
+Every scene has a different musical background.
+
+![Game Arena Scenes](documentation/features/game-arena-selection.png)
 
 **Navbar**
 
@@ -149,12 +172,29 @@ We built the CSS animations by pulling the code from the existing pens, and then
 - Beach Theme Materialized
 ![Theme Feature](documentation/features/beach_game.png)
 
+**End Game Window**
+
+After the game is finished, users are notified about their score. They can submit their score to Leader Boards by typing their name or anonymously if they prefer. Below name input, the Submit button sends the data to the Firebase database and the user is informed about the latest results hierarchy.
+
+![End Game Window](documentation/features/end-game-window.png)
+
+**Leaders Board**
+
+Users are able to see scores of previous players. The Leaders Board section is displayed after players submit their scores or by clicking in the respective button on the Navigation Bar.
+
+[Firebase](https://firebase.google.com/) database is implemented to store players scores.
+
+![Leaders Board](documentation/features/leaders-board.png)
+
 **Footer Feature**
 
 The footer is a fixed feature - always visible to the user. In addition to the copyright information, the footer includes a fun dropdown function that displays an avatar of each developer involved in the creation of this project. Each avatar links to the developers personal GitHub page. 
 
-![Footer Display](INSERT FINAL IMAGE HERE)
-![Footer With Dropdown Avatars](INSERT FINAL IMAGE HERE)
+- Footer (Normal State)
+![Footer Display](DOCUMENTATION/Features/footer1.png)
+
+- Footer (Active State)
+![Footer With Dropdown Avatars](DOCUMENTATION/Features/footer2.png)
 
 
 ### Future features
@@ -180,7 +220,12 @@ The background colour for the navigation and footer was chosen for contrast - ag
 ![Colour Scheme 2](documentation/design/colour_scheme.png)
 
 - Nav & Footer 
-![Colour Scheme 1](documentation/design/nav_colour.png)
+![Nav/Footer Colors](documentation/design/nav_colour.png)
+
+- Bin Design 
+
+The bin SVGs were custom designed by a team member in Adobe Illustrator and based on the following image obatined 
+![Bin Design](documentation/design/bin_design.png)
 
 
 ### Typography
@@ -200,10 +245,12 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 ### Github
 
+
 - The site was deployed to GitHub pages. The steps to deploy are as follows:
 - In the [GitHub repository](https://github.com/IuliiaKonovalova/team_3_april_hackathon), navigate to the Settings tab
 - From the source section drop-down menu, select the **Main** Branch, then click "Save".
 - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
 
 The live link can be found [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html)
 
@@ -221,29 +268,51 @@ Cloning by command line: Click the button beside the green button titled 'code',
 
 ### Forking
 
-Go to the repositary page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
+Go to the repository page. In the top right of the page, below the navbar, click the 'fork' button. The fork should now be in your repositories.
 
 **How to run this project locally**
 
 
 ## Credits
+
 - Garbage bins animation pop-up in **Rules Section** come from: [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
-- [Icons8]
 - [jQuery](https://jquery.com/): as simple and fast syntax allowed to create functionality  of the game within short period of time
 - [jQuery User Interface](https://jqueryui.com/) for free libraries which increase user interaction
-- [River Game](https://codepen.io/pehaa/pen/yLVeLNg) - The templates from this link were utilised in the 'river' theme of the game.
-- [Ocean Game](https://codepen.io/geertjanhendriks/pen/ZEWrmd) - The templates from this link were utilised in the 'ocean' theme of the game.
-- [Beach Game](codepen.io/wendko/pen/dyoRRbm) - The templates from this link were utilised in the 'beach' theme of the game.
+- CSS Animation Resources:
+  - [CodePen](http://codepen.io/wendko/pen/dyoRRbm): Beach Game Inspiration
+  - [CodePen](https://codepen.io/geertjanhendriks/pen/ZEWrmd): Ocean Game Inspiration
+  - [CodePen](https://codepen.io/pehaa/pen/yLVeLNg): River Game Inspiration
 - [Firebase](https://firebase.google.com/) for providing a free platform to host and store the leaderboard data.
 - The modal pop-up window used for the game's instructions were based on this Web Dev Simplified [video](https://www.youtube.com/watch?v=MBaw_6cPmAw).
 - Passing multiple arguments with the event included to event listener based on this [thread](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event).
 - [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) for providing a library which allows to use iquery ui draggable to work on mobile devices.
 - [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE).
 - [Obfuscate]( https://obfuscator.io/) Was used to obfuscate the api key to firebase.
+- [css-tricks.com](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/): Garbage bins animation pop-up in **Rules Section** come from: 
+- [Icons8](https://icons8.com/): for providing free access to amazing icons and illustrations
+- [FontAwesome](https://fontawesome.com/): for providing free icons
+- [Google Fonts](https://fonts.google.com/): for providing the chosen text fonts
+- [Build a Popup with JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw): The modal pop-up window used for the game’s instructions section
+- [Stack Overflow](https://stackoverflow.com/questions/16053866/javascript-pass-multiple-arguments-to-eventlistener-and-the-event): Passing multiple arguments with the event included to event listener 
 
 
 ## Acknowledgements
 
+- Thank you to the Code Institute for hosting the Hackathon platform.
+- Thank you to Jim Morel, our group facilitator from the Code Institute.
+- Thank you to our amazing, hard-working team of developers! We learned so much from one another.
+- And a big shout-out goes to Iuliia - our SCRUM Master :hugs: We would have been utterly lost without her!
+
 
 ## Collaborators
+
+
+Our team is made up of a wonderful group of people from around the world - all of which are either past or present students of the [Code Institue](https://codeinstitute.net/global/)
+
+- Aleksei [@lexach91](https://github.com/lexach91)
+- James [@stuartj073](https://github.com/stuartj073)
+- Iuliia [@IuliiaKonovalova](https://github.com/IuliiaKonovalova)
+- Milosz [@miloszmisiek](https://github.com/miloszmisiek)
+- Whitney [@Wingkelinks](https://github.com/Wingkelinks)
+
 
