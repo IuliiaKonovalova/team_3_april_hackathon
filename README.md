@@ -129,8 +129,11 @@ We built the CSS animations by pulling the code from the existing pens, and then
 
 The footer is a fixed feature - always visible to the user. In addition to the copyright information, the footer includes a fun dropdown function that displays an avatar of each developer involved in the creation of this project. Each avatar links to the developers personal GitHub page. 
 
-![Footer Display](INSERT FINAL IMAGE HERE)
-![Footer With Dropdown Avatars](INSERT FINAL IMAGE HERE)
+- Footer (Normal State)
+![Footer Display](DOCUMENTATION/Features/footer1.png)
+
+- Footer (Active State)
+![Footer With Dropdown Avatars](DOCUMENTATION/Features/footer2.png)
 
 
 ### Future features
@@ -156,7 +159,12 @@ The background colour for the navigation and footer was chosen for contrast - ag
 ![Colour Scheme 2](documentation/design/colour_scheme.png)
 
 - Nav & Footer 
-![Colour Scheme 1](documentation/design/nav_colour.png)
+![Nav/Footer Colors](documentation/design/nav_colour.png)
+
+- Bin Design 
+
+The bin SVGs were custom designed by a team member in Adobe Illustrator and based on the following image obatined 
+![Bin Design](documentation/design/bin_design.png)
 
 
 ### Typography
@@ -207,7 +215,22 @@ Go to the repositary page. In the top right of the page, below the navbar, click
 
 ## Acknowledgements
 
+- Thank you to the Code Institute for hosting the Hackathon platform.
+- Thank you to Jim Morel, our group facilitator from the Code Institute.
+- Thank you to our amazing, hard-working team of developers! We learned so much from one another.
+- And a big shout-out goes to Iuliia - our SCRUM Master :hugs: We would have been utterly lost without her!
+
 ## Collaborators
+
+Our team is made up of a wonderful group of people from around the world - all of which are either past or present students of the [Code Institue](https://codeinstitute.net/global/)
+
+- Aleksei [@lexach91](https://github.com/lexach91)
+- James [@stuartj073](https://github.com/stuartj073)
+- Iuliia [@IuliiaKonovalova](https://github.com/IuliiaKonovalova)
+- Milosz [@miloszmisiek](https://github.com/miloszmisiek)
+- Whitney [@Wingkelinks](https://github.com/Wingkelinks)
+
+
 
 
 
