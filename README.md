@@ -1,10 +1,11 @@
-# team_3_april_hackathon
+# Team: Earth Protectors - April Hackathon 
 
 # Contents
 
 ## About 
 
-In line with this edition of the Hackathon, we have decided to develop an interactive game based on the importance of environmental cleanliness. To achieve this, we have developed a game whereby players must sort through various randomly generated items of rubbish that which they can then deem recyclable or not. In tandem with this, players will be up against a time parameter with players that finish the game in a shorter period achieving a higher position on the overall leader board. 
+In line with the Earth Day theme, we have developed an interactive game for children to raise awareness around waste management. Players interact with different natural environments, as they sort out various types of waste materials by placing them in the correct bin. Before commencing the game, information is presented in the rules section which assists players in identifying which waste type goes into which bin. There are two difficulty levels for players to choose from; easy and hard. In game mode, a player works against the clock. The leaderboard displays players' success and ranks and records data accordingly.
+
 The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
 
 
@@ -88,9 +89,9 @@ On the mobile device the game bar will be seen in the middle of the navigation b
 
 ![Navbar mobile. Game view open](documentation/features/navbar_game_on_mobile.png)
 
-- Rules Section
+**Rules Feature**
 
-![Rules Feature](documentation/features/rules-feature.png)
+![Rules Feature](documentation/features/rules_feature2.png)
 
 The purpose of the Rules Feature is to give users a brief description of how to play the game.
 The four bins located in the centre of the screen are buttons, which show what kind of garbage must be placed in a respective bin.
@@ -98,11 +99,35 @@ The bins appear on the screen with CSS animation delaying every bin to be displa
 When users hover over bins, CSS animation is triggered to rotate respective bins 360 deg.
 Information about proper segregation of garbage is presented to a user using a modal pop-up window.
 
-**IMAGE OF UPDATED MODAL HERE**
+![Rules Feature](documentation/features/rules_feature1.png)
 
 Below the garbage bin section users can find randomly selected facts related to ecology. The information is fetched from a JSON file using jQuery and presented in UI.
 This section allows users to start a game with the use of the Play Button located in the right bottom corner of the section background window.
 Users can exit the Rules Section with any click outside the section window (excluding the navbar and footer) or by clicking the exit button in the top left corner.
+
+**Game Theme Feature**
+
+The theme selection allow players to select a natural environment to clean up, as it were. Each theme was inspired a collection of pens found on CodePen (links available in credits section).
+
+We built the CSS animations by pulling the code from the existing pens, and then manipulating it to suit our needs in seperate `test-game-bckdrop.html` files. Once satisfied with the visuals, we then migrated the code into the project. From there, the JavaScript was wired up, and layered above the animations in order to render the game.
+
+- River Theme Foundation
+![Theme Feature](documentation/features/river_theme_test.png)
+- River Theme Materialized
+![Theme Feature](documentation/features/river_game.png)
+- Ocean Theme Foundation
+![Theme Feature](documentation/features/ocean_theme_test.png)
+- Ocean Theme Materialized
+![Theme Feature](documentation/features/ocean_game.png)
+- Beach Theme Foundation
+![Theme Feature](documentation/features/beach_theme_test.png)
+- Beach Theme Materialized
+![Theme Feature](documentation/features/beach_game.png)
+
+
+![Theme Feature](documentation/features/.png)
+![Theme Feature](documentation/features/.png)
+
 
 
 - Home page (which includes a navbar with links to all pages of the site)
@@ -125,7 +150,6 @@ Users can exit the Rules Section with any click outside the section window (excl
 
 - In the future, the intention is to implement a 'time-limit' on the frequency a player can play the game. If a player plays the game in a specified number of successions they will be given a prompt notifying them of the amount of time they have spent playing the game and a suggestion that asks them to consider taking a break and coming back later. This is to ensure that parents can feel at ease as to whether or not their child will be playing the game too much. This feature will be developed further as the lifespan of the game continues into the future.
 
-!
 ## Design
 
 ### Structure
