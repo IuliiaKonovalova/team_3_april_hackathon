@@ -3,6 +3,7 @@ import {
   addHideClass,
   myFunction
 } from './leaderboard-ops.js';
+
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
 document.addEventListener("DOMContentLoaded", () => {
   // variables
@@ -53,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hamburger.classList.contains("is-active")) {
       toggleMenu();
     }
-    // toggleMenu() ? hamburger.classList.contains("is-active") : null;
     addHideClass();
     mainBlock.classList.remove("hide");
     document.getElementById("earth-image").classList.remove("hide");
@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
     leaderBoard.classList.remove("hide");
   });
 
-
   // If the user clicks easy level, hide the difficulty block and show the theme block
   difficultyBtnEasy.addEventListener("click", (e) => {
     addHideClass();
@@ -119,13 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
   nextButton.addEventListener("click", () => {
     carousel.classList.add("fade");
   });
-
-  // slides.forEach(slide => {
-  //   slide.addEventListener('click', () => {
-  //     carousel.classList.add('hide');
-  //     mainBlock.classList.remove('hide');
-  //   })
-  // })
 
   // Reset all slides
   function reset() {
@@ -357,7 +349,6 @@ document.addEventListener("DOMContentLoaded", () => {
       footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-down"></i>`;
   });
 
-  console.log(soundBtn);
   // Displays sound icon
   soundBtn.addEventListener('click', () => {
     soundBtn.querySelectorAll('i').forEach(icon => {

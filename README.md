@@ -45,6 +45,30 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 
 ## Scope
 
+## Technologies Used
+
+### Languages
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
+- [JS](https://www.javascript.com/): the main language used to develop the client side of the website.
+
+### Frameworks and libraries:
+
+- [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
+- [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
+
+### Other tools
+
+- [Git](https://git-scm.com/): the version control system used to manage the code.
+- [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+- [JShint](https://jshint.com/): was used to validate JS code for the website.
+- [GitHub](https://github.com/): used to host the source code of the website.
+- [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+- [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+
 ### Features
 
 - Home page (which includes a navbar with links to all pages of the site)
@@ -167,10 +191,6 @@ The background colour for the navigation and footer was chosen for contrast - ag
 
 
 - [Wireframes](documentation/wireframes/WIREFRAMES_EARTH_DAY_HKTHN.pdf)
-
-## Technologies Used
-
-
 
 ## Testing
 
