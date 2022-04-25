@@ -28,6 +28,6 @@ export let myFunction = function (section, closeBtn) {
                 document.getElementById('main').removeEventListener('click', sectionEventHandler);
             }
         }
-    }
-}
+    };
+};
 
