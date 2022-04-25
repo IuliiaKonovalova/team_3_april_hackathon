@@ -485,7 +485,6 @@ body {
 
 .modal-header .title {
   font-size: 1.4rem;
-  font-weight: bold;
 }
 
 .modal-header .close-button,
@@ -508,7 +507,12 @@ body {
 .modal-body {
   padding: 1.5rem;
   font-family: var(--ff-primary);
+}
 
+.modal__bullet-points li::before {
+  content: "\2022";
+  color: var(--clr-accent--100);
+  padding: 0 0.2em 0.3em 0.2em;
 }
 
 #overlay {

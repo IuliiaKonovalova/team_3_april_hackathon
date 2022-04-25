@@ -218,6 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (button.id === "organic-bin") {
         modalText = `
         <p>Organic matter comes from a living organism and when it is not living anymore, it will decay over time.</p>
+        <br>
         <ul class="modal__bullet-points">
           <li>Fruit</li>
           <li>Vegetables</li>
@@ -230,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (button.id === "plastic-bin") {
         modalText = `
         <p>Plastic - It is everywhere! Soft plastics and hard plastics can be recycled and turned into other items.</p>
+        <br>
         <ul class="modal__bullet-points">
           <li>Shopping Bags</li>
           <li>Chip Packets</li>
@@ -245,6 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (button.id === "glass-bin") {
         modalText = `
         <p>Glass is a hard material that can be easily recycled and made into many new things. It is mainly made of silica, which is actually sand!</p>
+        <br>
         <ul class="modal__bullet-points">
           <li>Glass Jars</li>
           <li>Wine & Beer Bottles</li>
@@ -257,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (button.id === "paper-bin") {
         modalText = `
         <p>Paper is a thin material and is mostly made of wood fibres from trees. Card is a heavy type of paper, known for being stiff and quite durable!</p>
+        <br>
         <ul class="modal__bullet-points">
           <li>Cardboard Boxes</li>
           <li>Newspaper</li>
