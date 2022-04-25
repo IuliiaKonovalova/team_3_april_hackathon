@@ -1,8 +1,6 @@
 {
     "category": {
-
         "plastic pollution": [
-
             {
                 "id": 1,
                 "text": "Every day approximately 8 million pieces of plastic pollution find their way into our oceans. 12 million tonnes of plastic are poured into the ocean every year.",
@@ -19,9 +17,7 @@
                 "source": "https://www.globalcitizen.org/en/content/plastic-bans-around-the-world/?template=next"
             }
         ],
-
         "air-pollution": [
-
             {
                 "id": 1,
                 "text": "Air pollution kills 800 people every hour or 13 every minute - more than three times compared to malaria, tuberculosis and AIDS combined each year.",
@@ -38,7 +34,6 @@
                 "source": "https://www.who.int/health-topics/air-pollution#tab=tab_2"
             }
         ],
-
         "chemical-pollution": [
             {
                 "id": 1,
@@ -47,12 +42,12 @@
             },
             {
                 "id": 2,
-                "text": "Less than 2% of chemicals on the market have actually been tested for carcinogenicity (tendency to cause cancer)",
+                "text": "Less than 2% of chemicals on the market have actually been tested for carcinogenicity (tendency to cause cancer).",
                 "source": "https://deainfo.nci.nih.gov/advisory/pcp/annualreports/pcp08-09rpt/pcp_report_08-09_508.pdf"
             },
             {
                 "id": 3,
-                "text": "One half of every metric ton of fertilizer applied to fields never even makes it into plant tissue, but instead ends up evaporating or being washed into local waterways",
+                "text": "One half of every metric ton of fertilizer applied to fields never even makes it into plant tissue, but instead ends up evaporating or being washed into local waterways.",
                 "source": "https://netedu.xauat.edu.cn/jpkc/netedu/jpkc2009/szylyybh/content/wlzy/4/Nutrient%20Overload-Unbalancing%20the%20Global%20Nitrogen%20Cycle.pdf"
             }
         ],
