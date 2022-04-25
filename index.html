@@ -119,7 +119,7 @@
     <div class="rules__section hide" id="rules">
       <!-- data-modal-target is a selector for JS that points out to element to be open with button -->
       <div class="game__rules">
-        <h1>How to Play?</h1>
+        <h1 class="game__rules--title">How to Play?</h1>
         <button class="rules__close" id="rules-close">&times;</button>
         <p>
           Identify four different waste types and which bins they belong in. Score points with proper waste segregation.
@@ -150,11 +150,13 @@
         <h2 class="eco__facts--title">Did you know?</h2>
         <p id="eco__text"></p>
       </div>
-      <a class="btn btn__play play-btn" id="rules__play">
-        <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
-      </a>
+      <div class="rules__play--container">
+        <a class="btn btn__play play-btn" id="rules__play">
+          <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
+        </a>
+      </div>
     </div>
-    </div>
+
 
     <!-- Leaders board Block -->
     <div class="leaders__board hide" id="leaders-board">
