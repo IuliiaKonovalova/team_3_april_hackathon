@@ -120,7 +120,7 @@ export default class Game {
     this.timerElement.innerHTML = '01:00';
     this.gameMode = mode;
     this.gameOver = false;
-    this.lives = 3;
+    this.restoreLives();
     this.score = 0;
     this.scoreElement.innerHTML = this.score;
     this.combo = 0;
@@ -206,6 +206,14 @@ export default class Game {
     hearts[this.lives].classList.add("far");
     if (this.lives === 0) {
       this.gameOverTrigger();
+    }
+  }
+  restoreLives() {
+    this.lives = 3;
+    let hearts = this.livesElement.getElementsByTagName("i");
+    for (let i = 0; i < hearts.length; i++) {
+      hearts[i].classList.remove("far");
+      hearts[i].classList.add("fas");
     }
   }
   increaseCombo() {
