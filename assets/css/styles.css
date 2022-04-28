@@ -1821,4 +1821,8 @@ label {
     width: 4rem;
     padding: 0.5em 0.5em 0.5em 0.8em;
   }
+  .garbage-item {
+    width: 60px !important;
+    height: 60px !important;
+  }
 }
