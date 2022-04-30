@@ -30,9 +30,15 @@
       </span>
     </button>
     <ul class="navbar__items" id="menu-bar">
-      <li><a href="javascript:void(0)" id="home-link">Home</a></li>
-      <li><a href="javascript:void(0)" id="rules__link">Rules</a></li>
-      <li><a href="javascript:void(0)" id="leaders-link">Leaders Board</a></li>
+      <li>
+        <a href="javascript:void(0)" id="home-link" aria-label="Go to the home view">Home</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" id="rules__link" aria-label="Go to the rules view">Rules</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" id="leaders-link" aria-label="Go to the leaders view">Leaders Board</a>
+      </li>
     </ul>
     <!-- Game Controls -->
     <div class="game__bar">
@@ -68,7 +74,7 @@
     <!-- Start Game block -->
     <div class="main__block" id="main-block">
       <h1 class="main__title">Earth Protectors</h1>
-      <a class="btn btn__play play-btn">
+      <a class="btn btn__play play-btn" aria-label="Go to choosing level view">
         <img src="assets/images/play.svg" alt="Play button icon" />
       </a>
     </div>
@@ -91,7 +97,7 @@
             <img class="carousel__images" src="assets/images/beach_clean.png"
               alt="Boy on a beach with a bag of garbage" />
           </div>
-          <a class="btn btn__play btn__play--theme" id="beach-theme">
+          <a class="btn btn__play btn__play--theme" id="beach-theme" aria-label="Choose beach theme">
             <img src="assets/images/play.svg" alt="Play button icon" />
           </a>
         </li>
@@ -101,7 +107,7 @@
           <div class="carousel__images--container">
             <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="Dog cleaning the river" />
           </div>
-          <a class="btn btn__play btn__play--theme" id="river-theme">
+          <a class="btn btn__play btn__play--theme" id="river-theme" aria-label="Choose river theme">
             <img src="assets/images/play.svg" alt="Play button icon" />
           </a>
         </li>
@@ -112,7 +118,7 @@
             <img class="carousel__images" src="assets/images/ocean_clean.png"
               alt="Plastic bottle in the Ocean cartoon image" />
           </div>
-          <a class="btn btn__play btn__play--theme" id="ocean-theme">
+          <a class="btn btn__play btn__play--theme" id="ocean-theme" aria-label="Choose ocean theme">
             <img src="assets/images/play.svg" alt="Play button icon" />
           </a>
         </li>
@@ -158,7 +164,7 @@
         <p id="eco__text"></p>
       </div>
       <div class="rules__play--container">
-        <a class="btn btn__play play-btn" id="rules__play">
+        <a class="btn btn__play play-btn" id="rules__play" aria-label="Go to choosing difficulty level">
           <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
         </a>
       </div>
