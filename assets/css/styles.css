@@ -1571,6 +1571,15 @@ label {
   color: var(--clr-accent--900);
 }
 
+/* #leader-close {
+  top: 0.2em;
+  right: 0.6em;
+} */
+
+#leaders-board {
+  border-radius: 0.5rem;
+}
+
 /* --- Hide Class --- */
 .hide {
   display: none !important;
@@ -1719,6 +1728,14 @@ label {
     right: 0;
   }
 
+  .leaders__board {
+    padding: 1em 1.5em;
+  }
+
+  .leaders__board--content {
+    gap: 1rem;
+  }
+
 
 }
 
@@ -1821,6 +1838,7 @@ label {
     width: 4rem;
     padding: 0.5em 0.5em 0.5em 0.8em;
   }
+
   .garbage-item {
     width: 60px !important;
     height: 60px !important;
