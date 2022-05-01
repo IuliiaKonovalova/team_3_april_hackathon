@@ -191,10 +191,10 @@ Users are able to see scores of previous players. The Leaders Board section is d
 The footer is a fixed feature - always visible to the user. In addition to the copyright information, the footer includes a fun dropdown function that displays an avatar of each developer involved in the creation of this project. Each avatar links to the developers personal GitHub page. 
 
 - Footer (Normal State)
-![Footer Display](DOCUMENTATION/Features/footer1.png)
+![Footer Display](documentation/features/footer1.png)
 
 - Footer (Active State)
-![Footer With Dropdown Avatars](DOCUMENTATION/Features/footer2.png)
+![Footer With Dropdown Avatars](documentation/features/footer2.png)
 
 
 ### Future features
