@@ -428,7 +428,8 @@ body {
 }
 
 .carousel__images {
-  height: 50vh;
+  height: 40vh;
+  width: 30vw;
 }
 
 .carousel__button {
@@ -1767,6 +1768,10 @@ label {
   .btn__play {
     width: 4rem;
     padding: 0.5em 0.5em 0.5em 0.8em;
+  }
+
+  .carousel__images {
+    width: 40vw;
   }
 
 }
