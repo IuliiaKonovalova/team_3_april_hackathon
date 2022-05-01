@@ -1311,6 +1311,21 @@ body {
   animation-delay: 6s;
 }
 
+/* ----- Disable Select in Game Mode ----- */
+
+.disable__select {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
 /* ----- End Game Window ----- */
 
 #end-game * {
@@ -1735,8 +1750,6 @@ label {
   .leaders__board--content {
     gap: 1rem;
   }
-
-
 }
 
 @media all and (max-width: 650px) and (min-height: 900px) {
