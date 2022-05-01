@@ -1528,14 +1528,18 @@ label {
   width: 100vw;
   z-index: 99999999;
   bottom: 0vh;
-  right: 2vw;
+  right: 5vw;
   position: absolute;
 }
 
 .game__bin {
   width: 100px;
   z-index: 999999;
-  margin: 0 1em;
+  margin: 0;
+}
+
+.game__bin:not(:first-child) {
+  margin-left: 5vw;
 }
 
 .game__bin img {
@@ -1687,10 +1691,12 @@ label {
   }
 
   /* Media for bins */
+  .game__bins--section {
+    right: 6vw;
+  }
+
   .game__bin {
-    width: 80px;
-    z-index: 999999;
-    margin: 0 0.8em;
+    width: 90px;
   }
 }
 
@@ -1758,6 +1764,16 @@ label {
   .leaders__board--content {
     gap: 1rem;
   }
+
+  /* Media for Bins */
+  .game__bins--section {
+    justify-content: center;
+    right: 0;
+  }
+
+  .game__bin {
+    width: 70px;
+  }
 }
 
 @media all and (max-width: 650px) and (min-height: 900px) {
@@ -1799,6 +1815,12 @@ label {
 
   .footer__creators--item:not(:first-child) {
     margin-left: 0;
+  }
+
+
+  /* Media for Bins */
+  .game__bin {
+    width: 50px;
   }
 }
 
