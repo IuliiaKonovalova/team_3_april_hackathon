@@ -1,7 +1,8 @@
 /* jshint esversion: 8, jquery: true */
 import {
   addHideClass,
-  myFunction
+  myFunction,
+  closeSection
 } from './leaderboard-ops.js';
 
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
@@ -341,13 +342,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
   // Display creators GitHub links
   footerBtn.addEventListener('click', (e) => {
     footerContent.classList.toggle("hide");
-    footerContent.classList.contains('hide') ?
-      footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>` :
+    if (footerContent.classList.contains('hide')) {
+      footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
+    } else {
       footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-down"></i>`;
+    }
   });
+
+
+
+  // function closeFooter() {
+  //   footerContent.classList.add('hide');
+  //   footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
+  // }
+
+  // function closeFooter() {
+  //   footerContent.classList.add("hide");
+  //   console.log('click');
+  //   document.removeEventListener('click', closeFooter);
+  // }
+
+  // if (!footerContent.classList.contains('hide')) {
+  //   document.addEventListener('click', () => {
+  //     footerContent.classList.remove("hide")
+  //     console.log('click');
+  //   });
+  // }
 
   // Displays sound icon
   soundBtn.addEventListener('click', () => {
