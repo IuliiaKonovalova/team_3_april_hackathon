@@ -105,7 +105,8 @@
         <li class="carousel__slide carousel__images--hidden">
           <h2 class="carousel__slide--title">River</h2>
           <div class="carousel__images--container">
-            <img class="carousel__images" src="assets/images/dog_cleaning.png" alt="Dog cleaning the river" />
+            <img class="carousel__images dog__image" src="assets/images/dog_cleaning.png"
+              alt="Dog cleaning the river" />
           </div>
           <a class="btn btn__play btn__play--theme" id="river-theme" aria-label="Choose river theme">
             <img src="assets/images/play.svg" alt="Play button icon" />
@@ -181,7 +182,7 @@
       <p>x <span id="combo">0</span></p>
       <p class="combo__title">combo</p>
     </div>
-    <div class="ocean__game--section hide" id="ocean-game">
+    <div class="ocean__game--section hide disable__select" id="ocean-game">
       <div class="ocean__game--header"></div>
       <div class="ocean__background">
         <div class="fish" id="fish"></div>
@@ -194,7 +195,7 @@
       </div>
     </div>
     <!-- Beach game -->
-    <div class="beach__game--section hide" id="beach-game">
+    <div class="beach__game--section hide disable__select" id="beach-game">
       <div class="beach__scene">
         <div class="sky">
           <div class="cloud"></div>
@@ -208,7 +209,7 @@
       </div>
     </div>
     <!-- River game -->
-    <div class="river__game--section hide" id="river-game">
+    <div class="river__game--section hide disable__select" id="river-game">
       <div class="mountain"></div>
       <div class="mountain mountain-2"></div>
       <div class="mountain mountain-3"></div>
@@ -238,7 +239,7 @@
       </div>
     </div>
     <!-- Garbage Bins For The Game -->
-    <div class="game__bins--section hide play__item" id="garbage-bins">
+    <div class="game__bins--section hide play__item disable__select" id="garbage-bins">
       <div class="game__bin" data-category="organic">
         <img src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste" />
       </div>
