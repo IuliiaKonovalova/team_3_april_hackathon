@@ -2,7 +2,6 @@
 import {
   addHideClass,
   myFunction,
-  closeSection
 } from './leaderboard-ops.js';
 
 // to prevent running script before DOM is rendered (only if script.js is in the <head> tag)
@@ -50,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleMenu);
   }
 
+
+
   // Displays Home Page on user's clicks
   homePage.addEventListener("click", () => {
     if (hamburger.classList.contains("is-active")) {
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     mainBlock.classList.remove("hide");
     document.getElementById("earth-image").classList.remove("hide");
+    // closeFooter(footerContent);
   });
 
   // Displays Rules Section on user's clicks
@@ -72,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rulesSection.classList.remove("hide");
 
     fetchEcoFacts();
+    // closeFooter(footerContent);
   });
 
   // Starts the game sequence on button clicks
@@ -82,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       difficultyBlock.classList.remove("hide");
       let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
       main.removeEventListener('click', sectionEventHandler);
+      // closeFooter(footerContent);
     });
   }
 
@@ -95,10 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     document.getElementById("earth-image").classList.remove("hide");
     leaderBoard.classList.remove("hide");
+    // closeFooter(footerContent);
   });
 
   // If the user clicks easy level, hide the difficulty block and show the theme block
   difficultyBtnEasy.addEventListener("click", (e) => {
+    // closeFooter(footerContent);
     addHideClass();
     carousel.classList.remove("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "easy");
@@ -109,15 +115,18 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     carousel.classList.remove("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "hard");
+    // closeFooter(footerContent);
   });
 
   // Fade animation;
   prevButton.addEventListener("click", () => {
     carousel.classList.add("fade");
+    // closeFooter(footerContent);
   });
 
   nextButton.addEventListener("click", () => {
     carousel.classList.add("fade");
+    // closeFooter(footerContent);
   });
 
   // Reset all slides
@@ -283,8 +292,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
+
   // Overlay event listener - iterates through elements with specified selector and executes the closeModal function if applicable
   document.getElementById('overlay').addEventListener('click', () => {
+    console.log('click overlay');
     const modals = document.querySelectorAll('.modal.active');
     modals.forEach(modal => {
       closeModal(modal);
@@ -298,7 +310,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("overlay").classList.add("active");
     document.getElementById('modal-text').innerHTML = modalText;
     document.getElementById('modal-title').innerHTML = modalHeading;
-
   }
 
   /// Function removes class '.active' to modal argument to control the popup window operation, or returns nothing if modal element is null
@@ -342,42 +353,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
-  // Display creators GitHub links
-  footerBtn.addEventListener('click', (e) => {
-    footerContent.classList.toggle("hide");
-    if (footerContent.classList.contains('hide')) {
-      footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
-    } else {
-      footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-down"></i>`;
-    }
-  });
-
-
-
-  // function closeFooter() {
-  //   footerContent.classList.add('hide');
-  //   footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
-  // }
-
-  // function closeFooter() {
-  //   footerContent.classList.add("hide");
-  //   console.log('click');
-  //   document.removeEventListener('click', closeFooter);
-  // }
-
-  // if (!footerContent.classList.contains('hide')) {
-  //   document.addEventListener('click', () => {
-  //     footerContent.classList.remove("hide")
-  //     console.log('click');
-  //   });
-  // }
-
   // Displays sound icon
   soundBtn.addEventListener('click', () => {
     soundBtn.querySelectorAll('i').forEach(icon => {
       icon.classList.toggle('hide');
     });
   });
+
+  // Trigger footer content visibility
+  document.addEventListener('click', (e) => {
+    if (footerBtn.contains(e.target)) {
+      if (footerContent.classList.contains('hide')) {
+        openFooter(footerContent);
+      } else {
+        closeFooter(footerContent);
+      }
+    } else {
+      if (!document.getElementById('footer-creators').contains(e.target)) {
+        closeFooter(footerContent);
+      }
+    }
+  });
+
+  // Open footer content
+  function openFooter(footer) {
+    if (footer === null) return;
+    footer.classList.remove('hide');
+    footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-down"></i>`;
+  }
+
+  // Close footer content
+  function closeFooter(footer) {
+    if (footer === null) return;
+    footer.classList.add('hide');
+    footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
+  }
 
 });

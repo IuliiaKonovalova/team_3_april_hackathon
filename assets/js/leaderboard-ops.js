@@ -31,18 +31,3 @@ export let myFunction = function (section, closeBtn) {
         }
     };
 };
-
-export let closeSection = function (section) {
-    return function curriedFunc(e) {
-        closeSection(e, section);
-        if (!section.classList.contains("hide")) {
-            if (!section.contains(e.target)) {
-                let sectionEventHandler;
-                document.getElementById("footer-content").classList.add('hide');
-                document.getElementById("footer-btn").innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
-                console.log('click');
-                document.removeEventListener('click', sectionEventHandler);
-            }
-        }
-    };
-};
