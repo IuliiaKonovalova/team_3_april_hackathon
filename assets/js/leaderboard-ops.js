@@ -13,6 +13,7 @@ export function addHideClass() {
     document.getElementById("beach-game").classList.add("hide");
     document.getElementById("river-game").classList.add("hide");
     document.getElementById("ocean-game").classList.add("hide");
+    document.getElementById("footer-content").classList.add("hide");
 }
 
 // Curried function to add and remove event listeners for Rules and Leaders Board sections
@@ -30,4 +31,3 @@ export let myFunction = function (section, closeBtn) {
         }
     };
 };
-
