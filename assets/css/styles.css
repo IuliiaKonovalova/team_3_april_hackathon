@@ -306,7 +306,6 @@ body {
 
 /* ----- Difficulty ----- */
 .difficulty,
-.difficulty,
 .leaders__board {
   position: absolute;
   top: 50%;
@@ -1611,6 +1610,8 @@ label {
   justify-content: start;
   padding: 1em 2em 1.5em 2em;
   border: solid 2px var(--clr-accent--100);
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .leaders__board--title {
@@ -1624,7 +1625,7 @@ label {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   grid-auto-flow: dense;
   gap: 2rem;
   text-transform: capitalize;
@@ -1813,10 +1814,11 @@ label {
   }
 
   .leaders__board {
-    padding: 1em 1.5em;
+    padding: 2vh 3vw;
   }
 
   .leaders__board--content {
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
     gap: 1rem;
   }
 
@@ -1926,6 +1928,17 @@ label {
 
   .final input {
     max-width: 80vw;
+  }
+}
+
+@media (max-height: 803px) and (max-width: 470px) {
+  .leaders__board {
+    padding: 2vh 3vw;
+  }
+
+  .leaders__board--content {
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: 1rem;
   }
 }
 
