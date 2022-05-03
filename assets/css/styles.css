@@ -1981,3 +1981,10 @@ label {
     height: 60px !important;
   }
 }
+
+@media all and (max-height: 439px) {
+  .leaders__board--content {
+    gap: 0.5rem;
+
+  }
+}
