@@ -364,21 +364,9 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
-  align-self: center;
-  justify-self: center;
+  justify-self: stretch;
+  align-self: stretch;
   max-width: 60rem;
-}
-
-.carousel__images--visible {
-  max-width: 60rem;
-  border-radius: 1.5rem;
-  display: grid;
-  grid-template-rows: 0.2fr 0.7fr;
-  background-color: var(--clr-neutral--800);
-  padding: 2em;
-  position: relative;
-  height: 60vh;
-  margin: 0 auto;
 }
 
 .carousel__slide {
@@ -386,11 +374,10 @@ body {
   max-width: 60rem;
   border-radius: 1.5rem;
   display: flex;
-  flex-direction: column;
   background-color: var(--clr-neutral--800);
   padding: 2em 1em;
   position: relative;
-  height: 60vh;
+
 }
 
 .carousel__slide a {
@@ -415,7 +402,19 @@ body {
 }
 
 .carousel__images--visible {
+
+  max-width: 60rem;
+  border-radius: 1.5rem;
   display: grid;
+  /* grid-template-rows: 0.2fr 0.7fr; */
+  grid-template-rows: 0.1fr 0.7fr;
+  background-color: var(--clr-neutral--800);
+  /* padding: 2em; */
+  gap: 1rem;
+  position: relative;
+  /* height: 60vh; */
+  margin: 0 auto;
+  max-height: 75vh;
 }
 
 .carousel__images--hidden {
@@ -423,19 +422,19 @@ body {
 }
 
 .carousel__images--container {
-  align-self: center;
-
+  align-self: stretch;
+  justify-self: stretch;
   width: 100%;
-  display: flex;
-
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: 0 auto;
+  max-height: 40vh;
 }
 
 .carousel__images {
-  height: 40vh;
-  width: 30vw;
+  max-height: 40vh;
+  /* width: 30vw; */
 }
 
 .carousel__button {
@@ -1792,7 +1791,7 @@ label {
   .carousel__images--visible {
     padding: 2em;
     position: relative;
-    height: 50vh;
+    /* height: 50vh; */
     margin: 0 auto;
   }
 
@@ -1805,7 +1804,7 @@ label {
   }
 
   .carousel__images {
-    height: 30vh;
+    /* height: 30vh; */
   }
 
   .carousel__slide a {
@@ -1858,7 +1857,7 @@ label {
   }
 
   .carousel__images {
-    width: 40vw;
+    /* width: 40vw; */
   }
 
 }
@@ -1985,6 +1984,5 @@ label {
 @media all and (max-height: 439px) {
   .leaders__board--content {
     gap: 0.5rem;
-
   }
 }
