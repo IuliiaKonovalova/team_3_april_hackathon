@@ -306,7 +306,6 @@ body {
 
 /* ----- Difficulty ----- */
 .difficulty,
-.difficulty,
 .leaders__board {
   position: absolute;
   top: 50%;
@@ -365,33 +364,20 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
-  align-self: center;
-  justify-self: center;
+  justify-self: stretch;
+  align-self: stretch;
   max-width: 60rem;
-}
-
-.carousel__images--visible {
-  max-width: 60rem;
-  border-radius: 1.5rem;
-  display: grid;
-  grid-template-rows: 0.2fr 0.7fr;
-  background-color: var(--clr-neutral--800);
-  padding: 2em;
-  position: relative;
-  height: 60vh;
-  margin: 0 auto;
 }
 
 .carousel__slide {
   width: 100%;
   max-width: 60rem;
   border-radius: 1.5rem;
-  display: grid;
-  grid-template-rows: 0.2fr 0.5fr;
+  display: flex;
   background-color: var(--clr-neutral--800);
   padding: 2em 1em;
   position: relative;
-  height: 60vh;
+
 }
 
 .carousel__slide a {
@@ -416,7 +402,19 @@ body {
 }
 
 .carousel__images--visible {
+
+  max-width: 60rem;
+  border-radius: 1.5rem;
   display: grid;
+  /* grid-template-rows: 0.2fr 0.7fr; */
+  grid-template-rows: 0.1fr 0.7fr;
+  background-color: var(--clr-neutral--800);
+  /* padding: 2em; */
+  gap: 1rem;
+  position: relative;
+  /* height: 60vh; */
+  margin: 0 auto;
+  max-height: 75vh;
 }
 
 .carousel__images--hidden {
@@ -424,19 +422,19 @@ body {
 }
 
 .carousel__images--container {
-  align-self: center;
-
+  align-self: stretch;
+  justify-self: stretch;
   width: 100%;
-  display: flex;
-
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: 0 auto;
+  max-height: 40vh;
 }
 
 .carousel__images {
-  height: 40vh;
-  width: 30vw;
+  max-height: 40vh;
+  /* width: 30vw; */
 }
 
 .carousel__button {
@@ -557,7 +555,7 @@ body {
   max-height: 75vh;
   background-color: var(--clr-neutral--800);
   color: var(--clr-neutral--100);
-  border-radius: 20px;
+  border-radius: 1em;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
@@ -1611,6 +1609,8 @@ label {
   justify-content: start;
   padding: 1em 2em 1.5em 2em;
   border: solid 2px var(--clr-accent--100);
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .leaders__board--title {
@@ -1624,7 +1624,7 @@ label {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   grid-auto-flow: dense;
   gap: 2rem;
   text-transform: capitalize;
@@ -1791,7 +1791,7 @@ label {
   .carousel__images--visible {
     padding: 2em;
     position: relative;
-    height: 50vh;
+    /* height: 50vh; */
     margin: 0 auto;
   }
 
@@ -1804,7 +1804,7 @@ label {
   }
 
   .carousel__images {
-    height: 30vh;
+    /* height: 30vh; */
   }
 
   .carousel__slide a {
@@ -1813,11 +1813,11 @@ label {
   }
 
   .leaders__board {
-    padding: 1em 1.5em;
+    padding: 2vh 3vw;
   }
 
   .leaders__board--content {
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .final__title {
@@ -1857,12 +1857,16 @@ label {
   }
 
   .carousel__images {
-    width: 40vw;
+    /* width: 40vw; */
   }
 
 }
 
 @media all and (max-width: 520px) {
+  .rules__section {
+    border-radius: 0.4em;
+  }
+
   .copyrights__wrapper {
     width: 95%;
   }
@@ -1925,7 +1929,21 @@ label {
   }
 }
 
+@media (max-height: 803px) and (max-width: 480px) {
+  .leaders__board {
+    padding: 2vh 3vw;
+  }
+
+  .leaders__board--content {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 0.5rem;
+  }
+}
+
 @media all and (max-height: 803px) {
+  .rules__section {
+    border-radius: 0.4em;
+  }
 
   /* Media for ocean theme */
   #fish3 {
@@ -1960,5 +1978,11 @@ label {
   .garbage-item {
     width: 60px !important;
     height: 60px !important;
+  }
+}
+
+@media all and (max-height: 439px) {
+  .leaders__board--content {
+    gap: 0.5rem;
   }
 }
