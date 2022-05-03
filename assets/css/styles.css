@@ -402,7 +402,6 @@ body {
 }
 
 .carousel__images--visible {
-
   max-width: 60rem;
   border-radius: 1.5rem;
   display: grid;
