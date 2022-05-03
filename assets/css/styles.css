@@ -385,8 +385,8 @@ body {
   width: 100%;
   max-width: 60rem;
   border-radius: 1.5rem;
-  display: grid;
-  grid-template-rows: 0.2fr 0.5fr;
+  display: flex;
+  flex-direction: column;
   background-color: var(--clr-neutral--800);
   padding: 2em 1em;
   position: relative;
@@ -1818,8 +1818,7 @@ label {
   }
 
   .leaders__board--content {
-    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .final__title {
@@ -1931,14 +1930,14 @@ label {
   }
 }
 
-@media (max-height: 803px) and (max-width: 470px) {
+@media (max-height: 803px) and (max-width: 480px) {
   .leaders__board {
     padding: 2vh 3vw;
   }
 
   .leaders__board--content {
-    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 0.5rem;
   }
 }
 
