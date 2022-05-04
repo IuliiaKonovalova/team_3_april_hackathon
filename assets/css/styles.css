@@ -1787,6 +1787,18 @@ label {
     margin-bottom: 1em;
   }
 
+  .carousel {
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+  }
+
+  .carousel__button {
+    padding: 0.5em 0.7em;
+  }
+
+  .btn-carousel {
+    font-size: 1.5rem;
+  }
+
   .carousel__images--visible {
     padding: 2em;
     position: relative;
@@ -1807,8 +1819,8 @@ label {
   }
 
   .carousel__slide a {
-    bottom: 0;
-    right: 0;
+    bottom: 0.5em;
+    right: 0.5em;
   }
 
   .leaders__board {
