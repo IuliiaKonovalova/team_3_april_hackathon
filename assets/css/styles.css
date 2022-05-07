@@ -1456,6 +1456,16 @@ label {
   cursor: pointer;
 }
 
+.game__scene {
+  font-family: var(--ff-secondary);
+  color: var(--clr-accent--900);
+}
+
+.garbage__left {
+  font-family: var(--ff-secondary);
+  color: var(--clr-accent--100);
+}
+
 /* ----- Footer ----- */
 .footer {
   background-color: var(--clr-neutral--800);
@@ -1676,11 +1686,6 @@ label {
 
 #leaders-board {
   border-radius: 0.5rem;
-}
-
-.garbage__left {
-  font-family: var(--ff-secondary);
-  color: var(--clr-accent--100);
 }
 
 /* --- Hide Class --- */
@@ -2111,15 +2116,19 @@ label {
   0% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(5deg);
   }
+
   50% {
     transform: rotate(0deg);
   }
+
   75% {
     transform: rotate(-5deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
@@ -2129,9 +2138,11 @@ label {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
