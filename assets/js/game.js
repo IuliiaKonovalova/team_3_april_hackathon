@@ -526,46 +526,34 @@ $(".sound__control").click(() => {
 
 let garbageIndex = 0;
 let binIndex = 0;
-let pressed = false;
 
 $(document).keydown((event) => {
   event.preventDefault();
-  if (pressed){
-    return;
-  }
-
+  
   if(event.key === 'Escape') {
     game.stop();
-    pressed = true;
   } else if(event.key === 'p') {
     if(game.pauseButton.classList.contains("hide")) {
       game.resume();
       $(game.pauseButton).removeClass("hide");
       $(game.playButton).addClass("hide");
-      pressed = true;
       
     } else {
       game.pause();
       $(game.playButton).removeClass("hide");
       $(game.pauseButton).addClass("hide");
-      pressed = true;
     }
   } else if(event.key === 'Tab') {
-    // stop the bounce effect of all the ".garbage-item"
     $(".garbage-item").removeClass("animated-item");
-    // choose between the ".garbage-item" using index variable
-    if(garbageIndex === game.garbageItems-1) {
+    garbageIndex++;
+    console.log(garbageIndex + " " + game.garbageItems);
+    if(garbageIndex >= game.garbageItems) {
       garbageIndex = 0;
-    } else {
-      garbageIndex++;
     }
+    console.log(garbageIndex + " " + game.garbageItems);
     let garbageItem = $(".garbage-item")[garbageIndex];
-    // make the selected ".garbage-item" bounce infinite times until it is unselected
-    // bounceForever(garbageItem);
     $(garbageItem).addClass("animated-item");
-    pressed = true;    
   } else if(event.key === 'ArrowRight') {
-    // stop the bounce effect of all the bins
     $(".game__bin").removeClass("animated-bin");
     binIndex++;
     if(binIndex === 4) {
@@ -574,7 +562,6 @@ $(document).keydown((event) => {
     let bin = $(".game__bin")[binIndex];
     
     $(bin).addClass("animated-bin");
-    pressed = true;
     
   } else if(event.key === 'ArrowLeft') {
     // stop the bounce effect of all the bins
@@ -585,8 +572,7 @@ $(document).keydown((event) => {
     }
     let bin = $(".game__bin")[binIndex];
     $(bin).addClass("animated-bin");
-    pressed = true;
-  } else if(event.key === 'Enter' || event.key === 'Spacebar') {
+  } else if(event.key === 'Enter' || event.key === ' ') {
     let bin = $(".game__bin")[binIndex];
     let garbageItem = $(".garbage-item")[garbageIndex];
     // animate the garbage item to the bin and check if it is correct
@@ -611,11 +597,8 @@ $(document).keydown((event) => {
         },
         element: garbageItem,        
       };
+      console.log(garbageIndex + " " + game.garbageItems);
       checkAnswer(null, ui, $(bin));
     });
   }
-});
-
-$(document).keyup(() => {
-  pressed = false;
 });
