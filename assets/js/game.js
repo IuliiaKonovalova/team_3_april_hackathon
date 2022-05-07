@@ -110,6 +110,7 @@ export default class Game {
     this.leaderBoardElement = document.getElementsByClassName("leaders__board")[0];
   }
   start(mode) {
+    $('.game__bin').removeClass('animated-bin');
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.checkSound();
@@ -421,9 +422,6 @@ $.ajax({
 });
 
 const checkAnswer = (event, ui, bin) => {
-  console.log(ui);
-  console.log(bin);
-  console.log(ui.draggable);
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
   if (itemCategory === binCategory) {
@@ -526,46 +524,32 @@ $(".sound__control").click(() => {
 
 let garbageIndex = 0;
 let binIndex = 0;
-let pressed = false;
 
 $(document).keydown((event) => {
   event.preventDefault();
-  if (pressed){
-    return;
-  }
-
+  
   if(event.key === 'Escape') {
     game.stop();
-    pressed = true;
   } else if(event.key === 'p') {
     if(game.pauseButton.classList.contains("hide")) {
       game.resume();
       $(game.pauseButton).removeClass("hide");
       $(game.playButton).addClass("hide");
-      pressed = true;
       
     } else {
       game.pause();
       $(game.playButton).removeClass("hide");
       $(game.pauseButton).addClass("hide");
-      pressed = true;
     }
   } else if(event.key === 'Tab') {
-    // stop the bounce effect of all the ".garbage-item"
     $(".garbage-item").removeClass("animated-item");
-    // choose between the ".garbage-item" using index variable
-    if(garbageIndex === game.garbageItems-1) {
+    garbageIndex++;
+    if(garbageIndex >= game.garbageItems) {
       garbageIndex = 0;
-    } else {
-      garbageIndex++;
     }
     let garbageItem = $(".garbage-item")[garbageIndex];
-    // make the selected ".garbage-item" bounce infinite times until it is unselected
-    // bounceForever(garbageItem);
     $(garbageItem).addClass("animated-item");
-    pressed = true;    
   } else if(event.key === 'ArrowRight') {
-    // stop the bounce effect of all the bins
     $(".game__bin").removeClass("animated-bin");
     binIndex++;
     if(binIndex === 4) {
@@ -574,10 +558,8 @@ $(document).keydown((event) => {
     let bin = $(".game__bin")[binIndex];
     
     $(bin).addClass("animated-bin");
-    pressed = true;
     
   } else if(event.key === 'ArrowLeft') {
-    // stop the bounce effect of all the bins
     $(".game__bin").removeClass("animated-bin");
     binIndex--;
     if(binIndex === -1) {
@@ -585,11 +567,9 @@ $(document).keydown((event) => {
     }
     let bin = $(".game__bin")[binIndex];
     $(bin).addClass("animated-bin");
-    pressed = true;
-  } else if(event.key === 'Enter' || event.key === 'Spacebar') {
+  } else if(event.key === 'Enter' || event.key === ' ') {
     let bin = $(".game__bin")[binIndex];
     let garbageItem = $(".garbage-item")[garbageIndex];
-    // animate the garbage item to the bin and check if it is correct
     $(garbageItem).animate({
       left: $(bin).offset().left + "px",
       top: $(bin).offset().top + "px",
@@ -614,8 +594,4 @@ $(document).keydown((event) => {
       checkAnswer(null, ui, $(bin));
     });
   }
-});
-
-$(document).keyup(() => {
-  pressed = false;
 });
