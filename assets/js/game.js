@@ -110,6 +110,7 @@ export default class Game {
     this.leaderBoardElement = document.getElementsByClassName("leaders__board")[0];
   }
   start(mode) {
+    $('.game__bin').removeClass('animated-bin');
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.checkSound();
@@ -421,9 +422,6 @@ $.ajax({
 });
 
 const checkAnswer = (event, ui, bin) => {
-  console.log(ui);
-  console.log(bin);
-  console.log(ui.draggable);
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
   if (itemCategory === binCategory) {
@@ -562,7 +560,6 @@ $(document).keydown((event) => {
     $(bin).addClass("animated-bin");
     
   } else if(event.key === 'ArrowLeft') {
-    // stop the bounce effect of all the bins
     $(".game__bin").removeClass("animated-bin");
     binIndex--;
     if(binIndex === -1) {
@@ -573,7 +570,6 @@ $(document).keydown((event) => {
   } else if(event.key === 'Enter' || event.key === ' ') {
     let bin = $(".game__bin")[binIndex];
     let garbageItem = $(".garbage-item")[garbageIndex];
-    // animate the garbage item to the bin and check if it is correct
     $(garbageItem).animate({
       left: $(bin).offset().left + "px",
       top: $(bin).offset().top + "px",
