@@ -339,7 +339,7 @@ export default class Game {
     pauseScreen.style.fontSize = "5rem";
     pauseScreen.style.color = "#fff";
     pauseScreen.style.textAlign = "center";
-    pauseScreen.innerHTML = '<p>Game Paused</p>';
+    pauseScreen.innerHTML = '<p id="game-paused">Game Paused</p>';
     this.gameScreen.appendChild(pauseScreen);
   }
   resume() {

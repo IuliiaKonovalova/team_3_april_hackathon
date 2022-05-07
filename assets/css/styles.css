@@ -1315,6 +1315,14 @@ body {
   animation-delay: 6s;
 }
 
+/* Game Paused Element */
+
+#game-paused {
+  font-family: var(--ff-secondary);
+  font-weight: lighter;
+  color: var(--clr-neutral--100);
+}
+
 /* ----- Disable Select in Game Mode ----- */
 
 .disable__select {
