@@ -421,6 +421,9 @@ $.ajax({
 });
 
 const checkAnswer = (event, ui, bin) => {
+  console.log(ui);
+  console.log(bin);
+  console.log(ui.draggable);
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
   if (itemCategory === binCategory) {
@@ -511,4 +514,108 @@ $(".sound__control").click(() => {
     beachBackground.muted = false;
     riverBackground.muted = false;
   }
+});
+
+// functions for accessability using keyboard
+// 'tab' key to choose between the ".garbage-item"
+// every time the 'tab' key is pressed, the next ".garbage-item" will be selected
+// 'arrow left' and 'arrow right' keys to choose between the bins
+// 'enter' or 'space' key to choose the bin and drop the item
+// 'p' key to pause/unpause the game
+// 'esc' key to stop the game
+
+let garbageIndex = 0;
+let binIndex = 0;
+let pressed = false;
+
+$(document).keydown((event) => {
+  event.preventDefault();
+  if (pressed){
+    return;
+  }
+
+  if(event.key === 'Escape') {
+    game.stop();
+    pressed = true;
+  } else if(event.key === 'p') {
+    if(game.pauseButton.classList.contains("hide")) {
+      game.resume();
+      $(game.pauseButton).removeClass("hide");
+      $(game.playButton).addClass("hide");
+      pressed = true;
+      
+    } else {
+      game.pause();
+      $(game.playButton).removeClass("hide");
+      $(game.pauseButton).addClass("hide");
+      pressed = true;
+    }
+  } else if(event.key === 'Tab') {
+    // stop the bounce effect of all the ".garbage-item"
+    $(".garbage-item").removeClass("animated-item");
+    // choose between the ".garbage-item" using index variable
+    if(garbageIndex === game.garbageItems-1) {
+      garbageIndex = 0;
+    } else {
+      garbageIndex++;
+    }
+    let garbageItem = $(".garbage-item")[garbageIndex];
+    // make the selected ".garbage-item" bounce infinite times until it is unselected
+    // bounceForever(garbageItem);
+    $(garbageItem).addClass("animated-item");
+    pressed = true;    
+  } else if(event.key === 'ArrowRight') {
+    // stop the bounce effect of all the bins
+    $(".game__bin").removeClass("animated-bin");
+    binIndex++;
+    if(binIndex === 4) {
+      binIndex = 0;
+    } 
+    let bin = $(".game__bin")[binIndex];
+    
+    $(bin).addClass("animated-bin");
+    pressed = true;
+    
+  } else if(event.key === 'ArrowLeft') {
+    // stop the bounce effect of all the bins
+    $(".game__bin").removeClass("animated-bin");
+    binIndex--;
+    if(binIndex === -1) {
+      binIndex = 3;
+    }
+    let bin = $(".game__bin")[binIndex];
+    $(bin).addClass("animated-bin");
+    pressed = true;
+  } else if(event.key === 'Enter' || event.key === 'Spacebar') {
+    let bin = $(".game__bin")[binIndex];
+    let garbageItem = $(".garbage-item")[garbageIndex];
+    // animate the garbage item to the bin and check if it is correct
+    $(garbageItem).animate({
+      left: $(bin).offset().left + "px",
+      top: $(bin).offset().top + "px",
+    }, 500, () => {
+      let ui = {
+        draggable: $(garbageItem),
+        helper: $(garbageItem),
+        offset: {
+          left: $(garbageItem).offset().left,
+          top: $(garbageItem).offset().top,
+        },
+        position: {
+          left: $(garbageItem).offset().left,
+          top: $(garbageItem).offset().top,
+        },
+        size: {
+          width: $(garbageItem).width(),
+          height: $(garbageItem).height(),
+        },
+        element: garbageItem,        
+      };
+      checkAnswer(null, ui, $(bin));
+    });
+  }
+});
+
+$(document).keyup(() => {
+  pressed = false;
 });

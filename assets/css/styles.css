@@ -2008,6 +2008,44 @@ label {
   }
 }
 
+@keyframes rotateForever {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes scaleForever {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animated-bin {
+  animation: rotateForever 0.5s infinite;
+}
+
+.animated-item {
+  animation: scaleForever 0.5s infinite;
+}
+
 @media all and (max-height: 439px) {
   .leaders__board--content {
     gap: 0.5rem;
