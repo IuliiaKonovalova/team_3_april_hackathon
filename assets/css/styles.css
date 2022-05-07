@@ -325,22 +325,23 @@ body {
 }
 
 .difficulty__btn {
-  padding: 1vh 3vw;
+  padding: 1vh 2vw;
   border-radius: 0.2em;
-  background-color: var(--clr-accent--900);
-  color: var(--clr-neutral--800);
+  background-color: var(--clr-accent--100);
+  color: var(--clr-neutral--100);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 2vh;
+  font-size: 2.5vh;
   font-family: var(--ff-secondary);
   border: none;
   cursor: pointer;
+  margin-top: 1vh;
 }
 
 .difficulty__btn:hover {
-  background-color: var(--clr-accent--100);
-  color: var(--clr-neutral--100);
+  background-color: var(--clr-accent--900);
+  color: var(--clr-neutral--800);
 }
 
 .difficulty__btn:focus {
@@ -712,8 +713,8 @@ body {
   top: 1rem;
   right: 1rem;
   padding: 0.05em 1em 0.3em 1em;
-  background-color: orange;
-  color: black;
+  background-color: var(--clr-primary--300);
+  color: var(--clr-neutral--900);
   border-radius: 0.2em;
   font-family: var(--ff-secondary);
   font-size: 5vh;
@@ -721,6 +722,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 
 .hide {
@@ -1315,6 +1317,14 @@ body {
   animation-delay: 6s;
 }
 
+/* Game Paused Element */
+
+#game-paused {
+  font-family: var(--ff-secondary);
+  font-weight: lighter;
+  color: var(--clr-neutral--100);
+}
+
 /* ----- Disable Select in Game Mode ----- */
 
 .disable__select {
@@ -1342,7 +1352,8 @@ body {
 
 .final__title {
   font-family: var(--ff-secondary);
-  font-size: 6vh;
+  font-size: 7vh;
+  font-weight: lighter;
   display: inline-block;
   margin-bottom: 2vh;
 }
@@ -1361,7 +1372,7 @@ body {
 }
 
 .scores__label {
-  margin: 0 auto !important;
+  margin: 1vh auto !important;
 }
 
 #end-game {
@@ -1375,16 +1386,18 @@ body {
 }
 
 .final input {
-  padding: 1vh 2vw;
-  border-radius: 0.3em;
+  padding: 1.2vh 2vw;
+  border-radius: 0.5em;
+  border: none;
   color: var(--clr-neutral--800);
-  margin: 1em 0;
+  margin: 3em 0 1em 0;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2vh;
   font-family: var(--ff-primary);
   text-align: center;
+  min-width: 10rem;
 }
 
 .final input:focus {
@@ -1413,18 +1426,20 @@ label {
 
 #end-game label {
   font-size: 3vh;
+  text-transform: uppercase;
 }
 
-
-
 #player-score {
-  height: 6vh;
+  height: 8vh;
   margin: auto;
   margin-top: 1vh;
   background: none;
-  border-radius: 50%;
+  border: 1px solid var(--clr--sixthly-cloud);
+  border-radius: 1.2em;
   max-width: 10rem;
   color: var(--clr-accent--100);
+  text-shadow: 2px 2px 4px var(--clr-neutral--800);
+  font-size: 4vh;
   background-color: var(--clr-accent--900);
   cursor: default;
 }
@@ -1438,7 +1453,6 @@ label {
 
 .final__btn {
   cursor: pointer;
-  margin-bottom: 2vh;
 }
 
 /* ----- Footer ----- */
