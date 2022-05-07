@@ -1802,6 +1802,11 @@ label {
     margin-bottom: 1em;
   }
 
+  .btn__play {
+    width: 4rem;
+    padding: 0.5em 0.5em 0.5em 0.8em;
+  }
+
   .carousel {
     grid-template-columns: 0.2fr 1fr 0.2fr;
   }
