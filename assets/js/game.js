@@ -546,11 +546,9 @@ $(document).keydown((event) => {
   } else if(event.key === 'Tab') {
     $(".garbage-item").removeClass("animated-item");
     garbageIndex++;
-    console.log(garbageIndex + " " + game.garbageItems);
     if(garbageIndex >= game.garbageItems) {
       garbageIndex = 0;
     }
-    console.log(garbageIndex + " " + game.garbageItems);
     let garbageItem = $(".garbage-item")[garbageIndex];
     $(garbageItem).addClass("animated-item");
   } else if(event.key === 'ArrowRight') {
@@ -597,7 +595,6 @@ $(document).keydown((event) => {
         },
         element: garbageItem,        
       };
-      console.log(garbageIndex + " " + game.garbageItems);
       checkAnswer(null, ui, $(bin));
     });
   }
