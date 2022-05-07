@@ -1955,12 +1955,66 @@ label {
     transition: transform 0.7s ease-in-out;
   }
 
+  .btn-carousel {
+    font-size: 1.2rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.7em 1.2em 0.7em 1em;
+  }
+
+  .carousel__button--next {
+    padding: 0.7em 1em 0.7em 1.2em;
+  }
+
+
   #end-game label {
     font-size: 1.2rem;
   }
 
   .final input {
     max-width: 80vw;
+  }
+}
+
+@media all and (max-width: 346px) {
+  .carousel {
+    grid-template-columns: 0.3fr 0.7fr 0.3fr;
+  }
+
+  .btn-carousel {
+    font-size: 1.2rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.7em 1.2em 0.7em 1em;
+  }
+
+  .carousel__button--next {
+    padding: 0.7em 1em 0.7em 1.2em;
+  }
+
+  .btn__play {
+    width: 3rem;
+    padding: 0.3em 0.3em 0.3em 0.5em;
+  }
+}
+
+@media all and (max-width: 265px) {
+  .carousel {
+    grid-template-columns: 0.3fr 0.9fr 0.3fr;
+  }
+
+  .btn-carousel {
+    font-size: 1rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.6em 1em 0.6em 0.8em;
+  }
+
+  .carousel__button--next {
+    padding: 0.6em 0.8em 0.6em 1em;
   }
 }
 
