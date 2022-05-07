@@ -415,6 +415,7 @@ body {
   /* height: 60vh; */
   margin: 0 auto;
   max-height: 75vh;
+  cursor: default;
 }
 
 .carousel__images--hidden {
@@ -660,7 +661,7 @@ body {
 }
 
 .animate {
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-name: animate-fade;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
@@ -1818,6 +1819,7 @@ label {
     position: relative;
     /* height: 50vh; */
     margin: 0 auto;
+
   }
 
   .carousel__slide {
