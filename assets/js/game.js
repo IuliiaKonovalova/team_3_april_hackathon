@@ -565,7 +565,7 @@ $(document).keydown((event) => {
     }
   } else if(event.key === 'Tab') {
     // stop the bounce effect of all the ".garbage-item"
-    $(".garbage-item").stop(true, true);
+    $(".garbage-item").removeClass("animated-item");
     // choose between the ".garbage-item" using index variable
     if(garbageIndex === game.garbageItems-1) {
       garbageIndex = 0;
@@ -574,7 +574,8 @@ $(document).keydown((event) => {
     }
     let garbageItem = $(".garbage-item")[garbageIndex];
     // make the selected ".garbage-item" bounce infinite times until it is unselected
-    bounceForever(garbageItem);
+    // bounceForever(garbageItem);
+    $(garbageItem).addClass("animated-item");
     pressed = true;    
   } else if(event.key === 'ArrowRight') {
     // stop the bounce effect of all the bins
