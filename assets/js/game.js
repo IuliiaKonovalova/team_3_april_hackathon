@@ -511,3 +511,87 @@ $(".sound__control").click(() => {
     riverBackground.muted = false;
   }
 });
+
+// functions for accessability using keyboard
+// 'tab' key to choose between the ".garbage-item"
+// every time the 'tab' key is pressed, the next ".garbage-item" will be selected
+// 'arrow left' and 'arrow right' keys to choose between the bins
+// 'enter' or 'space' key to choose the bin and drop the item
+// 'p' key to pause/unpause the game
+// 'esc' key to stop the game
+function bounceForever(element) {
+  $(element).effect("bounce", {
+    times: 3,
+    distance: 20,
+    complete: () => {
+      bounceForever(element);
+    }
+  });
+}
+
+
+let garbageIndex = 0;
+let binIndex = 0;
+let pressed = false;
+// store garbage bins positions to use in the next function
+let garbageBinsPositions = [];
+$(".game__bin").each((index, element) => {
+  garbageBinsPositions.push({
+    left: $(element).position().left,
+    top: $(element).position().top,
+  });
+});
+$(document).keydown((event) => {
+  event.preventDefault();
+  if (pressed){
+    return;
+  }
+
+  if(event.key === 'Escape') {
+    game.stop();
+    pressed = true;
+  } else if(event.key === 'p') {
+    if(game.pauseButton.classList.contains("hide")) {
+      game.resume();
+      $(game.pauseButton).removeClass("hide");
+      $(game.playButton).addClass("hide");
+      pressed = true;
+      
+    } else {
+      game.pause();
+      $(game.playButton).removeClass("hide");
+      $(game.pauseButton).addClass("hide");
+      pressed = true;
+    }
+  } else if(event.key === 'Tab') {
+    // stop the bounce effect of all the ".garbage-item"
+    $(".garbage-item").stop(true, true);
+    // choose between the ".garbage-item" using index variable
+    if(garbageIndex === game.garbageItems-1) {
+      garbageIndex = 0;
+    } else {
+      garbageIndex++;
+    }
+    let garbageItem = $(".garbage-item")[garbageIndex];
+    // make the selected ".garbage-item" bounce infinite times until it is unselected
+    bounceForever(garbageItem);
+    pressed = true;    
+  } else if(event.key === 'ArrowRight') {
+    // stop the bounce effect of all the bins
+    $(".game__bin").removeClass("animated-bin");
+    if(binIndex === 4) {
+      binIndex = 0;
+    } 
+    let bin = $(".game__bin")[binIndex];
+    binIndex++;
+    
+    $(bin).addClass("animated-bin");
+    pressed = true;
+    
+  }
+  
+});
+
+$(document).keyup(() => {
+  pressed = false;
+});
