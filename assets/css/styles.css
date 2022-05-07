@@ -443,7 +443,6 @@ body {
   align-self: center;
   background-color: var(--clr-neutral--800);
   border-radius: 50%;
-  padding: 1em 1.2em;
   cursor: pointer;
   z-index: 333;
   border: none;
@@ -455,11 +454,11 @@ body {
 }
 
 .carousel__button--prev {
-  left: 5%;
+  padding: 1em 2em 1em 1.6em;
 }
 
 .carousel__button--next {
-  right: 5%;
+  padding: 1em 1.6em 1em 2em;
 }
 
 /* ----- Modal Pop-Up Window - Game Rules ----- */
@@ -1475,7 +1474,7 @@ label {
   text-transform: uppercase;
   font-family: var(--ff-secondary);
   letter-spacing: var(--spacing);
-  justify-content: start;
+  justify-content: center;
   width: 100%;
   text-align: center;
 }
@@ -1485,11 +1484,20 @@ label {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  max-width: 25rem;
+  max-width: 28rem;
+}
+
+.copyrights__wrapper p {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 .footer__copyright {
   color: var(--clr-accent--100);
+  padding-left: 0.4em;
+  padding-right: 0.4em;
 }
 
 #footer-btn>h3 {
@@ -1501,7 +1509,7 @@ label {
 .footer__btn {
   cursor: pointer;
   color: var(--clr-neutral-100);
-  font-size: 3vh;
+  font-size: 2rem;
 }
 
 .footer__btn:hover {
@@ -1802,16 +1810,25 @@ label {
     margin-bottom: 1em;
   }
 
-  .carousel {
-    grid-template-columns: 0.2fr 1fr 0.2fr;
+  .btn__play {
+    width: 4rem;
+    padding: 0.5em 0.5em 0.5em 0.8em;
   }
 
-  .carousel__button {
-    padding: 0.5em 0.7em;
+  .carousel {
+    grid-template-columns: 0.3fr 1fr 0.3fr;
   }
 
   .btn-carousel {
     font-size: 1.5rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.9em 1.4em 0.9em 1.2em;
+  }
+
+  .carousel__button--next {
+    padding: 0.9em 1.2em 0.9em 1.4em;
   }
 
   .carousel__images--visible {
@@ -1898,9 +1915,12 @@ label {
     width: 95%;
   }
 
-  .footer__header,
-  .footer__copyright {
+  .footer__header {
     font-size: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1.05rem;
   }
 
   .footer__creators {
@@ -1947,12 +1967,79 @@ label {
     transition: transform 0.7s ease-in-out;
   }
 
+  .btn-carousel {
+    font-size: 1.2rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.7em 1.2em 0.7em 1em;
+  }
+
+  .carousel__button--next {
+    padding: 0.7em 1em 0.7em 1.2em;
+  }
+
+
   #end-game label {
     font-size: 1.2rem;
   }
 
   .final input {
     max-width: 80vw;
+  }
+}
+
+@media all and (max-width: 346px) {
+  .carousel {
+    grid-template-columns: 0.3fr 0.7fr 0.3fr;
+  }
+
+  .btn-carousel {
+    font-size: 1.2rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.7em 1.2em 0.7em 1em;
+  }
+
+  .carousel__button--next {
+    padding: 0.7em 1em 0.7em 1.2em;
+  }
+
+  .btn__play {
+    width: 3rem;
+    padding: 0.3em 0.3em 0.3em 0.5em;
+  }
+
+  .copyrights__wrapper {
+    width: 98%;
+  }
+
+  .footer__header,
+  .footer__copyright {
+    font-size: 0.8rem;
+  }
+
+  .footer__btn {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 265px) {
+  .carousel {
+    grid-template-columns: 0.3fr 0.9fr 0.3fr;
+  }
+
+  .btn-carousel {
+    font-size: 1rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.6em 1em 0.6em 0.8em;
+  }
+
+  .carousel__button--next {
+    padding: 0.6em 0.8em 0.6em 1em;
   }
 }
 
@@ -1964,6 +2051,12 @@ label {
   .leaders__board--content {
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
     gap: 0.5rem;
+  }
+}
+
+@media all and (max-height: 900px) {
+  .eco__facts {
+    display: none;
   }
 }
 
