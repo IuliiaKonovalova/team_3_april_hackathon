@@ -421,6 +421,9 @@ $.ajax({
 });
 
 const checkAnswer = (event, ui, bin) => {
+  console.log(ui);
+  console.log(bin);
+  console.log(ui.draggable);
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
   if (itemCategory === binCategory) {
@@ -519,28 +522,11 @@ $(".sound__control").click(() => {
 // 'enter' or 'space' key to choose the bin and drop the item
 // 'p' key to pause/unpause the game
 // 'esc' key to stop the game
-function bounceForever(element) {
-  $(element).effect("bounce", {
-    times: 3,
-    distance: 20,
-    complete: () => {
-      bounceForever(element);
-    }
-  });
-}
-
 
 let garbageIndex = 0;
 let binIndex = 0;
 let pressed = false;
-// store garbage bins positions to use in the next function
-let garbageBinsPositions = [];
-$(".game__bin").each((index, element) => {
-  garbageBinsPositions.push({
-    left: $(element).position().left,
-    top: $(element).position().top,
-  });
-});
+
 $(document).keydown((event) => {
   event.preventDefault();
   if (pressed){
@@ -580,17 +566,53 @@ $(document).keydown((event) => {
   } else if(event.key === 'ArrowRight') {
     // stop the bounce effect of all the bins
     $(".game__bin").removeClass("animated-bin");
+    binIndex++;
     if(binIndex === 4) {
       binIndex = 0;
     } 
     let bin = $(".game__bin")[binIndex];
-    binIndex++;
     
     $(bin).addClass("animated-bin");
     pressed = true;
     
+  } else if(event.key === 'ArrowLeft') {
+    // stop the bounce effect of all the bins
+    $(".game__bin").removeClass("animated-bin");
+    binIndex--;
+    if(binIndex === -1) {
+      binIndex = 3;
+    }
+    let bin = $(".game__bin")[binIndex];
+    $(bin).addClass("animated-bin");
+    pressed = true;
+  } else if(event.key === 'Enter' || event.key === 'Spacebar') {
+    let bin = $(".game__bin")[binIndex];
+    let garbageItem = $(".garbage-item")[garbageIndex];
+    // animate the garbage item to the bin and check if it is correct
+    $(garbageItem).animate({
+      left: $(bin).offset().left + "px",
+      top: $(bin).offset().top + "px",
+    }, 500, () => {
+      let ui = {
+        draggable: $(garbageItem),
+        helper: $(garbageItem),
+        offset: {
+          left: $(garbageItem).offset().left,
+          top: $(garbageItem).offset().top,
+        },
+        position: {
+          left: $(garbageItem).offset().left,
+          top: $(garbageItem).offset().top,
+        },
+        size: {
+          width: $(garbageItem).width(),
+          height: $(garbageItem).height(),
+        },
+        element: garbageItem,        
+      };
+      checkAnswer(null, ui, $(bin));
+    });
   }
-  
 });
 
 $(document).keyup(() => {
