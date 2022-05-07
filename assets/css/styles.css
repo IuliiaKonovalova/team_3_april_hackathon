@@ -443,7 +443,6 @@ body {
   align-self: center;
   background-color: var(--clr-neutral--800);
   border-radius: 50%;
-  padding: 1em 1.2em;
   cursor: pointer;
   z-index: 333;
   border: none;
@@ -455,11 +454,11 @@ body {
 }
 
 .carousel__button--prev {
-  left: 5%;
+  padding: 1em 2em 1em 1.6em;
 }
 
 .carousel__button--next {
-  right: 5%;
+  padding: 1em 1.6em 1em 2em;
 }
 
 /* ----- Modal Pop-Up Window - Game Rules ----- */
@@ -1808,15 +1807,19 @@ label {
   }
 
   .carousel {
-    grid-template-columns: 0.2fr 1fr 0.2fr;
-  }
-
-  .carousel__button {
-    padding: 0.5em 0.7em;
+    grid-template-columns: 0.3fr 1fr 0.3fr;
   }
 
   .btn-carousel {
     font-size: 1.5rem;
+  }
+
+  .carousel__button--prev {
+    padding: 0.9em 1.4em 0.9em 1.2em;
+  }
+
+  .carousel__button--next {
+    padding: 0.9em 1.2em 0.9em 1.4em;
   }
 
   .carousel__images--visible {
