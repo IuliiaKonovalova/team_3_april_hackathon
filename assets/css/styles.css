@@ -659,7 +659,7 @@ body {
 }
 
 .animate {
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-name: animate-fade;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
