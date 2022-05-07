@@ -1826,3 +1826,25 @@ label {
     height: 60px !important;
   }
 }
+
+@keyframes rotateForever {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animated-bin {
+  animation: rotateForever 0.5s infinite;
+}
