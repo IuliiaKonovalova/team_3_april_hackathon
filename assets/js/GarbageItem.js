@@ -19,6 +19,7 @@ export default class GarbageItem {
     let item = document.createElement("img");
     item.classList.add("garbage-item");
     item.src = this.imageUrl;
+    item.setAttribute("alt", `The image of ${this.item}`);
     item.setAttribute("data-id", this.id);
     item.setAttribute("data-category", this.category);
     item.style.position = "absolute";
