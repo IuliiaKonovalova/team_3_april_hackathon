@@ -414,6 +414,7 @@ body {
   /* height: 60vh; */
   margin: 0 auto;
   max-height: 75vh;
+  cursor: default;
 }
 
 .carousel__images--hidden {
@@ -1804,6 +1805,7 @@ label {
     position: relative;
     /* height: 50vh; */
     margin: 0 auto;
+
   }
 
   .carousel__slide {
