@@ -231,6 +231,30 @@ export default class Game {
       times: 3,
     }, 1000);
   }
+
+
+  finalScore() {
+    if (game.garbageItems > 0) {
+      console.log('gameboard not empty on easy');
+      console.log(game.garbageItems);
+      document.getElementById("player-score").value = this.score - (game.garbageItems * 50);
+      if (document.getElementById("player-score").value < 0) {
+        document.getElementById("player-score").value = 0;
+      }
+      // document.getElementById('garbage-left').innerHTML = game.garbageItems;
+    } else {
+      console.log('gameboard empty on easy')
+      document.getElementById('garbage-message').classList.add('hide');
+      document.getElementById("player-score").value = this.score + (this.timeLeft * 100);
+    }
+
+    document.getElementById('garbage-left').innerHTML = game.garbageItems;
+    this.scoreElement.innerHTML = document.getElementById("player-score").value;
+    this.combo = 0;
+    this.comboElement.innerHTML = this.combo;
+
+  }
+
   gameOverTrigger() {
     beachBackground.pause();
     riverBackground.pause();
@@ -240,7 +264,8 @@ export default class Game {
     this.gameOver = true;
     this.endGameElement.classList.remove("hide");
     this.endGameElement.style.zIndex = "999999999999999999999";
-    document.getElementById("player-score").value = this.score;
+    // document.getElementById("player-score").value = this.score;
+    this.finalScore();
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
     $(".pause-stop__control").addClass("hide");
@@ -447,9 +472,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-        left: Math.floor(Math.random() * 90) + "%",
-        top: Math.floor(Math.random() * 90) + "%",
-      },
+      left: Math.floor(Math.random() * 90) + "%",
+      top: Math.floor(Math.random() * 90) + "%",
+    },
       500
     );
     $(bin).effect("shake", {
