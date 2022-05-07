@@ -1967,6 +1967,12 @@ label {
   }
 }
 
+@media all and (max-height: 900px) {
+  .eco__facts {
+    display: none;
+  }
+}
+
 @media all and (max-height: 803px) {
   .rules__section {
     border-radius: 0.4em;
