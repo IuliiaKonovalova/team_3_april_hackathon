@@ -378,10 +378,16 @@ export default class Game {
     pauseScreen.style.justifyContent = "center";
     pauseScreen.style.alignItems = "center";
     pauseScreen.style.flexDirection = "column";
-    pauseScreen.style.fontSize = "5rem";
-    pauseScreen.style.color = "#fff";
+    // pauseScreen.style.fontSize = "5rem";
+    // pauseScreen.style.color = "#fff";
     pauseScreen.style.textAlign = "center";
-    pauseScreen.innerHTML = '<p id="game-paused">Game Paused</p>';
+    pauseScreen.innerHTML = `
+      <div id="game-paused">
+        <i class="fas fa-pause"></i>
+        <i class="fas fa-play hide"></i>
+        <p class="game__pause-title">Game Paused</p>
+      </div>
+    `;
     this.gameScreen.appendChild(pauseScreen);
   }
   resume() {
@@ -488,9 +494,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-      left: Math.floor(Math.random() * 90) + "%",
-      top: Math.floor(Math.random() * 90) + "%",
-    },
+        left: Math.floor(Math.random() * 90) + "%",
+        top: Math.floor(Math.random() * 90) + "%",
+      },
       500
     );
     $(bin).effect("shake", {

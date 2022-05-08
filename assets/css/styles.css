@@ -1319,7 +1319,19 @@ body {
 
 /* Game Paused Element */
 
-#game-paused {
+#game-paused i {
+  color: var(--clr-accent--900);
+  font-size: 8rem;
+  cursor: pointer;
+}
+
+#game-paused i:hover {
+  color: var(--clr-accent--100);
+}
+
+.game__pause-title {
+  font-size: 4vh;
+  margin-top: 2vh;
   font-family: var(--ff-secondary);
   font-weight: lighter;
   color: var(--clr-neutral--100);
@@ -1431,15 +1443,15 @@ label {
 }
 
 #player-score {
-  height: 8vh;
+  height: 6vh;
   margin: auto;
   margin-top: 1vh;
   background: none;
   border: 1px solid var(--clr--sixthly-cloud);
   border-radius: 1.2em;
-  max-width: 10rem;
+  width: 50%;
   color: var(--clr-accent--100);
-  text-shadow: 2px 2px 4px var(--clr-neutral--800);
+  text-shadow: 3px 3px 2px var(--clr-neutral--800);
   font-size: 4vh;
   background-color: var(--clr-accent--900);
   cursor: default;
@@ -1961,6 +1973,11 @@ label {
   /* Media for Game Bins */
   .game__bin {
     width: 50px;
+  }
+
+  /* Media for Pause Icon */
+  #game-paused i {
+    font-size: 6rem;
   }
 }
 
