@@ -254,7 +254,7 @@ export default class Game {
 
   }
 
-  updateEndGameWindow() {
+  updateEndGameCounter() {
     document.getElementById('garbage-left').innerHTML = game.garbageItems;
     let theme = $("#garbage-bins").attr("data-theme");
     let text;
@@ -268,6 +268,21 @@ export default class Game {
     document.getElementById('game-scene').innerHTML = text;
   }
 
+  updateEndGameTitle() {
+    let endGameScore = parseInt(document.getElementById("player-score").value);
+    let endGameTitle = document.getElementById("final-title");
+
+    if (endGameScore > 500) {
+      endGameTitle.innerHTML = "Good Job!";
+    } else if (endGameScore < 500) {
+      endGameTitle.innerHTML = "Try Again!";
+    } else if (endGameScore > 5000) {
+      endGameTitle.innerHTML = "Amazing!"
+    }
+  }
+
+
+
   gameOverTrigger() {
     $(document).off('keydown', keyboardControl);
     beachBackground.pause();
@@ -280,7 +295,8 @@ export default class Game {
     this.endGameElement.style.zIndex = "999999999999999999999";
     // document.getElementById("player-score").value = this.score;
     this.finalScore();
-    this.updateEndGameWindow();
+    this.updateEndGameCounter();
+    this.updateEndGameTitle();
     document.getElementById('combo-block').classList.add('hide');
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
@@ -494,9 +510,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-        left: Math.floor(Math.random() * 90) + "%",
-        top: Math.floor(Math.random() * 90) + "%",
-      },
+      left: Math.floor(Math.random() * 90) + "%",
+      top: Math.floor(Math.random() * 90) + "%",
+    },
       500
     );
     $(bin).effect("shake", {
