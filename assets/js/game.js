@@ -111,6 +111,7 @@ export default class Game {
   }
   start(mode) {
     $('.game__bin').removeClass('animated-bin');
+    $(document).on('keydown', keyboardControl);
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     this.checkSound();
@@ -268,6 +269,7 @@ export default class Game {
   }
 
   gameOverTrigger() {
+    $(document).off('keydown', keyboardControl);
     beachBackground.pause();
     riverBackground.pause();
     oceanBackground.pause();
@@ -564,7 +566,8 @@ $(".sound__control").click(() => {
 let garbageIndex = 0;
 let binIndex = 0;
 
-$(document).keydown((event) => {
+
+const keyboardControl = (event) => {
   event.preventDefault();
 
   if (event.key === 'Escape') {
@@ -633,4 +636,4 @@ $(document).keydown((event) => {
       checkAnswer(null, ui, $(bin));
     });
   }
-});
+};
