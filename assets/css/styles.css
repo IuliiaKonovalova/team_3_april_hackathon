@@ -1439,7 +1439,7 @@ label {
   border-radius: 1.2em;
   width: 50%;
   color: var(--clr-accent--100);
-  text-shadow: 2px 2px 4px var(--clr-neutral--800);
+  text-shadow: 3px 3px 2px var(--clr-neutral--800);
   font-size: 4vh;
   background-color: var(--clr-accent--900);
   cursor: default;
