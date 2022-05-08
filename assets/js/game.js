@@ -235,24 +235,36 @@ export default class Game {
 
   finalScore() {
     if (game.garbageItems > 0) {
-      console.log('gameboard not empty on easy');
-      console.log(game.garbageItems);
+      // console.log('gameboard not empty on easy');
+      // console.log(game.garbageItems);
       document.getElementById("player-score").value = this.score - (game.garbageItems * 50);
       if (document.getElementById("player-score").value < 0) {
         document.getElementById("player-score").value = 0;
       }
       // document.getElementById('garbage-left').innerHTML = game.garbageItems;
     } else {
-      console.log('gameboard empty on easy')
+      // console.log('gameboard empty on easy')
       document.getElementById('garbage-message').classList.add('hide');
       document.getElementById("player-score").value = this.score + (this.timeLeft * 100);
     }
-
-    document.getElementById('garbage-left').innerHTML = game.garbageItems;
     this.scoreElement.innerHTML = document.getElementById("player-score").value;
-    this.combo = 0;
-    this.comboElement.innerHTML = this.combo;
+    // this.combo = 0;
+    // this.comboElement.innerHTML = this.combo;
 
+  }
+
+  updateEndGameWindow() {
+    document.getElementById('garbage-left').innerHTML = game.garbageItems;
+    let theme = $("#garbage-bins").attr("data-theme");
+    let text;
+    if (theme === "ocean") {
+      text = `in the ${theme}`;
+    } else if (theme === "river") {
+      text = `at the ${theme}`;
+    } else if (theme === "beach") {
+      text = `on the ${theme}`;
+    }
+    document.getElementById('game-scene').innerHTML = text;
   }
 
   gameOverTrigger() {
@@ -266,6 +278,8 @@ export default class Game {
     this.endGameElement.style.zIndex = "999999999999999999999";
     // document.getElementById("player-score").value = this.score;
     this.finalScore();
+    this.updateEndGameWindow();
+    document.getElementById('combo-block').classList.add('hide');
     this.garbageBinsElement.classList.add("hide");
     this.removeAllGarbage();
     $(".pause-stop__control").addClass("hide");
@@ -552,47 +566,47 @@ let binIndex = 0;
 
 $(document).keydown((event) => {
   event.preventDefault();
-  
-  if(event.key === 'Escape') {
+
+  if (event.key === 'Escape') {
     game.stop();
-  } else if(event.key === 'p') {
-    if(game.pauseButton.classList.contains("hide")) {
+  } else if (event.key === 'p') {
+    if (game.pauseButton.classList.contains("hide")) {
       game.resume();
       $(game.pauseButton).removeClass("hide");
       $(game.playButton).addClass("hide");
-      
+
     } else {
       game.pause();
       $(game.playButton).removeClass("hide");
       $(game.pauseButton).addClass("hide");
     }
-  } else if(event.key === 'Tab') {
+  } else if (event.key === 'Tab') {
     $(".garbage-item").removeClass("animated-item");
     garbageIndex++;
-    if(garbageIndex >= game.garbageItems) {
+    if (garbageIndex >= game.garbageItems) {
       garbageIndex = 0;
     }
     let garbageItem = $(".garbage-item")[garbageIndex];
     $(garbageItem).addClass("animated-item");
-  } else if(event.key === 'ArrowRight') {
+  } else if (event.key === 'ArrowRight') {
     $(".game__bin").removeClass("animated-bin");
     binIndex++;
-    if(binIndex === 4) {
+    if (binIndex === 4) {
       binIndex = 0;
-    } 
+    }
     let bin = $(".game__bin")[binIndex];
-    
+
     $(bin).addClass("animated-bin");
-    
-  } else if(event.key === 'ArrowLeft') {
+
+  } else if (event.key === 'ArrowLeft') {
     $(".game__bin").removeClass("animated-bin");
     binIndex--;
-    if(binIndex === -1) {
+    if (binIndex === -1) {
       binIndex = 3;
     }
     let bin = $(".game__bin")[binIndex];
     $(bin).addClass("animated-bin");
-  } else if(event.key === 'Enter' || event.key === ' ') {
+  } else if (event.key === 'Enter' || event.key === ' ') {
     let bin = $(".game__bin")[binIndex];
     let garbageItem = $(".garbage-item")[garbageIndex];
     $(garbageItem).animate({
@@ -614,7 +628,7 @@ $(document).keydown((event) => {
           width: $(garbageItem).width(),
           height: $(garbageItem).height(),
         },
-        element: garbageItem,        
+        element: garbageItem,
       };
       checkAnswer(null, ui, $(bin));
     });
