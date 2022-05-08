@@ -1431,13 +1431,13 @@ label {
 }
 
 #player-score {
-  height: 8vh;
+  height: 6vh;
   margin: auto;
   margin-top: 1vh;
   background: none;
   border: 1px solid var(--clr--sixthly-cloud);
   border-radius: 1.2em;
-  max-width: 10rem;
+  width: 50%;
   color: var(--clr-accent--100);
   text-shadow: 2px 2px 4px var(--clr-neutral--800);
   font-size: 4vh;
