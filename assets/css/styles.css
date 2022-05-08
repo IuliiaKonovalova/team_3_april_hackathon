@@ -1778,13 +1778,19 @@ label {
     font-size: 1.5rem;
   }
 
-  /* Media for bins */
+  /* Media for Game Bins */
   .game__bins--section {
     right: 6vw;
   }
 
   .game__bin {
     width: 90px;
+  }
+
+  /* Media for Game Bins */
+  .garbage-item {
+    width: 75px !important;
+    height: 75px !important;
   }
 }
 
@@ -1883,7 +1889,7 @@ label {
     font-size: 1.5rem;
   }
 
-  /* Media for Bins */
+  /* Media for Game Bins */
   .game__bins--section {
     justify-content: center;
     right: 0;
@@ -1891,6 +1897,12 @@ label {
 
   .game__bin {
     width: 70px;
+  }
+
+  /* Media for Game Garbage Items */
+  .garbage-item {
+    width: 65px !important;
+    height: 65px !important;
   }
 }
 
@@ -1918,6 +1930,9 @@ label {
 }
 
 @media all and (max-width: 520px) {
+
+
+
   .rules__section {
     border-radius: 0.4em;
   }
@@ -1943,7 +1958,7 @@ label {
   }
 
 
-  /* Media for Bins */
+  /* Media for Game Bins */
   .game__bin {
     width: 50px;
   }
