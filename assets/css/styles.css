@@ -1319,7 +1319,19 @@ body {
 
 /* Game Paused Element */
 
-#game-paused {
+#game-paused i {
+  color: var(--clr-accent--900);
+  font-size: 8rem;
+  cursor: pointer;
+}
+
+#game-paused i:hover {
+  color: var(--clr-accent--100);
+}
+
+.game__pause-title {
+  font-size: 4vh;
+  margin-top: 2vh;
   font-family: var(--ff-secondary);
   font-weight: lighter;
   color: var(--clr-neutral--100);
@@ -1961,6 +1973,11 @@ label {
   /* Media for Game Bins */
   .game__bin {
     width: 50px;
+  }
+
+  /* Media for Pause Icon */
+  #game-paused i {
+    font-size: 6rem;
   }
 }
 
