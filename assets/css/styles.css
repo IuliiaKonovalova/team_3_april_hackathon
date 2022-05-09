@@ -546,7 +546,66 @@ body {
   z-index: 1;
 }
 
+/* ----- Rules Section ----- */
+
+.rules__section {
+  position: absolute;
+  top: 50%;
+  max-width: 100rem;
+  max-height: 75vh;
+  /* min-height: 75vh; */
+  background-color: var(--clr-neutral--800);
+  color: var(--clr-neutral--100);
+  border-radius: 1em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  padding: 1vh;
+}
+
 /* ----- << Tabs control >> ----- */
+.rules__tab--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--clr-accent--900);
+}
+
+.rules__tab {
+  background-color: var(--clr-neutral--800);
+  color: rgba(255, 255, 255, 0.624);
+  font-size: 1.2rem;
+  padding: 0.7em 2vw 0.5em 2vw;
+  border-top-left-radius: 0.7em;
+  border-top-right-radius: 0.7em;
+  border-top: 2px solid var(--clr-accent--900);
+  border-right: 1px solid var(--clr-accent--900);
+  border-left: 1px solid var(--clr-accent--900);
+}
+
+.rules__tab:focus {
+  outline: none;
+}
+
+.rules__tab:not(:last-child) {
+  margin-right: 2vw;
+}
+
+.rules__tab:not(:first-child) {
+  margin-left: 2vw;
+}
+
+
+.rules__tab--active {
+  /* border-bottom: 4px solid var(--clr-primary--700); */
+  color: white !important;
+  border-top: 3px solid var(--clr-accent--900);
+  border-right: 3px solid var(--clr-accent--900);
+  border-left: 3px solid var(--clr-accent--900);
+  /* border-bottom: 2px solid var(--clr-accent--900); */
+  border-bottom: 7px solid black !important;
+}
+
 .rules__tab--active {
   border-bottom: 4px solid var(--clr-primary--700);
   color: var(--clr-neutral--900);
@@ -562,25 +621,11 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
+  /* min-height: 75vh; */
   /* approximate!!!!!!! */
 }
 
-/* ----- Rules Section ----- */
-
-.rules__section {
-  position: absolute;
-  top: 50%;
-  max-width: 100rem;
-  max-height: 75vh;
-  background-color: var(--clr-neutral--800);
-  color: var(--clr-neutral--100);
-  border-radius: 1em;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  padding: 1vh;
-}
+/* Learning rules on recycling */
 
 .rules__section--data {
   position: relative;
