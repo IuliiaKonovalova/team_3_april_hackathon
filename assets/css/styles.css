@@ -547,9 +547,49 @@ body {
 }
 
 /* ----- << Tabs control >> ----- */
+.rules__tab--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #005aff; */
+  border-bottom: 1px solid var(--clr-accent--900);
+
+}
+
+.rules__tab {
+  background-color: var(--clr-neutral--800);
+  color: rgba(255, 255, 255, 0.624);
+  padding: 1.5em 3em;
+  border-top-left-radius: 0.7em;
+  border-top-right-radius: 0.7em;
+  border-top: 2px solid var(--clr-accent--900);
+  border-right: 1px solid var(--clr-accent--900);
+  border-left: 1px solid var(--clr-accent--900);
+
+}
+
+.rules__tab:focus {
+  outline: none;
+}
+
+.rules__tab:not(:last-child) {
+  margin-right: 5vw;
+}
+
+.rules__tab:not(:first-child) {
+  margin-left: 5vw;
+}
+
+
 .rules__tab--active {
-  border-bottom: 4px solid var(--clr-primary--700);
-  color: var(--clr-neutral--900);
+  /* border-bottom: 4px solid var(--clr-primary--700); */
+  color: white;
+
+  border-top: 2px solid var(--clr-accent--900);
+  border-right: 2px solid var(--clr-accent--900);
+  border-left: 2px solid var(--clr-accent--900);
+  /* border-bottom: 2px solid var(--clr-accent--900); */
+  border-bottom: 5px solid black;
 }
 
 .rules__content {
