@@ -399,12 +399,14 @@ export default class Game {
     pauseScreen.style.textAlign = "center";
     pauseScreen.innerHTML = `
       <div id="game-paused">
-        <i class="fas fa-pause"></i>
-        <i class="fas fa-play hide"></i>
+        <i class="fas fa-play" id="game-paused-play"></i>
         <p class="game__pause-title">Game Paused</p>
       </div>
     `;
     this.gameScreen.appendChild(pauseScreen);
+
+    let gamePausedPlayBtn = document.getElementById("game-paused-play");
+    gamePausedPlayBtn.addEventListener("click", gameResume);
   }
   resume() {
     let pauseScreen = document.getElementsByClassName("pause-screen")[0];
@@ -555,11 +557,13 @@ $(game.pauseButton).click(() => {
   $(game.playButton).removeClass("hide");
 });
 
-$(game.playButton).click(() => {
+const gameResume = () => {
   game.resume();
   $(game.playButton).addClass("hide");
   $(game.pauseButton).removeClass("hide");
-});
+}
+
+$(game.playButton).click(gameResume);
 
 $(game.stopButton).click(() => {
   game.stop();
