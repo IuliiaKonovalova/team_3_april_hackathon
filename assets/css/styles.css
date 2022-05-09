@@ -546,6 +546,26 @@ body {
   z-index: 1;
 }
 
+/* ----- << Tabs control >> ----- */
+.rules__tab--active {
+  border-bottom: 4px solid var(--clr-primary--700);
+  color: var(--clr-neutral--900);
+}
+
+.rules__content {
+  display: none;
+}
+
+.rules__content--active {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  /* approximate!!!!!!! */
+}
+
 /* ----- Rules Section ----- */
 
 .rules__section {
@@ -704,7 +724,6 @@ body {
 .delay-3 {
   animation-delay: 0.8s;
 }
-
 
 /* ---- Game Section ---- */
 /* Combo */

@@ -34,7 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const leaderBoardLink = document.getElementById('leaders-link');
   const leaderBoard = document.getElementById('leaders-board');
   const leaderBoardClose = document.getElementById('leader-close');
-
+  // Variables for feature tabs and content
+  const tabsContainer = document.querySelector(".rules__tab--container");
+  const tabs = document.querySelectorAll(".rules__tab");
+  const tabsContent = document.querySelectorAll(".rules__content");
 
   // Set the current carousel slide
   let current = 0;
@@ -76,6 +79,32 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchEcoFacts();
     // closeFooter(footerContent);
   });
+
+  // Control Feature's section content
+  tabsContainer.addEventListener("click", function (e) {
+    changeTabContent(e);
+  });
+
+  /**
+   * Switch content on tag click
+   */
+  const changeTabContent = function (e) {
+    const clicked = e.target.closest(".rules__tab");
+    if (!clicked) return;
+
+    // Remove Active Class
+    tabs.forEach((t) => t.classList.remove("rules__tab--active"));
+    tabsContent.forEach((c) => c.classList.remove("rules__content--active"));
+
+    // Activate Tab
+    clicked.classList.add("rules__tab--active");
+
+    // Activate Content
+    document
+      .querySelector(`.rules__content--${clicked.dataset.tab}`)
+      .classList.add("rules__content--active");
+  };
+
 
   // Starts the game sequence on button clicks
   for (let btn of playBtn) {
