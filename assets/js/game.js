@@ -399,13 +399,23 @@ export default class Game {
     pauseScreen.style.textAlign = "center";
     pauseScreen.innerHTML = `
       <div id="game-paused">
-        <i class="fas fa-play" id="game-paused-play"></i>
+        <i class="fas fa-pause" id="game-paused-pause"></i>
+        <i class="fas fa-play hide" id="game-paused-play"></i>
         <p class="game__pause-title">Game Paused</p>
       </div>
     `;
     this.gameScreen.appendChild(pauseScreen);
 
+    let gamePausedPauseBtn = document.getElementById("game-paused-pause");
     let gamePausedPlayBtn = document.getElementById("game-paused-play");
+    gamePausedPauseBtn.addEventListener("mouseenter", () => {
+      gamePausedPauseBtn.classList.toggle("hide");
+      gamePausedPlayBtn.classList.toggle("hide");
+    });
+    gamePausedPlayBtn.addEventListener("mouseleave", () => {
+      gamePausedPauseBtn.classList.toggle("hide");
+      gamePausedPlayBtn.classList.toggle("hide");
+    });
     gamePausedPlayBtn.addEventListener("click", gameResume);
   }
   resume() {
