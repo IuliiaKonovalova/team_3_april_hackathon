@@ -662,7 +662,7 @@ body {
 .animate {
   animation-duration: 0.2s;
   animation-name: animate-fade;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
   animation-fill-mode: backwards;
 }
 
@@ -678,7 +678,7 @@ body {
 
 .animate.pop {
   animation-name: animate-pop;
-  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-timing-function: cubic-bezier(0.16, 0.17, 0.16, 0.05);
 }
 
 @keyframes animate-pop {
