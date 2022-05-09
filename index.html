@@ -131,43 +131,68 @@
     </div>
     <!-- Rules Section -->
     <div class="rules__section hide" id="rules">
-      <!-- Game Rules -->
-      <div class="game__rules">
-        <h1 class="game__rules--title">How to Play?</h1>
-        <!-- Closing button -->
-        <button class="rules__close" id="rules-close">&times;</button>
-        <p>
-          Identify four different waste types and which bins they belong in. Score points with proper waste segregation.
-        </p>
-        <!-- Bins section -->
-        <div class="rules__bins">
-          <div class="rules__bin">
-            <img data-modal-target="#modal" class="bin__rules--img animate pop" id="organic-bin"
-              src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
-          </div>
-          <div class="rules__bin">
-            <img data-modal-target="#modal" class="bin__rules--img animate pop bin-delay-1" id="plastic-bin"
-              src="assets/images/blue_bin.svg" alt="Image of a blue bin for organic waste">
-          </div>
-          <div class="rules__bin">
-            <img data-modal-target="#modal" class="bin__rules--img animate pop bin-delay-2" id="glass-bin"
-              src="assets/images/green_bin.svg" alt="Image of a green bin for organic waste">
-          </div>
-          <div class="rules__bin">
-            <img data-modal-target="#modal" class="bin__rules--img animate pop bin-delay-3" id="paper-bin"
-              src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for organic waste">
+      <!-- How to Play Tabs -->
+      <div class="rules__tab--container">
+        <button class="rules__tab rules__tab--1 rules__tab--active" data-tab="1">
+          Scores counting
+        </button>
+        <button class="rules__tab rules__tab--2" data-tab="2">
+          Control keys
+        </button>
+        <button class="rules__tab rules__tab--3" data-tab="3">
+          Learn more
+        </button>
+      </div>
+      <!-- How to Play Content -->
+      <div class="rules__content rules__content--1 rules__content--active">
+        <!-- How to Play 1 Content -->
+        <p>Rules for scores will go here</p>
+      </div>
+      <div class="rules__content rules__content--2 rules__content--active">
+        <!-- How to Play 2 Content -->
+        <p>Rules for control keys will go here</p>
+      </div>
+      <div class="rules__content rules__content--3 rules__content--active">
+        <!-- How to Play 3 Content -->
+        <!-- Game Rules -->
+        <div class="game__rules">
+          <h2 class="game__rules--title">How to Play?</h2>
+          <!-- Closing button -->
+          <button class="rules__close" id="rules-close">&times;</button>
+          <p>
+            Identify four different waste types and which bins they belong in. Score points with proper waste
+            segregation.
+          </p>
+          <!-- Bins section -->
+          <div class="rules__bins">
+            <div class="rules__bin">
+              <img data-modal-target="#modal" class="bin__rules--img animate pop" id="organic-bin"
+                src="assets/images/red_bin.svg" alt="Image of a red bin for organic waste">
+            </div>
+            <div class="rules__bin">
+              <img data-modal-target="#modal" class="bin__rules--img animate pop delay-1" id="plastic-bin"
+                src="assets/images/blue_bin.svg" alt="Image of a blue bin for organic waste">
+            </div>
+            <div class="rules__bin">
+              <img data-modal-target="#modal" class="bin__rules--img animate pop delay-2" id="glass-bin"
+                src="assets/images/green_bin.svg" alt="Image of a green bin for organic waste">
+            </div>
+            <div class="rules__bin">
+              <img data-modal-target="#modal" class="bin__rules--img animate pop delay-3" id="paper-bin"
+                src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for organic waste">
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Eco facts section -->
-      <div class="eco__facts">
-        <h2 class="eco__facts--title">Did you know?</h2>
-        <p id="eco__text"></p>
-      </div>
-      <div class="rules__play--container">
-        <a class="btn btn__play play-btn" id="rules__play" aria-label="Go to choosing difficulty level">
-          <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
-        </a>
+        <!-- Eco facts section -->
+        <div class="eco__facts">
+          <h2 class="eco__facts--title">Did you know?</h2>
+          <p id="eco__text"></p>
+        </div>
+        <div class="rules__play--container">
+          <a class="btn btn__play play-btn" id="rules__play" aria-label="Go to choosing difficulty level">
+            <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
+          </a>
+        </div>
       </div>
     </div>
     <!-- Leaders Board Block -->
