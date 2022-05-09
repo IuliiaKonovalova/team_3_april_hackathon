@@ -660,9 +660,9 @@ body {
 }
 
 .animate {
-  animation-duration: 0.2s;
+  animation-duration: 0.3s;
   animation-name: animate-fade;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
   animation-fill-mode: backwards;
 }
 
@@ -693,16 +693,16 @@ body {
   }
 }
 
-.delay-1 {
+.bin-delay-1 {
+  animation-delay: 0.4s;
+}
+
+.bin-delay-2 {
+  animation-delay: 0.5s;
+}
+
+.bin-delay-3 {
   animation-delay: 0.6s;
-}
-
-.delay-2 {
-  animation-delay: 0.7s;
-}
-
-.delay-3 {
-  animation-delay: 0.8s;
 }
 
 
