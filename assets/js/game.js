@@ -231,15 +231,29 @@ export default class Game {
   }
 
   finalScore() {
+    let extraPointsTime = document.getElementById('points-time');
+    let negativePointsGarbage = document.getElementById('points-garbage');
+    let garbagePointsText = document.getElementById('points-garbage-text');
+    let timePointsText = document.getElementById('points-time-text');
+    let cleanPoints = document.getElementById('points-clean');
+    let cleanPointsText = document.getElementById('points-clean-text');
+
+    cleanPoints.innerHTML = this.score;
+
     if (game.garbageItems > 0) {
       console.log('gameboard not empty');
       console.log(game.garbageItems);
       console.log(this.score);
       this.score -= game.garbageItems * 50;
+      timePointsText.classList.add('hide');
+      negativePointsGarbage.innerHTML = game.garbageItems * 50;
       // let intScore = parseInt(document.getElementById("player-score").value);
       if (this.score < 0) {
         // console.log("score less than 0");
         this.score = 0;
+        timePointsText.classList.add('hide');
+        garbagePointsText.classList.add('hide');
+        cleanPointsText.classList.add('hide');
       }
     } else {
       // console.log('gameboard empty')
@@ -247,6 +261,9 @@ export default class Game {
       // console.log(this.score);
       console.log((this.timeLeft * 100));
       this.score += this.timeLeft * 100;
+      garbagePointsText.classList.add('hide');
+      extraPointsTime.innerHTML = this.timeLeft * 100;
+
     }
     // console.log(this.score);
     document.getElementById("player-score").value = this.score;
@@ -279,8 +296,6 @@ export default class Game {
       endGameTitle.innerHTML = "Amazing!"
     }
   }
-
-
 
   gameOverTrigger() {
     $(document).off('keydown', keyboardControl);
