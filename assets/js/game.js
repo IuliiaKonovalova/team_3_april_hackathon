@@ -244,13 +244,11 @@ export default class Game {
       // document.getElementById('garbage-left').innerHTML = game.garbageItems;
     } else {
       // console.log('gameboard empty on easy')
-      document.getElementById('garbage-message').classList.add('hide');
       document.getElementById("player-score").value = this.score + (this.timeLeft * 100);
     }
     this.scoreElement.innerHTML = document.getElementById("player-score").value;
     // this.combo = 0;
     // this.comboElement.innerHTML = this.combo;
-
   }
 
   updateEndGameCounter() {
