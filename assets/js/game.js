@@ -233,7 +233,6 @@ export default class Game {
     }, 1000);
   }
 
-
   finalScore() {
     if (game.garbageItems > 0) {
       // console.log('gameboard not empty on easy');
