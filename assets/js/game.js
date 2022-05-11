@@ -232,28 +232,25 @@ export default class Game {
 
   finalScore() {
     if (game.garbageItems > 0) {
-      // console.log('gameboard not empty');
-      // console.log(game.garbageItems);
-      // console.log(this.score);
-      document.getElementById("player-score").value = this.score - (game.garbageItems * 50);
+      console.log('gameboard not empty');
+      console.log(game.garbageItems);
+      console.log(this.score);
+      this.score -= game.garbageItems * 50;
       // let intScore = parseInt(document.getElementById("player-score").value);
-      if (document.getElementById("player-score").value < 0) {
-        // console.log("intScore less than 0");
-        document.getElementById("player-score").value = 0;
-        // console.log(document.getElementById("player-score").value);
+      if (this.score < 0) {
+        // console.log("score less than 0");
+        this.score = 0;
       }
-      // document.getElementById('garbage-left').innerHTML = game.garbageItems;
     } else {
       // console.log('gameboard empty')
       // console.log(game.garbageItems);
       // console.log(this.score);
-      // console.log((this.timeLeft * 100));
-      document.getElementById("player-score").value = this.score + (this.timeLeft * 100);
-      // console.log(document.getElementById("player-score").value);
+      console.log((this.timeLeft * 100));
+      this.score += this.timeLeft * 100;
     }
-    this.scoreElement.innerHTML = document.getElementById("player-score").value;
-    // this.combo = 0;
-    // this.comboElement.innerHTML = this.combo;
+    // console.log(this.score);
+    document.getElementById("player-score").value = this.score;
+    this.scoreElement.innerHTML = this.score;
   }
 
   updateEndGameCounter() {
@@ -311,8 +308,10 @@ export default class Game {
       $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
+        // console.log(this.score);
         saveScoreToDb(name, this.score);
       } else {
+        // console.log(this.score);
         saveScoreToDb("Anonymous", this.score);
       }
 
