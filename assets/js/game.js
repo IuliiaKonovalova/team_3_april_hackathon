@@ -250,7 +250,6 @@ export default class Game {
     this.scoreElement.innerHTML = document.getElementById("player-score").value;
     // this.combo = 0;
     // this.comboElement.innerHTML = this.combo;
-
   }
 
   updateEndGameCounter() {
@@ -521,9 +520,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-      left: Math.floor(Math.random() * 90) + "%",
-      top: Math.floor(Math.random() * 90) + "%",
-    },
+        left: Math.floor(Math.random() * 90) + "%",
+        top: Math.floor(Math.random() * 90) + "%",
+      },
       500
     );
     $(bin).effect("shake", {
