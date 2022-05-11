@@ -2055,7 +2055,8 @@ label {
 
 @media all and (max-width: 500px) {
 
-  .game__bar {
+  .game__bar,
+  .play__item i {
     font-size: 1.5rem;
   }
 
