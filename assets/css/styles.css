@@ -2055,6 +2055,10 @@ label {
 
 @media all and (max-width: 500px) {
 
+  .navbar {
+    padding: 0.9em 1.2em;
+  }
+
   .game__bar,
   .play__item i {
     font-size: 1.5rem;
@@ -2102,6 +2106,25 @@ label {
 
   .final input {
     max-width: 80vw;
+  }
+}
+
+@media all and (max-width: 371px) {
+  .navbar {
+    padding: 0.7em 1em;
+  }
+
+  .game__bar,
+  .play__item i {
+    font-size: 1.2rem;
+  }
+
+  .sound__control {
+    font-size: 1.5rem;
+  }
+
+  .timer__control span {
+    width: 5.5rem
   }
 }
 
