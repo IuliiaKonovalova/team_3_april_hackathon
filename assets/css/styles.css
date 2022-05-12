@@ -1540,12 +1540,20 @@ label {
   cursor: pointer;
 }
 
-.game__scene {
+.garbage__message {
+  line-height: 4vh;
+  text-align: center;
+}
+
+.game__scene,
+.points__time,
+.points__garbage {
   font-family: var(--ff-secondary);
   color: var(--clr-accent--900);
 }
 
-.garbage__left {
+.garbage__left,
+.points__clean {
   font-family: var(--ff-secondary);
   color: var(--clr-accent--100);
 }
