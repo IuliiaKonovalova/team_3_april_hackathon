@@ -396,12 +396,7 @@ export default class Game {
   }
   pause() {
     $(document).off('keydown', keyboardControl);
-    $(document).on('keydown', (e) => {
-      // if key p unpause the game
-      if (e.keyCode === 80) {
-        this.resume();
-      }
-    });
+    $(document).on('keydown', listenForPause);
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     let pauseScreen = document.createElement("div");
@@ -428,6 +423,8 @@ export default class Game {
       </div>
     `;
     this.gameScreen.appendChild(pauseScreen);
+    $(this.pauseButton).addClass("hide");
+    $(this.playButton).removeClass("hide");
 
     let gamePausedPauseBtn = document.getElementById("game-paused-pause");
     let gamePausedPlayBtn = document.getElementById("game-paused-play");
@@ -439,14 +436,16 @@ export default class Game {
       gamePausedPauseBtn.classList.toggle("hide");
       gamePausedPlayBtn.classList.toggle("hide");
     });
-    gamePausedPlayBtn.addEventListener("click", gameResume);
+    gamePausedPlayBtn.addEventListener("click", this.resume.bind(this));
   }
   resume() {
-    $(document).off('keydown', keyboardControl);
+    $(document).off('keydown', listenForPause);
     $(document).on('keydown', keyboardControl);
     let pauseScreen = document.getElementsByClassName("pause-screen")[0];
     pauseScreen.remove();
     this.startTimer();
+    $(this.playButton).addClass("hide");
+    $(this.pauseButton).removeClass("hide");
     if (this.gameMode === "hard") {
       this.garbageInterval = setInterval(() => {
         let garbageItem = new GarbageItem(this.garbageJson);
@@ -627,6 +626,11 @@ $(".sound__control").click(() => {
 let garbageIndex = 0;
 let binIndex = 0;
 
+const listenForPause = (e) => {
+  if (e.key === "p") {
+    game.resume();
+  }
+};
 
 const keyboardControl = (event) => {
   event.preventDefault();
@@ -634,16 +638,7 @@ const keyboardControl = (event) => {
   if (event.key === 'Escape') {
     game.stop();
   } else if (event.key === 'p') {
-    if (game.pauseButton.classList.contains("hide")) {
-      game.resume();
-      $(game.pauseButton).removeClass("hide");
-      $(game.playButton).addClass("hide");
-
-    } else {
-      game.pause();
-      $(game.playButton).removeClass("hide");
-      $(game.pauseButton).addClass("hide");
-    }
+    game.pause();
   } else if (event.key === 'Tab') {
     $(".garbage-item").removeClass("animated-item");
     garbageIndex++;
