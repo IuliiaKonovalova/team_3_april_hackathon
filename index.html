@@ -321,10 +321,16 @@
             <input id="player-score" name="player-score" placeholder="9999" readonly>
           </li>
           <li>
-            <p class="garbage__message" id="garbage-message">
+            <div class="garbage__message" id="garbage-message">
               You left <span class="garbage__left" id="garbage-left"></span> garbage <span class="game__scene"
-                id="game-scene"></span>!
-            </p>
+                id="game-scene"></span>! <br>
+              <span class="points__clean__text" id="points-clean-text"> Points for recycling: <span
+                  class="points__clean" id="points-clean"></span></span> <br>
+              <span class="points__time__text" id="points-time-text">Extra points for time: <span class="points__time"
+                  id="points-time"></span></span> <br>
+              <span class="points__garbage__text" id="points-garbage-text">Negative points for garbage: <span
+                  class="points__garbage" id="points-garbage"></span></span>
+            </div>
           </li>
           <li>
             <label for="player-name" class="scores__label"></label>

@@ -206,9 +206,6 @@ export default class Game {
     let hearts = this.livesElement.getElementsByTagName("i");
     hearts[this.lives].classList.remove("fas");
     hearts[this.lives].classList.add("far");
-    if (this.lives === 0) {
-      this.gameOverTrigger();
-    }
   }
   restoreLives() {
     this.lives = 3;
@@ -234,21 +231,43 @@ export default class Game {
   }
 
   finalScore() {
+    let extraPointsTime = document.getElementById('points-time');
+    let negativePointsGarbage = document.getElementById('points-garbage');
+    let garbagePointsText = document.getElementById('points-garbage-text');
+    let timePointsText = document.getElementById('points-time-text');
+    let cleanPoints = document.getElementById('points-clean');
+    let cleanPointsText = document.getElementById('points-clean-text');
+
+    cleanPoints.innerHTML = this.score;
+
     if (game.garbageItems > 0) {
-      // console.log('gameboard not empty on easy');
-      // console.log(game.garbageItems);
-      document.getElementById("player-score").value = this.score - (game.garbageItems * 50);
-      if (document.getElementById("player-score").value < 0) {
-        document.getElementById("player-score").value = 0;
+      console.log('gameboard not empty');
+      console.log(game.garbageItems);
+      console.log(this.score);
+      this.score -= game.garbageItems * 50;
+      timePointsText.classList.add('hide');
+      negativePointsGarbage.innerHTML = game.garbageItems * 50;
+      // let intScore = parseInt(document.getElementById("player-score").value);
+      if (this.score < 0) {
+        // console.log("score less than 0");
+        this.score = 0;
+        timePointsText.classList.add('hide');
+        garbagePointsText.classList.add('hide');
+        cleanPointsText.classList.add('hide');
       }
-      // document.getElementById('garbage-left').innerHTML = game.garbageItems;
     } else {
-      // console.log('gameboard empty on easy')
-      document.getElementById("player-score").value = this.score + (this.timeLeft * 100);
+      // console.log('gameboard empty')
+      // console.log(game.garbageItems);
+      // console.log(this.score);
+      console.log((this.timeLeft * 100));
+      this.score += this.timeLeft * 100;
+      garbagePointsText.classList.add('hide');
+      extraPointsTime.innerHTML = this.timeLeft * 100;
+
     }
-    this.scoreElement.innerHTML = document.getElementById("player-score").value;
-    // this.combo = 0;
-    // this.comboElement.innerHTML = this.combo;
+    // console.log(this.score);
+    document.getElementById("player-score").value = this.score;
+    this.scoreElement.innerHTML = this.score;
   }
 
   updateEndGameCounter() {
@@ -278,8 +297,6 @@ export default class Game {
     }
   }
 
-
-
   gameOverTrigger() {
     $(document).off('keydown', keyboardControl);
     beachBackground.pause();
@@ -306,8 +323,10 @@ export default class Game {
       $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
+        // console.log(this.score);
         saveScoreToDb(name, this.score);
       } else {
+        // console.log(this.score);
         saveScoreToDb("Anonymous", this.score);
       }
 
@@ -519,9 +538,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-        left: Math.floor(Math.random() * 90) + "%",
-        top: Math.floor(Math.random() * 90) + "%",
-      },
+      left: Math.floor(Math.random() * 90) + "%",
+      top: Math.floor(Math.random() * 90) + "%",
+    },
       500
     );
     $(bin).effect("shake", {
