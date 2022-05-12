@@ -629,13 +629,40 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  /* min-height: 75vh; */
+  min-height: 55vh;
   /* approximate!!!!!!! */
 }
 
-.rules__content .rules__content--2 img {
+/* .rules__content .rules__content--2 img {
   width: 25%;
   height: 25%;
+} */
+
+/* Game control */
+.play__control {
+  width: 100%;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-auto-flow: dense;
+  gap: 3rem;
+}
+
+.play__control--title {
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+.play__control--image {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  height: 100%;
+}
+
+.play__control--image img {
+  max-width: 20rem;
 }
 
 /* Learning rules on recycling */
