@@ -231,12 +231,11 @@ export default class Game {
   }
 
   finalScore() {
-    let extraPointsTime = document.getElementById('points-time');
-    let negativePointsGarbage = document.getElementById('points-garbage');
-    let garbagePointsText = document.getElementById('points-garbage-text');
-    let timePointsText = document.getElementById('points-time-text');
     let cleanPoints = document.getElementById('points-clean');
     let cleanPointsText = document.getElementById('points-clean-text');
+    let pointsText = document.getElementById('points-text');
+    let points = document.getElementById('points');
+    let pointsContainer = document.getElementById('points-container');
 
     cleanPoints.innerHTML = this.score;
 
@@ -245,24 +244,24 @@ export default class Game {
       console.log(game.garbageItems);
       console.log(this.score);
       this.score -= game.garbageItems * 50;
-      timePointsText.classList.add('hide');
-      negativePointsGarbage.innerHTML = game.garbageItems * 50;
-      // let intScore = parseInt(document.getElementById("player-score").value);
+      pointsText.innerHTML = `Negative points for garbage: `;
+      points.innerHTML = game.garbageItems * 50;
+
       if (this.score < 0) {
         // console.log("score less than 0");
         this.score = 0;
-        timePointsText.classList.add('hide');
-        garbagePointsText.classList.add('hide');
+        pointsContainer.classList.add('hide');
         cleanPointsText.classList.add('hide');
       }
+
     } else {
       // console.log('gameboard empty')
       // console.log(game.garbageItems);
       // console.log(this.score);
       console.log((this.timeLeft * 100));
       this.score += this.timeLeft * 100;
-      garbagePointsText.classList.add('hide');
-      extraPointsTime.innerHTML = this.timeLeft * 100;
+      pointsText.innerHTML = `Extra points for time: `;
+      points.innerHTML = this.timeLeft * 100;
 
     }
     // console.log(this.score);
@@ -352,6 +351,8 @@ export default class Game {
       $("#beach-game").addClass("hide");
       $("#river-game").addClass("hide");
       $("#earth-image").removeClass("hide");
+      $("#points-container").removeClass("hide");
+      $("#points-clean-text").removeClass("hide");
     });
   }
   removeAllGarbage() {
@@ -546,9 +547,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-        left: Math.floor(Math.random() * 90) + "%",
-        top: Math.floor(Math.random() * 90) + "%",
-      },
+      left: Math.floor(Math.random() * 90) + "%",
+      top: Math.floor(Math.random() * 90) + "%",
+    },
       500
     );
     $(bin).effect("shake", {

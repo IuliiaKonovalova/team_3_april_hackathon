@@ -1588,8 +1588,7 @@ label {
 }
 
 .game__scene,
-.points__time,
-.points__garbage {
+.points {
   font-family: var(--ff-secondary);
   color: var(--clr-accent--900);
 }
