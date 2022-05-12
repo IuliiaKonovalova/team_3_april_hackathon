@@ -538,9 +538,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-      left: Math.floor(Math.random() * 90) + "%",
-      top: Math.floor(Math.random() * 90) + "%",
-    },
+        left: Math.floor(Math.random() * 90) + "%",
+        top: Math.floor(Math.random() * 90) + "%",
+      },
       500
     );
     $(bin).effect("shake", {

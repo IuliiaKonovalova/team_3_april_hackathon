@@ -1432,6 +1432,8 @@ body {
   align-items: center;
   justify-content: space-around;
   text-align: center;
+  max-height: 75vh;
+  padding: 3em 1em !important;
 }
 
 .final__title {
@@ -1475,7 +1477,7 @@ body {
   border: none;
   color: var(--clr-neutral--800);
   /* margin: 3em 0 1em 0; */
-  margin: 3em auto;
+  margin: 0 auto;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -1541,8 +1543,16 @@ label {
 }
 
 .garbage__message {
-  line-height: 4vh;
-  text-align: center;
+  /* line-height: 4vh; */
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.garbage__message--item {
+  font-size: 2vh;
 }
 
 .game__scene,
@@ -1725,8 +1735,6 @@ label {
   z-index: 999999999;
 }
 
-
-
 /* ----- leaders__board ----- */
 .leaders__board {
   min-height: 30vh;
@@ -1734,8 +1742,8 @@ label {
   justify-content: start;
   padding: 1em 2em 1.5em 2em;
   border: solid 2px var(--clr-accent--100);
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  /* margin-top: 2vh;
+  margin-bottom: 2vh; */
 }
 
 .leaders__board--title {
@@ -1969,6 +1977,10 @@ label {
     padding: 2vh 3vw;
   }
 
+  #end-game {
+    padding: 1em !important;
+  }
+
   .leaders__board--content {
     gap: 0.5rem;
   }
@@ -2022,7 +2034,17 @@ label {
 }
 
 @media all and (max-width: 520px) {
+  .final {
+    padding: 1em 1em;
+  }
 
+  .final__title {
+    font-size: 2rem;
+  }
+
+  .scores__label {
+    font-size: 1rem;
+  }
 
 
   .rules__section {
