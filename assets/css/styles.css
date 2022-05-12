@@ -629,7 +629,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 55vh;
+  min-height: 50vh;
   /* approximate!!!!!!! */
 }
 
@@ -2300,6 +2300,11 @@ label {
     width: 60px !important;
     height: 60px !important;
   }
+
+  .rules__content--active {
+    min-height: 45vh;
+    /* approximate!!!!!!! */
+  }
 }
 
 @keyframes rotateForever {
@@ -2346,8 +2351,21 @@ label {
   animation: scaleForever 0.5s infinite;
 }
 
+@media all and (max-height: 616px) {
+
+  .rules__content--active {
+    min-height: 35vh;
+    /* approximate!!!!!!! */
+  }
+}
+
 @media all and (max-height: 439px) {
   .leaders__board--content {
     gap: 0.5rem;
+  }
+
+  .rules__content--active {
+    min-height: 25vh;
+    /* approximate!!!!!!! */
   }
 }
