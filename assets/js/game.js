@@ -395,6 +395,13 @@ export default class Game {
     return this.sound;
   }
   pause() {
+    $(document).off('keydown', keyboardControl);
+    $(document).on('keydown', (e) => {
+      // if key p unpause the game
+      if (e.keyCode === 80) {
+        this.resume();
+      }
+    });
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     let pauseScreen = document.createElement("div");
@@ -435,6 +442,8 @@ export default class Game {
     gamePausedPlayBtn.addEventListener("click", gameResume);
   }
   resume() {
+    $(document).off('keydown', keyboardControl);
+    $(document).on('keydown', keyboardControl);
     let pauseScreen = document.getElementsByClassName("pause-screen")[0];
     pauseScreen.remove();
     this.startTimer();
