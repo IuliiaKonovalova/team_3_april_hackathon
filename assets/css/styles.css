@@ -700,7 +700,7 @@ body {
 
 .eco__facts--title,
 .game__rules--title {
-  font-size: 4vh !important;
+  font-size: 3.5vh !important;
   font-family: var(--ff-secondary);
 }
 
@@ -712,7 +712,7 @@ body {
 .eco__facts p,
 .game__rules p {
   padding: 10px;
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 
 .rules__bins {
@@ -732,7 +732,7 @@ body {
 }
 
 .rules__bin img {
-  height: 15vh;
+  height: 13vh;
   transition: transform 0.7s ease-in-out;
 }
 
