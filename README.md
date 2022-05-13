@@ -41,8 +41,6 @@ The following areas were looked into in order to achieve this goal of obtaining 
 - As a parent of a frequent user, I want to be sure that my child is motivated to play the game, so I can be sure that my child receives enough motivation to recycle and actively participate in preserving our environment.
 - As a parent of a frequent user, I want my child to learn additional facts about the environment, so I can be sure that my child will be able to improve his recycling habits.
 
-## Scope
-
 ## Technologies Used
 
 ### Languages
@@ -55,8 +53,8 @@ The following areas were looked into in order to achieve this goal of obtaining 
 
 - [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
 - [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
-
 - [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) was to use jquery ui draggable to work on mobile devices.
+
 ### Other tools
 
 - [Git](https://git-scm.com/): the version control system used to manage the code.
@@ -70,7 +68,7 @@ The following areas were looked into in order to achieve this goal of obtaining 
 - [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE) to build own svg images.
 - [Obfuscate]( https://obfuscator.io/) was used to obfuscate the api key to firebase.
 
-### Features
+## Features
 
 - Home page (which includes a navbar with links to all pages of the site)
 - Rules page
@@ -298,10 +296,13 @@ Designed for use in the Ocean animation
 The live link can be found [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html)
 
 ### Local Deployment
-In order to make a local copy of this project, you can clone it.
+1. In order to make a local copy of this project, you can clone it.
 In your IDE Terminal, type the following command to clone my repository:
 - `git clone https://github.com/IuliiaKonovalova/team_3_april_hackathon.git`
-- Alternatively, if you use Gitpod, you can [click here](https://github.com/IuliiaKonovalova/team_3_april_hackathon), which will start the Gitpod workspace for you.
+
+1. Alternatively, if you use Gitpod, you can [click here](https://github.com/IuliiaKonovalova/team_3_april_hackathon), which will start the Gitpod workspace for you.
+
+1. You may also download the project from the [GitHub repository](https://github.com/IuliiaKonovalova/team_3_april_hackathon) and run it locally.
 
 ### Cloning and Forking 
 
@@ -357,5 +358,3 @@ Our team is made up of a wonderful group of people from around the world - all o
 - Iuliia [@IuliiaKonovalova](https://github.com/IuliiaKonovalova)
 - Milosz [@miloszmisiek](https://github.com/miloszmisiek)
 - Whitney [@Wingkelinks](https://github.com/Wingkelinks)
-
-
