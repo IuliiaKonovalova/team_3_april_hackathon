@@ -848,7 +848,7 @@ body {
 
 .ocean__game--header {
   height: 10vh;
-  background: url(/assets/images/waves.svg) repeat-x bottom;
+  background: url("../images/waves.svg") repeat-x bottom;
   margin-bottom: -5px;
 }
 
@@ -920,7 +920,7 @@ body {
 
 /* Stingray */
 .stingray {
-  background-image: url("/assets/images/stingray.svg");
+  background-image: url("../images/stingray.svg");
   width: 200px;
   height: 91px;
   margin-left: -235px;
@@ -947,7 +947,7 @@ body {
 
 /* Jellyfish */
 .jellyfish {
-  background-image: url("/assets/images/jellyfish.svg");
+  background-image: url("../images/jellyfish.png");
   width: 100px;
   height: 114px;
   margin-left: -235px;
