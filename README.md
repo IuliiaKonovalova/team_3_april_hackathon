@@ -15,8 +15,8 @@ You can find the live site [here](https://iuliiakonovalova.github.io/team_3_apri
 
 ### Target Audience
 
-For our project the intention is to mainly advertise the game to the younger generations mainly within the age bracket of 6-12 years old. In particular, the demographic the project is aimed at is for those that want to learn more about the enivornment around them. 
-The following areas were looked into in order to ahieve this goal of obtaining this age demographic: Gamification, Interactivity and Visual and Audio cues. A combination and the correct use of all four allows for the target audience to be attracted towards the project. The different difficulty levels provides for prolonged interest in the game itself also.
+For our project the intention is to mainly advertise the game to the younger generations mainly within the age bracket of 6-12 years old. In particular, the demographic the project is aimed at is for those that want to learn more about the environment around them. 
+The following areas were looked into in order to achieve this goal of obtaining this age demographic: Gamification, Interactivity and Visual and Audio cues. A combination and the correct use of all four allows for the target audience to be attracted towards the project. The different difficulty levels provides for prolonged interest in the game itself also.
 
 
 ### User Stories:
@@ -56,6 +56,7 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
 - [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
 
+- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) was to use jquery ui draggable to work on mobile devices.
 ### Other tools
 
 - [Git](https://git-scm.com/): the version control system used to manage the code.
@@ -66,6 +67,8 @@ The following areas were looked into in order to ahieve this goal of obtaining t
 - [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
 - [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+- [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE) to build own svg images.
+- [Obfuscate]( https://obfuscator.io/) was used to obfuscate the api key to firebase.
 
 ### Features
 
