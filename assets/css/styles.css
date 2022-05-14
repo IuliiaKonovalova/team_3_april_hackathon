@@ -597,6 +597,7 @@ body {
 }
 
 
+
 .rules__tab--active {
   /* border-bottom: 4px solid var(--clr-primary--700); */
   color: var(--clr-accent--900) !important;
@@ -633,6 +634,13 @@ body {
   /* approximate!!!!!!! */
 }
 
+.rules__content.rules__content--2.rules__content--active>h2 {
+  font-family: var(--ff-secondary);
+  text-transform: uppercase;
+  color: var(--clr-accent--100);
+  font-size: 3.5vh;
+}
+
 
 .rules__content.rules__content--1.rules__content--active {
   text-align: center;
@@ -656,8 +664,6 @@ div:nth-child(8)>h3 {
   font-size: 2.5vh !important;
   text-transform: uppercase;
 }
-
-
 
 
 /* .rules__content .rules__content--2 img {
