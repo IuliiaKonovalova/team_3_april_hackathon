@@ -524,6 +524,7 @@ $.ajax({
 const checkAnswer = (event, ui, bin) => {
   let itemCategory = ui.draggable.attr("data-category");
   let binCategory = bin.attr("data-category");
+  garbageIndex = 0;
   if (itemCategory === binCategory) {
     if (game.checkSound()) {
       popSound.play();
