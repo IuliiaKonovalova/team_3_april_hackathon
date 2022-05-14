@@ -633,10 +633,7 @@ body {
   /* approximate!!!!!!! */
 }
 
-.rules__content .rules__content--2 img {
-  width: 25%;
-  height: 25%;
-}
+.rules__content .rules__content--2 img {}
 
 /* Learning rules on recycling */
 
