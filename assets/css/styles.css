@@ -573,7 +573,7 @@ body {
 
 .rules__tab {
   background-color: var(--clr-neutral--800);
-  color: rgba(255, 255, 255, 0.624);
+  color: var(--clr-neutral--100);
   font-size: 1.2rem;
   padding: 0.7em 2vw 0.5em 2vw;
   border-top-left-radius: 0.7em;
@@ -581,7 +581,7 @@ body {
   border-top: 2px solid var(--clr-accent--900);
   border-right: 1px solid var(--clr-accent--900);
   border-left: 1px solid var(--clr-accent--900);
-  ;
+  text-transform: uppercase;
 }
 
 .rules__tab:focus {
@@ -599,7 +599,7 @@ body {
 
 .rules__tab--active {
   /* border-bottom: 4px solid var(--clr-primary--700); */
-  color: white !important;
+  color: var(--clr-accent--900) !important;
   border-top: 3px solid var(--clr-accent--900);
   border-right: 3px solid var(--clr-accent--900);
   border-left: 3px solid var(--clr-accent--900);
@@ -651,6 +651,7 @@ body {
 .play__control--title {
   text-align: center;
   margin-bottom: 3vh;
+  text-transform: uppercase;
 }
 
 .play__control--image {
@@ -696,12 +697,23 @@ body {
 
 .eco__facts {
   max-width: 90%;
+  display: flex;
+  flex-direction: row;
 }
 
-.eco__facts--title,
 .game__rules--title {
   font-size: 3.5vh !important;
   font-family: var(--ff-secondary);
+  color: var(--clr-accent--100);
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.eco__facts--title {
+  font-size: 2.5vh !important;
+  font-family: var(--ff-secondary);
+  color: var(--clr-accent--900);
+  text-transform: uppercase;
 }
 
 .game__rules {
@@ -716,7 +728,7 @@ body {
 }
 
 .rules__bins {
-  margin: 2vh 0;
+  margin: 4vh 0;
   display: flex;
   flex-wrap: wrap;
   padding: 0.8em 0.5em;
@@ -756,7 +768,7 @@ body {
 }
 
 .eco__facts {
-  margin-top: 3vh;
+  margin-top: 2vh;
 }
 
 .eco__facts p {
@@ -2050,7 +2062,6 @@ label {
   .eco__facts--title,
   .game__rules--title {
     font-size: 2rem !important;
-    font-family: var(--ff-secondary);
   }
 
   .btn__play {
