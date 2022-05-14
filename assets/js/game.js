@@ -206,9 +206,6 @@ export default class Game {
     let hearts = this.livesElement.getElementsByTagName("i");
     hearts[this.lives].classList.remove("fas");
     hearts[this.lives].classList.add("far");
-    if (this.lives === 0) {
-      this.gameOverTrigger();
-    }
   }
   restoreLives() {
     this.lives = 3;
@@ -233,25 +230,43 @@ export default class Game {
     }, 1000);
   }
 
-
   finalScore() {
-    if (game.garbageItems > 0) {
-      // console.log('gameboard not empty on easy');
-      // console.log(game.garbageItems);
-      document.getElementById("player-score").value = this.score - (game.garbageItems * 50);
-      if (document.getElementById("player-score").value < 0) {
-        document.getElementById("player-score").value = 0;
-      }
-      // document.getElementById('garbage-left').innerHTML = game.garbageItems;
-    } else {
-      // console.log('gameboard empty on easy')
-      document.getElementById('garbage-message').classList.add('hide');
-      document.getElementById("player-score").value = this.score + (this.timeLeft * 100);
-    }
-    this.scoreElement.innerHTML = document.getElementById("player-score").value;
-    // this.combo = 0;
-    // this.comboElement.innerHTML = this.combo;
+    let cleanPoints = document.getElementById('points-clean');
+    let cleanPointsText = document.getElementById('points-clean-text');
+    let pointsText = document.getElementById('points-text');
+    let points = document.getElementById('points');
+    let pointsContainer = document.getElementById('points-container');
 
+    cleanPoints.innerHTML = this.score;
+
+    if (game.garbageItems > 0) {
+      console.log('gameboard not empty');
+      console.log(game.garbageItems);
+      console.log(this.score);
+      this.score -= game.garbageItems * 50;
+      pointsText.innerHTML = `Negative points for garbage: `;
+      points.innerHTML = game.garbageItems * 50;
+
+      if (this.score < 0) {
+        // console.log("score less than 0");
+        this.score = 0;
+        pointsContainer.classList.add('hide');
+        cleanPointsText.classList.add('hide');
+      }
+
+    } else {
+      // console.log('gameboard empty')
+      // console.log(game.garbageItems);
+      // console.log(this.score);
+      console.log((this.timeLeft * 100));
+      this.score += this.timeLeft * 100;
+      pointsText.innerHTML = `Extra points for time: `;
+      points.innerHTML = this.timeLeft * 100;
+
+    }
+    // console.log(this.score);
+    document.getElementById("player-score").value = this.score;
+    this.scoreElement.innerHTML = this.score;
   }
 
   updateEndGameCounter() {
@@ -281,8 +296,6 @@ export default class Game {
     }
   }
 
-
-
   gameOverTrigger() {
     $(document).off('keydown', keyboardControl);
     beachBackground.pause();
@@ -309,8 +322,10 @@ export default class Game {
       $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
+        // console.log(this.score);
         saveScoreToDb(name, this.score);
       } else {
+        // console.log(this.score);
         saveScoreToDb("Anonymous", this.score);
       }
 
@@ -336,6 +351,8 @@ export default class Game {
       $("#beach-game").addClass("hide");
       $("#river-game").addClass("hide");
       $("#earth-image").removeClass("hide");
+      $("#points-container").removeClass("hide");
+      $("#points-clean-text").removeClass("hide");
     });
   }
   removeAllGarbage() {
@@ -379,6 +396,8 @@ export default class Game {
     return this.sound;
   }
   pause() {
+    $(document).off('keydown', keyboardControl);
+    $(document).on('keydown', listenForPause);
     clearInterval(this.garbageInterval);
     clearInterval(this.timerInterval);
     let pauseScreen = document.createElement("div");
@@ -405,6 +424,8 @@ export default class Game {
       </div>
     `;
     this.gameScreen.appendChild(pauseScreen);
+    $(this.pauseButton).addClass("hide");
+    $(this.playButton).removeClass("hide");
 
     let gamePausedPauseBtn = document.getElementById("game-paused-pause");
     let gamePausedPlayBtn = document.getElementById("game-paused-play");
@@ -416,12 +437,16 @@ export default class Game {
       gamePausedPauseBtn.classList.toggle("hide");
       gamePausedPlayBtn.classList.toggle("hide");
     });
-    gamePausedPlayBtn.addEventListener("click", gameResume);
+    gamePausedPlayBtn.addEventListener("click", this.resume.bind(this));
   }
   resume() {
+    $(document).off('keydown', listenForPause);
+    $(document).on('keydown', keyboardControl);
     let pauseScreen = document.getElementsByClassName("pause-screen")[0];
     pauseScreen.remove();
     this.startTimer();
+    $(this.playButton).addClass("hide");
+    $(this.pauseButton).removeClass("hide");
     if (this.gameMode === "hard") {
       this.garbageInterval = setInterval(() => {
         let garbageItem = new GarbageItem(this.garbageJson);
@@ -602,6 +627,11 @@ $(".sound__control").click(() => {
 let garbageIndex = 0;
 let binIndex = 0;
 
+const listenForPause = (e) => {
+  if (e.key === "p") {
+    game.resume();
+  }
+};
 
 const keyboardControl = (event) => {
   event.preventDefault();
@@ -609,16 +639,7 @@ const keyboardControl = (event) => {
   if (event.key === 'Escape') {
     game.stop();
   } else if (event.key === 'p') {
-    if (game.pauseButton.classList.contains("hide")) {
-      game.resume();
-      $(game.pauseButton).removeClass("hide");
-      $(game.playButton).addClass("hide");
-
-    } else {
-      game.pause();
-      $(game.playButton).removeClass("hide");
-      $(game.pauseButton).addClass("hide");
-    }
+    game.pause();
   } else if (event.key === 'Tab') {
     $(".garbage-item").removeClass("animated-item");
     garbageIndex++;

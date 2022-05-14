@@ -69,11 +69,11 @@
   <!-- Main Content -->
   <main class="main" id="main">
     <div class="image__holder" id="earth-image">
-      <img src="assets/images/earth1.png" alt="Image of the green and blue earth" />
+      <img src="assets/images/earth1.png" alt="Image of the green and blue earth" class="disable__select" />
     </div>
     <!-- Start Game block -->
     <div class="main__block" id="main-block">
-      <h1 class="main__title">Earth Protectors</h1>
+      <h1 class="main__title disable__select">Earth Protectors</h1>
       <a class="btn btn__play play-btn" aria-label="Go to choosing level view">
         <img src="assets/images/play.svg" alt="Play button icon" />
       </a>
@@ -146,16 +146,66 @@
       </div>
       <!-- How to Play Content -->
       <div class="rules__content rules__content--1 rules__content--active">
+        <h2>Rules</h2>
         <!-- How to Play 1 Content -->
-        <p>Rules for scores will go here</p>
+        <p>Your task is to sort garbage items by putting them in correct bins within 1 min.</p>
+        <p>You have 3 lives</p>
+        <p>Combo will increase each time, when you correctly sort 1 item.</p>
+        <p>
+          If you make a mistake you will lose 1 life and combo will be reset. If you make 3 mistakes, the game will be
+          over.
+        </p>
+        <p>
+          Additional scores will be added if you sort items before the time is up. Each second left will be multiplied
+          by 100.
+        </p>
+        <p>
+          If there are some items left on the screen, your scores will be reduced. Each item left will cost you 50.
+        </p>
+        <div>
+          <h3>Easy mode</h3>
+          <p>
+            You will need to sort 15 items.
+          </p>
+        </div>
+        <div>
+          <h3>Hard mode</h3>
+          <p>
+            You will need to sort 15 items at the beginning + New item will be generated each 2 seconds.
+          </p>
+        </div>
       </div>
-      <div class="rules__content rules__content--2">
+      <div class="rules__content rules__content--2 ">
         <!-- How to Play 2 Content -->
+<<<<<<< HEAD
         <p>Rules for control keys will go here</p>
         <img src="assets/images/game_controls/mouse_control.png" alt="" height="100" width="100">
         <img src="assets/images/game_controls/key_control.png" alt="" height="100" width="100">
         <img src="assets/images/game_controls/touch_control.png" alt="" height="100" width="100">
         <!-- <img src="assets/images/game_controls/mouse_controls.png" alt="" height="300" width="300"> -->
+=======
+        <div class="play__control">
+          <div class="play__control--mode">
+            <h3 class="play__control--title">Control mouse</h3>
+            <div class="play__control--image">
+              <img src="assets/images/game_controls/mouse_controls.png" alt="">
+            </div>
+          </div>
+          <div class="play__control--mode">
+            <h3 class="play__control--title">Control keyboard</h3>
+            <div class="play__control--image">
+              <img src="assets/images/game_controls/key_controls.png" alt="">
+              <!-- <img src="assets/images/game_controls/mouse_controls.png" alt="" height="300" width="300"> -->
+            </div>
+          </div>
+          <div class="play__control--mode">
+            <h3 class="play__control--title">Control touch</h3>
+            <div class="play__control--image">
+              <img src="assets/images/game_controls/key_controls.png" alt="">
+            </div>
+          </div>
+        </div>
+>>>>>>> 94822571802750f6eb054b6032544dca2cbd5180
       </div>
       <div class="rules__content rules__content--3 ">
         <!-- How to Play 3 Content -->
@@ -285,19 +335,27 @@
       </div>
     </div>
     <!-- End Game Window -->
-    <div class="difficulty final hide" id="end-game">
+    <div class="difficulty final hide leaders__board" id="end-game">
       <h2 class="final__title" id="final-title"></h2>
       <form>
         <ul>
           <li class="scores__container">
-            <label for="player-score" class="scores__label">Score</label>
+            <label for="player-score" class="scores__label">Final scores</label>
             <input id="player-score" name="player-score" placeholder="9999" readonly>
           </li>
           <li>
-            <p class="garbage__message" id="garbage-message">
-              You left <span class="garbage__left" id="garbage-left"></span> garbage <span class="game__scene"
-                id="game-scene"></span>!
-            </p>
+            <div class="garbage__message" id="garbage-message">
+              <div class="garbage__message--item">
+                You left <span class="garbage__left" id="garbage-left"></span> garbage items <span class="game__scene"
+                  id="game-scene"></span>!
+              </div>
+              <div class="garbage__message--item">
+                <span class="points__clean__text" id="points-clean-text"> Points for recycling: <span
+                    class="points__clean" id="points-clean"></span></span>
+              </div>
+              <div class="garbage__message--item" id="points-container">
+                <span class="points__text" id="points-text"></span><span class="points" id="points"></span>
+              </div>
           </li>
           <li>
             <label for="player-name" class="scores__label"></label>
