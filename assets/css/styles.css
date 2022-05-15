@@ -1811,6 +1811,10 @@ label {
   z-index: 999999999;
 }
 
+.garbage-item {
+  object-position: center;
+}
+
 /* ----- leaders__board ----- */
 .leaders__board {
   min-height: 30vh;
