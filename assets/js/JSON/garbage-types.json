@@ -15,6 +15,7 @@
   "plastic": {
     "type": {
       "bottle": "assets/images/plastic/plastic_bottle.png",
+      "waterBottle": "assets/images/plastic/plastic_bottle1.png",
       "bagPlastic": "assets/images/plastic/plastic_bag.png",
       "cookingBag": "assets/images/plastic/cooking_bag.png",
       "plasticBin": "assets/images/plastic/plastic_bin.png",
@@ -36,7 +37,8 @@
       "mirror": "assets/images/glass/broken_mirror.png",
       "window": "assets/images/glass/broken_window.png",
       "beer": "assets/images/glass/beer.png",
-      "vase": "assets/images/glass/broken_vase.png"
+      "vase": "assets/images/glass/broken_vase.png",
+      "window1": "assets/images/glass/window.png"
     },
     "description": "Items made of glass"
   },
@@ -49,7 +51,10 @@
       "leaves": "assets/images/organic/leaves.png",
       "watermelon": "assets/images/organic/watermelon.png",
       "flower": "assets/images/organic/flower.png",
-      "cheese": "assets/images/organic/cheese.png"
+      "cheese": "assets/images/organic/cheese.png",
+      "banana": "assets/images/organic/banana.png",
+      "apple": "assets/images/organic/apple.png",
+      "carrot": "assets/images/organic/carrot.png"
     },
     "description": "Materials that may be turned into compost at a composting site."
   }
