@@ -180,26 +180,32 @@
       <div class="rules__content rules__content--2">
         <h2>3 Ways to Play</h2>
         <!-- How to Play 2 Content -->
-        <div class="play__control">
-          <div class="play__control--mode">
+        <button id="rules-carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
+          <i class="fas fa-chevron-left btn-carousel"></i>
+        </button>
+        <div class="play__control carousel__images--visible">
+          <div class="play__control--mode play__control--visible">
             <h3 class="play__control--title">Mouse</h3>
             <div class="play__control--image">
               <img src="assets/images/game_controls/mouse_control.png" alt="">
             </div>
           </div>
-          <div class="play__control--mode">
+          <div class="play__control--mode carousel__images--hidden">
             <h3 class="play__control--title">Keyboard</h3>
             <div class="play__control--image">
               <img src="assets/images/game_controls/key_control.png" alt="">
             </div>
           </div>
-          <div class="play__control--mode">
+          <div class="play__control--mode carousel__images--hidden">
             <h3 class="play__control--title">Touch</h3>
             <div class="play__control--image">
               <img src="assets/images/game_controls/touch_control.png" alt="">
             </div>
           </div>
         </div>
+        <button id="rules-carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
+          <i class="fas fa-chevron-right btn-carousel"></i>
+        </button>
       </div>
       <div class="rules__content rules__content--3">
         <!-- How to Play 3 Content -->

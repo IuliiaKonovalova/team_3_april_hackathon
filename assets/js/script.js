@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabsContainer = document.querySelector(".rules__tab--container");
   const tabs = document.querySelectorAll(".rules__tab");
   const tabsContent = document.querySelectorAll(".rules__content");
+  // Variables for rules carousel
+  const rulesCarousel = document.getElementById("rules-carousel");
+  const rulesCarouselSlides = document.querySelectorAll(".rules-carousel__slide");
+  const rulesCarouselPrev = document.getElementById("rules-carousel-prev");
+  const rulesCarouselNext = document.getElementById("rules-carousel-next");
 
   // Set the current carousel slide
   let current = 0;
