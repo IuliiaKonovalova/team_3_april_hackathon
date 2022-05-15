@@ -733,6 +733,14 @@ div:nth-child(8)>h3 {
   max-width: 20rem;
 }
 
+.play__control--hidden {
+  display: none;
+}
+
+.play__control--visible {
+  display: block;
+}
+
 /* Learning rules on recycling */
 
 .rules__section--data {
