@@ -244,7 +244,7 @@ export default class Game {
       console.log(game.garbageItems);
       console.log(this.score);
       this.score -= game.garbageItems * 50;
-      pointsText.innerHTML = `Negative points for garbage: `;
+      pointsText.innerHTML = `Negative points for garbage left behind: `;
       points.innerHTML = game.garbageItems * 50;
 
       if (this.score < 0) {
@@ -548,9 +548,9 @@ const checkAnswer = (event, ui, bin) => {
       fartSound.play();
     }
     $(ui.draggable).animate({
-      left: Math.floor(Math.random() * 90) + "%",
-      top: Math.floor(Math.random() * 90) + "%",
-    },
+        left: Math.floor(Math.random() * 90) + "%",
+        top: Math.floor(Math.random() * 90) + "%",
+      },
       500
     );
     $(bin).effect("shake", {

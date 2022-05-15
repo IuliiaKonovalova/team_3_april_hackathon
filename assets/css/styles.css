@@ -2356,7 +2356,7 @@ label {
   }
 
   25% {
-    transform: rotate(5deg);
+    transform: rotate(10deg);
   }
 
   50% {
@@ -2364,7 +2364,7 @@ label {
   }
 
   75% {
-    transform: rotate(-5deg);
+    transform: rotate(-10deg);
   }
 
   100% {
@@ -2374,16 +2374,17 @@ label {
 
 @keyframes scaleForever {
   0% {
-    transform: scale(1);
+    transform: scale(1.2);
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.5);
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(1.2);
   }
+
 }
 
 .animated-bin {
@@ -2391,7 +2392,9 @@ label {
 }
 
 .animated-item {
-  animation: scaleForever 0.5s infinite;
+  animation: scaleForever 0.8s infinite;
+  border: 0.8rem ridge var(--clr-neutral--100);
+  border-radius: 0.5rem;
 }
 
 @media all and (max-height: 616px) {
