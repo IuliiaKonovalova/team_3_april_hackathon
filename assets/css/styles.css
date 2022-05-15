@@ -645,16 +645,18 @@ body {
   text-transform: uppercase;
   color: var(--clr-accent--100);
   font-size: 3.5vh;
+  padding-bottom: 3vh;
 }
 
 
 .rules__content.rules__content--1.rules__content--active {
   text-align: center;
+
 }
 
 .rules__content.rules__content--1.rules__content--active p {
   font-size: 2vh;
-  padding: 10px;
+  padding-bottom: 2vh;
 }
 
 .rules__content.rules__content--1.rules__content--active>h2 {
@@ -671,11 +673,37 @@ div:nth-child(8)>h3 {
   text-transform: uppercase;
 }
 
+.rules__content--1 {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2vw;
+}
 
-/* .rules__content .rules__content--2 img {
-  width: 25%;
-  height: 25%;
-} */
+.rules__modes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules__mode {
+  display: inline;
+  margin-right: auto;
+  border-radius: 0.7em;
+  font-size: 2vh;
+}
+
+.rules__modes:first-child {
+  padding-bottom: 2vh;
+}
+
+.rules__title--mode {
+  color: var(--clr-accent--900);
+  font-size: 2vh !important;
+  text-transform: uppercase;
+}
+
 
 /* Game control */
 .play__control {
