@@ -579,9 +579,12 @@ body {
   border-top-left-radius: 0.7em;
   border-top-right-radius: 0.7em;
   border-top: 2px solid var(--clr-accent--900);
-  border-right: 1px solid var(--clr-accent--900);
-  border-left: 1px solid var(--clr-accent--900);
+  border-right: 1.5px solid var(--clr-accent--900);
+  border-left: 1.5px solid var(--clr-accent--900);
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .rules__tab:focus {
@@ -596,6 +599,9 @@ body {
   margin-left: 2vw;
 }
 
+.rules__tab--title {
+  margin-left: 0.4em;
+}
 
 
 .rules__tab--active {
@@ -613,7 +619,7 @@ body {
   content: "";
   position: absolute;
   width: 100%;
-  height: 0.3rem;
+  height: 0.5rem;
   background-color: var(--clr-neutral--800);
   /* background-color: red; */
   bottom: -0.25rem;
@@ -1974,6 +1980,16 @@ label {
   }
 }
 
+@media all and (max-width: 834px) {
+  .rules__tab {
+    padding: 0.7em 5vw 0.5em 5vw;
+  }
+
+  .rules__tab--title {
+    display: none;
+  }
+}
+
 @media all and (max-width: 784px) {
   .main__title {
     font-size: 2rem;
@@ -2216,6 +2232,7 @@ label {
   .final input {
     max-width: 80vw;
   }
+
 }
 
 @media all and (max-width: 371px) {
