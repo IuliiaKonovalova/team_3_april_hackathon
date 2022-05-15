@@ -2233,6 +2233,13 @@ label {
     max-width: 80vw;
   }
 
+  .rules__tab--container {
+    justify-content: start;
+  }
+
+  .rules__tab--1 {
+    margin-left: 5vw;
+  }
 }
 
 @media all and (max-width: 371px) {
