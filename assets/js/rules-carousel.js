@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener("DOMContentLoaded", () => {
   // Variables for feature tabs and content
   const tabsContainer = document.querySelector(".rules__tab--container");

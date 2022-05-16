@@ -52,7 +52,6 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-
 const saveScoreToDb = (name, score) => {
   database.ref("scores").push({
     name: name,
@@ -248,23 +247,17 @@ export default class Game {
       points.innerHTML = game.garbageItems * 50;
 
       if (this.score < 0) {
-        // console.log("score less than 0");
         this.score = 0;
         pointsContainer.classList.add('hide');
         cleanPointsText.classList.add('hide');
       }
 
     } else {
-      // console.log('gameboard empty')
-      // console.log(game.garbageItems);
-      // console.log(this.score);
       console.log((this.timeLeft * 100));
       this.score += this.timeLeft * 100;
       pointsText.innerHTML = `Extra points for time: `;
       points.innerHTML = this.timeLeft * 100;
-
     }
-    // console.log(this.score);
     document.getElementById("player-score").value = this.score;
     this.scoreElement.innerHTML = this.score;
   }
@@ -306,7 +299,6 @@ export default class Game {
     this.gameOver = true;
     this.endGameElement.classList.remove("hide");
     this.endGameElement.style.zIndex = "999999999999999999999";
-    // document.getElementById("player-score").value = this.score;
     this.finalScore();
     this.updateEndGameCounter();
     this.updateEndGameTitle();
@@ -322,10 +314,8 @@ export default class Game {
       $("#score-submit").replaceWith(`<i class="fas fa-spinner fa-spin"></i>`);
       let name = document.getElementById("player-name").value;
       if (name.length > 0) {
-        // console.log(this.score);
         saveScoreToDb(name, this.score);
       } else {
-        // console.log(this.score);
         saveScoreToDb("Anonymous", this.score);
       }
 
@@ -413,8 +403,6 @@ export default class Game {
     pauseScreen.style.justifyContent = "center";
     pauseScreen.style.alignItems = "center";
     pauseScreen.style.flexDirection = "column";
-    // pauseScreen.style.fontSize = "5rem";
-    // pauseScreen.style.color = "#fff";
     pauseScreen.style.textAlign = "center";
     pauseScreen.innerHTML = `
       <div id="game-paused">
@@ -509,8 +497,6 @@ riverBackground.loop = true;
 oceanBackground.volume = 0.2;
 beachBackground.volume = 0.2;
 riverBackground.volume = 0.2;
-
-
 
 let gameJson = {};
 $.ajax({
