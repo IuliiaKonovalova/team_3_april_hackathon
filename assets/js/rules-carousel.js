@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabsContainer = document.querySelector(".rules__tab--container");
   const tabs = document.querySelectorAll(".rules__tab");
   const tabsContent = document.querySelectorAll(".rules__content");
-
   // Variables for rules carousel
   const rulesCarouselSlides = document.querySelectorAll(".play__control--mode");
   const rulesCarouselPrev = document.getElementById("rules-carousel-prev");
@@ -54,8 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
     rulesSlideNext();
   });
 
-
-
   // Start Slider the first rules
   function rulesStartSlide() {
     rulesReset();
@@ -98,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
   rulesStartSlide()
 
   // ----- Modal Functionality ----- //
-
   // Iteration through every button element in HTML to execute an openModal function for elements with specified selector
   document.querySelectorAll('[data-modal-target]').forEach(button => {
     let modalText;
@@ -176,8 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal(modal);
     });
   });
-
-
 
   // Overlay event listener - iterates through elements with specified selector and executes the closeModal function if applicable
   document.getElementById('overlay').addEventListener('click', () => {
