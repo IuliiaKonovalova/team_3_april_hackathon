@@ -1855,6 +1855,7 @@ label {
 
 .garbage-item {
   object-position: center;
+  object-fit: contain;
 }
 
 /* ----- leaders__board ----- */
@@ -1864,8 +1865,6 @@ label {
   justify-content: start;
   padding: 1em 2em 1.5em 2em;
   border: solid 2px var(--clr-accent--100);
-  /* margin-top: 2vh;
-  margin-bottom: 2vh; */
 }
 
 .leaders__board--title {
