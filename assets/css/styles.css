@@ -631,46 +631,45 @@ body {
 }
 
 .rules__content--active {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 50vh;
+  min-height: 45vh;
   /* approximate!!!!!!! */
 }
 
-.rules__content.rules__content--2.rules__content--active>h2 {
+.rules__content--active.rules__content--1,
+.rules__content--active.rules__content--2,
+.rules__content--active.rules__content--3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.rules__play--container a {
+  margin-top: 0;
+}
+
+.rules__content--title {
+  align-self: center;
+  justify-self: center;
   font-family: var(--ff-secondary);
   text-transform: uppercase;
   color: var(--clr-accent--100);
   font-size: 3.5vh;
-  padding-bottom: 3vh;
+  text-align: center;
 }
 
-
-.rules__content.rules__content--1.rules__content--active {
-  text-align: center;
-
+.rules__content--title p {
+  color: white;
+  font-family: var(--ff-primary);
+  font-size: 2vh !important;
 }
 
 .rules__content.rules__content--1.rules__content--active p {
   font-size: 2vh;
   padding-bottom: 2vh;
-}
-
-.rules__content.rules__content--1.rules__content--active>h2 {
-  color: var(--clr-accent--100);
-  font-family: var(--ff-secondary);
-  font-size: 3.5vh !important;
-  text-transform: uppercase;
-}
-
-#rules>div.rules__content.rules__content--1.rules__content--active>div:nth-child(9)>h3,
-div:nth-child(8)>h3 {
-  color: var(--clr-accent--900) !important;
-  font-size: 2.5vh !important;
-  text-transform: uppercase;
+  text-align: center;
 }
 
 .rules__content--1 {
@@ -706,31 +705,47 @@ div:nth-child(8)>h3 {
 
 
 /* Game control */
+/* .rules__content--2 {
+  width: 100%;
+  background-color: orange;
+
+  flex-direction: column;
+} */
+
+.play__control--main {
+  width: 100%;
+  padding: 0 2vw;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+
 .play__control {
   width: 100%;
   padding: 1em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-auto-flow: dense;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 3rem;
 }
 
 .play__control--title {
   text-align: center;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
   text-transform: uppercase;
 }
 
 .play__control--image {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: end;
-  width: 100%;
-  height: 100%;
+  align-items: center;
 }
 
 .play__control--image img {
-  max-width: 20rem;
+  max-width: 30rem;
+  height: 20vh;
 }
 
 .play__control--hidden {
@@ -791,11 +806,6 @@ div:nth-child(8)>h3 {
   text-transform: uppercase;
 }
 
-.game__rules {
-  margin-top: 4vh;
-  width: 100%;
-}
-
 .eco__facts p,
 .game__rules p {
   padding: 10px;
@@ -803,7 +813,7 @@ div:nth-child(8)>h3 {
 }
 
 .rules__bins {
-  margin: 4vh 0;
+  margin-bottom: 3vh;
   display: flex;
   flex-wrap: wrap;
   padding: 0.8em 0.5em;
@@ -833,14 +843,14 @@ div:nth-child(8)>h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  /* margin-top: 3vh; */
+  /* margin-bottom: 3vh; */
 }
 
-#rules__play {
+/* #rules__play {
   position: unset;
   margin: 0;
-}
+} */
 
 .eco__facts {
   margin-top: 2vh;
@@ -1855,6 +1865,7 @@ label {
 
 .garbage-item {
   object-position: center;
+  object-fit: contain;
 }
 
 /* ----- leaders__board ----- */
@@ -1864,8 +1875,6 @@ label {
   justify-content: start;
   padding: 1em 2em 1.5em 2em;
   border: solid 2px var(--clr-accent--100);
-  /* margin-top: 2vh;
-  margin-bottom: 2vh; */
 }
 
 .leaders__board--title {
@@ -2363,8 +2372,15 @@ label {
 }
 
 @media all and (max-height: 900px) {
-  .eco__facts {
+
+  /* .eco__facts {
     display: none;
+  } */
+  .eco__facts,
+  .eco__facts p {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem !important;
   }
 }
 
@@ -2394,10 +2410,6 @@ label {
     padding: 0;
   }
 
-  .eco__facts {
-    display: none;
-  }
-
   .btn__play {
     width: 4rem;
     padding: 0.5em 0.5em 0.5em 0.8em;
@@ -2410,6 +2422,24 @@ label {
 
   .rules__content--active {
     min-height: 45vh;
+  }
+}
+
+@media all and (max-height: 616px) {
+
+  .rules__content--active {
+    min-height: 35vh;
+    /* approximate!!!!!!! */
+  }
+}
+
+@media all and (max-height: 439px) {
+  .leaders__board--content {
+    gap: 0.5rem;
+  }
+
+  .rules__content--active {
+    min-height: 25vh;
     /* approximate!!!!!!! */
   }
 }
@@ -2459,23 +2489,4 @@ label {
   animation: scaleForever 0.8s infinite;
   border: 0.8rem ridge var(--clr-neutral--100);
   border-radius: 0.5rem;
-}
-
-@media all and (max-height: 616px) {
-
-  .rules__content--active {
-    min-height: 35vh;
-    /* approximate!!!!!!! */
-  }
-}
-
-@media all and (max-height: 439px) {
-  .leaders__board--content {
-    gap: 0.5rem;
-  }
-
-  .rules__content--active {
-    min-height: 25vh;
-    /* approximate!!!!!!! */
-  }
 }

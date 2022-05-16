@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     mainBlock.classList.remove("hide");
     document.getElementById("earth-image").classList.remove("hide");
-    // closeFooter(footerContent);
   });
 
   // Displays Rules Section on user's clicks
@@ -76,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     rulesSection.classList.remove("hide");
 
     fetchEcoFacts();
-    // closeFooter(footerContent);
   });
 
 
@@ -90,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
       difficultyBlock.classList.remove("hide");
       let sectionEventHandler = myFunction(rulesSection, rulesCloseBtn);
       main.removeEventListener('click', sectionEventHandler);
-      // closeFooter(footerContent);
     });
   }
 
@@ -104,12 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     document.getElementById("earth-image").classList.remove("hide");
     leaderBoard.classList.remove("hide");
-    // closeFooter(footerContent);
   });
 
   // If the user clicks easy level, hide the difficulty block and show the theme block
   difficultyBtnEasy.addEventListener("click", (e) => {
-    // closeFooter(footerContent);
     addHideClass();
     carousel.classList.remove("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "easy");
@@ -120,18 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     carousel.classList.remove("hide");
     document.getElementById("garbage-bins").setAttribute("data-mode", "hard");
-    // closeFooter(footerContent);
   });
 
   // Fade animation;
   prevButton.addEventListener("click", () => {
     carousel.classList.add("fade");
-    // closeFooter(footerContent);
   });
 
   nextButton.addEventListener("click", () => {
     carousel.classList.add("fade");
-    // closeFooter(footerContent);
   });
 
   // Reset all slides
@@ -185,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     displayRandomFacts(ecoJson);
+    console.log(ecoJson);
   }
 
   // Get json file and convert it's data for random display of eco-facts
@@ -197,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Math.floor(Math.random() * jsonFile.category[category].length)
       ].text;
     ecoText.innerText = fact;
+    console.log(fact);
   }
 
   // jQuery function to display current year in the footer

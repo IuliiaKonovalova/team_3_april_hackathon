@@ -1,3 +1,5 @@
+/* jshint esversion: 8, jquery: true */
+document.addEventListener("DOMContentLoaded", () => {
   // Variables for feature tabs and content
   const tabsContainer = document.querySelector(".rules__tab--container");
   const tabs = document.querySelectorAll(".rules__tab");
@@ -53,8 +55,6 @@
     rulesSlideNext();
   });
 
-
-
   // Start Slider the first rules
   function rulesStartSlide() {
     rulesReset();
@@ -95,3 +95,4 @@
   }
 
   rulesStartSlide()
+});

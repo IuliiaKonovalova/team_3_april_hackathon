@@ -129,6 +129,8 @@
         <i class="fas fa-chevron-right btn-carousel"></i>
       </button>
     </div>
+
+
     <!-- Rules Section -->
     <div class="rules__section hide" id="rules">
       <button class="rules__close" id="rules-close">&times;</button>
@@ -146,77 +148,85 @@
       </div>
       <!-- How to Play Content -->
       <div class="rules__content rules__content--1 rules__content--active">
-        <h2 class="rules__title--main">Rules</h2>
+        <h2 class="rules__content--title">Rules</h2>
         <!-- How to Play 1 Content -->
-        <p>Your task is to sort garbage items by putting them in the correct bins within 1 min. You have 3 lives.</p>
-        <p>Combo points increase each time you correctly sort 1 item.</p>
-        <p>
-          If you make a mistake you will lose 1 life and combo points will be reset. If you make 3 mistakes, the
-          game will be over.
-        </p>
-        <p>
-          Additional scores will be added if you sort items before the time is up. Each second left will be
-          multiplied by 100.
-        </p>
-        <p>
-          If there are some items left on the screen, your score will be reduced. Each item left will cost you 50
-          points.
-        </p>
-        <div class="rules__modes">
-          <div class="rules__mode">
-            <span class="rules__title--mode">Easy Mode:</span>
+        <div>
+          <p>Your task is to sort garbage items by putting them in the correct bins within 1 min. You have 3 lives.</p>
+          <p>Combo points increase each time you correctly sort 1 item.</p>
+          <p>
+            If you make a mistake you will lose 1 life and combo points will be reset. If you make 3 mistakes, the
+            game will be over.
+          </p>
+          <p>
+            Additional scores will be added if you sort items before the time is up. Each second left will be
+            multiplied by 100.
+          </p>
+          <p>
+            If there are some items left on the screen, your score will be reduced. Each item left will cost you 50
+            points.
+          </p>
+          <div class="rules__modes">
+            <div class="rules__mode">
+              <span class="rules__title--mode">Easy Mode:</span>
 
-            You will need to sort 15 garbage items.
+              You will need to sort 15 garbage items.
 
-          </div>
-          <div class="rules__mode">
-            <span class="rules__title--mode">Hard Mode:</span>
+            </div>
+            <div class="rules__mode">
+              <span class="rules__title--mode">Hard Mode:</span>
 
-            You will need to sort 15 items at the beginning + a new item will be generated every 2 seconds.
+              You will need to sort 15 items at the beginning + a new item will be generated every 2 seconds.
 
+            </div>
           </div>
         </div>
       </div>
       <div class="rules__content rules__content--2">
-        <h2>3 Ways to Play</h2>
+        <h2 class="rules__content--title">3 Ways to Play</h2>
         <!-- How to Play 2 Content -->
-        <button id="rules-carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
-          <i class="fas fa-chevron-left btn-carousel"></i>
-        </button>
-        <div class="play__control play__control--visible">
-          <div class="play__control--mode play__control--visible">
-            <h3 class="play__control--title">Mouse</h3>
-            <div class="play__control--image">
-              <img src="assets/images/game_controls/mouse_control.png" alt="">
+        <div class="play__control--main">
+          <button id="rules-carousel-prev" class="carousel__button carousel__button--prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left btn-carousel"></i>
+          </button>
+          <div class="play__control play__control--visible">
+            <div class="play__control--mode play__control--visible">
+              <h3 class="play__control--title">Mouse</h3>
+              <div class="play__control--image">
+                <img src="assets/images/game_controls/mouse_control.png"
+                  alt="Image with description how to play the game with a mouse">
+              </div>
+            </div>
+            <div class="play__control--mode play__control--hidden">
+              <h3 class="play__control--title">Keyboard</h3>
+              <div class="play__control--image">
+                <img src="assets/images/game_controls/key_control.png"
+                  alt="Image with description how to play the game with keyboard">
+              </div>
+            </div>
+            <div class="play__control--mode play__control--hidden">
+              <h3 class="play__control--title">Touch</h3>
+              <div class="play__control--image">
+                <img src="assets/images/game_controls/touch_control.png"
+                  alt="Image with description how to play the game with a touch patch">
+              </div>
             </div>
           </div>
-          <div class="play__control--mode play__control--hidden">
-            <h3 class="play__control--title">Keyboard</h3>
-            <div class="play__control--image">
-              <img src="assets/images/game_controls/key_control.png" alt="">
-            </div>
-          </div>
-          <div class="play__control--mode play__control--hidden">
-            <h3 class="play__control--title">Touch</h3>
-            <div class="play__control--image">
-              <img src="assets/images/game_controls/touch_control.png" alt="">
-            </div>
-          </div>
+          <button id="rules-carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
+            <i class="fas fa-chevron-right btn-carousel"></i>
+          </button>
         </div>
-        <button id="rules-carousel-next" class="carousel__button carousel__button--next" aria-label="Next slide">
-          <i class="fas fa-chevron-right btn-carousel"></i>
-        </button>
       </div>
       <div class="rules__content rules__content--3">
         <!-- How to Play 3 Content -->
         <!-- Game Rules -->
-        <div class="game__rules">
-          <h2 class="game__rules--title">Types of Waste</h2>
-          <!-- Closing button -->
 
+        <div class="rules__content--title">
+          <h2 class="game__rules--title">Types of Waste</h2>
           <p>
             Click on a bin to see what rubbish items belong in it.
           </p>
+        </div>
+        <div class="game__rules">
           <!-- Bins section -->
           <div class="rules__bins">
             <div class="rules__bin">
@@ -236,19 +246,20 @@
                 src="assets/images/yellow_bin.svg" alt="Image of a yellow bin for organic waste">
             </div>
           </div>
+          <!-- Eco facts section -->
+          <div class="eco__facts">
+            <h2 class="eco__facts--title">Did you know?</h2>
+            <p id="eco__text"></p>
+          </div>
         </div>
-        <!-- Eco facts section -->
-        <div class="eco__facts">
-          <h2 class="eco__facts--title">Did you know?</h2>
-          <p id="eco__text"></p>
-        </div>
-
       </div>
       <div class="rules__play--container">
         <a class="btn btn__play play-btn" id="rules__play" aria-label="Go to choosing difficulty level">
           <img src="assets/images/play.svg" alt="Play button which leads to chose level" />
         </a>
       </div>
+    </div>
+
     </div>
     <!-- Leaders Board Block -->
     <div class="leaders__board hide" id="leaders-board">
