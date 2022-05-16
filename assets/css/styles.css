@@ -631,8 +631,9 @@ body {
 }
 
 .rules__content--active {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  /* flex-direction: column; */
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -640,12 +641,14 @@ body {
   /* approximate!!!!!!! */
 }
 
-.rules__content.rules__content--2.rules__content--active>h2 {
+.rules__content--title {
+  align-self: center;
+  justify-self: center;
   font-family: var(--ff-secondary);
   text-transform: uppercase;
   color: var(--clr-accent--100);
   font-size: 3.5vh;
-  padding-bottom: 3vh;
+  /* padding-bottom: 3vh; */
 }
 
 
@@ -664,6 +667,7 @@ body {
   font-family: var(--ff-secondary);
   font-size: 3.5vh !important;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #rules>div.rules__content.rules__content--1.rules__content--active>div:nth-child(9)>h3,
@@ -706,31 +710,40 @@ div:nth-child(8)>h3 {
 
 
 /* Game control */
+.play__control--main {
+  width: 100%;
+  padding: 0 2vw;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+
 .play__control {
   width: 100%;
   padding: 1em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-auto-flow: dense;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 3rem;
 }
 
 .play__control--title {
   text-align: center;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
   text-transform: uppercase;
 }
 
 .play__control--image {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #005aff;
   display: flex;
   justify-content: center;
-  align-items: end;
-  width: 100%;
-  height: 100%;
+  align-items: center;
 }
 
 .play__control--image img {
-  max-width: 20rem;
+  max-width: 30rem;
 }
 
 .play__control--hidden {
