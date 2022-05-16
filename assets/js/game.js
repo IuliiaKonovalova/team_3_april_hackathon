@@ -110,6 +110,7 @@ export default class Game {
     this.leaderBoardElement = document.getElementsByClassName("leaders__board")[0];
   }
   start(mode) {
+    garbageIndex = 0;
     $('.game__bin').removeClass('animated-bin');
     $(document).on('keydown', keyboardControl);
     clearInterval(this.garbageInterval);
@@ -297,6 +298,7 @@ export default class Game {
   }
 
   gameOverTrigger() {
+    garbageIndex = 0;
     $(document).off('keydown', keyboardControl);
     beachBackground.pause();
     riverBackground.pause();
@@ -669,7 +671,7 @@ const keyboardControl = (event) => {
     $(bin).addClass("animated-bin");
   } else if (event.key === 'Enter' || event.key === ' ') {
     let bin = $(".game__bin")[binIndex];
-    let garbageItem = $(".garbage-item")[garbageIndex];
+    let garbageItem = $(".garbage-item.animated-item");
     $(garbageItem).animate({
       left: $(bin).offset().left + "px",
       top: $(bin).offset().top + "px",
