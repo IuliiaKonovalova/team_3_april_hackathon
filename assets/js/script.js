@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const difficultyBtnEasy = document.getElementById('difficulty-easy');
   const difficultyBtnHard = document.getElementById('difficulty-hard');
   const homePage = document.getElementById('home-link');
-
   const rulesSection = document.getElementById('rules');
   const rulesCloseBtn = document.getElementById('rules-close');
   const rulesLink = document.getElementById('rules__link');
@@ -37,8 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const leaderBoard = document.getElementById('leaders-board');
   const leaderBoardClose = document.getElementById('leader-close');
 
-
-
   // Set the current carousel slide
   let current = 0;
 
@@ -52,8 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.addEventListener("click", toggleMenu);
   }
 
-
-
   // Displays Home Page on user's clicks
   homePage.addEventListener("click", () => {
     if (hamburger.classList.contains("is-active")) {
@@ -65,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // closeFooter(footerContent);
   });
 
-
   // Displays Rules Section on user's clicks
   rulesLink.addEventListener("click", () => {
     if (hamburger.classList.contains("is-active")) {
@@ -76,12 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     document.getElementById("earth-image").classList.remove("hide");
     rulesSection.classList.remove("hide");
-
     fetchEcoFacts();
-    // closeFooter(footerContent);
   });
-
-
 
   // Starts the game sequence on button clicks
   for (let btn of playBtn) {
@@ -174,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
     current++;
   }
 
-
   // Fetch text from eco-facts.json and display it to the user
   function fetchEcoFacts() {
     let ecoJson = {};
@@ -248,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addHideClass();
     document.getElementById("ocean-game").classList.remove("hide");
     document.getElementById("garbage-bins").setAttribute("data-theme", "ocean");
-
     for (let item of playItems) {
       item.classList.remove("hide");
     }
@@ -289,5 +277,4 @@ document.addEventListener("DOMContentLoaded", () => {
     footer.classList.add('hide');
     footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
   }
-
 });
