@@ -448,6 +448,10 @@ body {
   border: none;
 }
 
+.carousel .carousel__button:hover {
+  background-color: #333d4d;
+}
+
 .btn-carousel {
   font-size: 3rem;
   color: var(--clr-accent--100);
