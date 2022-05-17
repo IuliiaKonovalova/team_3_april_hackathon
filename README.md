@@ -5,7 +5,7 @@
 ## About 
 
 In line with this edition of the Hackathon, we have decided to develop an interactive game based on the importance of environmental cleanliness. To achieve this, we have developed a game whereby players must sort through various randomly generated items of rubbish that which they can then deem recyclable or not. In tandem with this, players will be up against a time parameter with players that finish the game in a shorter period achieving a higher position on the overall leader board. 
-The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will be continuously learning about which pieces of rubbish are environmentally friendly to recycle whilst conversely noting which pieces of rubbish aren’t. Of course, the leader board is there to gauge each player’s skill level, but the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that hopefully, they can provide this newfound understanding to those around them. 
+The overall goal of this game is to drive home a newfound knowledge base for recyclable goods. Players will continuously learn which pieces of rubbish are environmentally friendly to recycle while noting which amounts of garbage aren’t. Of course, the leader board is there to gauge each player’s skill level. Still, the main takeaway is that players are enjoying themselves, gaining knowledge of the environment around them and that, hopefully, they can provide this newfound understanding to those around them. 
 
 You can find the live site [here](https://iuliiakonovalova.github.io/team_3_april_hackathon/index.html).
 
@@ -15,16 +15,16 @@ You can find the live site [here](https://iuliiakonovalova.github.io/team_3_apri
 
 ### Target Audience
 
-For our project the intention is to mainly advertise the game to the younger generations mainly within the age bracket of 6-12 years old. In particular, the demographic the project is aimed at is for those that want to learn more about the environment around them. 
-The following areas were looked into in order to achieve this goal of obtaining this age demographic: Gamification, Interactivity and Visual and Audio cues. A combination and the correct use of all four allows for the target audience to be attracted towards the project. The different difficulty levels provides for prolonged interest in the game itself also.
+For our project, the intention is to advertise the game to the younger generations, mainly within the age bracket of 6-12 years old. In particular, the demographic the project is aimed at is those that want to learn more about the environment around them. 
+The following areas were looked into to achieve this goal of obtaining this age demographic: Gamification, Interactivity, and Visual and Audio cues. A combination and the correct use of all four allow the target audience to be attracted to the project. The different difficulty levels provide for prolonged interest in the game itself also.
 
 
 ### User Stories:
 
 #### First Time Visitor Goals:
-- As a first time visitor, I want to be able to easily understand the purpose of the website, so I can decide whether I want to use it or not.
-- As a first time visitor, I want to be able to easily navigate the website, so I can find what I am looking for.
-- As a first time visitor, I want to be able to easily understand the rules of the game, so I can play freely.
+- As a first-time visitor, I want to be able to easily understand the purpose of the website, so I can decide whether I want to use it or not.
+- As a first-time visitor, I want to be able to easily navigate the website, so I can find what I am looking for.
+- As a first-time visitor, I want to be able to easily understand the rules of the game, so I can play freely.
 
 #### Frequent User Goals:
 - As a frequent user, I want to be able to learn about sorting garbage for recycling, so I can recycle my garbage in real life.
@@ -47,44 +47,44 @@ The following areas were looked into in order to achieve this goal of obtaining 
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
-- [JS](https://www.javascript.com/): the main language used to develop the client side of the website.
+- [JS](https://www.javascript.com/): the primary language used to develop the client side of the website.
 
 ### Frameworks and libraries:
 
 - [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
 - [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
-- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) was to use jquery ui draggable to work on mobile devices.
+- [jquery-ui-touch-punch](https://www.npmjs.com/package/jquery-ui-touch-punch) was to use jquery UI draggable to work on mobile devices.
 
 ### Other tools
 
 - [Git](https://git-scm.com/): the version control system used to manage the code.
 - [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
 - [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
-- [JShint](https://jshint.com/): was used to validate JS code for the website.
-- [GitHub](https://github.com/): used to host the source code of the website.
+- [JShint](https://jshint.com/): was used to validate the JS code for the website.
+[GitHub](https://github.com/): used to host the website's source code.
 - [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
-- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used for debugging the website.
 - [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
-- [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE) to build own svg images.
-- [Obfuscate]( https://obfuscator.io/) was used to obfuscate the api key to firebase.
+- [Adobe Illustrator](https://www.adobe.com/au/products/illustrator.html?sdid=TTGWL8CS&mv=search&ef_id=Cj[…]Mw01BhF8_wBquCngqzn4MreNugw_lYfimZRDOCGwbgzjYaReBoCzC0QAvD_BwE) to build own SVG images.
+- [Obfuscate]( https://obfuscator.io/) was used to obfuscate the API key to firebase.
 
 ## Features
 
-- Home page (which includes a navbar with links to all pages of the site)
-- Rules page
-- Leaderboard page
-- Play button (located on home screen and rules page)
-- Game difficulty choice
-- Game theme option
-- A footer which includes all team members names
-- Neat and presentable UI for the game
-- Countdown clock for the game
-- Performance analytics for the player (including time left, score and lives)
-- A sound feature to toggle on and off
-- Sounds to accompany correct and incorrect game moves
-- An overlay which allows a player to supply their name and score to the global leaderboard
-- A game pause button
-- A game stop button which allows a player to prematurely end the game as well as submitting their name and score for the leaderboard
+- Home page (which includes a navbar with links to all pages of the site);
+- Rules page;
+- Leaderboard page;
+- Play button (located on home screen and rules page);
+- Game difficulty choice;
+- Game theme option;
+- A footer that includes all team members' names;
+- Neat and presentable UI for the game;
+- Countdown clock for the game;
+- Performance analytics for the player (including time left, score, and lives);
+- A sound feature to toggle on and off;
+- Sounds to accompany correct and incorrect game moves;
+- An overlay that allows a player to supply their name and score to the global leaderboard;
+- A game pause button;
+- A game stop button that allows a player to prematurely end the game as well as submit their name and score for the leaderboard.
 
 **Home Page**
 

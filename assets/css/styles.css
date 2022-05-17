@@ -634,7 +634,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 45vh;
+  min-height: 40vh;
   /* approximate!!!!!!! */
 }
 
@@ -705,13 +705,6 @@ body {
 
 
 /* Game control */
-/* .rules__content--2 {
-  width: 100%;
-  background-color: orange;
-
-  flex-direction: column;
-} */
-
 .play__control--main {
   width: 100%;
   padding: 0 2vw;
