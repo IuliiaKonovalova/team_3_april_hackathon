@@ -118,7 +118,7 @@ Every scene has a different musical background.
 
 **Navbar**
 
-The web application has navigation buttons to navigate to the Home view, Rules Section, Leadersboard Section and a Sound control button.
+The web application has navigation buttons to navigate to the Home view, How to Play Section, Leadersboard Section and a Sound control button.
 
 ![Navbar desktop](documentation/features/navbar_desktop.png)
 
