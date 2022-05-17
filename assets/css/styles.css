@@ -275,6 +275,12 @@ body {
   animation: myAnim 2s ease-in-out 0s infinite normal forwards;
 }
 
+
+.btn__play:hover {
+  background-color: rgb(214, 232, 255);
+  background-color: var(--clr-accent--900);
+}
+
 /*------ Play btn image + Animation ------*/
 @keyframes myAnim {
   0% {
@@ -446,6 +452,10 @@ body {
   cursor: pointer;
   z-index: 333;
   border: none;
+}
+
+.carousel .carousel__button:hover {
+  background-color: #333d4d;
 }
 
 .btn-carousel {
@@ -634,7 +644,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  min-height: 45vh;
+  min-height: 40vh;
   /* approximate!!!!!!! */
 }
 
@@ -705,13 +715,6 @@ body {
 
 
 /* Game control */
-/* .rules__content--2 {
-  width: 100%;
-  background-color: orange;
-
-  flex-direction: column;
-} */
-
 .play__control--main {
   width: 100%;
   padding: 0 2vw;
