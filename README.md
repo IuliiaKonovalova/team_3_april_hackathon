@@ -110,7 +110,11 @@ Players can choose scenery with arrow buttons located on the left & right parts 
 
 Every scene has a different musical background.
 
-![Game Arena Scenes](documentation/features/game-arena-selection.png)
+![Game Arena Scenes Beach](documentation/features/game-arena-selection-beach.png)
+
+![Game Arena Scenes River](documentation/features/game-arena-selection-river.png)
+
+![Game Arena Scenes Ocean](documentation/features/game-arena-selection-ocean.png)
 
 **Navbar**
 
