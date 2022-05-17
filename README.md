@@ -88,7 +88,7 @@ The following areas were looked into to achieve this goal of obtaining this age 
 
 **Home Page**
 
-The Earth Protectors Home Page is structured with a Navbar on the top, the logo heading centred on the web page, followed by the Play button, which clicked will prompt the users to choose the basic gameplay settings. The bottom of the page is occupied by the Footer section.
+The Earth Protectors Home Page is structured with a Navbar on the top, the logo heading centered on the web page, followed by the Play button, which will prompt the users to choose the basic gameplay settings. The Footer section occupies the bottom of the page.
 
 ![Home Page](documentation/features/home-page.png)
 
