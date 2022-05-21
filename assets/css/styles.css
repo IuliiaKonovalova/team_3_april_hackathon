@@ -266,7 +266,7 @@ body {
 .btn__play {
   margin-top: 10vh;
   width: 6rem;
-  background-color: #ffffff;
+  background-color: var(--clr-neutral--100);
   border-radius: 50%;
   padding: 0.5em 0.5em 0.5em 1em;
   display: flex;
@@ -278,7 +278,7 @@ body {
 
 .btn__play:hover {
   background-color: rgb(214, 232, 255);
-  background-color: var(--clr-accent--900);
+  background-color: var(--clr-neutral--800);
 }
 
 /*------ Play btn image + Animation ------*/
@@ -638,6 +638,7 @@ body {
 
 .rules__content {
   display: none;
+  margin: 1vh 0;
 }
 
 .rules__content--active {
@@ -844,11 +845,18 @@ body {
 .rules__play--container {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  /* justify-content: center; */
+  /* align-items: center; */
   /* margin-top: 3vh; */
   /* margin-bottom: 3vh; */
 }
+
+#rules__play {
+  margin: 1em;
+}
+
+
 
 /* #rules__play {
   position: unset;
@@ -2066,10 +2074,10 @@ label {
     height: 5rem;
   }
 
-  .rules__play--container {
+  /* .rules__play--container {
     margin-top: 1em;
     margin-bottom: 1em;
-  }
+  } */
 
   .btn__play {
     width: 4rem;
