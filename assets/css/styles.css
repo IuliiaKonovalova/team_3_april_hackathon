@@ -399,6 +399,10 @@ body {
   border: 1px solid var(--clr-neutral--800);
 }
 
+.btn__play--theme:hover {
+  background-color: var(--clr-neutral--100) !important;
+}
+
 .carousel__slide--title {
   text-transform: uppercase;
   font-family: var(--ff-secondary);
