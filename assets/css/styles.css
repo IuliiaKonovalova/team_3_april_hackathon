@@ -317,17 +317,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 70%;
   max-width: 50rem;
   margin: 0 auto;
   background-color: var(--clr-neutral--800);
-  padding: 2em 1em;
-  height: 30vh;
+  padding: 0;
+  height: 25vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  border-radius: 1.5rem;
+  justify-content: center;
+  border-radius: 1rem;
 }
 
 .difficulty__btn {
@@ -342,7 +342,8 @@ body {
   font-family: var(--ff-secondary);
   border: none;
   cursor: pointer;
-  margin-top: 1vh;
+  /* margin-top: 1vh; */
+  margin: 0.8em;
 }
 
 .difficulty__btn:hover {
