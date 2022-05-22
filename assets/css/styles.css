@@ -681,7 +681,7 @@ body {
 .rules__content.rules__content--1.rules__content--active p {
   font-size: 2.5vh;
   padding: 1.5vh 0;
-  text-align: justify;
+  text-align: center;
 }
 
 .rules__content--1 {
@@ -718,6 +718,7 @@ body {
   align-items: top;
   font-size: 2vh;
   padding: 2vh 0;
+  text-align: center;
 }
 
 /* .rules__modes:first-child {
