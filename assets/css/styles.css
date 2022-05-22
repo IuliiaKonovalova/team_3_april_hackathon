@@ -642,7 +642,7 @@ body {
 }
 
 .rules__content--active {
-  width: 100%;
+  /* width: 100%; */
   justify-content: center;
   align-items: center;
   min-height: 40vh;
@@ -674,44 +674,60 @@ body {
 .rules__content--title p {
   color: white;
   font-family: var(--ff-primary);
-  font-size: 2vh !important;
+  font-size: 2.5vh !important;
 }
 
 .rules__content.rules__content--1.rules__content--active p {
-  font-size: 2vh;
-  padding-bottom: 2vh;
-  text-align: center;
+  font-size: 2.5vh;
+  padding: 1.5vh 0;
+  text-align: justify;
 }
 
 .rules__content--1 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 0 2vw;
 }
 
-.rules__modes {
+.rules__content.rules__content--1.rules__content--active {
+  margin: 3vh 2vw 0 2vw;
+}
+
+
+/* .rules__modes {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.rules__mode {
+/* .rules__mode {
   display: inline;
   margin-right: auto;
   border-radius: 0.7em;
+  font-size: 2.5vh;
+  padding: 1vh 0;
+} */
+
+.rules__modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+  justify-content: center;
+  align-items: top;
   font-size: 2vh;
+  padding: 2vh 0;
 }
 
-.rules__modes:first-child {
+/* .rules__modes:first-child {
   padding-bottom: 2vh;
-}
+} */
 
 .rules__title--mode {
   color: var(--clr-accent--900);
   font-size: 2vh !important;
   text-transform: uppercase;
+  font-weight: bolder;
 }
 
 
@@ -2445,6 +2461,37 @@ label {
 
   .rules__content--active {
     min-height: 45vh;
+  }
+
+  .rules__content.rules__content--1.rules__content--active p {
+    font-size: 2.2vh;
+    padding: 1vh 0;
+  }
+
+  /* .rules__modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    justify-content: center;
+    align-items: top;
+  } */
+
+  /* .rules__mode {
+    display: inline;
+    margin-right: auto;
+    border-radius: 0.7em;
+    font-size: 2.5vh;
+    padding: 1vh 0;
+  } */
+
+  /* .rules__modes:first-child {
+    padding-bottom: 2vh;
+  } */
+
+  .rules__title--mode {
+    color: var(--clr-accent--900);
+    font-size: 2.2vh !important;
+    text-transform: uppercase;
   }
 }
 
