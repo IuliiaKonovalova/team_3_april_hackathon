@@ -1922,6 +1922,10 @@ label {
   border: solid 2px var(--clr-accent--100);
 }
 
+.leaders__board {
+  flex-direction: column !important;
+}
+
 .leaders__board--title {
   font-family: var(--ff-secondary);
   font-size: 3vh;
