@@ -110,11 +110,15 @@ Players can choose scenery with arrow buttons located on the left & right parts 
 
 Every scene has a different musical background.
 
-![Game Arena Scenes](documentation/features/game-arena-selection.png)
+![Game Arena Scenes Beach](documentation/features/game-arena-selection-beach.png)
+
+![Game Arena Scenes River](documentation/features/game-arena-selection-river.png)
+
+![Game Arena Scenes Ocean](documentation/features/game-arena-selection-ocean.png)
 
 **Navbar**
 
-The web application has navigation buttons to navigate to the Home view, Rules Section, Leadersboard Section and a Sound control button.
+The web application has navigation buttons to navigate to the Home view, How to Play Section, Leadersboard Section and a Sound control button.
 
 ![Navbar desktop](documentation/features/navbar_desktop.png)
 
