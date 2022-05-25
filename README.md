@@ -142,7 +142,33 @@ On the mobile device the game bar will be seen in the middle of the navigation b
 
 ![Navbar mobile. Game view open](documentation/features/navbar_game_on_mobile.png)
 
-**Rules Feature**
+**How to play**
+
+This section contains 3 subsections:
+
+  - **Rules**
+  - **3 ways to play**
+  - **Fun facts**
+
+To navigate through the sections, the user can click on the tabs navigation buttons located on the top of the main container. Each subsection has a play button that will take the user to the respective subsection. This button is located in the right bottom corner of the subsection.
+
+![How to play. Navigation](documentation/features/tabs.png)
+
+**Rules**
+
+This section contains the rules of the game and the difference between two difficulty levels.
+
+![Rules](documentation/features/rules.png)
+
+**3 ways to play**
+
+Presents a carusel of 3 images that will show the user how to play the game.
+
+![3 ways to play. Mouse](documentation/features/control_mouse.png)
+![3 ways to play. Keyboard](documentation/features/control_keyboard.png)
+![3 ways to play. Mobile](documentation/features/control_touch_patch.png)
+
+**Fun facts**
 
 ![Rules Feature](documentation/features/rules_feature2.png)
 
