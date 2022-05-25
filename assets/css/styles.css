@@ -1754,6 +1754,7 @@ label {
   cursor: pointer;
   color: var(--clr-neutral-100);
   font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .footer__btn:hover {
@@ -1826,6 +1827,10 @@ label {
   height: 100px;
   width: 100px;
   background-color: black;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 /* ----- Footer Avatars ----- */
