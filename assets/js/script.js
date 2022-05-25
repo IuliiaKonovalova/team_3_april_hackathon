@@ -380,14 +380,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function openFooter(footer) {
     if (footer === null) return;
     footer.classList.remove('hide');
-    footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-down"></i>`;
+    footerBtn.classList.add('rotate');
   }
 
   // Close footer content
   function closeFooter(footer) {
     if (footer === null) return;
     footer.classList.add('hide');
-    footerBtn.innerHTML = `<i class="fas fa-arrow-alt-circle-up"></i>`;
+    footerBtn.classList.remove('rotate');
   }
-
 });
