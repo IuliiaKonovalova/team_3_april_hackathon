@@ -1,4 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lato:wght@300&family=Moo+Lah+Lah&family=Roboto+Slab:wght@200&family=Roboto:wght@100&family=Rubik+Microbe&family=Rubik+Moonrocks&family=Titan+One&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Rubik+Moonrocks&display=swap');
 
 :root {
@@ -657,7 +656,6 @@ body {
   color: var(--clr-accent--100);
   font-size: 3.5vh;
   text-align: center;
-  /* font-size: calc(60% + 0.8vmin) !important; */
 }
 
 .rules__content--title p {
@@ -687,21 +685,6 @@ body {
   font-size: calc(60% + 0.8vmin) !important;
 }
 
-/* .rules__modes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .rules__mode {
-  display: inline;
-  margin-right: auto;
-  border-radius: 0.7em;
-  font-size: 2.5vh;
-  padding: 1vh 0;
-} */
-
 .rules__modes,
 .rules__modes--title {
   display: grid;
@@ -709,21 +692,14 @@ body {
   grid-gap: 0.5rem;
   justify-content: center;
   align-items: top;
-
-  /* Could be changed */
   padding: 2vh 0;
   text-align: center;
   font-size: calc(60% + 0.8vmin) !important;
   margin-bottom: 4vh;
 }
 
-/* .rules__modes:first-child {
-  padding-bottom: 2vh;
-} */
-
 .rules__title--mode {
   color: var(--clr-accent--900);
-  /* font-size: 2vh !important; */
   text-transform: uppercase;
   font-weight: bolder;
 }
@@ -767,7 +743,6 @@ body {
 }
 
 .play__control--image img {
-  /* object-fit: cover; */
   max-width: 30rem;
   height: 20vh;
 }
@@ -781,7 +756,6 @@ body {
 }
 
 /* Learning rules on recycling */
-
 .rules__section--data {
   position: relative;
 }
@@ -813,7 +787,6 @@ body {
   max-width: 90%;
   display: flex;
   flex-direction: row;
-  /* font-size: calc(60% + 0.8vmin) !important; */
 }
 
 .game__rules--title {
@@ -833,7 +806,6 @@ body {
 .eco__facts--title {
   font-family: var(--ff-secondary);
   color: var(--clr-accent--900);
-  /* text-transform: uppercase; */
   font-size: calc(60% + 0.8vmin) !important;
 }
 
@@ -848,7 +820,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 0.8em 0.5em;
-
 }
 
 .rules__bin {
@@ -890,13 +861,6 @@ body {
   width: 3rem;
   padding: 0.2em 0.2em 0.2em 0.4em;
 }
-
-
-
-/* #rules__play {
-  position: unset;
-  margin: 0;
-} */
 
 .eco__facts {
   margin-top: 2vh;
@@ -1565,7 +1529,6 @@ body {
 }
 
 /* Game Paused Element */
-
 #game-paused i {
   color: var(--clr-accent--900);
   font-size: 8rem;
@@ -1585,7 +1548,6 @@ body {
 }
 
 /* ----- Disable Select in Game Mode ----- */
-
 .disable__select {
   user-select: none;
   /* supported by Chrome and Opera */
@@ -1651,7 +1613,6 @@ body {
   border-radius: 0.5em;
   border: none;
   color: var(--clr-neutral--800);
-  /* margin: 3em 0 1em 0; */
   margin: 0 auto;
   text-decoration: none;
   text-transform: uppercase;
@@ -1718,8 +1679,6 @@ label {
 }
 
 .garbage__message {
-  /* line-height: 4vh; */
-  /* text-align: center; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1775,10 +1734,8 @@ label {
 }
 
 .copyrights__wrapper p {
-  /* width: 100%; */
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .footer__copyright {
@@ -1959,11 +1916,6 @@ label {
 #leaders-board .leader__data--score {
   color: var(--clr-accent--900);
 }
-
-/* #leader-close {
-  top: 0.2em;
-  right: 0.6em;
-} */
 
 #leaders-board {
   border-radius: 0.5rem;
