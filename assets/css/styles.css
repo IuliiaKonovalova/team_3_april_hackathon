@@ -567,7 +567,7 @@ body {
   position: absolute;
   top: 50%;
   max-width: 100rem;
-  max-height: 75vh;
+  max-height: 100vh;
   /* min-height: 75vh; */
   background-color: var(--clr-neutral--800);
   color: var(--clr-neutral--100);
@@ -576,6 +576,7 @@ body {
   transform: translate(-50%, -50%);
   width: 90%;
   padding: 1vh;
+  z-index: 999999999999;
 }
 
 /* ----- << Tabs control >> ----- */
@@ -674,6 +675,7 @@ body {
   color: var(--clr-accent--100);
   font-size: 3.5vh;
   text-align: center;
+  /* font-size: calc(60% + 0.8vmin) !important; */
 }
 
 .rules__content--title p {
@@ -730,6 +732,7 @@ body {
   padding: 2vh 0;
   text-align: center;
   font-size: calc(60% + 0.8vmin) !important;
+  margin-bottom: 4vh;
 }
 
 /* .rules__modes:first-child {
@@ -2098,6 +2101,11 @@ label {
   .rules__tab--title {
     display: none;
   }
+
+  .rules__section {
+    width: 98vw;
+    max-height: 80vh;
+  }
 }
 
 @media all and (max-width: 784px) {
@@ -2113,10 +2121,14 @@ label {
     font-size: 2.5rem;
   }
 
+  .rules__content--title {
+    font-size: 2.5vh;
+  }
+
   .eco__facts p,
   .game__rules p {
     padding: 10px;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
   }
 
   .eco__facts p {
@@ -2217,15 +2229,32 @@ label {
 }
 
 @media all and (max-width: 650px) and (min-height: 900px) {
+  .rules__content.rules__content--1.rules__content--active p {
+    padding: 0.5vh 0;
+  }
+
+  .rules__bins {
+    margin-bottom: 1vh;
+
+  }
+
   .rules__bin img {
     height: 5rem;
     transition: transform 0.7s ease-in-out;
   }
 
-  .eco__facts--title,
+  .eco__facts {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+    /* font-size: calc(60% + 0.8vmin) !important; */
+  }
+
+  /* .eco__facts--title,
   .game__rules--title {
     font-size: 2rem !important;
-  }
+  } */
 
   .btn__play {
     width: 4rem;
@@ -2252,9 +2281,7 @@ label {
   }
 
 
-  .rules__section {
-    border-radius: 0.4em;
-  }
+
 
   .copyrights__wrapper {
     width: 95%;
@@ -2445,7 +2472,7 @@ label {
   .eco__facts p {
     display: flex;
     flex-direction: column;
-    font-size: 1rem !important;
+    /* font-size: 1rem !important; */
   }
 }
 
@@ -2490,7 +2517,7 @@ label {
   }
 
   .rules__content.rules__content--1.rules__content--active p {
-    font-size: 2.2vh;
+    /* font-size: 2.2vh; */
     padding: 1vh 0;
   }
 
@@ -2516,7 +2543,7 @@ label {
 
   .rules__title--mode {
     color: var(--clr-accent--900);
-    font-size: 2.2vh !important;
+    /* font-size: 2.2vh !important; */
     text-transform: uppercase;
   }
 }
@@ -2524,8 +2551,20 @@ label {
 @media all and (max-height: 616px) {
 
   .rules__content--active {
-    min-height: 35vh;
+    min-height: 45vh;
     /* approximate!!!!!!! */
+  }
+
+  .rules__content.rules__content--1.rules__content--active p {
+    padding: 0;
+  }
+
+  .eco__facts {
+    display: none;
+  }
+
+  .rules__tab {
+    font-size: 0.7rem;
   }
 }
 
@@ -2535,7 +2574,7 @@ label {
   }
 
   .rules__content--active {
-    min-height: 25vh;
+    /* min-height: 25vh; */
     /* approximate!!!!!!! */
   }
 }
