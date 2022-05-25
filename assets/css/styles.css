@@ -842,6 +842,7 @@ body {
 .game__rules--subtitle {
   font-size: calc(60% + 0.8vmin) !important;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .eco__facts--title {
@@ -884,6 +885,9 @@ body {
 }
 
 .rules__play--container {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
   width: 100%;
   display: flex;
   justify-content: end;
@@ -2465,7 +2469,7 @@ label {
   }
 
   .rules__bins {
-    margin: 0;
+    margin: 2vh 0;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
