@@ -679,13 +679,14 @@ body {
 .rules__content--title p {
   color: white;
   font-family: var(--ff-primary);
-  font-size: 2.5vh !important;
+  font-size: calc(60% + 0.8vmin) !important;
 }
 
 .rules__content.rules__content--1.rules__content--active p {
   font-size: 2.5vh;
   padding: 1.5vh 0;
   text-align: center;
+  font-size: calc(60% + 0.8vmin) !important;
 }
 
 .rules__content--1 {
@@ -698,6 +699,9 @@ body {
   margin: 3vh 2vw 0 2vw;
 }
 
+.rules__content--howtoplay p {
+  font-size: calc(60% + 0.8vmin) !important;
+}
 
 /* .rules__modes {
   display: flex;
@@ -714,7 +718,8 @@ body {
   padding: 1vh 0;
 } */
 
-.rules__modes {
+.rules__modes,
+.rules__modes--title {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5rem;
@@ -724,6 +729,7 @@ body {
   /* Could be changed */
   padding: 2vh 0;
   text-align: center;
+  font-size: calc(60% + 0.8vmin) !important;
 }
 
 /* .rules__modes:first-child {
@@ -732,7 +738,7 @@ body {
 
 .rules__title--mode {
   color: var(--clr-accent--900);
-  font-size: 2vh !important;
+  /* font-size: 2vh !important; */
   text-transform: uppercase;
   font-weight: bolder;
 }
@@ -822,6 +828,7 @@ body {
   max-width: 90%;
   display: flex;
   flex-direction: row;
+  /* font-size: calc(60% + 0.8vmin) !important; */
 }
 
 .game__rules--title {
@@ -832,17 +839,22 @@ body {
   font-weight: lighter;
 }
 
+.game__rules--subtitle {
+  font-size: calc(60% + 0.8vmin) !important;
+  text-transform: uppercase;
+}
+
 .eco__facts--title {
-  font-size: 2.5vh !important;
   font-family: var(--ff-secondary);
   color: var(--clr-accent--900);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  font-size: calc(60% + 0.8vmin) !important;
 }
 
 .eco__facts p,
 .game__rules p {
   padding: 10px;
-  font-size: 2vh;
+  font-size: calc(60% + 0.8vmin) !important;
 }
 
 .rules__bins {
@@ -875,10 +887,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: end;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* margin-top: 3vh; */
-  /* margin-bottom: 3vh; */
 }
 
 #rules__play {
@@ -889,8 +897,7 @@ body {
   background-color: var(--clr-neutral--100);
 }
 
-#rules__play,
-btn {
+#rules__play {
   width: 3rem;
   padding: 0.2em 0.2em 0.2em 0.4em;
 }
